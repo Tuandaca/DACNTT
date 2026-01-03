@@ -1,1 +1,4 @@
 env/
+app/_pycache__/
+app/backend/__pycache__/
+app/backend/.envapp/backend/.env

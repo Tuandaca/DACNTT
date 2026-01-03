@@ -22,12 +22,12 @@ class BusBotV13:
             "tdt": "đại học tôn đức thắng", "đh tdt": "đại học tôn đức thắng", "tdtu": "đại học tôn đức thắng",
             "văn lang": "trường đại học văn lang", "đh văn lang": "trường đại học văn lang", "vlu": "trường đại học văn lang",
             "csnd": "đại học cảnh sát nhân dân", "đh csnd": "đại học cảnh sát nhân dân",
-            "bk": "đại học bách khoa", "bách khoa": "đại học bách khoa",
-            "khtn": "đại học khoa học tự nhiên", "tự nhiên": "đại học khoa học tự nhiên",
+            "bk": "đại học bách khoa", "bách khoa": "đại học bách khoa", "hcmut": "đại học bách khoa",
+            "khtn": "đại học khoa học tự nhiên", "tự nhiên": "đại học khoa học tự nhiên", "hcmus": "đại học khoa học tự nhiên",
             "ussh": "đại học khoa học xã hội và nhân văn", "nhân văn": "đại học khoa học xã hội và nhân văn",
-            "spkt": "đại học sư phạm kỹ thuật", "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật", "đh sư phạm kỹ thuật": "đại học sư phạm kỹ thuật", "đh spkt": "đại học sư phạm kỹ thuật",
+            "spkt": "đại học sư phạm kỹ thuật", "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật", "hcmute": "đại học sư phạm kỹ thuật",
             "nlu": "đại học nông lâm", "nông lâm": "đại học nông lâm",
-            "ueh": "đại học kinh tế", "đh kinh tế": "đại học kinh tế", "đh kt": "đại học kinh tế",
+            "ueh": "đại học kinh tế", "đh kinh tế": "đại học kinh tế", "kinh tế": "đại học kinh tế",
             "ulu": "đại học luật", "đh luật": "đại học luật",
             "yds": "đại học y dược", "y dược": "đại học y dược",
             "hutech": "đại học công nghệ tphcm", "công nghệ": "đại học công nghệ tphcm",
@@ -41,10 +41,10 @@ class BusBotV13:
             
             "bến thành": "bến xe buýt sài gòn", "chợ bến thành": "bến xe buýt sài gòn",
             "suối tiên": "khu du lịch suối tiên", "kdl suối tiên": "khu du lịch suối tiên",
-            "đầm sen": "công viên văn hóa đầm sen", "cv đầm sen": "công viên văn hóa đầm sen", "công viên nước đầm sen": "công viên văn hóa đầm sen",
+            "đầm sen": "công viên văn hóa đầm sen", "cv đầm sen": "công viên văn hóa đầm sen",
             "thảo cầm viên": "thảo cầm viên",
             "nhà thờ đức bà": "công xã paris",
-            "sân bay": "sân bay tân sơn nhất", "tsn": "sân bay tân sơn nhất","sân bay tsn": "sân bay tân sơn nhất",
+            "sân bay": "sân bay tân sơn nhất", "tsn": "sân bay tân sơn nhất",
             "chợ rẫy": "bệnh viện chợ rẫy", "115": "bệnh viện nhân dân 115",
             "lotte mart nam sài gòn":"Lotte Mart","lotte mart quận 7":"Lotte Mart",
             
@@ -62,29 +62,54 @@ class BusBotV13:
         text = text.lower()
         def replace(match): return self.ABBREVIATIONS[match.group(0)]
         text = self.pattern.sub(replace, text)
-        text = text.replace("đại học đại học", "đại học").replace("trường đại học trường đại học", "trường đại học").replace("bến xe bến xe", "bến xe").replace("bệnh viện bệnh viện", "bệnh viện").replace("công viên văn hóa công viên văn hóa", "công viên văn hóa")
+        text = text.replace("đại học đại học", "đại học").replace("trường đại học trường đại học", "trường đại học")
         return text
 
-    # --- HÀM MỚI: TÌM KIẾM & GOM NHÓM THEO ĐƯỜNG ---
+    # --- HÀM TÌM KIẾM & GOM NHÓM (CẬP NHẬT LOGIC VÉT CẠN) ---
     def find_grouped_candidates(self, session, query_text):
         clean_text = self.normalize_query(query_text).replace("trạm", "").strip()
         
-        # Cypher: Tìm và Gom nhóm theo Tên Đường (street)
-        # Nếu trạm không có street thì ghi là 'Khu vực chính'
-        q = """
-        MATCH (b:BusStop)
-        WHERE toLower(b.name) CONTAINS $txt OR toLower(b.code) = $txt
+        # LOGIC 1: Tìm chính xác khi có tên đường (Do Button tạo ra)
+        if " đường " in clean_text:
+            parts = clean_text.split(" đường ")
+            name_part = parts[0].strip() 
+            street_part = parts[1].strip() 
+            
+            q = """
+            MATCH (b:BusStop)
+            WHERE (toLower(b.name) CONTAINS $name OR toLower(b.code) = $name)
+              AND toLower(b.street) CONTAINS $street
+            
+            WITH b.name AS LocationName, 
+                 b.street AS StreetName, 
+                 collect(b.id) AS StationIDs,
+                 avg(b.lat) as lat, avg(b.lng) as lng
+                 
+            RETURN LocationName, StreetName, StationIDs, lat, lng
+            LIMIT 1
+            """
+            results = list(session.run(q, name=name_part, street=street_part))
         
-        WITH b.name AS LocationName, 
-             COALESCE(b.street, 'Khu vực chính') AS StreetName, 
-             collect(b.id) AS StationIDs,
-             avg(b.lat) as lat, avg(b.lng) as lng
-             
-        RETURN LocationName, StreetName, StationIDs, lat, lng
-        ORDER BY size(StationIDs) DESC
-        LIMIT 5
-        """
-        results = list(session.run(q, txt=clean_text))
+        # LOGIC 2: Tìm diện rộng (Khi người dùng nhập lần đầu)
+        else:
+            # - Bỏ Limit 5 -> Tăng lên 50 để lấy hết cơ sở.
+            # - Sắp xếp: Ưu tiên khớp đầu câu (STARTS WITH) để các kết quả chính xác lên đầu.
+            q = """
+            MATCH (b:BusStop)
+            WHERE toLower(b.name) CONTAINS $txt OR toLower(b.code) = $txt
+            
+            WITH b.name AS LocationName, 
+                 COALESCE(b.street, 'Khu vực chính') AS StreetName, 
+                 collect(b.id) AS StationIDs,
+                 avg(b.lat) as lat, avg(b.lng) as lng
+            
+            RETURN LocationName, StreetName, StationIDs, lat, lng
+            ORDER BY 
+               CASE WHEN toLower(LocationName) STARTS WITH $txt THEN 0 ELSE 1 END,
+               LocationName ASC
+            LIMIT 50
+            """
+            results = list(session.run(q, txt=clean_text))
         
         # Parse kết quả
         candidates = []
@@ -98,23 +123,22 @@ class BusBotV13:
             })
         return candidates
 
-    # --- HÀM TÌM ĐƯỜNG CHÍNH (ĐÃ UPDATE LOGIC AMBIGUITY) ---
+    # --- HÀM TÌM ĐƯỜNG CHÍNH ---
     def solve_route(self, start_text, end_text):
         with self.driver.session() as session:
             # 1. Tìm địa điểm (Gom nhóm theo đường)
             s_groups = self.find_grouped_candidates(session, start_text)
             e_groups = self.find_grouped_candidates(session, end_text)
 
-            # 2. Xử lý Mơ hồ (Ambiguity) - NẾU CÓ > 1 NHÓM ĐỊA ĐIỂM
+            # 2. Xử lý Mơ hồ (Ambiguity)
             # Kiểm tra điểm ĐI
             if len(s_groups) > 1:
-                # Tạo danh sách lựa chọn cho Client
                 options = [{"label": f"{g['name']} ({g['street']})", "value": f"{g['name']} đường {g['street']}"} for g in s_groups]
                 return {
                     "status": "ambiguous", 
                     "point_type": "start",
                     "original_input": start_text,
-                    "message": f"🤔 Tôi tìm thấy {len(s_groups)} địa điểm cho **'{start_text}'**. Bạn muốn đi từ đâu?",
+                    "message": f"🤔 Tôi tìm thấy {len(s_groups)} địa điểm liên quan đến **'{start_text}'**. Bạn muốn đi từ đâu?",
                     "options": options
                 }
             
@@ -125,11 +149,11 @@ class BusBotV13:
                     "status": "ambiguous", 
                     "point_type": "end",
                     "original_input": end_text,
-                    "message": f"🤔 Tôi tìm thấy {len(e_groups)} địa điểm cho **'{end_text}'**. Bạn muốn đến cơ sở nào?",
+                    "message": f"🤔 Tôi tìm thấy {len(e_groups)} địa điểm liên quan đến **'{end_text}'**. Bạn muốn đến cơ sở nào?",
                     "options": options
                 }
 
-            # 3. Nếu không tìm thấy hoặc chỉ có 1 kết quả duy nhất -> Chạy tiếp
+            # 3. Kiểm tra kết quả tìm kiếm
             if not s_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đi: '{start_text}'"}
             if not e_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đến: '{end_text}'"}
 
@@ -137,7 +161,7 @@ class BusBotV13:
             s_ids = s_groups[0]["ids"]
             e_ids = e_groups[0]["ids"]
 
-            # --- LOGIC TÌM ĐƯỜNG CŨ (GIÁ VÉ 6K/3K/FREE) ---
+            # --- LOGIC TÌM ĐƯỜNG ---
             
             # ƯU TIÊN 1: ĐI THẲNG
             q_direct = """

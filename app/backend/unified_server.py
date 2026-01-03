@@ -59,7 +59,6 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(title="Professional Travel & Transport AI", lifespan=lifespan)
 
-# Mount thư mục ảnh tĩnh (dù ưu tiên dùng link online, vẫn giữ cấu hình này để tránh lỗi nếu có request tới)
 if not os.path.exists("images_items"):
     os.makedirs("images_items")
 app.mount("/images_items", StaticFiles(directory="images_items"), name="images")
@@ -78,16 +77,15 @@ QUESTION_MARKERS = [
     "thông tin", "chi tiết", "giới thiệu", "kể về", "nói về", "liệt kê", "danh sách"
 ]
 
-# --- 5. LOGIC TÌM KIẾM TOURISM (Lấy image_url) ---
+# --- 5. LOGIC TÌM KIẾM TOURISM ---
 async def hybrid_search_tourism(text: str, province_filter: str = None):
     search_text_norm = normalize_text(text)
     records = []
     
     async with tourism_driver.session() as session:
-        # TH1: Có lọc theo tỉnh -> Tìm kiếm diện rộng (List)
+        # TH1: Có lọc theo tỉnh -> Tìm kiếm diện rộng
         if province_filter and len(province_filter) > 2:
             province_norm = normalize_text(province_filter)
-            # Tăng LIMIT để lấy nhiều địa điểm cho việc liệt kê
             cypher_loc = """
             MATCH (node:Searchable)-[:LOCATED_IN]->(p:Province)
             WHERE toLower(p.name) CONTAINS $province_norm
@@ -101,7 +99,7 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
             except Exception as e:
                 logger.error(f"Error Loc Search: {e}")
 
-        # TH2: Vector Search & Keyword Search (Bổ trợ nếu ít kết quả)
+        # TH2: Vector & Keyword Search
         if len(records) < 5: 
             loop = asyncio.get_running_loop()
             vector = await loop.run_in_executor(None, lambda: model.encode(text).tolist())
@@ -118,16 +116,12 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
                 records.extend([record.data() async for record in r2])
             except: pass
 
-    # Lọc trùng và chấm điểm lại
     unique_results = {}
     for r in records:
         uid = r['id']
-        # Giảm điểm nếu sai tỉnh (Strict filtering logic)
         if province_filter and r.get('province_name'):
             if normalize_text(province_filter) not in normalize_text(r['province_name']):
                 r['score'] = r['score'] * 0.1
-
-        # Ngưỡng vector (để loại bỏ kết quả rác)
         if r['source_type'] == 'vector' and r['score'] < 0.65: continue
         
         if uid not in unique_results:
@@ -138,18 +132,14 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
                 unique_results[uid]['score'] = 10.0 if r['source_type'] == 'keyword' else r['score']
     
     sorted_results = sorted(unique_results.values(), key=lambda x: x['score'], reverse=True)
-    return sorted_results[:10] # Lấy tối đa 10 kết quả
+    return sorted_results[:10]
 
 # --- 6. FALLBACK LOGIC ---
 async def fallback_general_knowledge(question: str):
     system_prompt = f"""
     VAI TRÒ: Chuyên gia tư vấn du lịch và văn hóa Việt Nam.
     CÂU HỎI: "{question}"
-    YÊU CẦU:
-    1. Trả lời chính xác, khách quan, ngôn ngữ trang trọng (Professional Tone).
-    2. TUYỆT ĐỐI KHÔNG sử dụng Emoji.
-    3. Trình bày văn bản rõ ràng bằng Markdown.
-    4. Tập trung vào thông tin thực tế.
+    YÊU CẦU: Trả lời chính xác, khách quan, ngôn ngữ trang trọng. KHÔNG dùng Emoji.
     """
     loop = asyncio.get_running_loop()
     response = await loop.run_in_executor(None, lambda: llm_model.generate_content(system_prompt))
@@ -167,104 +157,116 @@ async def chat_endpoint(request: ChatRequest):
     start_time = time.time()
     question = request.question.strip()
     logger.info(f"REQ: {question}")
+    lower_q = question.lower()
     
-    # --- 1. ROUTER THÔNG MINH (Intent + Location + Mode) ---
+    # --- 1. ROUTER THÔNG MINH ---
+    # Danh sách từ nối để nhận diện câu hỏi Bus
+    # Bao gồm: đến, tới, về, sang, qua, ra
+    dest_markers = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "] 
+    
+    is_bus_intent = False
+    # Check nhanh: Nếu có từ chỉ hướng + từ chỉ di chuyển
+    if any(m.strip() in lower_q for m in dest_markers) and \
+       any(w in lower_q for w in ["từ", "đi", "đường", "xe bus", "buýt", "cách"]):
+        is_bus_intent = True
+
     router_prompt = f"""
     Phân tích câu hỏi: "{question}".
     Nhiệm vụ:
     1. Intent: "greeting" | "bus" | "tourism".
-    2. Location: Trích xuất tên Tỉnh/Thành phố/Quận Huyện (nếu có).
-    3. Mode: 
-       - "list": Nếu hỏi danh sách, liệt kê, số lượng (VD: "Có những chùa nào", "Các địa điểm đẹp", "Liệt kê...").
-       - "detail": Nếu hỏi chi tiết về một địa điểm cụ thể (VD: "Giới thiệu chùa Sùng Nghiêm", "Thuyết minh về...").
+    2. Location: Trích xuất tên Tỉnh/Thành phố (nếu có).
+    3. Mode: "list" (liệt kê) | "detail" (chi tiết).
     
     JSON Output: {{ "intent": "...", "location": "...", "mode": "..." }}
     """
     
-    intent = "tourism"
-    start_loc = None
-    end_loc = None
+    intent = "bus" if is_bus_intent else "tourism"
     location_filter = None
     mode = "detail"
 
     try:
-        res = await asyncio.to_thread(llm_model.generate_content, router_prompt)
-        clean = res.text.strip().replace("```json", "").replace("```", "")
-        parsed = json.loads(clean)
-        intent = parsed.get("intent", "tourism")
-        location_filter = parsed.get("location")
-        mode = parsed.get("mode", "detail")
+        if not is_bus_intent: # Chỉ dùng AI check nếu chưa chắc là Bus
+            res = await asyncio.to_thread(llm_model.generate_content, router_prompt)
+            clean = res.text.strip().replace("```json", "").replace("```", "")
+            parsed = json.loads(clean)
+            intent = parsed.get("intent", "tourism")
+            location_filter = parsed.get("location")
+            mode = parsed.get("mode", "detail")
     except: pass
 
-    # --- 2. LOGIC ĐIỀU HƯỚNG THỦ CÔNG (QUAN TRỌNG: ĐƯA LÊN TRƯỚC HẾT) ---
-    lower_q = question.lower()
+    # Override Intent thủ công nếu phát hiện từ khóa mạnh
+    if is_bus_intent: intent = "bus"
     
-    # [FIX] Kiểm tra Intent BUS độc lập (không phụ thuộc vào câu hỏi nghi vấn)
-    if "đến" in lower_q and ("từ" in lower_q or "đi" in lower_q or "tìm đường" in lower_q or "chỉ đường" in lower_q):
-        intent = "bus"
-    
-    # Kiểm tra Intent GREETING hoặc ép về TOURISM nếu có từ để hỏi
     has_question_word = any(marker in lower_q for marker in QUESTION_MARKERS)
-    
-    if intent != "bus": # Chỉ check tiếp nếu chưa phải là bus
+    if intent != "bus":
         if has_question_word:
-            if intent == "greeting": intent = "tourism" # Ép về tourism nếu AI nhận nhầm greeting
+            if intent == "greeting": intent = "tourism"
         else:
-            greeting_words = ["xin chào", "hello", "hi bot", "chào bạn", "alo", "hi there"]
+            greeting_words = ["xin chào", "hello", "hi bot", "chào bạn", "alo"]
             if any(w == lower_q or lower_q.startswith(w) for w in greeting_words) and len(lower_q) < 20:
                 intent = "greeting"
 
     if location_filter and mode == "detail":
-        if any(w in lower_q for w in ["nào", "gì", "những", "các", "đâu"]):
-            mode = "list"
+        if any(w in lower_q for w in ["nào", "gì", "những", "các"]): mode = "list"
 
     logger.info(f"🔍 INTENT: {intent} | LOC: {location_filter} | MODE: {mode}")
 
     if intent == "greeting":
-        greeting_msg = (
-            "Kính chào Quý khách. Tôi là Trợ lý AI chuyên trách về Văn hóa, Du lịch và Giao thông công cộng.\n\n"
-            "Tôi có thể hỗ trợ Quý khách:\n"
-            "- Tra cứu lộ trình xe buýt tối ưu.\n"
-            "- Cung cấp thông tin chuyên sâu về di tích, danh lam thắng cảnh Việt Nam.\n\n"
-            "Quý khách cần tìm hiểu thông tin gì hôm nay?"
-        )
-        return {"answer": greeting_msg, "sources": [], "images": []}
+        return {"answer": "Kính chào Quý khách. Tôi là Trợ lý AI chuyên trách về Văn hóa & Giao thông.\nTôi có thể giúp bạn tra cứu lộ trình xe buýt hoặc thông tin du lịch.", "sources": [], "images": []}
 
-    # --- XỬ LÝ BUS (CẬP NHẬT LOGIC BUTTON & PROMPT) ---
+    # --- XỬ LÝ BUS (LOGIC TÁCH CHUỖI NÂNG CAO) ---
     if intent == "bus":
-        # Parse điểm đi/đến thủ công nếu AI chưa bắt được
-        if not start_loc or not end_loc:
-            if "đến" in lower_q:
-                try:
-                    parts = lower_q.split("đến")
-                    end_loc = parts[1].strip()
-                    start_raw = parts[0]
-                    for w in ["đi từ", "tìm đường từ", "chỉ đường từ", "từ", "đường đi"]:
-                        start_raw = start_raw.replace(w, "")
-                    start_loc = start_raw.strip()
-                except: pass
+        start_loc = None
+        end_loc = None
+        
+        # Danh sách các từ có thể là vách ngăn giữa Điểm đi và Điểm đến
+        # Lưu ý: Có khoảng trắng 2 đầu để tránh bắt nhầm (vd: "Quốc lộ" có chữ "qua")
+        separators = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "]
+        
+        # Danh sách từ thừa ở đầu câu cần cắt bỏ
+        start_prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ"]
+
+        found_sep = None
+        # Tìm từ nối xuất hiện đầu tiên trong câu
+        for sep in separators:
+            if sep in lower_q:
+                found_sep = sep
+                break
+        
+        if found_sep:
+            try:
+                parts = lower_q.split(found_sep, 1) # Chỉ tách ở từ nối đầu tiên
+                end_loc = parts[1].strip()
+                
+                # Xử lý phần Start: Cắt bỏ các từ prefix
+                start_raw = parts[0].strip()
+                for prefix in start_prefixes:
+                    if start_raw.startswith(prefix):
+                        start_raw = start_raw[len(prefix):].strip()
+                        break # Cắt xong thì thôi
+                start_loc = start_raw
+            except: pass
         
         if start_loc and end_loc:
             try:
                 # Gọi BusBot
                 bus_result = await asyncio.to_thread(bus_bot.solve_route, start_loc, end_loc)
                 
-                # TRƯỜNG HỢP 1: CÓ NHIỀU LỰA CHỌN (AMBIGUOUS) -> TRẢ VỀ OPTIONS CHO CLIENT
+                # TH1: Ambiguous -> Trả về Options
                 if bus_result.get("status") == "ambiguous":
                     return {
                         "answer": bus_result["message"], 
-                        "options": bus_result["options"], # List các nút bấm
-                        "context_type": "bus_ambiguity", # Đánh dấu để client biết
+                        "options": bus_result["options"],
+                        "context_type": "bus_ambiguity",
                         "original_request": {"start": start_loc, "end": end_loc, "type": bus_result["point_type"]},
-                        "sources": [], 
-                        "images": []
+                        "sources": [], "images": []
                     }
 
-                # TRƯỜNG HỢP 2: LỖI
+                # TH2: Error
                 if bus_result.get("status") == "error":
                     return {"answer": bus_result["message"], "sources": [], "images": []}
                 
-                # TRƯỜNG HỢP 3: THÀNH CÔNG (CÓ LỘ TRÌNH)
+                # TH3: Thành công
                 raw_text = bus_result["text"]
                 path_coords = bus_result.get("path_coords", [])
                 
@@ -274,13 +276,12 @@ async def chat_endpoint(request: ChatRequest):
                     e = path_coords[-1]
                     google_link = f"https://www.google.com/maps/dir/?api=1&origin={s[1]},{s[0]}&destination={e[1]},{e[0]}&travelmode=transit"
 
-                # Prompt này ép AI phải hiển thị đúng bảng giá vé 3 loại
                 polish_prompt = f"""
                 Dữ liệu lộ trình: \"\"\"{raw_text}\"\"\"
                 YÊU CẦU: Viết lại hướng dẫn di chuyển chuyên nghiệp.
                 1. Trình bày các bước rõ ràng.
                 2. In đậm tên trạm, số xe.
-                3. Bắt buộc hiển thị Bảng giá vé (Gồm: Vé thường, HSSV, Người cao tuổi) dựa trên dữ liệu.
+                3. Bắt buộc hiển thị Bảng giá vé (Gồm: Vé thường, HSSV, Người cao tuổi).
                 4. Văn phong lịch sự, không emoji.
                 """
                 final_res = await asyncio.to_thread(llm_model.generate_content, polish_prompt)
@@ -289,124 +290,96 @@ async def chat_endpoint(request: ChatRequest):
                 if google_link:
                     answer_text += f"\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps]({google_link})**"
 
-                logger.info(f"DONE [BUS]: {time.time()-start_time:.2f}s")
                 return {"answer": answer_text, "sources": [], "images": []}
             except Exception as e:
                 return {"answer": f"Lỗi hệ thống: {str(e)}", "sources": [], "images": []}
         else:
-            return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành đến Đầm Sen) để tôi tìm lộ trình.", "sources": [], "images": []}
+             return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình.", "sources": [], "images": []}
 
-    # --- XỬ LÝ TOURISM (FULL LOGIC) ---
+    # --- XỬ LÝ TOURISM ---
     final_province = request.province if request.province else location_filter
     search_results = await hybrid_search_tourism(question, final_province)
     
     if search_results:
-        # 1. Xử lý ảnh: CHỈ LẤY URL ONLINE (Bỏ qua local path theo yêu cầu)
         image_urls = []
         for item in search_results:
             node_data = item.get('node', {})
-            
-            # Chỉ lấy trường image_url
             url = node_data.get('image_url')
-            
-            # Kiểm tra hợp lệ (phải bắt đầu bằng http)
             if url and isinstance(url, str) and url.startswith("http"):
                 image_urls.append(url)
-        
-        # Lọc trùng và lấy tối đa 2 ảnh (THEO YÊU CẦU MỚI)
         final_imgs = list(dict.fromkeys(image_urls))[:2] 
 
-        # 2. Tạo Context cho LLM
-        context_str = "\n".join([f"- {item['node']['name']}: {item['node']['content']}" for item in search_results])
+        context_str = "\n".join([f"- {item['node']['name']} (Tỉnh: {item.get('province_name', 'Chưa rõ')}): {item['node']['content']}" for item in search_results])
         
-        # 3. Chọn Prompt theo Mode (List vs Detail)
         if mode == "list":
             rag_prompt = f"""
-            VAI TRÒ: Hướng dẫn viên du lịch chuyên nghiệp.
-            NHIỆM VỤ: Liệt kê danh sách các địa điểm.
-            DỮ LIỆU CUNG CẤP: {context_str}
-            CÂU HỎI NGƯỜI DÙNG: "{question}"
-            
-            YÊU CẦU TRẢ LỜI:
-            1. Mở đầu: "Tại {location_filter if location_filter else 'khu vực này'}, có các địa điểm nổi tiếng sau:"
-            2. Liệt kê danh sách (tối thiểu 3 điểm nếu có trong dữ liệu).
-            3. Mỗi điểm mô tả ngắn gọn 2-3 câu về điểm đặc sắc nhất.
-            4. Văn phong trang trọng, KHÔNG sử dụng emoji.
+            VAI TRÒ: Trợ lý du lịch.
+            NHIỆM VỤ: Liệt kê địa điểm.
+            DỮ LIỆU: {context_str}
+            CÂU HỎI: "{question}"
+            YÊU CẦU: Liệt kê danh sách (tối thiểu 3). Ghi rõ Tên và Tỉnh/Thành phố. Mô tả ngắn. KHÔNG emoji.
             """
         else:
             rag_prompt = f"""
-            VAI TRÒ: Nhà nghiên cứu văn hóa và Hướng dẫn viên cao cấp.
-            DỮ LIỆU CUNG CẤP: {context_str}
-            CÂU HỎI NGƯỜI DÙNG: "{question}"
-            
-            YÊU CẦU TRẢ LỜI:
-            1. Phong cách: Trang trọng, uyên bác, giàu cảm xúc. TUYỆT ĐỐI KHÔNG dùng emoji.
-            2. Cấu trúc bài thuyết minh:
-               - Mở đầu: Giới thiệu ấn tượng.
-               - Thân bài: Chi tiết lịch sử, kiến trúc, giá trị văn hóa (Sử dụng gạch đầu dòng để trình bày).
-               - Kết luận: Ý nghĩa của di tích.
-            3. Chỉ sử dụng thông tin từ dữ liệu cung cấp, không bịa đặt.
+            VAI TRÒ: Chuyên gia văn hóa & du lịch.
+            DỮ LIỆU: {context_str}
+            CÂU HỎI: "{question}"
+            YÊU CẦU:
+            1. PHONG CÁCH: Ngắn gọn, súc tích.
+            2. CẤU TRÚC:
+               - Đoạn 1: Tổng quan (Tên, Vị trí hành chính cụ thể Tỉnh/Thành, đặc điểm).
+               - Đoạn 2: Gạch đầu dòng tóm tắt (Vị trí, Lịch sử, Kiến trúc, Giá trị).
+            3. Dùng thông tin Tỉnh/Thành có trong dữ liệu. KHÔNG mở bài/kết bài rườm rà.
             """
 
         res = await asyncio.to_thread(llm_model.generate_content, rag_prompt)
-        logger.info(f"DONE [RAG]: {time.time()-start_time:.2f}s")
         return {"answer": res.text, "sources": search_results, "images": final_imgs}
     
     else:
         general_answer = await fallback_general_knowledge(question)
-        logger.info(f"DONE [FALLBACK]: {time.time()-start_time:.2f}s")
         return {"answer": general_answer, "sources": [], "images": []}
 
-# --- API XỬ LÝ ẢNH ĐẦU VÀO ---
+# --- API XỬ LÝ ẢNH ---
 @app.post("/chat_with_image")
 async def chat_with_image_endpoint(file: UploadFile = File(...), question: str = Form(...)):
-    start_time = time.time()
-    logger.info(f"REQ [IMG]: {question}")
     try:
         contents = await file.read()
         image = Image.open(io.BytesIO(contents))
         
-        # 1. Nhận diện địa điểm
         vision_prompt = "Đây là địa điểm nào? Chỉ trả về tên chính xác. Nếu không biết, trả về 'Unknown'."
         loop = asyncio.get_running_loop()
         vision_res = await loop.run_in_executor(None, lambda: llm_model.generate_content([vision_prompt, image]))
         detected_name = vision_res.text.strip()
         
         if "Unknown" in detected_name or len(detected_name) < 2:
-            return {"detected_location": None, "answer": "Hệ thống chưa nhận diện được địa điểm trong ảnh. Vui lòng cung cấp ảnh rõ hơn.", "sources": [], "images": []}
+            return {"detected_location": None, "answer": "Chưa nhận diện được địa điểm.", "sources": [], "images": []}
              
-        # 2. Tìm kiếm thông tin trong Neo4j
         search_results = await hybrid_search_tourism(detected_name)
         
-        # 3. Lấy ảnh minh họa (Chỉ lấy URL Online)
         image_urls = []
         if search_results:
             for item in search_results:
-                node_data = item.get('node', {})
-                url = node_data.get('image_url')
+                url = item.get('node', {}).get('image_url')
                 if url and isinstance(url, str) and url.startswith("http"): 
                     image_urls.append(url)
-        
-        # Lấy tối đa 2 ảnh
         final_imgs = list(dict.fromkeys(image_urls))[:2]
 
-        # 4. Trả lời câu hỏi
         if search_results:
-            context_str = "\n".join([f"- {item['node']['name']}: {item['node']['content']}" for item in search_results[:3]])
+            context_str = "\n".join([f"- {item['node']['name']} (Tỉnh: {item.get('province_name', '')}): {item['node']['content']}" for item in search_results[:3]])
             final_prompt = f"""
             VAI TRÒ: Chuyên gia văn hóa.
-            ĐỊA ĐIỂM NHẬN DIỆN TỪ ẢNH: {detected_name}
+            ĐỊA ĐIỂM TỪ ẢNH: {detected_name}
             DỮ LIỆU: {context_str}
             CÂU HỎI: {question}
-            YÊU CẦU: Trả lời chuyên nghiệp, cấu trúc rõ ràng, KHÔNG emoji.
+            YÊU CẦU: Trả lời chuyên nghiệp, cấu trúc rõ ràng (Tên, Vị trí Tỉnh/Thành, Đặc điểm), KHÔNG emoji.
             """
             final_res = await loop.run_in_executor(None, lambda: llm_model.generate_content(final_prompt))
             return {"detected_location": detected_name, "answer": final_res.text, "sources": search_results, "images": final_imgs}
         else:
-            general_prompt = f"Địa điểm trong ảnh là '{detected_name}'. Câu hỏi: '{question}'. Hãy trả lời chi tiết với văn phong chuyên gia, không dùng emoji."
+            general_prompt = f"Địa điểm trong ảnh là '{detected_name}'. Câu hỏi: '{question}'. Trả lời chi tiết, nêu rõ vị trí thuộc Tỉnh/Thành nào. KHÔNG emoji."
             final_res = await loop.run_in_executor(None, lambda: llm_model.generate_content(general_prompt))
             return {"detected_location": detected_name, "answer": final_res.text, "sources": [], "images": []}
 
     except Exception as e:
         logger.error(f"ERROR: {e}")
-        return {"answer": "Đã xảy ra lỗi trong quá trình xử lý ảnh.", "sources": [], "images": []}
+        return {"answer": "Lỗi xử lý ảnh.", "sources": [], "images": []}
