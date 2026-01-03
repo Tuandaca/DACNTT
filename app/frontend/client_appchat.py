@@ -1,7 +1,6 @@
 import streamlit as st
 import requests
 import uuid
-# ĐÃ BỎ IMPORT FOLIUM
 
 # --- CẤU HÌNH TRANG ---
 st.set_page_config(
@@ -67,30 +66,59 @@ with st.sidebar:
             delete_current_chat()
             st.rerun()
 
-# --- CHAT UI ---
 current_chat = st.session_state.all_chats[st.session_state.active_chat_id]
 messages = current_chat["messages"]
 
-st.markdown("<h2 style='text-align: center; color: #0056b3; font-weight: 700;'>Ứng dụng hỏi đáp nhanh</h2>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; color: #6c757d;'>Trợ lý ảo hỗ trợ lộ trình xe buýt tại TP.HCM và thông tin văn hóa - du lịch Việt Nam </p>", unsafe_allow_html=True)
+# --- HEADER ---
+st.markdown("<h2 style='text-align: center; color: #0056b3; font-weight: 700;'>Hệ thống Tra cứu Giao thông & Du lịch</h2>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #6c757d;'>Hỗ trợ tìm kiếm lộ trình xe buýt và thông tin văn hóa - lịch sử tại TP.HCM</p>", unsafe_allow_html=True)
 st.divider()
 
 if not messages:
-    st.info("👋 Hệ thống đã sẵn sàng. Vui lòng nhập câu hỏi hoặc tải ảnh lên để bắt đầu.")
+    st.info("Hệ thống đã sẵn sàng. Vui lòng nhập câu hỏi hoặc tải ảnh lên để bắt đầu.")
 
-for msg in messages:
+for index, msg in enumerate(messages):
     with st.chat_message(msg["role"]):
         if "image_data" in msg and msg["image_data"]:
             st.image(msg["image_data"], width=250)
         st.markdown(msg["content"])
         
-        # Chỉ hiển thị ảnh du lịch, KHÔNG CÒN BẢN ĐỒ MAP Ở ĐÂY
+        # LOGIC HIỂN THỊ ẢNH MINH HỌA
         if "images" in msg and msg["images"]:
-            st.markdown("**Hình ảnh tham khảo:**")
+            st.markdown("**Hình ảnh minh họa:**")
             cols = st.columns(len(msg["images"]))
             for i, img_url in enumerate(msg["images"]):
                 with cols[i]:
-                    st.image(img_url, use_column_width=True)
+                    full_url = img_url if img_url.startswith("http") else f"http://127.0.0.1:8000/{img_url}"
+                    st.image(full_url, use_container_width=True)
+        
+        # LOGIC HIỂN THỊ BUTTON LỰA CHỌN (AMBIGUITY)
+        if "options" in msg and msg["options"]:
+            st.markdown(f"👇 **Vui lòng chọn địa điểm chính xác:**")
+            cols = st.columns(min(len(msg["options"]), 2)) # Chia tối đa 2 cột
+            
+            for i, option in enumerate(msg["options"]):
+                # Tạo key duy nhất cho button dựa trên index tin nhắn và index option
+                btn_key = f"btn_{index}_{i}" 
+                
+                if cols[i % 2].button(option["label"], key=btn_key, use_container_width=True):
+                    # KHI CLICK -> TẠO CÂU LỆNH MỚI RÕ RÀNG HƠN
+                    ctx = msg.get("original_request", {})
+                    start = ctx.get("start")
+                    end = ctx.get("end")
+                    p_type = ctx.get("type")
+                    
+                    # Ghép chuỗi mới
+                    new_prompt = ""
+                    if p_type == "start":
+                        new_prompt = f"Đi từ {option['value']} đến {end}"
+                    else:
+                        new_prompt = f"Đi từ {start} đến {option['value']}"
+                    
+                    # Gửi tin nhắn mới
+                    user_msg = {"role": "user", "content": new_prompt}
+                    st.session_state.all_chats[st.session_state.active_chat_id]["messages"].append(user_msg)
+                    st.rerun()
 
 if prompt := st.chat_input("Nhập nội dung cần hỗ trợ..."):
     if len(messages) == 0: 
@@ -121,17 +149,29 @@ if prompt := st.chat_input("Nhập nội dung cần hỗ trợ..."):
                     data = response.json()
                     ans = data.get("answer", "Không có phản hồi.")
                     placeholder.markdown(ans)
-                    assistant_msg = {"role": "assistant", "content": ans}
+                    
+                    assistant_msg = {
+                        "role": "assistant", 
+                        "content": ans,
+                        # Lưu thêm options và context nếu có
+                        "options": data.get("options"), 
+                        "original_request": data.get("original_request")
+                    }
                     
                     if "images" in data and data["images"]:
                         assistant_msg["images"] = data["images"]
-                        st.markdown("**Hình ảnh tham khảo:**")
+                        st.markdown("**Hình ảnh minh họa:**")
                         cols = st.columns(len(data["images"]))
                         for i, img_url in enumerate(data["images"]):
                             with cols[i]:
-                                st.image(img_url, use_column_width=True)
+                                full_url = img_url if img_url.startswith("http") else f"http://127.0.0.1:8000/{img_url}"
+                                st.image(full_url, use_container_width=True)
                                 
                     st.session_state.all_chats[st.session_state.active_chat_id]["messages"].append(assistant_msg)
+                    
+                    # Nếu có options, Rerun để hiển thị button ngay
+                    if data.get("options"):
+                        st.rerun()
                     if uploaded_file: st.rerun()
                 else:
                     placeholder.error(f"Lỗi: {response.status_code}")

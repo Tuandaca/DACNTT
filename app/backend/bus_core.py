@@ -19,16 +19,16 @@ class BusBotV13:
         
         # --- TỪ ĐIỂN VIẾT TẮT ---
         self.ABBREVIATIONS = {
-            "tdt": "đại học tôn đức thắng", "đh tdt": "đại học tôn đức thắng",
+            "tdt": "đại học tôn đức thắng", "đh tdt": "đại học tôn đức thắng", "tdtu": "đại học tôn đức thắng",
             "văn lang": "trường đại học văn lang", "đh văn lang": "trường đại học văn lang", "vlu": "trường đại học văn lang",
             "csnd": "đại học cảnh sát nhân dân", "đh csnd": "đại học cảnh sát nhân dân",
             "bk": "đại học bách khoa", "bách khoa": "đại học bách khoa",
             "khtn": "đại học khoa học tự nhiên", "tự nhiên": "đại học khoa học tự nhiên",
             "ussh": "đại học khoa học xã hội và nhân văn", "nhân văn": "đại học khoa học xã hội và nhân văn",
-            "spkt": "đại học sư phạm kỹ thuật", "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật",
+            "spkt": "đại học sư phạm kỹ thuật", "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật", "đh sư phạm kỹ thuật": "đại học sư phạm kỹ thuật", "đh spkt": "đại học sư phạm kỹ thuật",
             "nlu": "đại học nông lâm", "nông lâm": "đại học nông lâm",
-            "ueh": "đại học kinh tế", "kinh tế": "đại học kinh tế",
-            "ulu": "đại học luật", "luật": "đại học luật",
+            "ueh": "đại học kinh tế", "đh kinh tế": "đại học kinh tế", "đh kt": "đại học kinh tế",
+            "ulu": "đại học luật", "đh luật": "đại học luật",
             "yds": "đại học y dược", "y dược": "đại học y dược",
             "hutech": "đại học công nghệ tphcm", "công nghệ": "đại học công nghệ tphcm",
             "uef": "đại học kinh tế tài chính",
@@ -65,65 +65,86 @@ class BusBotV13:
         text = text.replace("đại học đại học", "đại học").replace("trường đại học trường đại học", "trường đại học").replace("bến xe bến xe", "bến xe").replace("bệnh viện bệnh viện", "bệnh viện").replace("công viên văn hóa công viên văn hóa", "công viên văn hóa")
         return text
 
-    def get_coordinates(self, place_name):
-        try:
-            url = "https://nominatim.openstreetmap.org/search"
-            params = {'q': f"{place_name}, Ho Chi Minh City, Vietnam", 'format': 'json', 'limit': 1}
-            headers = {'User-Agent': 'BusMapBot/1.0'}
-            resp = requests.get(url, params=params, headers=headers, timeout=2)
-            data = resp.json()
-            if data: return float(data[0]['lat']), float(data[0]['lon']), data[0]['display_name']
-        except: pass
-        return None, None, None
-
-    def find_nearest_station_by_coords(self, session, lat, lng):
-        query = "MATCH (n:BusStop) WITH n, point.distance(point({latitude: n.lat, longitude: n.lng}), point({latitude: $lat, longitude: $lng})) AS dist WHERE dist < 1000 RETURN n ORDER BY dist ASC LIMIT 1"
-        result = session.run(query, lat=lat, lng=lng).single()
-        return result['n'] if result else None
-
-    def _internal_search(self, session, txt):
-        q_exact = "MATCH (n:BusStop) WHERE toLower(n.name) CONTAINS $txt OR toLower(n.search) CONTAINS $txt OR toLower(n.code) = $txt RETURN n LIMIT 5"
-        res = list(session.run(q_exact, txt=txt))
-        candidates = [r['n'] for r in res]
+    # --- HÀM MỚI: TÌM KIẾM & GOM NHÓM THEO ĐƯỜNG ---
+    def find_grouped_candidates(self, session, query_text):
+        clean_text = self.normalize_query(query_text).replace("trạm", "").strip()
         
-        if not candidates and "đại học" in txt:
-            short_txt = txt.replace("đại học", "đh")
-            res = list(session.run(q_exact, txt=short_txt))
-            candidates = [r['n'] for r in res]
-
-        if not candidates:
-            lat, lng, addr = self.get_coordinates(txt)
-            if lat and lng:
-                nearest = self.find_nearest_station_by_coords(session, lat, lng)
-                if nearest: candidates.append(nearest)
+        # Cypher: Tìm và Gom nhóm theo Tên Đường (street)
+        # Nếu trạm không có street thì ghi là 'Khu vực chính'
+        q = """
+        MATCH (b:BusStop)
+        WHERE toLower(b.name) CONTAINS $txt OR toLower(b.code) = $txt
+        
+        WITH b.name AS LocationName, 
+             COALESCE(b.street, 'Khu vực chính') AS StreetName, 
+             collect(b.id) AS StationIDs,
+             avg(b.lat) as lat, avg(b.lng) as lng
+             
+        RETURN LocationName, StreetName, StationIDs, lat, lng
+        ORDER BY size(StationIDs) DESC
+        LIMIT 5
+        """
+        results = list(session.run(q, txt=clean_text))
+        
+        # Parse kết quả
+        candidates = []
+        for r in results:
+            candidates.append({
+                "name": r["LocationName"],
+                "street": r["StreetName"],
+                "ids": r["StationIDs"],
+                "lat": r["lat"],
+                "lng": r["lng"]
+            })
         return candidates
 
-    def find_stop_candidates(self, session, query_text):
-        clean_query = self.normalize_query(query_text).replace("trạm", "").strip()
-        candidates = self._internal_search(session, clean_query)
-        if not candidates and clean_query != query_text.strip():
-            raw_query = query_text.replace("trạm", "").strip()
-            candidates = self._internal_search(session, raw_query)
-        return candidates 
-
-    # --- HÀM TÌM ĐƯỜNG (CÓ GIÁ VÉ & TỌA ĐỘ) ---
+    # --- HÀM TÌM ĐƯỜNG CHÍNH (ĐÃ UPDATE LOGIC AMBIGUITY) ---
     def solve_route(self, start_text, end_text):
         with self.driver.session() as session:
-            s_candidates = self.find_stop_candidates(session, start_text)
-            e_candidates = self.find_stop_candidates(session, end_text)
+            # 1. Tìm địa điểm (Gom nhóm theo đường)
+            s_groups = self.find_grouped_candidates(session, start_text)
+            e_groups = self.find_grouped_candidates(session, end_text)
 
-            if not s_candidates: return {"status": "error", "message": f"❌ Không tìm thấy điểm đi: '{start_text}'"}
-            if not e_candidates: return {"status": "error", "message": f"❌ Không tìm thấy điểm đến: '{end_text}'"}
+            # 2. Xử lý Mơ hồ (Ambiguity) - NẾU CÓ > 1 NHÓM ĐỊA ĐIỂM
+            # Kiểm tra điểm ĐI
+            if len(s_groups) > 1:
+                # Tạo danh sách lựa chọn cho Client
+                options = [{"label": f"{g['name']} ({g['street']})", "value": f"{g['name']} đường {g['street']}"} for g in s_groups]
+                return {
+                    "status": "ambiguous", 
+                    "point_type": "start",
+                    "original_input": start_text,
+                    "message": f"🤔 Tôi tìm thấy {len(s_groups)} địa điểm cho **'{start_text}'**. Bạn muốn đi từ đâu?",
+                    "options": options
+                }
+            
+            # Kiểm tra điểm ĐẾN
+            if len(e_groups) > 1:
+                options = [{"label": f"{g['name']} ({g['street']})", "value": f"{g['name']} đường {g['street']}"} for g in e_groups]
+                return {
+                    "status": "ambiguous", 
+                    "point_type": "end",
+                    "original_input": end_text,
+                    "message": f"🤔 Tôi tìm thấy {len(e_groups)} địa điểm cho **'{end_text}'**. Bạn muốn đến cơ sở nào?",
+                    "options": options
+                }
 
-            s_ids = [s['id'] for s in s_candidates]
-            e_ids = [e['id'] for e in e_candidates]
+            # 3. Nếu không tìm thấy hoặc chỉ có 1 kết quả duy nhất -> Chạy tiếp
+            if not s_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đi: '{start_text}'"}
+            if not e_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đến: '{end_text}'"}
+
+            # Lấy list ID của nhóm đầu tiên (duy nhất)
+            s_ids = s_groups[0]["ids"]
+            e_ids = e_groups[0]["ids"]
+
+            # --- LOGIC TÌM ĐƯỜNG CŨ (GIÁ VÉ 6K/3K/FREE) ---
             
             # ƯU TIÊN 1: ĐI THẲNG
             q_direct = """
             MATCH (s:BusStop)-[:ON_ROUTE]->(route:BusRoute)<-[:ON_ROUTE]-(e:BusStop)
             WHERE s.id IN $s_ids AND e.id IN $e_ids
             RETURN route.route_no, route.name, s.name, e.name, s.lat, s.lng, e.lat, e.lng,
-                   toInteger(COALESCE(route.fares, 7000)) as price
+                   toInteger(COALESCE(route.fares, 6000)) as price
             LIMIT 1
             """
             direct = session.run(q_direct, s_ids=s_ids, e_ids=e_ids).single()
@@ -134,8 +155,7 @@ class BusBotV13:
                     "text": (f"🎯 **TÌM THẤY XE ĐI THẲNG!**\n"
                              f"- Đi xe **{direct['route.route_no']}**: {direct['route.name']}\n"
                              f"- Đón tại: {direct['s.name']} -> Xuống tại: {direct['e.name']}\n"
-                             f"- 🎫 **Giá vé:** {price:,}đ"),
-                    # Trả về tọa độ để Server tạo Link Google Map
+                             f"- 🎫 **Giá vé:** {price:,}đ (HSSV: 3.000đ; Người cao tuổi: Miễn phí)"),
                     "path_coords": [[direct['s.lng'], direct['s.lat']], [direct['e.lng'], direct['e.lat']]]
                 }
 
@@ -146,8 +166,8 @@ class BusBotV13:
             WHERE s.id IN $s_ids AND e.id IN $e_ids AND r1 <> r2
             RETURN r1.route_no AS bus1, r2.route_no AS bus2, mid.name, s.name, 
                    s.lat, s.lng, mid.lat, mid.lng, e.lat, e.lng,
-                   toInteger(COALESCE(r1.fares, 7000)) as p1,
-                   toInteger(COALESCE(r2.fares, 7000)) as p2
+                   toInteger(COALESCE(r1.fares, 6000)) as p1,
+                   toInteger(COALESCE(r2.fares, 6000)) as p2
             LIMIT 1
             """
             one_stop = session.run(q_1_transfer, s_ids=s_ids, e_ids=e_ids).single()
@@ -165,7 +185,7 @@ class BusBotV13:
                              f"💰 **Chi phí:**\n"
                              f"- Xe {one_stop['bus1']}: {p1:,}đ\n"
                              f"- Xe {one_stop['bus2']}: {p2:,}đ\n"
-                             f"👉 **Tổng cộng:** {total:,}đ"),
+                             f"👉 **Tổng cộng:** {total:,}đ (HSSV: 6.000đ; Người cao tuổi: Miễn phí)"),
                     "path_coords": [
                         [one_stop['s.lng'], one_stop['s.lat']],
                         [one_stop['mid.lng'], one_stop['mid.lat']],
@@ -182,9 +202,9 @@ class BusBotV13:
               AND r1 <> r2 AND r2 <> r3
             RETURN r1.route_no, m1.name, r2.route_no, m2.name, r3.route_no,
                    s.lat, s.lng, m1.lat, m1.lng, m2.lat, m2.lng, e.lat, e.lng,
-                   toInteger(COALESCE(r1.fares, 7000)) as p1,
-                   toInteger(COALESCE(r2.fares, 7000)) as p2,
-                   toInteger(COALESCE(r3.fares, 7000)) as p3
+                   toInteger(COALESCE(r1.fares, 6000)) as p1,
+                   toInteger(COALESCE(r2.fares, 6000)) as p2,
+                   toInteger(COALESCE(r3.fares, 6000)) as p3
             LIMIT 1
             """
             two_stops = session.run(q_2_transfer, s_ids=s_ids, e_ids=e_ids).single()
@@ -202,7 +222,7 @@ class BusBotV13:
                              f"- Chặng 1: {p1:,}đ\n"
                              f"- Chặng 2: {p2:,}đ\n"
                              f"- Chặng 3: {p3:,}đ\n"
-                             f"👉 **Tổng cộng:** {total:,}đ"),
+                             f"👉 **Tổng cộng:** {total:,}đ (HSSV: 9.000đ; Người cao tuổi: Miễn phí)"),
                     "path_coords": [
                         [two_stops['s.lng'], two_stops['s.lat']],
                         [two_stops['m1.lng'], two_stops['m1.lat']],
