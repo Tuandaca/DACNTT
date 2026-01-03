@@ -5,6 +5,7 @@ import unicodedata
 import io
 import json
 import time
+import re
 from typing import Optional
 from contextlib import asynccontextmanager
 
@@ -83,7 +84,6 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
     records = []
     
     async with tourism_driver.session() as session:
-        # TH1: Có lọc theo tỉnh -> Tìm kiếm diện rộng
         if province_filter and len(province_filter) > 2:
             province_norm = normalize_text(province_filter)
             cypher_loc = """
@@ -99,7 +99,6 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
             except Exception as e:
                 logger.error(f"Error Loc Search: {e}")
 
-        # TH2: Vector & Keyword Search
         if len(records) < 5: 
             loop = asyncio.get_running_loop()
             vector = await loop.run_in_executor(None, lambda: model.encode(text).tolist())
@@ -120,8 +119,8 @@ async def hybrid_search_tourism(text: str, province_filter: str = None):
     for r in records:
         uid = r['id']
         if province_filter and r.get('province_name'):
-            if normalize_text(province_filter) not in normalize_text(r['province_name']):
-                r['score'] = r['score'] * 0.1
+             if normalize_text(province_filter) not in normalize_text(r['province_name']):
+                 r['score'] = r['score'] * 0.1
         if r['source_type'] == 'vector' and r['score'] < 0.65: continue
         
         if uid not in unique_results:
@@ -155,28 +154,44 @@ class ChatRequest(BaseModel):
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
     start_time = time.time()
-    question = request.question.strip()
+    raw_question = request.question.strip()
+    question = re.sub(r'[\\/*.,?]+$', '', raw_question).strip()
+    
     logger.info(f"REQ: {question}")
     lower_q = question.lower()
     
-    # --- 1. ROUTER THÔNG MINH ---
-    # Danh sách từ nối để nhận diện câu hỏi Bus
-    # Bao gồm: đến, tới, về, sang, qua, ra
-    dest_markers = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "] 
-    
+    # --- 2. NHẬN DIỆN INTENT THÔNG MINH (LOGIC MỚI) ---
     is_bus_intent = False
-    # Check nhanh: Nếu có từ chỉ hướng + từ chỉ di chuyển
-    if any(m.strip() in lower_q for m in dest_markers) and \
-       any(w in lower_q for w in ["từ", "đi", "đường", "xe bus", "buýt", "cách"]):
-        is_bus_intent = True
+    
+    # 2.1. Danh sách từ khóa CHẮN CHẮN là Du lịch/Lập kế hoạch (BLACKLIST CHO BUS)
+    # Nếu gặp các từ này -> Bỏ qua logic Bus ngay lập tức
+    tourism_keywords = [
+        "lập kế hoạch", "kế hoạch", "lịch trình", "đi chơi", "du lịch", "tham quan", 
+        "tour", "máy bay", "khách sạn", "nhà hàng", "ăn gì", "chơi gì", 
+        "hà nội", "đà nẵng", "huế", "đà lạt", "phú quốc" # Các địa danh ngoài TP.HCM
+    ]
+    
+    is_tourism_override = any(k in lower_q for k in tourism_keywords)
+
+    if not is_tourism_override:
+        # 2.2. Chỉ check Bus nếu KHÔNG phải là câu hỏi lập kế hoạch/du lịch
+        dest_markers = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "] 
+        strong_bus_words = ["xe bus", "xe buýt", "buýt", "tuyến xe", "trạm xe", "số mấy"]
+        
+        # Check 1: Có từ khóa mạnh về Bus
+        if any(w in lower_q for w in strong_bus_words):
+            is_bus_intent = True
+        # Check 2: Cấu trúc tìm đường (Đi từ A đến B)
+        elif any(m.strip() in lower_q for m in dest_markers) and \
+             any(w in lower_q for w in ["từ", "đi", "đường", "cách", "lộ trình"]):
+            is_bus_intent = True
 
     router_prompt = f"""
     Phân tích câu hỏi: "{question}".
     Nhiệm vụ:
     1. Intent: "greeting" | "bus" | "tourism".
-    2. Location: Trích xuất tên Tỉnh/Thành phố (nếu có).
-    3. Mode: "list" (liệt kê) | "detail" (chi tiết).
-    
+    2. Location: Trích xuất tên Tỉnh/Thành phố/Quận Huyện (nếu có).
+    3. Mode: "list" | "detail".
     JSON Output: {{ "intent": "...", "location": "...", "mode": "..." }}
     """
     
@@ -185,7 +200,7 @@ async def chat_endpoint(request: ChatRequest):
     mode = "detail"
 
     try:
-        if not is_bus_intent: # Chỉ dùng AI check nếu chưa chắc là Bus
+        if not is_bus_intent: 
             res = await asyncio.to_thread(llm_model.generate_content, router_prompt)
             clean = res.text.strip().replace("```json", "").replace("```", "")
             parsed = json.loads(clean)
@@ -194,9 +209,11 @@ async def chat_endpoint(request: ChatRequest):
             mode = parsed.get("mode", "detail")
     except: pass
 
-    # Override Intent thủ công nếu phát hiện từ khóa mạnh
-    if is_bus_intent: intent = "bus"
+    # Double check: Nếu AI bảo là bus nhưng có từ khóa tourism -> Ép về tourism
+    if intent == "bus" and is_tourism_override:
+        intent = "tourism"
     
+    # Check Greeting
     has_question_word = any(marker in lower_q for marker in QUESTION_MARKERS)
     if intent != "bus":
         if has_question_word:
@@ -207,27 +224,24 @@ async def chat_endpoint(request: ChatRequest):
                 intent = "greeting"
 
     if location_filter and mode == "detail":
-        if any(w in lower_q for w in ["nào", "gì", "những", "các"]): mode = "list"
+         if any(w in lower_q for w in ["nào", "gì", "những", "các"]): mode = "list"
 
     logger.info(f"🔍 INTENT: {intent} | LOC: {location_filter} | MODE: {mode}")
 
     if intent == "greeting":
         return {"answer": "Kính chào Quý khách. Tôi là Trợ lý AI chuyên trách về Văn hóa & Giao thông.\nTôi có thể giúp bạn tra cứu lộ trình xe buýt hoặc thông tin du lịch.", "sources": [], "images": []}
 
-    # --- XỬ LÝ BUS (LOGIC TÁCH CHUỖI NÂNG CAO) ---
+    # --- 3. XỬ LÝ BUS ---
     if intent == "bus":
         start_loc = None
         end_loc = None
-        
-        # Danh sách các từ có thể là vách ngăn giữa Điểm đi và Điểm đến
-        # Lưu ý: Có khoảng trắng 2 đầu để tránh bắt nhầm (vd: "Quốc lộ" có chữ "qua")
         separators = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "]
-        
-        # Danh sách từ thừa ở đầu câu cần cắt bỏ
-        start_prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ"]
+        start_prefixes = [
+            "đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", 
+            "lộ trình từ", "xe buýt từ", "bắt xe từ", "ghé", "chạy từ"
+        ]
 
         found_sep = None
-        # Tìm từ nối xuất hiện đầu tiên trong câu
         for sep in separators:
             if sep in lower_q:
                 found_sep = sep
@@ -235,24 +249,20 @@ async def chat_endpoint(request: ChatRequest):
         
         if found_sep:
             try:
-                parts = lower_q.split(found_sep, 1) # Chỉ tách ở từ nối đầu tiên
+                parts = lower_q.split(found_sep, 1)
                 end_loc = parts[1].strip()
-                
-                # Xử lý phần Start: Cắt bỏ các từ prefix
                 start_raw = parts[0].strip()
                 for prefix in start_prefixes:
                     if start_raw.startswith(prefix):
                         start_raw = start_raw[len(prefix):].strip()
-                        break # Cắt xong thì thôi
+                        break 
                 start_loc = start_raw
             except: pass
         
         if start_loc and end_loc:
             try:
-                # Gọi BusBot
                 bus_result = await asyncio.to_thread(bus_bot.solve_route, start_loc, end_loc)
                 
-                # TH1: Ambiguous -> Trả về Options
                 if bus_result.get("status") == "ambiguous":
                     return {
                         "answer": bus_result["message"], 
@@ -262,11 +272,9 @@ async def chat_endpoint(request: ChatRequest):
                         "sources": [], "images": []
                     }
 
-                # TH2: Error
                 if bus_result.get("status") == "error":
                     return {"answer": bus_result["message"], "sources": [], "images": []}
                 
-                # TH3: Thành công
                 raw_text = bus_result["text"]
                 path_coords = bus_result.get("path_coords", [])
                 
@@ -294,9 +302,9 @@ async def chat_endpoint(request: ChatRequest):
             except Exception as e:
                 return {"answer": f"Lỗi hệ thống: {str(e)}", "sources": [], "images": []}
         else:
-            return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình.", "sources": [], "images": []}
+             return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình.", "sources": [], "images": []}
 
-    # --- XỬ LÝ TOURISM ---
+    # --- 4. XỬ LÝ TOURISM ---
     final_province = request.province if request.province else location_filter
     search_results = await hybrid_search_tourism(question, final_province)
     
@@ -313,35 +321,44 @@ async def chat_endpoint(request: ChatRequest):
         
         if mode == "list":
             rag_prompt = f"""
-            VAI TRÒ: Trợ lý du lịch.
-            NHIỆM VỤ: Liệt kê địa điểm.
+            VAI TRÒ: Trợ lý du lịch. NHIỆM VỤ: Liệt kê.
             DỮ LIỆU: {context_str}
             CÂU HỎI: "{question}"
-            YÊU CẦU: Liệt kê danh sách (tối thiểu 3). Ghi rõ Tên và Tỉnh/Thành phố. Mô tả ngắn. KHÔNG emoji.
+            YÊU CẦU: Liệt kê (tối thiểu 3). Ghi rõ Tên và Tỉnh/Thành. KHÔNG emoji.
             """
         else:
             rag_prompt = f"""
             VAI TRÒ: Chuyên gia văn hóa & du lịch.
             DỮ LIỆU: {context_str}
             CÂU HỎI: "{question}"
-            YÊU CẦU:
-            1. PHONG CÁCH: Ngắn gọn, súc tích.
-            2. CẤU TRÚC:
-               - Đoạn 1: Tổng quan (Tên, Vị trí hành chính cụ thể Tỉnh/Thành, đặc điểm).
-               - Đoạn 2: Gạch đầu dòng tóm tắt (Vị trí, Lịch sử, Kiến trúc, Giá trị).
-            3. Dùng thông tin Tỉnh/Thành có trong dữ liệu. KHÔNG mở bài/kết bài rườm rà.
+            YÊU CẦU: Ngắn gọn. Cấu trúc: 1. Tổng quan (Vị trí Tỉnh/Thành), 2. Gạch đầu dòng chi tiết.
             """
 
         res = await asyncio.to_thread(llm_model.generate_content, rag_prompt)
         return {"answer": res.text, "sources": search_results, "images": final_imgs}
     
     else:
-        general_answer = await fallback_general_knowledge(question)
-        return {"answer": general_answer, "sources": [], "images": []}
+        # --- LOGIC XỬ LÝ CÂU HỎI LẬP KẾ HOẠCH/CHUNG CHUNG ---
+        general_prompt = f"""
+        VAI TRÒ: Chuyên gia tư vấn du lịch và văn hóa Việt Nam.
+        CÂU HỎI: "{question}"
+        
+        YÊU CẦU:
+        1. Nếu là câu hỏi lập kế hoạch (Ví dụ: đi chơi 1 ngày, lịch trình...): Hãy gợi ý một lịch trình cụ thể, hợp lý về thời gian và địa điểm.
+        2. Nếu là câu hỏi kiến thức chung: Trả lời chính xác, khách quan.
+        3. Văn phong trang trọng, chuyên nghiệp. TUYỆT ĐỐI KHÔNG dùng Emoji.
+        4. Trình bày bằng Markdown rõ ràng.
+        """
+        general_answer = await fallback_general_knowledge(question) # Lưu ý: Cần update hàm fallback để nhận prompt mới nếu muốn, hoặc để mặc định như cũ cũng ổn
+        
+        # Để chắc chắn Gemini nhận prompt mới, ta gọi trực tiếp ở đây thay vì qua hàm fallback cũ
+        final_res = await asyncio.to_thread(llm_model.generate_content, general_prompt)
+        return {"answer": final_res.text, "sources": [], "images": []}
 
-# --- API XỬ LÝ ẢNH ---
+# --- 5. API XỬ LÝ ẢNH (Giữ nguyên) ---
 @app.post("/chat_with_image")
 async def chat_with_image_endpoint(file: UploadFile = File(...), question: str = Form(...)):
+    # (Giữ nguyên logic cũ)
     try:
         contents = await file.read()
         image = Image.open(io.BytesIO(contents))
@@ -352,31 +369,30 @@ async def chat_with_image_endpoint(file: UploadFile = File(...), question: str =
         detected_name = vision_res.text.strip()
         
         if "Unknown" in detected_name or len(detected_name) < 2:
-            return {"detected_location": None, "answer": "Chưa nhận diện được địa điểm.", "sources": [], "images": []}
+             return {"detected_location": None, "answer": "Chưa nhận diện được địa điểm.", "sources": [], "images": []}
              
         search_results = await hybrid_search_tourism(detected_name)
         
         image_urls = []
         if search_results:
-            for item in search_results:
+             for item in search_results:
                 url = item.get('node', {}).get('image_url')
-                if url and isinstance(url, str) and url.startswith("http"): 
-                    image_urls.append(url)
+                if url and isinstance(url, str) and url.startswith("http"): image_urls.append(url)
         final_imgs = list(dict.fromkeys(image_urls))[:2]
 
         if search_results:
-            context_str = "\n".join([f"- {item['node']['name']} (Tỉnh: {item.get('province_name', '')}): {item['node']['content']}" for item in search_results[:3]])
+            context_str = "\n".join([f"- {item['node']['name']}: {item['node']['content']}" for item in search_results[:3]])
             final_prompt = f"""
             VAI TRÒ: Chuyên gia văn hóa.
-            ĐỊA ĐIỂM TỪ ẢNH: {detected_name}
+            ĐỊA ĐIỂM: {detected_name}
             DỮ LIỆU: {context_str}
             CÂU HỎI: {question}
-            YÊU CẦU: Trả lời chuyên nghiệp, cấu trúc rõ ràng (Tên, Vị trí Tỉnh/Thành, Đặc điểm), KHÔNG emoji.
+            YÊU CẦU: Trả lời chuyên nghiệp. KHÔNG emoji.
             """
             final_res = await loop.run_in_executor(None, lambda: llm_model.generate_content(final_prompt))
             return {"detected_location": detected_name, "answer": final_res.text, "sources": search_results, "images": final_imgs}
         else:
-            general_prompt = f"Địa điểm trong ảnh là '{detected_name}'. Câu hỏi: '{question}'. Trả lời chi tiết, nêu rõ vị trí thuộc Tỉnh/Thành nào. KHÔNG emoji."
+            general_prompt = f"Địa điểm: '{detected_name}'. Câu hỏi: '{question}'. Trả lời chi tiết. KHÔNG emoji."
             final_res = await loop.run_in_executor(None, lambda: llm_model.generate_content(general_prompt))
             return {"detected_location": detected_name, "answer": final_res.text, "sources": [], "images": []}
 
