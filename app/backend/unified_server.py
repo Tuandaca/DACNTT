@@ -294,7 +294,7 @@ async def chat_endpoint(request: ChatRequest):
             except Exception as e:
                 return {"answer": f"Lỗi hệ thống: {str(e)}", "sources": [], "images": []}
         else:
-             return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình.", "sources": [], "images": []}
+            return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình.", "sources": [], "images": []}
 
     # --- XỬ LÝ TOURISM ---
     final_province = request.province if request.province else location_filter
