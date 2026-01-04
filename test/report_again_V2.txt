@@ -1,9 +1,8 @@
 ================================================================================
-      BÁO CÁO KIỂM THỬ HỆ THỐNG GEMINI 2.0 & SAFETY GUARDRAILS (FINAL)
+      BÁO CÁO KIỂM THỬ HỆ THỐNG SAU KHI TEST
 ================================================================================
 Ngày báo cáo: 04/01/2026
 Tổng số Test Case: 200
-Model AI: Gemini 2.0 Flash (Optimized)
 
 --------------------------------------------------------------------------------
 I. TỔNG QUAN CHỈ SỐ (KEY METRICS)
