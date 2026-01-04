@@ -97,18 +97,24 @@ if not messages:
 # --- HIỂN THỊ LỊCH SỬ ---
 for index, msg in enumerate(messages):
     with st.chat_message(msg["role"]):
+        # 1. Hiển thị ảnh input (nếu user upload)
         if "image_data" in msg and msg["image_data"]:
             st.image(msg["image_data"], width=250)
+        
+        # 2. Hiển thị nội dung chữ (LUÔN HIỆN TRƯỚC)
         st.markdown(msg["content"])
         
+        # 3. Hiển thị hình ảnh minh họa từ Bot (LUÔN HIỆN SAU)
         if "images" in msg and msg["images"]:
-            st.markdown("**Hình ảnh minh họa:**")
+            st.write("") # Tạo khoảng cách nhỏ
+            # st.markdown("**Hình ảnh minh họa:**") # Có thể bỏ comment nếu muốn hiện tiêu đề
             cols = st.columns(len(msg["images"]))
             for i, img_url in enumerate(msg["images"]):
                 with cols[i]:
                     full_url = img_url if img_url.startswith("http") else f"http://127.0.0.1:8000/{img_url}"
                     st.image(full_url, use_container_width=True)
         
+        # 4. Hiển thị Options (nếu có - Bus Ambiguity)
         if "options" in msg and msg["options"]:
             st.markdown(f"👇 **Vui lòng chọn địa điểm chính xác:**")
             cols = st.columns(min(len(msg["options"]), 2))
@@ -161,14 +167,26 @@ if messages and messages[-1]["role"] == "user":
                 if response.status_code == 200:
                     data = response.json()
                     ans = data.get("answer", "Không có phản hồi.")
+                    images = data.get("images", [])
+
+                    # 1. Hiển thị Text vào placeholder trước (QUAN TRỌNG)
                     placeholder.markdown(ans)
                     
+                    # 2. Hiển thị hình ảnh NGAY LẬP TỨC bên dưới Text (Sử dụng st.columns, KHÔNG dùng placeholder)
+                    if images and isinstance(images, list):
+                        st.write("") # Spacer để ảnh không dính sát vào chữ
+                        cols = st.columns(len(images))
+                        for idx, img_url in enumerate(images):
+                            with cols[idx]:
+                                st.image(img_url, use_container_width=True)
+                    
+                    # 3. Lưu vào session state
                     assistant_msg = {
                         "role": "assistant", 
                         "content": ans,
                         "options": data.get("options"), 
                         "original_request": data.get("original_request"),
-                        "images": data.get("images")
+                        "images": images
                     }
                     st.session_state.all_chats[st.session_state.active_chat_id]["messages"].append(assistant_msg)
                     

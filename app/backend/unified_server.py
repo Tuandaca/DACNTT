@@ -108,6 +108,32 @@ def clean_entity_name(raw_text: str) -> str:
     for sw in secondary_stopwords:
         if cleaned.startswith(sw.strip()):
             cleaned = cleaned.replace(sw.strip(), "", 1).strip()
+    
+    # --- [LOGIC MỚI] TỪ ĐIỂN ĐỒNG NGHĨA (ALIAS MAPPING) ---
+    # Key: Tên dân dã (User hay gọi) -> Value: Tên chính thức (Trong Database Neo4j)
+    ENTITY_ALIASES = {
+        "dinh độc lập": "hội trường thống nhất",
+        "dinh norodom": "hội trường thống nhất",
+        "phủ đầu rồng": "hội trường thống nhất",
+        
+        "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
+        "nhà thờ lớn sài gòn": "vương cung thánh đường chính tòa đức bà sài gòn",
+        
+        "bưu điện thành phố": "bưu điện trung tâm sài gòn",
+        "bưu điện sài gòn": "bưu điện trung tâm sài gòn",
+        
+        "bến nhà rồng": "bảo tàng hồ chí minh",
+        "bảo tàng bến nhà rồng": "bảo tàng hồ chí minh",
+        
+        "chợ lớn": "chợ bình tây",
+        "landmart 81": "landmark 81", # Fix lỗi chính tả
+        "lăng bác": "lăng chủ tịch hồ chí minh"
+    }
+    
+    # Kiểm tra xem từ khóa đã làm sạch có nằm trong danh sách đồng nghĩa không
+    if cleaned in ENTITY_ALIASES:
+        # Nếu có, tráo đổi sang tên chính thức ngay lập tức
+        return ENTITY_ALIASES[cleaned].title()
 
     return cleaned.title()
 

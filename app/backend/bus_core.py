@@ -40,7 +40,7 @@ class BusBotV13:
             "ou": "đại học mở", "mở": "đại học mở",
             
             "bến thành": "bến xe buýt sài gòn", "chợ bến thành": "bến xe buýt sài gòn",
-            "suối tiên": "khu du lịch suối tiên", "kdl suối tiên": "khu du lịch suối tiên",
+            "kdl suối tiên": "Khu DL Suối Tiên",
             "đầm sen": "công viên văn hóa đầm sen", "cv đầm sen": "công viên văn hóa đầm sen",
             "thảo cầm viên": "thảo cầm viên",
             "nhà thờ đức bà": "công xã paris",
