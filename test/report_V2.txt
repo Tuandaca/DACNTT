@@ -15,7 +15,7 @@ PHẦN I: CÁC CHỈ SỐ ĐÁNH GIÁ HIỆU SUẤT (KEY METRICS)
 
 2. TỶ LỆ LỖI (FAILURE RATE): 32.0%
    - Số câu hỏng (Fail): 64/200
-   - Đánh giá: CAO. Cần giảm xuống dưới 10% để đưa vào sản xuất.
+   - Đánh giá: CAO. Cần giảm xuống dưới 10% để đưa vào deploy.
 
 3. ĐỘ ỔN ĐỊNH KỸ THUẬT (STABILITY): 97.5%
    - Số ca sập nguồn (Crash 500): 5 ca
