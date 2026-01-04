@@ -59,15 +59,25 @@ class BusBotV13:
     def close(self): self.driver.close()
 
     def normalize_query(self, text):
+        if not text: return ""
         text = text.lower()
+        
+        # 1. Thay thế từ viết tắt
         def replace(match): return self.ABBREVIATIONS[match.group(0)]
         text = self.pattern.sub(replace, text)
-        text = text.replace("đại học đại học", "đại học").replace("trường đại học trường đại học", "trường đại học")
         
-        # --- CẢI TIẾN: Loại bỏ các từ thừa chỉ hướng/địa điểm ---
+        # --- [FIX QUAN TRỌNG] XỬ LÝ LẶP TỪ DO MỞ RỘNG VIẾT TẮT ---
+        # Ví dụ: User nhập "Đại học Văn Lang" -> Máy dịch thành "Đại học trường đại học Văn Lang"
+        # Cần replace chuỗi lặp đó thành "trường đại học" gọn gàng.
+        text = text.replace("đại học đại học", "đại học") \
+                   .replace("trường đại học trường đại học", "trường đại học") \
+                   .replace("đại học trường đại học", "trường đại học") \
+                   .replace("trường đại học đại học", "trường đại học")
+        
+        # 2. Loại bỏ các từ thừa phổ biến
         stopwords = [
-            "trạm", "bến xe", "điểm dừng", "khu vực", 
-            "lộ trình đi từ", "xe buýt từ", "đi từ", "về", "đến", "tới", "sang", "qua"
+            "trạm xe buýt", "trạm", "bến xe", "điểm dừng", "khu vực", 
+            "lộ trình xe buýt đi từ", "lộ trình", "xe buýt từ", "đi từ", "về", "đến", "tới", "sang", "qua"
         ]
         for word in stopwords:
             text = text.replace(word, " ")
@@ -76,10 +86,9 @@ class BusBotV13:
 
     # --- HÀM TÌM KIẾM & GOM NHÓM ---
     def find_grouped_candidates(self, session, query_text):
-        # normalize_query đã được cải tiến để loại bỏ 'trạm', 'đi từ'...
         clean_text = self.normalize_query(query_text)
         
-        # LOGIC 1: Tìm chính xác khi có tên đường (Do Button tạo ra)
+        # LOGIC 1: Tìm chính xác khi có tên đường
         if " đường " in clean_text:
             parts = clean_text.split(" đường ")
             name_part = parts[0].strip() 
@@ -100,7 +109,7 @@ class BusBotV13:
             """
             results = list(session.run(q, name=name_part, street=street_part))
         
-        # LOGIC 2: Tìm diện rộng (Khi người dùng nhập lần đầu)
+        # LOGIC 2: Tìm diện rộng
         else:
             q = """
             MATCH (b:BusStop)
@@ -119,7 +128,6 @@ class BusBotV13:
             """
             results = list(session.run(q, txt=clean_text))
         
-        # Parse kết quả
         candidates = []
         for r in results:
             candidates.append({
@@ -134,12 +142,9 @@ class BusBotV13:
     # --- HÀM TÌM ĐƯỜNG CHÍNH ---
     def solve_route(self, start_text, end_text):
         with self.driver.session() as session:
-            # 1. Tìm địa điểm (Gom nhóm theo đường)
             s_groups = self.find_grouped_candidates(session, start_text)
             e_groups = self.find_grouped_candidates(session, end_text)
 
-            # 2. Xử lý Mơ hồ (Ambiguity)
-            # Kiểm tra điểm ĐI
             if len(s_groups) > 1:
                 options = [{"label": f"{g['name']} ({g['street']})", "value": f"{g['name']} đường {g['street']}"} for g in s_groups]
                 return {
@@ -150,7 +155,6 @@ class BusBotV13:
                     "options": options
                 }
             
-            # Kiểm tra điểm ĐẾN
             if len(e_groups) > 1:
                 options = [{"label": f"{g['name']} ({g['street']})", "value": f"{g['name']} đường {g['street']}"} for g in e_groups]
                 return {
@@ -161,17 +165,13 @@ class BusBotV13:
                     "options": options
                 }
 
-            # 3. Kiểm tra kết quả tìm kiếm
             if not s_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đi: '{start_text}'"}
             if not e_groups: return {"status": "error", "message": f"❌ Không tìm thấy điểm đến: '{end_text}'"}
 
-            # Lấy list ID của nhóm đầu tiên (duy nhất)
             s_ids = s_groups[0]["ids"]
             e_ids = e_groups[0]["ids"]
 
-            # --- LOGIC TÌM ĐƯỜNG ---
-            
-            # ƯU TIÊN 1: ĐI THẲNG
+            # 3.1. ĐI THẲNG
             q_direct = """
             MATCH (s:BusStop)-[:ON_ROUTE]->(route:BusRoute)<-[:ON_ROUTE]-(e:BusStop)
             WHERE s.id IN $s_ids AND e.id IN $e_ids
@@ -191,7 +191,7 @@ class BusBotV13:
                     "path_coords": [[direct['s.lng'], direct['s.lat']], [direct['e.lng'], direct['e.lat']]]
                 }
 
-            # ƯU TIÊN 2: 1 LẦN ĐỔI XE
+            # 3.2. 1 LẦN ĐỔI XE
             q_1_transfer = """
             MATCH (s:BusStop)-[:ON_ROUTE]->(r1:BusRoute)<-[:ON_ROUTE]-(mid:BusStop)
             MATCH (mid)-[:ON_ROUTE]->(r2:BusRoute)<-[:ON_ROUTE]-(e:BusStop)
@@ -204,8 +204,7 @@ class BusBotV13:
             """
             one_stop = session.run(q_1_transfer, s_ids=s_ids, e_ids=e_ids).single()
             if one_stop:
-                p1 = one_stop['p1']
-                p2 = one_stop['p2']
+                p1, p2 = one_stop['p1'], one_stop['p2']
                 total = p1 + p2
                 return {
                     "status": "success",
@@ -217,7 +216,7 @@ class BusBotV13:
                              f"💰 **Chi phí:**\n"
                              f"- Xe {one_stop['bus1']}: {p1:,}đ\n"
                              f"- Xe {one_stop['bus2']}: {p2:,}đ\n"
-                             f"👉 **Tổng cộng:** {total:,}đ (HSSV: 6.000đ; Người cao tuổi: Miễn phí)"),
+                             f"👉 **Tổng cộng:** {total:,}đ"),
                     "path_coords": [
                         [one_stop['s.lng'], one_stop['s.lat']],
                         [one_stop['mid.lng'], one_stop['mid.lat']],
@@ -225,7 +224,7 @@ class BusBotV13:
                     ]
                 }
 
-            # ƯU TIÊN 3: 2 LẦN ĐỔI XE
+            # 3.3. 2 LẦN ĐỔI XE
             q_2_transfer = """
             MATCH (s:BusStop)-[:ON_ROUTE]->(r1:BusRoute)<-[:ON_ROUTE]-(m1:BusStop)
             MATCH (m1)-[:ON_ROUTE]->(r2:BusRoute)<-[:ON_ROUTE]-(m2:BusStop)
@@ -250,11 +249,7 @@ class BusBotV13:
                              f"2. Đổi xe **{two_stops['r2.route_no']}** -> Trạm '{two_stops['m2.name']}'.\n"
                              f"3. Đổi xe **{two_stops['r3.route_no']}** về đích.\n"
                              f"--------------------\n"
-                             f"💰 **Chi phí:**\n"
-                             f"- Chặng 1: {p1:,}đ\n"
-                             f"- Chặng 2: {p2:,}đ\n"
-                             f"- Chặng 3: {p3:,}đ\n"
-                             f"👉 **Tổng cộng:** {total:,}đ (HSSV: 9.000đ; Người cao tuổi: Miễn phí)"),
+                             f"💰 **Chi phí:** {total:,}đ"),
                     "path_coords": [
                         [two_stops['s.lng'], two_stops['s.lat']],
                         [two_stops['m1.lng'], two_stops['m1.lat']],

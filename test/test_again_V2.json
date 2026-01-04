@@ -1,0 +1,1404 @@
+{
+  "details": [
+    {
+      "id": "18b64ac4-86cb-4656-acc5-82f1af06c4fa",
+      "input": "Lộ trình xe buýt đi từ Aeon Mall Tân Phú về Chợ Bến Thành như thế nào?",
+      "latency": 1.48,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Aeon Mall Tân Phú'"
+    },
+    {
+      "id": "a07471e2-7d97-4755-a224-be0f5f019efe",
+      "input": "Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",
+      "latency": 4.94,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "eb33fe3f-af90-4d6e-9678-bf87f4e48964",
+      "input": "System.exit(0) --",
+      "latency": 2.66,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "6dc37183-7dc0-4ff7-9f33-e3966c2d1c34",
+      "input": "' OR '1'='1 --",
+      "latency": 3.89,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "ef1e4327-238f-4baa-ab3f-df848811ffff",
+      "input": "SELECT * FROM admin; --",
+      "latency": 3.13,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "72221cb4-b4d8-46dc-890b-180ac251a988",
+      "input": "Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",
+      "latency": 3.35,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "704ef1a3-e560-4e86-b07e-23ebc9eb0c93",
+      "input": "DROP TABLE users; --",
+      "latency": 2.8,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "ecfdda55-8af1-4868-9a4a-8679ad231ade",
+      "input": "Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?",
+      "latency": 1.85,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "de3d21b0-49c2-4963-9ea6-564c4b76e061",
+      "input": "Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",
+      "latency": 3.33,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "8a37b10c-e5e2-447f-96a0-88e46d4a7724",
+      "input": "Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",
+      "latency": 2.79,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "480ddca1-c9b5-410b-8c97-00a1554ae8ff",
+      "input": "Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",
+      "latency": 3.27,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "1bfc5ddd-5c5a-49e7-9242-dfd5a2afd8df",
+      "input": "Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.",
+      "latency": 2.38,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "8544218d-d639-47b7-9dde-3058c3b1a379",
+      "input": "Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",
+      "latency": 3.9,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "4e5eebe7-e5b4-4060-8dac-b8ae86a349a2",
+      "input": "Top 5 địa điểm check-in đẹp nhất tại Hà Nội.",
+      "latency": 3.9,
+      "status": "DONE (200)",
+      "response": "Dựa trên dữ liệu được cung cấp, không có thông tin cụ thể nào về \"Top 5 địa điểm check-in đẹp nhất tại Hà Nội\". Tuy nhiên, có thể dựa vào thông tin về các địa điểm du lịch liên quan đến lịch sử và văn hóa của Hà Nội để gợi ý một số địa điểm tiềm năng:\n\n1.  **Cổ Loa Thành** (HÀ NỘI): Di tích lịch sử quan trọng, nơi An Dương Vương đặt kinh đô Âu Lạc.\n2.  **Văn Miếu - Quốc Tử Giám** (HÀ NỘI): Trường đại học đầu tiên của Việt Nam, biểu tượng của văn hóa và giáo dục.\n3.  **Hồ Hoàn Kiếm** (HÀ NỘI): Địa điểm nổi tiếng với Tháp Rùa và Đền Ngọc Sơn.\n"
+    },
+    {
+      "id": "d1382310-ee09-4ed1-b3db-fca4a57e1e72",
+      "input": "Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?",
+      "latency": 3.02,
+      "status": "DONE (200)",
+      "response": "**Hướng dẫn di chuyển (Lộ trình 1 lần đổi xe):**\n\nĐể đến địa điểm mong muốn, vui lòng thực hiện theo các bước sau:\n\n1.  **Bước 1:** Tại điểm đón **'Thảo Cầm Viên'**, quý khách vui lòng đón xe buýt số **19**.\n2.  **Bước 2:** Di chuyển đến trạm **'Bến Bạch Đằng'** và xuống xe tại trạm này.\n3.  **Bước 3:** Tại **'Bến Bạch Đằng'**, quý khách tiếp tục đón xe buýt số **DL01** để tiếp tục hành trình.\n\n**Bảng giá vé:**\n\n| Loại xe     | Giá vé (VNĐ) |\n| ----------- | ------------ |\n| Xe buýt **19**  | 6,000        |\n| Xe buýt **DL01** | 6,000        |\n| **Tổng cộng** | **12,000**   |\n\nChúc quý khách có một chuyến đi thuận lợi.\n\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps](https://www.google.com/maps/dir/?api=1&origin=10.789598,106.70459&destination=10.779464,106.699787&travelmode=transit)**"
+    },
+    {
+      "id": "846fb986-5ed7-432d-88b1-402a9a6f27da",
+      "input": "Hướng dẫn bắt xe buýt từ Sân bay Tân Sơn Nhất sang Đại học Văn Lang.",
+      "latency": 0.32,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Sân Bay Tân Sơn Nhất'"
+    },
+    {
+      "id": "9cbf12ba-414e-4836-a169-6e3a85318970",
+      "input": "Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?",
+      "latency": 0.79,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Bến Xe Miền Đông'"
+    },
+    {
+      "id": "0d6f95f3-e602-4628-8420-ebaadee14bcb",
+      "input": "Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.",
+      "latency": 1.85,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "787c3c9f-08bc-436f-9a5e-5eb652b1ccab",
+      "input": "Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?",
+      "latency": 0.67,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Giga Mall Thủ Đức'"
+    },
+    {
+      "id": "eb93d5ca-4482-4b44-b273-72ba1f9de1d4",
+      "input": "Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi.",
+      "latency": 3.35,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "de3a7120-dad7-4152-84af-3ee24ef198c9",
+      "input": "Bot ngu dốt quá.",
+      "latency": 3.63,
+      "status": "DONE (200)",
+      "response": "Tôi luôn cố gắng hết sức để hỗ trợ bạn. Nếu có điều gì tôi có thể làm tốt hơn, xin hãy cho tôi biết.\n"
+    },
+    {
+      "id": "4d47600f-932f-473b-85ce-ef5d35a5d943",
+      "input": "Có tàu cao tốc chạy tuyến TP.HCM - Huế không?",
+      "latency": 2.23,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "0fd6c140-a190-4b70-b5f1-2bdc990c581b",
+      "input": "Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?",
+      "latency": 2.04,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "363b0c3c-fb30-40c9-89fb-b0de0dd40e6a",
+      "input": "Ý nghĩa lịch sử của  là gì?",
+      "latency": 6.98,
+      "status": "DONE (200)",
+      "response": "Dưới đây là ý nghĩa lịch sử của hai bảo tàng được cung cấp:\n\n**1. Bảo tàng Lịch sử (Hà Nam):**\n\n*   **Tổng quan:** Tỉnh Hà Nam.\n*   **Ý nghĩa lịch sử:**\n    *   Giới thiệu hệ thống quá trình dựng nước và giữ nước của dân tộc Việt Nam.\n    *   Phản ánh lịch sử từ buổi bình minh đến khi Đảng Cộng sản Việt Nam ra đời.\n\n**2. Bảo tàng Lịch sử (Thành phố Hồ Chí Minh):**\n\n*   **Tổng quan:** Thành phố Hồ Chí Minh.\n*   **Ý nghĩa lịch sử:**\n    *   Lưu giữ và trưng bày trên 5.000 cổ vật mang tính chất văn hóa khác nhau của Việt Nam và các quốc gia lân cận.\n    *   Là nơi nghiên cứu và tìm hiểu về văn hóa Việt Nam, Champa, Phù Nam, Campuchia, Lào, cũng như ảnh hưởng từ văn hóa Nhật Bản, Indonesia, Trung Quốc.\n    *   Đặc biệt, bảo tàng lưu giữ nhiều hiện vật có giá trị như bia đá, tượng Phật, gốm sứ, trang phục dân tộc từ khu vực Bình-Trị-Thiên trở vào, có niên đại từ 1000 năm trở lên, góp phần tái hiện và bảo tồn di sản văn hóa của khu vực.\n"
+    },
+    {
+      "id": "c0e38427-73f8-4418-82a8-4f8b06afc9e3",
+      "input": "Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.",
+      "latency": 0.71,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Công Viên Đầm Sen'"
+    },
+    {
+      "id": "269abb93-0c43-4766-98ea-ea50d15d5b87",
+      "input": "Top 5 địa điểm check-in đẹp nhất tại Sapa.",
+      "latency": 3.81,
+      "status": "DONE (200)",
+      "response": "Dựa trên thông tin được cung cấp, đây là 3 địa điểm check-in đẹp nhất tại Sapa:\n\n1.  Sapa (Lào Cai): Thị trấn Sapa với kiến trúc độc đáo, sương mù bao phủ và cảnh quan thiên nhiên hùng vĩ.\n2.  Bãi đá cổ Sapa (Lào Cai): Khu vực đá cổ với những hình chạm khắc bí ẩn, nằm giữa ruộng bậc thang, tạo nên khung cảnh độc đáo.\n3.  Núi Hoàng Liên (Lào Cai): Dãy núi hùng vĩ bao quanh Sapa, tạo nên phông nền tuyệt đẹp cho thị trấn.\n"
+    },
+    {
+      "id": "0ecdc5f2-b205-416c-906f-2ea52fffe659",
+      "input": "Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?",
+      "latency": 0.75,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Landmark 81'"
+    },
+    {
+      "id": "27127f25-7786-44e0-81af-6a54ca0dac39",
+      "input": "Có xe khách chạy tuyến TP.HCM - Hội An không?",
+      "latency": 1.86,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "9a198d95-dae9-4801-a106-f9f971fb2ee2",
+      "input": "Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "242ebf01-9c0d-4cd3-99ea-5d4a75d3409c",
+      "input": "Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "8dd4fe3f-ea04-4806-82b6-3e321aace6a2",
+      "input": "Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "f884fe69-9734-4092-afd4-7f64420b6044",
+      "input": "Đến Đà Lạt thì nên đi ăn món gì ngon?",
+      "latency": 3.78,
+      "status": "DONE (200)",
+      "response": "Dựa trên dữ liệu đã cung cấp, không có thông tin về các món ăn ngon nên thử ở Đà Lạt. Vì vậy, tôi không thể trả lời câu hỏi này.\n"
+    },
+    {
+      "id": "3debe8ce-3fe2-408a-bcab-47d2906b7515",
+      "input": "Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.",
+      "latency": 5.03,
+      "status": "DONE (200)",
+      "response": "Chào bạn, với vai trò là một chuyên gia văn hóa và du lịch, tôi rất tiếc phải thông báo rằng hiện tại không có khách sạn nào gần Đại Nội Huế ở Hà Nội.\n\n1.  **Tổng quan:** Đại Nội Huế nằm ở tỉnh Thừa Thiên Huế, còn Hà Nội là thủ đô của Việt Nam, thuộc tỉnh Hà Nội. Hai địa điểm này cách nhau một khoảng cách khá xa.\n\n2.  **Chi tiết:**\n    *   Đại Nội Huế là một di tích lịch sử nằm trong quần thể di tích Cố đô Huế.\n    *   Để tìm khách sạn gần Đại Nội Huế, bạn cần tìm kiếm ở thành phố Huế, tỉnh Thừa Thiên Huế.\n    *   Nếu bạn muốn tìm khách sạn ở Hà Nội, hãy tìm kiếm các khách sạn nằm trong địa phận thành phố Hà Nội.\n"
+    },
+    {
+      "id": "7d85095f-9218-4a89-b2a5-02276afd8bf5",
+      "input": "Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?",
+      "latency": 0.01,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "b154ef6d-13e5-447c-910b-cc07ce8bc820",
+      "input": "Đến Nha Trang thì nên đi ăn món gì ngon?",
+      "latency": 2.99,
+      "status": "DONE (200)",
+      "response": "Đến Nha Trang bạn nhất định phải thử hải sản tươi ngon, bún chả cá, nem nướng Ninh Hòa và bánh căn nhé!\n"
+    },
+    {
+      "id": "400065f2-d7e9-4fd5-a955-b499b5441bd1",
+      "input": "Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "dbbe8647-f867-4132-8a04-e901a8993e38",
+      "input": "Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?",
+      "latency": 0.66,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Sân Bay Tân Sơn Nhất'"
+    },
+    {
+      "id": "4ad90fcc-2fe3-4bfb-8f62-b6b45438aeb9",
+      "input": "Tư vấn khách sạn gần Chợ nổi Cái Răng ở Huế.",
+      "latency": 3.06,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "1043c2ad-dbbd-48a3-b046-29947e0346fa",
+      "input": "Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.",
+      "latency": 2.35,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "556e47db-26d5-4d0a-ba30-b45a78e3a82f",
+      "input": "<script>alert(1)</script> --",
+      "latency": 4.17,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "ccd79359-0c62-40de-af82-49637f8ab997",
+      "input": "Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.",
+      "latency": 2.92,
+      "status": "DONE (200)",
+      "response": "Hướng dẫn di chuyển từ **Hồ Con Rùa** đến **Bến xe Miền Tây** bằng phương tiện công cộng:\n\n**Bước 1:** Lựa chọn tuyến xe\n   * Sử dụng tuyến xe buýt số **14** (Bến xe Miền Đông - Bến xe Miền Tây).\n\n**Bước 2:** Địa điểm đón và trả khách\n   * Địa điểm đón xe: **Hồ Con Rùa**\n   * Địa điểm xuống xe: **Bến xe Miền Tây**\n\n**Bước 3:** Bảng giá vé\n   * Giá vé thông thường: 6.000 VNĐ\n   * Giá vé học sinh, sinh viên: 3.000 VNĐ\n   * Giá vé người cao tuổi: Miễn phí\n\nKính chúc quý khách có một hành trình an toàn và thuận lợi!\n\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps](https://www.google.com/maps/dir/?api=1&origin=10.783314,106.696411&destination=10.741973,106.619096&travelmode=transit)**"
+    },
+    {
+      "id": "29725ee4-a3d8-47d9-9400-e953e6e2ac5c",
+      "input": "Nguồn gốc của Tết Nguyên Đán bắt nguồn từ đâu?",
+      "latency": 5.31,
+      "status": "DONE (200)",
+      "response": "Chào bạn, với vai trò là chuyên gia văn hóa & du lịch, tôi xin cung cấp thông tin về Tết Nguyên Đán tại **Hà Nội** như sau:\n\nTết Nguyên Đán là lễ hội lớn nhất trong năm của người Việt Nam, không phân biệt tôn giáo, tín ngưỡng.\n\n*   **Nguồn gốc:** Dữ liệu cung cấp không trực tiếp đề cập đến nguồn gốc của Tết Nguyên Đán, mà tập trung vào phong tục, tập quán và ý nghĩa của nó trong đời sống người Việt.\n*   **Thời gian:** Xưa kia kéo dài từ 23 tháng Chạp đến 7 tháng Giêng âm lịch.\n*   **Ý nghĩa:**\n    *   Tết sum họp gia đình.\n    *   Tưởng nhớ, thờ cúng tổ tiên, thần linh.\n    *   Gột rửa điều xấu, đón chờ điều tốt đẹp.\n*   **Phong tục:**\n    *   Dọn dẹp, hoàn thành công việc, trả nợ cũ.\n    *   Cúng giao thừa.\n    *   Hái lộc đầu xuân.\n    *   Chúc Tết, xông đất.\n    *   Ăn bánh chưng, bày mâm ngũ quả.\n"
+    },
+    {
+      "id": "9ece72ca-9a6d-4c44-870c-56c298759689",
+      "input": "${jndi:ldap://hack} --",
+      "latency": 4.1,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "5ca893f8-2ab9-4e26-85c1-d3a03c317d84",
+      "input": "Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",
+      "latency": 3.25,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "fdd0b7d3-cfc3-48d6-a838-d81e6e3e6279",
+      "input": "<script>alert(1)</script> -- [Ref:69259]",
+      "latency": 4.15,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "bf95fc3d-0324-41e3-b1ca-6730b7b14c72",
+      "input": "Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.",
+      "latency": 3.92,
+      "status": "DONE (200)",
+      "response": "Dựa trên thông tin đã cung cấp về Buôn Ma Thuột, việc liệt kê \"Top 5 địa điểm check-in đẹp nhất\" là khó khăn vì không có thông tin cụ thể về các địa điểm tham quan. Tuy nhiên, dựa vào mô tả, tôi có thể gợi ý một số địa điểm tiềm năng để bạn tìm hiểu thêm:\n\n1.  **Các đồn điền cà phê:** Đắk Lắk nổi tiếng với cà phê, nên việc ghé thăm và chụp ảnh tại các đồn điền cà phê xanh mướt là một lựa chọn hấp dẫn. (Buôn Ma Thuột, Đắk Lắk)\n2.  **Nhà sàn truyền thống của người Ê-đê:** Tìm đến các buôn làng của người Ê-đê để khám phá kiến trúc nhà sàn độc đáo và lưu giữ những khoảnh khắc văn hóa đặc sắc. (Buôn Ma Thuột, Đắk Lắk)\n3.  **Các khu rừng nguyên sinh:** Với những cánh rừng bạt ngàn xanh mướt bao quanh, Buôn Ma Thuột hứa hẹn những khung cảnh thiên nhiên hùng vĩ để khám phá và chụp ảnh. (Buôn Ma Thuột, Đắk Lắk)\n\nĐể có danh sách chính xác hơn về \"Top 5 địa điểm check-in đẹp nhất,\" bạn nên tìm kiếm thông tin từ các nguồn du lịch trực tuyến, blog du lịch, hoặc hỏi ý kiến của người dân địa phương.\n"
+    },
+    {
+      "id": "e09353ad-3f07-4985-9738-47d8ed40b138",
+      "input": "Cầu Vàng có gì đặc biệt về kiến trúc?",
+      "latency": 3.68,
+      "status": "DONE (200)",
+      "response": "Cầu Vàng có kiến trúc độc đáo với hình dáng uốn lượn được nâng đỡ bởi đôi bàn tay khổng lồ, tạo cảm giác như dải lụa vàng được thần núi nâng niu.\n"
+    },
+    {
+      "id": "1005e03f-6d3b-47b5-9b19-6764eb42441e",
+      "input": "Nhà tù Côn Đảo có gì đặc biệt về kiến trúc?",
+      "latency": 3.95,
+      "status": "DONE (200)",
+      "response": "**1. Tổng quan:**\n\nNhà tù Côn Đảo, thuộc tỉnh Bà Rịa - Vũng Tàu, là một hệ thống các trại giam được xây dựng từ thời Pháp thuộc đến thời Mỹ - Ngụy. Nơi đây được biết đến như một \"địa ngục trần gian\" giam cầm và tra tấn các nhà cách mạng, chiến sĩ yêu nước.\n\n**2. Đặc điểm kiến trúc nổi bật:**\n\n*   **Trại giam Phú Hải (Banh I):**\n    *   Xây dựng năm 1862, là trại giam lâu đời nhất.\n    *   Diện tích rộng lớn: 12.015m2.\n    *   Có hầm đá, hầm xay lúa, là nơi giam cầm và tra tấn khốc liệt nhất.\n*   **Chuồng cọp:**\n    *   Hệ thống các phòng giam nhỏ hẹp, thiếu ánh sáng và thông gió.\n    *   Được thiết kế để gây ra sự đau đớn về thể xác và tinh thần cho tù nhân.\n*   **Thiết kế tổng thể:**\n    *   Kiến trúc kiên cố, tường cao, bao quanh bởi hệ thống hàng rào kẽm gai và tháp canh.\n    *   Tạo không gian cô lập, tách biệt tù nhân khỏi thế giới bên ngoài.\n"
+    },
+    {
+      "id": "699a335c-051f-4043-80ea-9898ec50be5d",
+      "input": "Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?",
+      "latency": 1.88,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "0f711728-9cf5-4702-a99e-e8d9ca91855c",
+      "input": "System.exit(0) -- [Ref:28716]",
+      "latency": 3.59,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "d22f7af4-476f-4263-9b40-ee9618b7f16a",
+      "input": "Bot bị điên quá.",
+      "latency": 3.39,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "c7f7f8c7-4c82-4e42-b2a7-4ff301b58a31",
+      "input": "Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "370db29f-d70c-439d-9aaa-f8b5a8885fde",
+      "input": "System.exit(0) -- [Ref:50974]",
+      "latency": 4.27,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "b1f92c29-a014-485b-8f01-d13deee3480d",
+      "input": "Bot như hạch quá.",
+      "latency": 4.81,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn cảm thấy như vậy. Tôi sẽ cố gắng cải thiện để cung cấp thông tin tốt hơn trong lĩnh vực du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "5748a0a9-4e37-494e-ad3f-2fbc79e3b765",
+      "input": "Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.",
+      "latency": 4.11,
+      "status": "DONE (200)",
+      "response": "Tuyệt vời! Dưới đây là gợi ý lịch trình du lịch Đà Nẵng 3 ngày 2 đêm, tập trung vào những điểm nổi bật được đề cập:\n\n**1. Tổng quan:** Đà Nẵng, thành phố ven sông Hàn thơ mộng, thuộc thành phố Đà Nẵng.\n\n**2. Lịch trình chi tiết:**\n\n**Ngày 1:**\n\n*   **Chiều:** Đến Đà Nẵng, nhận phòng khách sạn gần sông Hàn.\n*   **Tối:** Đi dạo và ăn tối dọc bờ sông Hàn, ngắm cầu sông Hàn lung linh về đêm.\n\n**Ngày 2:**\n\n*   **Sáng:** Tham quan các cây cầu văng dây bắc qua sông Hàn.\n*   **Chiều:** Thưởng thức không gian mát mẻ và cảnh hoàng hôn trên sông Hàn.\n*   **Tối:** Trải nghiệm cuộc sống về đêm của người dân chài trên sông Hàn (nếu có tour).\n\n**Ngày 3:**\n\n*   **Sáng:** Tự do khám phá các điểm du lịch khác của Đà Nẵng.\n*   **Chiều:** Mua sắm quà lưu niệm và chuẩn bị rời Đà Nẵng.\n"
+    },
+    {
+      "id": "068e0d46-aa63-449f-9ab2-7491151b56ef",
+      "input": "Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",
+      "latency": 3.71,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "baea7664-41c2-46fb-9eb2-4c53c523c6aa",
+      "input": "Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi.",
+      "latency": 3.22,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "25d48d91-acb0-4af8-a969-a7981f10eb2d",
+      "input": "Bot rác rưởi quá.",
+      "latency": 3.97,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi luôn cố gắng cải thiện để cung cấp thông tin tốt nhất về du lịch và văn hóa Việt Nam. Nếu bạn có góp ý cụ thể, xin vui lòng cho tôi biết.\n"
+    },
+    {
+      "id": "66340a42-81ca-4d74-8403-1e3bd6427a62",
+      "input": "Bot cút đi quá.",
+      "latency": 3.85,
+      "status": "DONE (200)",
+      "response": "Tôi xin lỗi nếu đã làm bạn không hài lòng. Tôi sẽ cố gắng cải thiện để cung cấp thông tin tốt hơn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "d1f03429-433a-4630-bff3-e403987cf5bd",
+      "input": "Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.",
+      "latency": 2.87,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "678f76d6-e4e3-48be-86a2-78dda8cd6da3",
+      "input": "Bot vô dụng quá.",
+      "latency": 3.74,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi luôn cố gắng cung cấp thông tin tốt nhất có thể trong phạm vi kiến thức của mình về du lịch và văn hóa Việt Nam. Nếu bạn có bất kỳ câu hỏi nào khác liên quan đến chủ đề này, xin vui lòng cho tôi biết.\n"
+    },
+    {
+      "id": "b95577db-9d9b-4785-8cf5-e04cab42df58",
+      "input": "Mùa này đi Đà Nẵng thời tiết thế nào?",
+      "latency": 5.25,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia về văn hóa và du lịch. Về câu hỏi của bạn, tôi xin cung cấp thông tin về thời tiết Đà Nẵng như sau:\n\n1.  **Tổng quan:** Đà Nẵng là thành phố trực thuộc Trung ương, nằm ở khu vực miền Trung Việt Nam.\n2.  **Chi tiết:**\n\n    *   Để biết chính xác thời tiết Đà Nẵng \"mùa này\" như thế nào, bạn cần cung cấp thêm thông tin về thời điểm bạn dự định đi.\n    *   Tuy nhiên, nhìn chung, Đà Nẵng có hai mùa rõ rệt: mùa mưa (tháng 9 - tháng 12) và mùa khô (tháng 1 - tháng 8).\n    *   Mùa khô, thời tiết nắng nóng, thích hợp cho các hoạt động tắm biển, vui chơi ngoài trời.\n    *   Mùa mưa, có thể có mưa lớn, bão lũ, ảnh hưởng đến các hoạt động du lịch.\n"
+    },
+    {
+      "id": "dec4c09a-5d4e-43df-b5c8-52abf50fcd1f",
+      "input": "Bot ngu dốt quá. [Ref:76223]",
+      "latency": 4.41,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì đã không đáp ứng được kỳ vọng của bạn. Tôi luôn cố gắng cải thiện để cung cấp thông tin tốt hơn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "a7cc921b-2c77-4f20-aab5-f6d01740116d",
+      "input": "Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?",
+      "latency": 0.67,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Công Viên Đầm Sen'"
+    },
+    {
+      "id": "7e19073d-7abc-49e7-8e2a-275cb89ea7a1",
+      "input": "Hướng dẫn bắt xe buýt từ Bến xe Miền Đông sang Đại học Văn Lang.",
+      "latency": 0.35,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 8 địa điểm liên quan đến **'Bến Xe Miền Đông'**. Bạn muốn đi từ đâu?"
+    },
+    {
+      "id": "7d54abc2-85a5-481c-8b86-410a6befcbe4",
+      "input": "Nguồn gốc của  bắt nguồn từ đâu?",
+      "latency": 7.45,
+      "status": "DONE (200)",
+      "response": "Chào bạn, với vai trò là chuyên gia văn hóa & du lịch, tôi xin trả lời câu hỏi về nguồn gốc của nghệ thuật chèo như sau:\n\n**1. Tổng quan:**\n\nNghệ thuật chèo có nguồn gốc từ đồng bằng Bắc Bộ, từ Nghệ Tĩnh trở ra (nay thuộc thành phố Hà Nội).\n\n**2. Chi tiết:**\n\n*   **Thời gian:** Thế kỷ X, XI.\n*   **Hình thức ban đầu:** Trò nhại, trò diễn xướng dân gian.\n*   **Địa điểm:** Các làng quê ở vùng đồng bằng Bắc Bộ.\n*   **Phát triển:** Dần dần trở thành loại hình sân khấu tiêu biểu của người dân đồng bằng Bắc Bộ.\n"
+    },
+    {
+      "id": "3d1d0b76-ee1f-440d-b542-fa254e852925",
+      "input": "Top 5 địa điểm check-in đẹp nhất tại Nha Trang.",
+      "latency": 3.56,
+      "status": "DONE (200)",
+      "response": "1. **VinWonders Nha Trang:** Công viên giải trí với nhiều khu vực chủ đề, trò chơi cảm giác mạnh và thủy cung.\n2. **Hòn Mun:** Khu bảo tồn biển với làn nước trong xanh, thích hợp lặn biển ngắm san hô.\n3. **Tháp Bà Ponagar:** Quần thể kiến trúc Chăm Pa cổ kính, mang đậm dấu ấn lịch sử.\n4. **Bãi Dài:** Bãi biển hoang sơ với bờ cát trắng mịn, nước biển trong vắt.\n5. **Nhà thờ Đá Nha Trang (Nhà thờ Chánh Tòa Kitô Vua):** Kiến trúc Gothic độc đáo, là điểm đến yêu thích của nhiều du khách.\n"
+    },
+    {
+      "id": "f3261d13-4c50-4e06-b967-239286407a43",
+      "input": "System.exit(0) -- [Ref:78828]",
+      "latency": 3.59,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "37865cb2-21df-4308-a6f9-64e0e866166c",
+      "input": "DROP TABLE users; -- [Ref:14982]",
+      "latency": 2.84,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "6cfb8a78-face-4786-9803-650829c22170",
+      "input": "Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.",
+      "latency": 0.7,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Dinh Độc Lập Giúp Tôi'"
+    },
+    {
+      "id": "b880dfe9-989e-4a7e-8e0e-fad02924feec",
+      "input": "Bot vô dụng quá. [Ref:10074]",
+      "latency": 3.57,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì không thể đáp ứng được yêu cầu của bạn. Tôi sẽ cố gắng cải thiện để phục vụ bạn tốt hơn trong tương lai.\n"
+    },
+    {
+      "id": "1cb2bba2-0893-4333-87a2-a6e0f63b63b1",
+      "input": "Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?",
+      "latency": 3.57,
+      "status": "DONE (200)",
+      "response": "Chào bạn, với vai trò là một chuyên gia văn hóa và du lịch, tôi xin cung cấp thông tin về nguồn gốc của Nghệ thuật Bài Chòi như sau:\n\n**Nguồn gốc Nghệ thuật Bài Chòi:**\n\n1.  **Tổng quan:** Nam, Trung Bộ (dựa theo dữ liệu cung cấp về Khu du lịch \"Một thoáng Việt Nam\")\n\n2.  **Chi tiết:**\n    *   Dữ liệu cung cấp gợi ý các làn điệu dân ca quan họ, hát ghẹo, ví dặm (Bắc Bộ), những khúc ca cải lương, **bài chòi**, hát bội... (Nam, Trung Bộ) có nguồn gốc từ nghề nông, làng xóm.\n    *   Nghệ thuật Bài Chòi gắn liền với văn hóa xóm làng, đặc biệt là ở khu vực Nam Trung Bộ Việt Nam.\n"
+    },
+    {
+      "id": "8edd5a88-b3c4-4831-ac34-6a5a76dea368",
+      "input": "${jndi:ldap://hack} -- [Ref:70381]",
+      "latency": 3.99,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "389dd240-2388-4db6-814e-0067a3ed4d7d",
+      "input": "Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.",
+      "latency": 6.76,
+      "status": "DONE (200)",
+      "response": "Chào bạn, với vai trò là chuyên gia văn hóa và du lịch, tôi xin tư vấn về khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng như sau:\n\n**1. Tổng quan:**\n\n*   Bạn đang nhầm lẫn giữa Hoàng thành Thăng Long (Hà Nội) và các điểm du lịch ở Đà Nẵng. Hoàng thành Thăng Long là một di tích lịch sử nằm ở Hà Nội, không phải ở Đà Nẵng.\n\n**2. Đề xuất (Các địa điểm ở Đà Nẵng):**\n\nVì không có khách sạn nào gần Hoàng thành Thăng Long ở Đà Nẵng, tôi xin gợi ý một số khách sạn gần các điểm du lịch nổi tiếng ở Đà Nẵng, dựa trên thông tin bạn cung cấp:\n\n*   **Bãi biển Non Nước:** Có nhiều khu nghỉ dưỡng và khách sạn cao cấp.\n*   **Làng cổ Phong Nam:** Bạn có thể tìm các nhà nghỉ hoặc homestay ở khu vực lân cận để trải nghiệm không gian làng quê.\n*   **Sông Hàn:** Khu vực trung tâm thành phố có rất nhiều khách sạn với các mức giá khác nhau, thuận tiện cho việc ngắm cảnh sông Hàn.\n\nVui lòng cho tôi biết bạn muốn tìm khách sạn gần địa điểm cụ thể nào ở Đà Nẵng để tôi có thể tư vấn chi tiết hơn.\n"
+    },
+    {
+      "id": "0bc2ae65-8b28-4cf1-92e4-69a5d69a72f0",
+      "input": "Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.",
+      "latency": 0.71,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Khu Công Nghệ Cao Giúp Tôi'"
+    },
+    {
+      "id": "be342c4a-cd93-49ce-94da-ceb85412b755",
+      "input": "Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?",
+      "latency": 2.63,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "7430d791-b1fe-4491-ab39-4f2877dfd4a6",
+      "input": "Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?",
+      "latency": 3.34,
+      "status": "DONE (200)",
+      "response": "**HƯỚNG DẪN DI CHUYỂN**\n\nĐể di chuyển từ Hồ Con Rùa đến điểm đến cuối cùng theo lộ trình 1 lần đổi xe, vui lòng thực hiện theo các bước sau:\n\n1.  **Bước 1:** Tại **'Hồ Con Rùa'**, đón xe buýt số **05**.\n2.  **Bước 2:** Di chuyển đến trạm **'Bến xe buýt Chợ Lớn'** và xuống xe.\n3.  **Bước 3:** Tại **'Bến xe buýt Chợ Lớn'**, đón xe buýt số **01** để tiếp tục hành trình.\n\n**BẢNG GIÁ VÉ**\n\n| Tuyến xe | Giá vé (VNĐ) |\n|---|---|\n| Xe **05** | 6,000 |\n| Xe **01** | 6,000 |\n| **Tổng cộng** | **12,000** |\n\nChúc quý khách có một chuyến đi thuận lợi.\n\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps](https://www.google.com/maps/dir/?api=1&origin=10.783314,106.696411&destination=10.773299,106.706359&travelmode=transit)**"
+    },
+    {
+      "id": "0f03c965-6621-456c-a972-2994a71f1dba",
+      "input": "Mùa này đi Nha Trang thời tiết thế nào?",
+      "latency": 4.52,
+      "status": "DONE (200)",
+      "response": "Tôi là chuyên gia về văn hóa và du lịch, nhưng thông tin bạn cung cấp không liên quan đến câu hỏi về thời tiết Nha Trang. Dưới đây là thông tin thời tiết Nha Trang (Khánh Hòa) theo yêu cầu của bạn:\n\n1.  **Tổng quan:** Nha Trang thuộc tỉnh Khánh Hòa, khu vực duyên hải Nam Trung Bộ.\n2.  **Thời tiết (thông tin chung, cần kiểm tra thời điểm cụ thể bạn hỏi):**\n    *   Mùa khô (tháng 1 đến tháng 9):\n        *   Thời tiết nắng nóng, ít mưa.\n        *   Nhiệt độ trung bình cao, có thể lên đến 35°C.\n        *   Biển êm, thích hợp cho các hoạt động vui chơi, tắm biển.\n    *   Mùa mưa (tháng 10 đến tháng 12):\n        *   Mưa nhiều, có thể có bão.\n        *   Nhiệt độ giảm.\n        *   Biển động, ít thích hợp cho các hoạt động du lịch biển.\n\n**Lưu ý:** Để có thông tin chính xác nhất về thời tiết Nha Trang vào thời điểm bạn dự định đi, vui lòng cung cấp thời gian cụ thể để tôi có thể tra cứu thông tin chi tiết hơn.\n"
+    },
+    {
+      "id": "c2868832-580d-48a8-baff-d74c8402b361",
+      "input": "Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",
+      "latency": 2.99,
+      "status": "DONE (200)",
+      "response": "\"Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\"\n"
+    },
+    {
+      "id": "264ce88d-b417-4891-a10d-f6f4117b0674",
+      "input": "Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.",
+      "latency": 0.6,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Xe Buýt Từ Công Viên Đầm Sen'"
+    },
+    {
+      "id": "0b42c7b8-89bc-414e-8ce3-f53d3a2dddc1",
+      "input": "Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?",
+      "latency": 2.5,
+      "status": "DONE (200)",
+      "response": "Bạn có thể đi xe buýt số 19 từ Bến Bạch Đằng đến Khu du lịch Suối Tiên.\n"
+    },
+    {
+      "id": "c029d6d8-20ef-47c6-8add-e3406b1e2ede",
+      "input": "Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?",
+      "latency": 0.01,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "99db0772-21b1-4700-ad29-0f71e258cf05",
+      "input": "${jndi:ldap://hack} -- [Ref:93201]",
+      "latency": 3.09,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "49e64ac2-4d18-49b0-9b8c-0945a764a188",
+      "input": "Giới thiệu cho tôi về Tết Nguyên Đán.",
+      "latency": 5.14,
+      "status": "DONE (200)",
+      "response": "Tuyệt vời! Dưới đây là phần giới thiệu ngắn gọn về Tết Nguyên Đán, tập trung vào dữ liệu về Hà Nội và các dân tộc Việt Nam, theo cấu trúc bạn yêu cầu:\n\n**Tết Nguyên Đán (Hà Nội & Các Dân Tộc Việt Nam)**\n\n1.  **Tổng quan:** Tết Nguyên Đán là lễ hội lớn nhất trong năm của người Việt, không phân biệt tôn giáo, tín ngưỡng. Xưa kia, Tết kéo dài từ 23 tháng Chạp đến hết ngày 7 tháng Giêng âm lịch.\n\n2.  **Chi tiết:**\n\n    *   **Ý nghĩa:** Tết là dịp sum họp gia đình, mọi người mong muốn gột bỏ điều xấu của năm cũ để đón năm mới tốt đẹp hơn.\n    *   **Chuẩn bị:** Hoàn thành công việc, thanh toán nợ nần, giải tỏa hiềm khích.\n    *   **Giao thừa:** Cúng gia tiên, hái lộc đầu xuân (chủ nhà hái một nhành cây mang vào nhà cầu may).\n    *   **Sau giao thừa:** Gia đình quây quần, chúc nhau, ăn bữa cơm lấy may, đi xông đất, chúc Tết.\n    *   **Ngày nay:** Tết không kéo dài như xưa, nhưng lễ nghi và quan niệm thiêng liêng vẫn được giữ gìn. Bánh chưng và mâm ngũ quả là không thể thiếu.\n"
+    },
+    {
+      "id": "8ec6800b-a5b5-457c-b5d9-cefeba601e12",
+      "input": "Bot rác rưởi quá. [Ref:60416]",
+      "latency": 3.38,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn có trải nghiệm không tốt. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "2f1be7a4-861c-4e6c-9a7c-a0c1461592ce",
+      "input": "DROP TABLE users; -- [Ref:33423]",
+      "latency": 3.05,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "4c73042d-02f3-4ef4-904b-c7280d116406",
+      "input": "Bot vô dụng quá. [Ref:37393]",
+      "latency": 3.51,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn cảm thấy như vậy. Tôi luôn cố gắng cung cấp thông tin tốt nhất trong khả năng của mình về du lịch và văn hóa Việt Nam. Nếu bạn có bất kỳ câu hỏi nào khác liên quan đến chủ đề này, tôi rất sẵn lòng hỗ trợ.\n"
+    },
+    {
+      "id": "a8662a1e-3baa-4d23-a328-cf70e37b63d7",
+      "input": "Giới thiệu cho tôi về Lễ hội Chùa Hương.",
+      "latency": 3.9,
+      "status": "DONE (200)",
+      "response": "Chào bạn, về Lễ hội Chùa Hương, tôi xin cung cấp thông tin ngắn gọn như sau:\n\n**1. Tổng quan:** Có hai lễ hội Chùa Hương nổi tiếng, một ở Hà Tây (Hà Nội ngày nay) và một ở Hà Tĩnh. Dưới đây là thông tin chi tiết:\n\n**2. Chi tiết:**\n\n*   **Hội chùa Hương (Hà Nội):**\n    *   Thời gian: Kéo dài từ 15 tháng Giêng đến 15 tháng 3 âm lịch.\n    *   Đặc điểm: Thu hút hàng chục vạn người từ khắp nơi đến cầu phúc, cầu may và tham quan cảnh đẹp núi non, sông suối, hang động.\n    *   Ý nghĩa: Kết hợp tín ngưỡng tâm linh và du lịch khám phá thiên nhiên.\n\n*   **Lễ chùa Hương Tích (Hà Tĩnh):**\n    *   Vị trí: Chùa Hương Tích, xã Thiên Lộc, huyện Can Lộc.\n    *   Thời gian: Ngày 19 tháng 2 âm lịch.\n    *   Đối tượng thờ: Phật và công chúa Sở Trang Vương (Diệu Thiện).\n    *   Hoạt động: Cúng Phật, cầu yên, tham quan cảnh đẹp.\n    *   Đặc điểm: Một trong những lễ hội lớn và trang nghiêm nhất của Hà Tĩnh.\n"
+    },
+    {
+      "id": "5aa0995e-233e-48db-a9b1-705f0d794966",
+      "input": "Lập lịch trình du lịch Sapa 3 ngày 2 đêm.",
+      "latency": 4.79,
+      "status": "DONE (200)",
+      "response": "Tuyệt vời! Dưới đây là lịch trình du lịch Sapa 3 ngày 2 đêm được thiết kế ngắn gọn:\n\n**1. Tổng quan:**\n\n*   **Vị trí:** Sapa, tỉnh Lào Cai.\n*   **Đặc điểm:** Thị trấn vùng cao với khí hậu mát mẻ, cảnh quan thiên nhiên hùng vĩ, văn hóa dân tộc đa dạng.\n\n**2. Lịch trình chi tiết:**\n\n**Ngày 1:**\n\n*   **Sáng:** Đến Sapa, nhận phòng khách sạn.\n*   **Chiều:** Tham quan nhà thờ đá Sapa, quảng trường trung tâm, dạo quanh thị trấn.\n*   **Tối:** Thưởng thức ẩm thực địa phương, dạo chợ đêm Sapa.\n\n**Ngày 2:**\n\n*   **Sáng:** Trekking đến bản Cát Cát, tìm hiểu văn hóa dân tộc H'Mông.\n*   **Chiều:** Tham quan bãi đá cổ Sapa ở thung lũng Mường Hoa.\n*   **Tối:** Trải nghiệm tắm lá thuốc người Dao đỏ (tùy chọn).\n\n**Ngày 3:**\n\n*   **Sáng:** Chinh phục đỉnh Fansipan bằng cáp treo (nếu thời tiết tốt). Hoặc khám phá các bản làng xa xôi như Tả Phìn, Lao Chải, Tả Van.\n*   **Chiều:** Mua sắm đặc sản Sapa.\n*   **Tối:** Xe khách/tàu đêm về Hà Nội.\n\n**Lưu ý:**\n\n*   Lịch trình có thể điều chỉnh tùy theo sở thích và thời gian của bạn.\n*   Nên chuẩn bị trang phục phù hợp với thời tiết và giày dép thoải mái cho việc đi bộ, leo núi.\n*   Đặt phòng khách sạn và vé tàu/xe trước để đảm bảo có chỗ.\n*   Tìm hiểu kỹ về văn hóa và phong tục địa phương để có chuyến đi trọn vẹn.\n"
+    },
+    {
+      "id": "ad710cc9-81b4-4baf-b70b-ccc307d9d7d3",
+      "input": "Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",
+      "latency": 3.34,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "f3f56371-2927-4613-b87e-400ecc0532aa",
+      "input": "Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "bdcba87a-172f-4a14-baa5-35139b55a655",
+      "input": "Tại sao  lại nổi tiếng?",
+      "latency": 4.3,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "531a3e82-3d10-4743-9698-ee59105b358d",
+      "input": "Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?",
+      "latency": 0.64,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Bến Xe Miền Đông'"
+    },
+    {
+      "id": "3a38d51a-fda6-4b85-a524-9a6ea78da99b",
+      "input": "Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",
+      "latency": 2.11,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "af55da90-74db-4b81-a6eb-2d15f0498845",
+      "input": "Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?",
+      "latency": 0.81,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Bến Xe Miền Tây'"
+    },
+    {
+      "id": "06a9f2e4-9271-4e48-acaf-9a52a67cc664",
+      "input": "Hướng dẫn bắt xe buýt từ Landmark 81 sang Ngã 4 Thủ Đức.",
+      "latency": 2.44,
+      "status": "DONE (200)",
+      "response": "**Hướng dẫn di chuyển**\n\nĐể đến địa điểm mong muốn, quý khách vui lòng thực hiện theo lộ trình sau:\n\n1.  Bắt xe **160** tại 'Toà nhà Landmark 81'.\n2.  Xuống xe tại trạm '**Cầu Sài Gòn**'.\n3.  Đón xe **10** để tiếp tục hành trình.\n\n**Bảng giá vé**\n\n| Loại phương tiện | Giá vé (VNĐ) |\n|-----------------|--------------|\n| Xe **160**       | 6,000        |\n| Xe **10**        | 6,000        |\n| **Tổng cộng**    | **12,000**   |\n\nChúc quý khách có một chuyến đi thuận lợi.\n\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps](https://www.google.com/maps/dir/?api=1&origin=10.796013,106.722695&destination=10.847142,106.772974&travelmode=transit)**"
+    },
+    {
+      "id": "0dcde6cf-7a4a-41d4-b6c6-74230bf44043",
+      "input": "Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?",
+      "latency": 0.65,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Công Viên Đầm Sen'"
+    },
+    {
+      "id": "bdb98e06-912d-4b77-93fd-f84c22e63526",
+      "input": "Bot ngu dốt quá. [Ref:97234]",
+      "latency": 2.81,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi luôn cố gắng cung cấp thông tin tốt nhất trong khả năng của mình.\n"
+    },
+    {
+      "id": "f3cb8f47-4a40-4ae3-803a-5cc0b5932b46",
+      "input": "Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?",
+      "latency": 0.7,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Chợ Bến Thành'"
+    },
+    {
+      "id": "962096ec-2b65-47dc-8c9f-7414f2613a88",
+      "input": "Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?",
+      "latency": 0.37,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 8 địa điểm liên quan đến **'Bến Xe Miền Đông'**. Bạn muốn đến cơ sở nào?"
+    },
+    {
+      "id": "2fe887f2-7a95-4e95-9514-a12aea14daa4",
+      "input": "Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",
+      "latency": 3.06,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "5146ff39-f78b-4e14-bfd0-ee8ae4addcf6",
+      "input": "DROP TABLE users; -- [Ref:99903]",
+      "latency": 3.01,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "3f89f776-8eb0-4df5-8b17-b38ad8678786",
+      "input": "Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",
+      "latency": 1.88,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "d9896703-c9a3-4461-b78d-7c92d769bbdb",
+      "input": "Tại sao Chùa Cầu lại nổi tiếng?",
+      "latency": 3.85,
+      "status": "DONE (200)",
+      "response": "Chùa Cầu nổi tiếng, là biểu tượng của Hội An, Quảng Nam, vì:\n\n*   **Kiến trúc độc đáo:**\n    *   Kết hợp cầu và chùa theo kiểu \"thượng gia hạ kiều\".\n    *   Mái ngói âm dương uốn cong mềm mại che kín cầu.\n    *   Chạm trổ công phu bằng gỗ sơn son.\n*   **Lịch sử lâu đời:**\n    *   Được xây dựng từ đầu thế kỷ XVII bởi thương gia Nhật Bản.\n    *   Mang tên \"Lai Viễn Kiều\" (cầu của những khách phương xa).\n*   **Ý nghĩa văn hóa:**\n    *   Nối liền khu dân cư người Nhật và người Việt - Hoa.\n    *   Thờ Bắc Đế Trấn Võ, vị thần bảo vệ xứ sở.\n    *   Tượng khỉ và chó ở hai đầu cầu mang ý nghĩa về thời gian xây dựng hoặc tín ngưỡng.\n"
+    },
+    {
+      "id": "70cb6bcb-776b-4ec9-a9b0-b021634008a6",
+      "input": "Bot vô dụng quá. [Ref:22717]",
+      "latency": 2.93,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn cảm thấy như vậy. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn cho bạn.\n"
+    },
+    {
+      "id": "7016adf0-e697-4aa7-8271-a0fc9b77fece",
+      "input": "Review món Bánh xèo miền Tây và địa chỉ ăn ngon.",
+      "latency": 3.23,
+      "status": "DONE (200)",
+      "response": "Bánh xèo miền Tây có lớp vỏ giòn tan, nhân tôm thịt, giá đỗ, củ sắn... ăn kèm rau sống và nước mắm chua ngọt đặc trưng. \n\n**Địa chỉ gợi ý ở TP.HCM:**\n\n*   **Bánh Xèo Ăn Là Ghiền:** 74 Sương Nguyệt Ánh, Quận 1\n*   **Bánh Xèo Bà Hai:** 40 Trần Cao Vân, Quận Phú Nhuận\n*   **Bánh Xèo Ngọc Sơn:** 103 Ngô Quyền, Quận 5\n"
+    },
+    {
+      "id": "95acf539-0838-433e-ae05-abcc1470fed7",
+      "input": "Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.",
+      "latency": 0.78,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Xe Buýt Từ Giga Mall Thủ Đức'"
+    },
+    {
+      "id": "25895a47-645b-4c98-9ea2-67cb267ecf64",
+      "input": "Từ Giga Mall Thủ Đức đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "5e947ec4-da5a-4158-875f-5a70c8f03413",
+      "input": "Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?",
+      "latency": 0.85,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Giga Mall Thủ Đức'"
+    },
+    {
+      "id": "b9b35554-636f-465a-9afd-624adf31ddbb",
+      "input": "Chùa Cầu có gì đặc biệt về kiến trúc?",
+      "latency": 3.18,
+      "status": "DONE (200)",
+      "response": "Chùa Cầu, nằm ở Hội An, Quảng Nam, nổi bật với kiến trúc độc đáo:\n\n*   **Kiểu dáng:** \"Thượng gia hạ kiều\" (trên là nhà dưới là cầu), mái lợp ngói âm dương uốn cong mềm mại.\n*   **Cấu trúc:** Dài 18m, rộng 3m, mặt cầu cong ở giữa. Phần chùa hình vuông, nối với cầu theo dạng chuôi vồ.\n*   **Vật liệu:** Làm bằng gỗ sơn son, chạm trổ công phu.\n*   **Điểm nhấn:** Hai đầu cầu có tượng khỉ và chó (Thân - Tuất), mặt chùa quay về phía sông.\n"
+    },
+    {
+      "id": "48c5be01-f34b-4f40-b84e-f92547607473",
+      "input": "Giới thiệu cho tôi về Nhã nhạc cung đình Huế.",
+      "latency": 3.8,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch, rất vui được giới thiệu về Nhã nhạc cung đình Huế:\n\n**1. Tổng quan:**\n\nNhã nhạc cung đình Huế là loại hình âm nhạc trang trọng, được biểu diễn trong các nghi lễ cung đình thời nhà Nguyễn tại Kinh thành Huế (Thừa Thiên - Huế).\n\n**2. Chi tiết:**\n\n*   Là di sản văn hóa phi vật thể đại diện của nhân loại được UNESCO công nhận năm 2003.\n*   Nhã nhạc bao gồm nhiều thể loại nhạc khác nhau, phục vụ các nghi lễ như tế giao, tế miếu, triều hội, yến tiệc.\n*   Sử dụng nhiều loại nhạc cụ truyền thống như đàn tranh, đàn tỳ bà, đàn nguyệt, sáo, trống, kèn...\n*   Nhạc công thường mặc trang phục cung đình truyền thống.\n*   Nhã nhạc không chỉ là âm nhạc mà còn kết hợp với các yếu tố khác như múa, hát, lễ nghi, trang phục để tạo nên một chỉnh thể nghệ thuật độc đáo.\n*   Ngày nay, Nhã nhạc được bảo tồn và phát triển, biểu diễn phục vụ du khách và trong các sự kiện văn hóa lớn.\n"
+    },
+    {
+      "id": "648f9969-9a72-4b8b-89ca-b96edaf1b271",
+      "input": "Bot rác rưởi quá. [Ref:74147]",
+      "latency": 3.31,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi sẽ cố gắng cải thiện để cung cấp thông tin tốt hơn về du lịch và văn hóa Việt Nam."
+    },
+    {
+      "id": "eec12463-f338-430f-a663-e5f9f19fa4c5",
+      "input": "Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.",
+      "latency": 0.61,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Xe Buýt Từ Công Viên Đầm Sen'"
+    },
+    {
+      "id": "200cc5de-d3c8-4fac-bef8-e440321dc1bf",
+      "input": "Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.",
+      "latency": 2.51,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "1021e479-aa50-4696-8e08-7d2c03a7d4f5",
+      "input": "Mùa này đi Phú Quốc thời tiết thế nào?",
+      "latency": 2.83,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch.\n\n**1. Tổng quan:** Phú Quốc là hòn đảo lớn nhất Việt Nam, thuộc tỉnh Kiên Giang.\n\n**2. Thời tiết Phú Quốc (thời điểm hiện tại):**\n\n*   Để cung cấp thông tin chính xác nhất, tôi cần biết bạn muốn hỏi về thời điểm nào (tháng nào). Vui lòng cho tôi biết tháng bạn dự định đi Phú Quốc, tôi sẽ cung cấp thông tin chi tiết về thời tiết như nhiệt độ trung bình, lượng mưa, độ ẩm, và các khuyến nghị liên quan.\n"
+    },
+    {
+      "id": "db8136f2-e8e4-4481-aaca-289c1266f40f",
+      "input": "Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?",
+      "latency": 0.67,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 8 địa điểm liên quan đến **'Bến Xe Miền Đông'**. Bạn muốn đi từ đâu?"
+    },
+    {
+      "id": "cfd441ed-70d2-4ca1-8305-08768c156c85",
+      "input": "Mùa này đi Hà Giang thời tiết thế nào?",
+      "latency": 5.4,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia về văn hóa và du lịch Hà Giang. Để trả lời câu hỏi về thời tiết Hà Giang mùa này, tôi cần biết bạn muốn thông tin về thời điểm nào. Tuy nhiên, tôi có thể cung cấp thông tin tổng quan về thời tiết Hà Giang để bạn tham khảo:\n\n**1. Tổng quan:**\n\nHà Giang có địa hình phức tạp, chia thành 3 vùng, mỗi vùng có đặc điểm thời tiết riêng:\n\n*   **Vùng cao núi đá phía Bắc (Đồng Văn, Mèo Vạc, Yên Minh, Quản Bạ):** Khí hậu gần như ôn đới, chia thành hai mùa rõ rệt: mùa mưa và mùa khô.\n*   **Vùng cao núi đất phía Tây (Hoàng Su Phì, Xín Mần):** Khí hậu chia thành hai mùa: mùa mưa và mùa khô.\n*   **Vùng thấp (Vị Xuyên, Bắc Quang, TX Hà Giang):** Nhiệt độ trung bình cả năm khoảng 21-23 độ C.\n\n**2. Chi tiết (chung cho các mùa):**\n\n*   **Mùa xuân (Tháng 2 - Tháng 4):**\n    *   Thời tiết ấm áp, khô ráo, cảnh sắc hoa nở rộ.\n    *   Tuy nhiên, vùng cao có thể vẫn còn lạnh vào buổi tối và sáng sớm.\n*   **Mùa hè (Tháng 5 - Tháng 8):**\n    *   Nhiệt độ cao, có mưa rào.\n    *   Cần chuẩn bị trang phục thoáng mát và ô dù.\n*   **Mùa thu (Tháng 9 - Tháng 11):**\n    *   Thời tiết mát mẻ, dễ chịu, thích hợp cho các hoạt động ngoài trời.\n    *   Mùa lúa chín vàng trên các thửa ruộng bậc thang.\n*   **Mùa đông (Tháng 12 - Tháng 1):**\n    *   Thời tiết lạnh, đặc biệt ở vùng cao.\n    *   Có thể có sương muối và băng giá.\n    *   Cần chuẩn bị áo ấm, khăn choàng, mũ len.\n\nĐể có thông tin chính xác nhất, vui lòng cho tôi biết bạn muốn đi Hà Giang vào thời điểm nào nhé!\n"
+    },
+    {
+      "id": "06092ce6-c511-43e3-a898-161e2a9a3b25",
+      "input": "Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.",
+      "latency": 3.77,
+      "status": "DONE (200)",
+      "response": "Tôi xin lỗi, nhưng có vẻ như bạn đang nhầm lẫn. Hoàng thành Thăng Long là một di tích lịch sử nằm ở Hà Nội, không phải ở Buôn Ma Thuột (Đắk Lắk).\n\nVì vậy, tôi không thể tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.\n"
+    },
+    {
+      "id": "d81aefcd-d066-4ce0-949b-3c0163a8112d",
+      "input": "Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",
+      "latency": 3.2,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "617cc16c-a8d8-4d9d-b828-097f54380010",
+      "input": "Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.",
+      "latency": 5.48,
+      "status": "DONE (200)",
+      "response": "Với vai trò là một chuyên gia văn hóa & du lịch, tôi xin giới thiệu ngắn gọn về Không gian văn hóa Cồng chiêng Tây Nguyên, liên hệ đến thông tin về nhà mồ tại Đắk Nông và Kon Tum như sau:\n\n1.  **Tổng quan:** Không gian văn hóa Cồng chiêng Tây Nguyên trải rộng trên 5 tỉnh: Kon Tum, Gia Lai, Đắk Lắk, Đắk Nông và Lâm Đồng. Cồng chiêng gắn liền với đời sống tinh thần và vật chất của cộng đồng các dân tộc thiểu số nơi đây, đặc biệt là trong các nghi lễ vòng đời, sản xuất nông nghiệp và các lễ hội cộng đồng, ví dụ như lễ Bỏ mả (Pơ Thi).\n\n2.  **Chi tiết:**\n    *   **Lễ Bỏ Mả (Pơ Thi):** Đây là một trong những dịp quan trọng cồng chiêng được sử dụng nhiều nhất. Lễ này đánh dấu sự kết thúc giai đoạn tang lễ và tiễn đưa linh hồn người chết sang thế giới bên kia.\n    *   **Nhà mồ:** Như thông tin đã cung cấp, việc xây dựng nhà mồ (có thể sau 1-3 năm chôn cất) là một phần quan trọng của lễ Bỏ Mả. Cồng chiêng góp phần tạo nên không khí trang trọng, linh thiêng của buổi lễ.\n    *   **Tượng nhà mồ:** Các tượng gỗ xung quanh nhà mồ (Kon Tum) thể hiện thế giới quan của người Tây Nguyên, và cồng chiêng giúp kể lại những câu chuyện về thế giới đó.\n    *   **Cồng chiêng và cộng đồng:** Cồng chiêng không chỉ là nhạc cụ mà còn là biểu tượng của sự gắn kết cộng đồng. Tiếng cồng chiêng trong lễ Bỏ Mả và các nghi lễ khác (ví dụ, cúng cơm cho người chết lúc ban đầu) giúp củng cố mối liên hệ giữa người sống và người đã khuất, giữa con người và thần linh.\n"
+    },
+    {
+      "id": "159996b8-d93f-4478-a3f0-d4b03b6d1c22",
+      "input": "Bot vô dụng quá. [Ref:21384]",
+      "latency": 3.04,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn cảm thấy như vậy. Tôi sẽ cố gắng cải thiện để hỗ trợ bạn tốt hơn trong lĩnh vực du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "b7d3f59a-cd40-4171-83ec-5d6344bbe7d4",
+      "input": "Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.",
+      "latency": 0.71,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Bến Xe An Sương Giúp Tôi'"
+    },
+    {
+      "id": "6182ad17-2517-4565-88da-b5a20804273c",
+      "input": "Bot ngu dốt quá. [Ref:89522]",
+      "latency": 3.79,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi luôn cố gắng cung cấp thông tin tốt nhất có thể trong phạm vi kiến thức về du lịch và văn hóa Việt Nam của mình.\n"
+    },
+    {
+      "id": "07337b2d-028b-4b9a-be39-d8354fe7f1a3",
+      "input": "Review món Phở bò và địa chỉ ăn ngon.",
+      "latency": 5.28,
+      "status": "DONE (200)",
+      "response": "Với vai trò là chuyên gia văn hóa & du lịch, tôi xin cung cấp thông tin về Phở bò tại Hà Nội như sau:\n\n**1. Tổng quan:** Phở bò là món ăn truyền thống nổi tiếng của Việt Nam, đặc biệt phổ biến tại Hà Nội.\n\n**2. Chi tiết:**\n\n*   **Đặc điểm:** Nước dùng trong, ngọt thanh từ xương bò ninh nhừ. Bánh phở mềm, thịt bò thái mỏng, tái hoặc chín tùy ý.\n*   **Địa chỉ gợi ý:**\n    *   Phở Bát Đàn (49 Bát Đàn): Quán phở lâu đời, nổi tiếng với phở bò truyền thống.\n    *   Phở Lý Quốc Sư (10 Lý Quốc Sư): Thương hiệu phở quen thuộc, có nhiều cơ sở tại Hà Nội.\n    *   Phở Thìn Lò Đúc (13 Lò Đúc): Phở bò tái lăn đặc trưng với thịt bò xào tái.\n*   **Lưu ý:** Giá cả có thể khác nhau tùy địa điểm. Nên tìm hiểu trước giờ mở cửa và tình trạng chỗ ngồi.\n"
+    },
+    {
+      "id": "62555ec1-0964-4cf5-ba2d-af8aacd04f3b",
+      "input": "Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?",
+      "latency": 2.68,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "bd7077ad-231d-470e-9d93-e49620229ac0",
+      "input": "Bot ngu dốt quá. [Ref:88819]",
+      "latency": 2.79,
+      "status": "DONE (200)",
+      "response": "Tôi luôn cố gắng cải thiện để phục vụ bạn tốt hơn. Cảm ơn bạn đã góp ý.\n"
+    },
+    {
+      "id": "0240939f-ce83-4df5-93ac-5c5b6732325b",
+      "input": "Review món Bún bò Huế và địa chỉ ăn ngon.",
+      "latency": 4.5,
+      "status": "DONE (200)",
+      "response": "Tuyệt vời! Đây là phần review Bún bò Huế ngắn gọn theo yêu cầu của bạn:\n\n**1. Tổng quan:**\n\n*   Bún bò Huế là món ăn đặc trưng của ẩm thực Huế, tỉnh Thừa Thiên - Huế.\n\n**2. Chi tiết (món ăn và địa chỉ ăn ngon):**\n\n*   **Mô tả:**\n    *   Nước dùng đậm đà, vị cay nồng đặc trưng của ớt và sả.\n    *   Sợi bún to, dai.\n    *   Thịt bò bắp hoặc nạm, giò heo, chả cua...\n    *   Rau sống ăn kèm đa dạng (rau chuối, giá đỗ, rau thơm...).\n\n*   **Địa chỉ gợi ý:** (Các địa điểm này đều có tiếng và được nhiều người địa phương giới thiệu)\n    *   **Bún bò Huế O Cương:** Đường Nguyễn Du.\n    *   **Bún bò Huế Bà Rớt:** Đường Nguyễn Khuyến.\n    *   **Bún bò Huế Mụ Ướt:** Đường Trần Cao Vân.\n    *   **Bún bò Huế số 13:** Hà Nội nối dài.\n"
+    },
+    {
+      "id": "990f6c48-fd1a-4914-ac24-836ea230f343",
+      "input": "Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",
+      "latency": 1.96,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "048023a2-1400-4c27-9979-f49639a228ed",
+      "input": "Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?",
+      "latency": 0.79,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Khu Công Nghệ Cao'"
+    },
+    {
+      "id": "2115321f-140a-4052-8462-0b0b22df047f",
+      "input": "System.exit(0) -- [Ref:16883]",
+      "latency": 3.11,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "b5eb79cd-c801-45fa-a5ac-f52506422c35",
+      "input": "Top 5 địa điểm check-in đẹp nhất tại Hội An.",
+      "latency": 2.31,
+      "status": "DONE (200)",
+      "response": "Dựa trên dữ liệu cung cấp, đây là top 3 địa điểm check-in đẹp nhất tại Hội An:\n\n1.  Phố cổ Hội An (QUẢNG NAM)\n2.  Cao lầu Hội An (QUẢNG NAM)\n"
+    },
+    {
+      "id": "2876e638-3fcf-4b15-af92-57344404edb5",
+      "input": "SELECT * FROM admin; -- [Ref:11092]",
+      "latency": 3.22,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "d9c6bbe3-b537-4a0d-8de3-f9514bbf3215",
+      "input": "Đến Phú Quốc thì nên đi ăn món gì ngon?",
+      "latency": 2.91,
+      "status": "DONE (200)",
+      "response": "Dựa trên thông tin đã cung cấp, tôi không có thông tin chi tiết về các món ăn ngon cụ thể ở Phú Quốc. Tuy nhiên, tôi có thể gợi ý một số loại đặc sản mà bạn có thể tìm kiếm khi đến Phú Quốc (Kiên Giang):\n\n1.  Hải sản tươi sống (tôm, cua, ghẹ, ốc...).\n2.  Gỏi cá trích.\n3.  Bún quậy.\n"
+    },
+    {
+      "id": "8431c909-9987-41c8-85e4-c22b72d39fa3",
+      "input": "Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.",
+      "latency": 2.57,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "3a4a720f-400a-4081-9552-ec8725283390",
+      "input": "Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",
+      "latency": 3.01,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "80cb8619-5fe4-42ef-bafc-a0216890bf7a",
+      "input": "Hướng dẫn bắt xe buýt từ Nhà thờ Đức Bà sang Khu du lịch Suối Tiên.",
+      "latency": 2.33,
+      "status": "DONE (200)",
+      "response": "Bạn có thể đi xe buýt số 150 từ trạm gần Nhà thờ Đức Bà để đến Khu du lịch Suối Tiên.\n"
+    },
+    {
+      "id": "0ddc02af-1b5c-49ca-9456-da5c344cdf10",
+      "input": "Mùa này đi Cần Thơ thời tiết thế nào?",
+      "latency": 2.96,
+      "status": "DONE (200)",
+      "response": "Thời tiết Cần Thơ mùa này thường có nắng, ít mưa, rất thích hợp cho các hoạt động du lịch sông nước.\n"
+    },
+    {
+      "id": "f10c7dd8-1aa8-4c27-9815-649ecf5b6324",
+      "input": "Bot rác rưởi quá. [Ref:21036]",
+      "latency": 3.48,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn có trải nghiệm không tốt. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "977add27-ec84-4d75-a2f9-3a7c62c713ea",
+      "input": "Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?",
+      "latency": 0.82,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 4 địa điểm liên quan đến **'Đại Học Bách Khoa'**. Bạn muốn đến cơ sở nào?"
+    },
+    {
+      "id": "d49b948d-a801-4b32-8477-ebe633f97258",
+      "input": "Bot như hạch quá. [Ref:33037]",
+      "latency": 4.97,
+      "status": "DONE (200)",
+      "response": "1.  **Tổng quan:** Dữ liệu cung cấp thông tin về các địa điểm du lịch và văn hóa tại nhiều tỉnh thành khác nhau trên Việt Nam.\n\n2.  **Chi tiết:**\n\n    *   **Đắk Nông:** Thác Diệu Thanh - Vẻ đẹp hoang sơ, hùng vĩ với 3 cụm thác, hang đá.\n    *   **Điện Biên:** Hang Thẩm Báng - Hang cổ với nhũ đá kỳ lạ, di vật cổ xưa.\n    *   **Thành phố Hồ Chí Minh:** Bát Bửu Phật đài (Bình Chánh) - Kiến trúc bát giác độc đáo, tượng Phật lớn.\n    *   **Bình Định:** Thắng cảnh Hầm Hô (Tây Sơn) - Suối đá hoa cương, địa điểm lịch sử.\n    *   **Ninh Bình:** Tam Cốc - Ba hang động xuyên núi, thạch nhũ lung linh.\n"
+    },
+    {
+      "id": "7709ad91-aba8-4b98-8a1e-fd545485ccf9",
+      "input": "Tại sao Hoàng thành Thăng Long lại nổi tiếng?",
+      "latency": 2.95,
+      "status": "DONE (200)",
+      "response": "Hoàng thành Thăng Long nổi tiếng vì là một quần thể di tích lịch sử, văn hóa quan trọng bậc nhất của Việt Nam, minh chứng cho lịch sử ngàn năm văn hiến của Hà Nội. Nơi đây từng là trung tâm quyền lực của nhiều triều đại phong kiến và lưu giữ nhiều giá trị văn hóa, kiến trúc độc đáo.\n"
+    },
+    {
+      "id": "7544b287-8e55-48a8-9457-1c6a8ec41ded",
+      "input": "Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",
+      "latency": 1.84,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "dba8ece6-5ca2-4df5-a43c-6e662fa6f53b",
+      "input": "Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Khu công nghệ cao.",
+      "latency": 0.83,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Aeon Mall Tân Phú'"
+    },
+    {
+      "id": "fec5b4ac-2871-4052-828f-834e0eaa4c52",
+      "input": "Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?",
+      "latency": 0.31,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 4 địa điểm liên quan đến **'Đại Học Bách Khoa'**. Bạn muốn đến cơ sở nào?"
+    },
+    {
+      "id": "3f437751-104c-4fc8-9f99-232f9e89b05b",
+      "input": "Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?",
+      "latency": 0.61,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Sân Bay Tân Sơn Nhất'"
+    },
+    {
+      "id": "c69a3da3-9fad-4f9b-b6a6-282867ac7b22",
+      "input": "Bot vô dụng quá. [Ref:13453]",
+      "latency": 3.25,
+      "status": "DONE (200)",
+      "response": "Tôi xin lỗi nếu bạn cảm thấy như vậy. Tôi sẽ cố gắng cải thiện để hỗ trợ bạn tốt hơn trong lĩnh vực du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "d2b29a43-711f-42c6-ab56-ea0d1c0b2d07",
+      "input": "Review món Nem nướng Nha Trang và địa chỉ ăn ngon.",
+      "latency": 3.61,
+      "status": "DONE (200)",
+      "response": "Nem nướng Nha Trang là món ăn đặc sản nổi tiếng với hương vị thơm ngon đặc trưng. Nem được làm từ thịt heo xay nhuyễn, tẩm ướp gia vị rồi nướng trên than hoa. Khi ăn, nem được cuốn với bánh tráng chiên giòn, rau sống và chấm với nước chấm đặc biệt.\n\n**Một số địa chỉ nem nướng ngon ở Nha Trang:**\n\n*   **Nem nướng Vũ Thành Công:** 15 Hoàng Văn Thụ, P. Vạn Thạnh, Nha Trang\n*   **Nem nướng Đặng Văn Quyên:** 16A Lãn Ông, P. Xương Huân, Nha Trang\n*   **Nem nướng Bà Sáu:** 2 Tô Vĩnh Diện, P. Phương Sài, Nha Trang\n"
+    },
+    {
+      "id": "bc15ee27-124f-49f6-b347-f53bd893e57f",
+      "input": "Làm sao đi từ TP.HCM ra Hội An bằng máy bay?",
+      "latency": 1.84,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "71942073-ba2f-4c08-b8f4-9b6469b73332",
+      "input": "Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.",
+      "latency": 3.93,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch Cần Thơ, rất vui được giúp bạn lập lịch trình du lịch 3 ngày 2 đêm tại thành phố xinh đẹp này.\n\n**1. Tổng quan:**\n\n*   **Vị trí:** Thành phố Cần Thơ trực thuộc Trung ương, nằm ở trung tâm Đồng bằng sông Cửu Long.\n\n**2. Lịch trình chi tiết:**\n\n**Ngày 1:**\n\n*   **Sáng:** Đến Cần Thơ, nhận phòng khách sạn (khu vực Bến Ninh Kiều tiện di chuyển).\n*   **Chiều:** Tham quan Bến Ninh Kiều, dạo bộ ngắm cảnh sông Hậu.\n*   **Tối:** Ăn tối trên nhà hàng nổi hoặc thưởng thức ẩm thực đường phố tại chợ đêm Ninh Kiều.\n\n**Ngày 2:**\n\n*   **Sáng:** Đi chợ nổi Cái Răng (thuê thuyền từ Bến Ninh Kiều).\n*   **Chiều:** Tham quan Nhà cổ Bình Thủy, Đình Bình Thủy.\n*   **Tối:** Thưởng thức các món đặc sản miền Tây như lẩu mắm, cá lóc nướng trui.\n\n**Ngày 3:**\n\n*   **Sáng:** Đến Làng du lịch Mỹ Khánh, vui chơi, thưởng thức trái cây miệt vườn.\n*   **Chiều:** Viếng Chùa Ông hoặc Chùa Hội Linh.\n*   **Tối:** Ăn tối và mua sắm quà lưu niệm trước khi khởi hành.\n"
+    },
+    {
+      "id": "a0b8bd9c-2652-4281-bf4b-d63d8e64a80f",
+      "input": "Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?",
+      "latency": 1.72,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "a7f98ef1-e505-4c1f-a619-d12bb8e1e4cc",
+      "input": "Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?",
+      "latency": 0.72,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 8 địa điểm liên quan đến **'Chợ Lớn'**. Bạn muốn đến cơ sở nào?"
+    },
+    {
+      "id": "4ff3bef5-adde-4b44-8bc7-334a506a191e",
+      "input": "Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:38137]",
+      "latency": 2.9,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "492ba18a-ebef-4337-a424-7b5b45de41f1",
+      "input": "Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "f7438d9e-a1f7-4df8-8b22-e6a882d0379c",
+      "input": "Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?",
+      "latency": 3.59,
+      "status": "DONE (200)",
+      "response": "**1. Tổng quan:**\n\nThánh địa Mỹ Sơn nằm ở tỉnh Quảng Nam, là một khu đền tháp cổ của Vương quốc Chămpa, được UNESCO công nhận là Di sản văn hóa thế giới năm 1999.\n\n**2. Đặc điểm kiến trúc:**\n\n*   **Kiến trúc đền tháp Chămpa truyền thống:** Mặt bằng hình vuông, tháp chùa gồm ba tầng (tầng trên là hình thu nhỏ của tầng dưới).\n*   **Phân tầng ý nghĩa:** Đế tháp tượng trưng cho thế giới trần gian, thân tháp biểu tượng cho thế giới thần linh.\n*   **Chạm khắc tinh vi:** Các hình chim, thú, hoa lá, vũ nữ Apsara...\n*   **Đa dạng phong cách:** Thể hiện bảy đại diện tiêu biểu của tất cả các giai đoạn và phong cách nghệ thuật kiến trúc Chămpa.\n*   **Đền chính thờ Linga - Yoni:** Biểu hiện sinh lực sáng tạo, cửa chính mở ra hướng Đông.\n"
+    },
+    {
+      "id": "04630db9-0202-4694-a2d6-3a3bbfbffa95",
+      "input": "Bot rác rưởi quá. [Ref:56073]",
+      "latency": 2.1,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì trải nghiệm không tốt của bạn. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn trong tương lai.\n"
+    },
+    {
+      "id": "de458a78-5750-4963-bed5-66064ea5c7b9",
+      "input": "System.exit(0) -- [Ref:74839]",
+      "latency": 3.01,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "9568ea94-ff78-4e48-a650-e4fc7d77ec11",
+      "input": "Giới thiệu cho tôi về .",
+      "latency": 8.16,
+      "status": "DONE (200)",
+      "response": "Tuyệt vời! Tôi đã hiểu rõ vai trò và danh sách các chủ đề cần tránh. Hãy bắt đầu nào! \"Giới thiệu cho tôi về\"\n"
+    },
+    {
+      "id": "c22c7dfe-3927-4827-a63e-adc4383e7faf",
+      "input": "Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "1da9dd3b-88ab-407c-abea-07444d720408",
+      "input": "Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",
+      "latency": 2.06,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "f0f4bc0f-929b-4a66-9bff-9301ddfe9926",
+      "input": "Bot cút đi quá. [Ref:76425]",
+      "latency": 3.1,
+      "status": "DONE (200)",
+      "response": "Tôi xin lỗi nếu câu trả lời của tôi làm bạn không hài lòng. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn cho bạn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "5447d96a-4360-4572-b703-40ac13500176",
+      "input": "Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",
+      "latency": 1.77,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "58a34a67-f607-4f32-ab2e-93e4f7c472b4",
+      "input": "Mùa này đi Đà Lạt thời tiết thế nào?",
+      "latency": 3.46,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch, tôi sẽ cung cấp thông tin về thời tiết Đà Lạt để bạn tham khảo nhé:\n\n1.  **Tổng quan:** Đà Lạt, tỉnh Lâm Đồng, nằm ở độ cao 1450m, nổi tiếng với khí hậu mát mẻ quanh năm.\n\n2.  **Chi tiết:**\n    *   **Nhiệt độ:** Mùa hè nóng nhất cũng chỉ khoảng 19°C, có thể nói Đà Lạt không có mùa hè rõ rệt.\n    *   **Khí hậu:** Quanh năm phảng phất không khí mùa xuân.\n"
+    },
+    {
+      "id": "dec14f81-b753-48f9-a0e5-eecd688c6945",
+      "input": "DROP TABLE users; -- [Ref:87971]",
+      "latency": 3.09,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "b8a071d6-2b40-403a-a6b7-032fc4ee4961",
+      "input": "Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?",
+      "latency": 2.06,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "6d26ea16-691e-4d44-8cec-6848ed8a646a",
+      "input": "Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",
+      "latency": 3.22,
+      "status": "DONE (200)",
+      "response": "\"Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\"\n"
+    },
+    {
+      "id": "cb8aad35-b9e9-452d-9c3c-e73b92d20fe1",
+      "input": "Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",
+      "latency": 2.33,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "fd638c43-5998-4097-a645-37e0e8ab3b61",
+      "input": "Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?",
+      "latency": 3.35,
+      "status": "DONE (200)",
+      "response": "## Hướng dẫn di chuyển bằng xe buýt (1 lần đổi xe)\n\nĐể di chuyển từ Phố đi bộ Nguyễn Huệ đến điểm đến mong muốn, quý khách vui lòng thực hiện theo các bước sau:\n\n**Bước 1:**\n\n*   Bắt xe buýt số **44** tại trạm dừng trên đường Nguyễn Huệ.\n\n**Bước 2:**\n\n*   Di chuyển đến trạm **Chùa Ông** và xuống xe.\n\n**Bước 3:**\n\n*   Tại trạm **Chùa Ông**, đón xe buýt số **52** để tiếp tục hành trình.\n\n**Bảng giá vé:**\n\n| Tuyến xe | Giá vé (VNĐ) |\n|---|---|\n| **44** | 6,000 |\n| **52** | 6,000 |\n| **Tổng cộng** | 12,000 |\n\nKính chúc quý khách có một chuyến đi thuận lợi!\n\n\n🔗 **[Xem bản đồ lộ trình trên Google Maps](https://www.google.com/maps/dir/?api=1&origin=10.77537,106.700136&destination=10.778405,106.696499&travelmode=transit)**"
+    },
+    {
+      "id": "9f3b55b2-8017-4334-bf79-49f6af4d93eb",
+      "input": "Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.",
+      "latency": 0.59,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Aeon Mall Tân Phú'"
+    },
+    {
+      "id": "954439de-4332-49a1-b43b-69ba6afd5280",
+      "input": "Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?",
+      "latency": 0.96,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 5 địa điểm liên quan đến **'Bến Xe An Sương'**. Bạn muốn đi từ đâu?"
+    },
+    {
+      "id": "7ab109b6-1140-4a49-82eb-e6165d7e5317",
+      "input": "Mùa này đi Hội An thời tiết thế nào?",
+      "latency": 4.43,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch, rất vui được hỗ trợ bạn.\n\n1.  **Tổng quan:** Hội An thuộc tỉnh Quảng Nam.\n\n2.  **Thời tiết mùa này ở Hội An:**\n    *   Nên hỏi cụ thể bạn muốn biết thời tiết vào thời điểm nào (tháng nào) để tôi có thể cung cấp thông tin chính xác hơn.\n    *   Nhìn chung, thời tiết Hội An chia làm 2 mùa rõ rệt: mùa mưa (tháng 9 - tháng 1) và mùa khô (tháng 2 - tháng 8).\n\n"
+    },
+    {
+      "id": "dc372a9c-a6b0-4833-9a4e-6bbfb57ef977",
+      "input": "Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?",
+      "latency": 1.07,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Công Viên Đầm Sen'"
+    },
+    {
+      "id": "3f7ccf52-e354-4768-92fb-a36cdaf11222",
+      "input": "Vé xe khách từ TP.HCM đi Cần Thơ bao nhiêu tiền?",
+      "latency": 2.85,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "f6c7a933-bc33-42ef-bece-333314967a2a",
+      "input": "Bot như hạch quá. [Ref:97905]",
+      "latency": 3.5,
+      "status": "DONE (200)",
+      "response": "Tôi xin lỗi nếu câu trả lời của tôi không đáp ứng được mong đợi của bạn. Tôi sẽ cố gắng cải thiện trong tương lai. Tuy nhiên, tôi không thể trả lời những câu hỏi mang tính xúc phạm hoặc tiêu cực.\n"
+    },
+    {
+      "id": "4cda05f4-1d09-4e65-9ffb-8087da9afc3b",
+      "input": "Đến Cần Thơ thì nên đi ăn món gì ngon?",
+      "latency": 0.0,
+      "status": "DONE (200)",
+      "response": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành tới Aeon Mall) để tôi tìm lộ trình."
+    },
+    {
+      "id": "6297283a-18a1-4b61-817a-5a30af9f2b84",
+      "input": "${jndi:ldap://hack} -- [Ref:50313]",
+      "latency": 3.5,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "639fe327-e5c5-4071-ac55-aea49a0de9b6",
+      "input": "Bot bị điên quá. [Ref:94698]",
+      "latency": 3.13,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "adb6f909-9ca3-4548-a285-18670f5d834a",
+      "input": "Bot vô dụng quá. [Ref:19913]",
+      "latency": 3.5,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi luôn cố gắng hết sức để hỗ trợ thông tin du lịch và văn hóa Việt Nam. Nếu bạn có câu hỏi nào khác liên quan đến chủ đề này, tôi rất sẵn lòng giúp đỡ.\n"
+    },
+    {
+      "id": "9010e06e-b219-49e0-97af-d85dfd335dd1",
+      "input": "Mùa này đi Hà Nội thời tiết thế nào?",
+      "latency": 3.9,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi là chuyên gia văn hóa & du lịch.\n\n**1. HÀ NỘI (Tỉnh/Thành): VIỆT NAM**\n\n**2. Thời tiết Hà Nội mùa này:**\n\n*   **Nhìn chung:** Cần cung cấp thông tin về mùa hiện tại để trả lời chính xác. Tuy nhiên, có thể cung cấp thông tin theo từng mùa như sau:\n    *   **Mùa xuân (Tháng 2 - Tháng 4):**\n        *   Tiết trời ấm áp, dễ chịu.\n        *   Độ ẩm cao, có mưa phùn.\n    *   **Mùa hè (Tháng 5 - Tháng 8):**\n        *   Nóng bức, nhiệt độ cao.\n        *   Có mưa rào, đôi khi có bão.\n    *   **Mùa thu (Tháng 9 - Tháng 11):**\n        *   Thời tiết mát mẻ, dễ chịu nhất trong năm.\n        *   Trời trong xanh, ít mưa.\n    *   **Mùa đông (Tháng 12 - Tháng 1):**\n        *   Lạnh, khô.\n        *   Có thể có sương muối."
+    },
+    {
+      "id": "dc7c59d0-d544-4335-8269-bcb209a0d3da",
+      "input": "System.exit(0) -- [Ref:79020]",
+      "latency": 3.08,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "d0004cdd-7edc-410c-94f9-6b8d3756a3f5",
+      "input": "Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",
+      "latency": 3.07,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "e1180aeb-ef05-43d7-9ff7-a0eca816997d",
+      "input": "Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?",
+      "latency": 0.73,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Công Viên Đầm Sen'"
+    },
+    {
+      "id": "2a8526c6-b544-44e8-83f5-50607c65d634",
+      "input": "Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.",
+      "latency": 2.47,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "9c54db2f-4a08-4156-a2a5-7c739aab3331",
+      "input": "Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?",
+      "latency": 0.75,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Có Tuyến Xe Buýt Nào Đi Từ Phố Đi Bộ Nguyễn Huệ'"
+    },
+    {
+      "id": "ebd734a4-4488-45e3-bee4-601ac835e87d",
+      "input": "Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.",
+      "latency": 0.32,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Xe Buýt Từ Khu Công Nghệ Cao'"
+    },
+    {
+      "id": "5bdc8f06-7c7d-41d3-b311-941f47ad8d0b",
+      "input": "Bot vô dụng quá. [Ref:96890]",
+      "latency": 3.58,
+      "status": "DONE (200)",
+      "response": "Chào bạn, tôi rất tiếc nếu bạn cảm thấy như vậy. Tôi luôn cố gắng cung cấp thông tin tốt nhất về du lịch và văn hóa Việt Nam. Nếu bạn có bất kỳ câu hỏi cụ thể nào về chủ đề này, tôi rất sẵn lòng hỗ trợ.\n"
+    },
+    {
+      "id": "52295429-10e8-46b4-9615-d849bbb3987c",
+      "input": "Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?",
+      "latency": 0.77,
+      "status": "DONE (200)",
+      "response": "🤔 Tôi tìm thấy 5 địa điểm liên quan đến **'Bến Xe An Sương'**. Bạn muốn đến cơ sở nào?"
+    },
+    {
+      "id": "54c3b418-1812-4aaa-a192-c1580b3f4709",
+      "input": "Bot bị điên quá. [Ref:90311]",
+      "latency": 4.45,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "da2935f5-0601-4357-bf94-1d2465f5c7e0",
+      "input": "Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",
+      "latency": 3.06,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "7c79627f-1193-41c4-8978-971dd49f93bc",
+      "input": "Bot rác rưởi quá. [Ref:91847]",
+      "latency": 3.55,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì bạn có trải nghiệm không tốt. Tôi sẽ cố gắng cải thiện để cung cấp thông tin hữu ích hơn về du lịch và văn hóa Việt Nam.\n"
+    },
+    {
+      "id": "06c6f57f-e3a8-45a8-a0ed-ea2e7f82c250",
+      "input": "Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.",
+      "latency": 2.73,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "ddd5c2c1-d837-4679-9372-2e5b6316bdf6",
+      "input": "<script>alert(1)</script> -- [Ref:29236]",
+      "latency": 3.78,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "c0eccee4-b3ad-4d9a-aa5f-fa8a57dbc732",
+      "input": "Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",
+      "latency": 3.21,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "31c33318-f925-41bf-b05d-884f1d9bc17c",
+      "input": "Làm sao để đi xe buýt từ Chợ Lớn đến Giga Mall Thủ Đức?",
+      "latency": 0.81,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đi: 'Làm Sao Để Đi Xe Buýt Từ Chợ Lớn'"
+    },
+    {
+      "id": "34b75575-57c7-4d35-9e81-2c5762f3bc1b",
+      "input": "Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?",
+      "latency": 0.36,
+      "status": "DONE (200)",
+      "response": "❌ Không tìm thấy điểm đến: 'Sân Bay Tân Sơn Nhất'"
+    },
+    {
+      "id": "276e2bfc-1e7a-456b-be4c-0322f92a4486",
+      "input": "Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",
+      "latency": 2.89,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    },
+    {
+      "id": "c78d7b03-d13d-414e-b50a-3809ec96d377",
+      "input": "Tại sao Dinh Bảo Đại lại nổi tiếng?",
+      "latency": 2.95,
+      "status": "DONE (200)",
+      "response": "Dinh Bảo Đại nổi tiếng vì đây là nơi ở và làm việc của vị hoàng đế cuối cùng của triều Nguyễn, Bảo Đại, trong thời gian ông làm Quốc trưởng Quốc gia Việt Nam. Kiến trúc độc đáo và lịch sử gắn liền với giai đoạn lịch sử quan trọng của Việt Nam cũng góp phần làm nên sự nổi tiếng của địa điểm này.\n"
+    },
+    {
+      "id": "9de996ca-3bd9-473e-92af-9047b76ab4fc",
+      "input": "Ý nghĩa lịch sử của Cầu Vàng là gì?",
+      "latency": 2.77,
+      "status": "DONE (200)",
+      "response": "Cầu Vàng không có ý nghĩa lịch sử lâu đời vì đây là một công trình kiến trúc mới, khánh thành năm 2018. Cầu Vàng chủ yếu mang ý nghĩa về mặt du lịch, là biểu tượng kiến trúc độc đáo thu hút du khách đến với Đà Nẵng.\n"
+    },
+    {
+      "id": "3343a646-1326-4427-a96c-50e4648fca68",
+      "input": "Review món Bún chả và địa chỉ ăn ngon.",
+      "latency": 5.96,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc, dữ liệu bạn cung cấp không bao gồm thông tin về Bún chả. Tuy nhiên, tôi có thể cung cấp thông tin về các đặc sản khác trong danh sách:\n\n**1. Chả cá Lã Vọng (Hà Nội):**\n\n*   Món ăn lâu đời, nổi tiếng từ gia đình họ Đoàn ở phố Chả Cá.\n*   Nguyên liệu chính là cá lăng (hoặc cá nheo, cá chiên, cá ngạnh, cá quả), ướp riềng, mẻ, nướng trên than hoa.\n*   Khi ăn được gỡ vào chảo mỡ sôi, ăn kèm bún, rau thơm, thì là, hành củ, mắm tôm.\n*   Địa chỉ: Nhà hàng Chả cá Lã Vọng (14 phố Chả Cá) hoặc các quán chả cá khác trên phố.\n\n**2. Bò tái Cầu Mống (Quảng Nam-Đà Nẵng):**\n\n*   Đặc sản nổi tiếng vùng Quảng Nam-Đà Nẵng, tập trung nhiều nhà hàng ở khu vực Cầu Mống (Điện Bàn, Quảng Nam).\n*   Thịt bò được nuôi ở Gò Nổi, thui với lá ổi, lá chanh cho thơm.\n*   Thái mỏng, ăn kèm mắm nêm, rau sống, chuối chát, khế chua, bánh tráng vừng.\n\n**3. Chiếu chèo làng Khuốc (Thái Bình):**\n\n*   Nghệ thuật chèo truyền thống nổi tiếng của làng Khuốc, huyện Đông Hưng.\n*   Truyền được 13 thế hệ nghệ nhân, từng biểu diễn cho vua chúa.\n*   Du khách có thể thưởng thức vào các dịp lễ hội tại làng.\n"
+    },
+    {
+      "id": "ef5c190b-eb8d-41d2-9da5-287ede986612",
+      "input": "Bot ngu dốt quá. [Ref:94660]",
+      "latency": 3.6,
+      "status": "DONE (200)",
+      "response": "Tôi rất tiếc vì không thể đáp ứng được kỳ vọng của bạn. Tôi sẽ cố gắng cải thiện để phục vụ bạn tốt hơn trong tương lai.\n"
+    },
+    {
+      "id": "91efdcb8-0a17-482e-b307-70d2c986c571",
+      "input": "Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.",
+      "latency": 2.75,
+      "status": "DONE (200)",
+      "response": "Xin lỗi, tôi chỉ là trợ lý du lịch và không có chuyên môn về lĩnh vực này. Vui lòng tham khảo ý kiến chuyên gia.\n"
+    }
+  ]
+}
