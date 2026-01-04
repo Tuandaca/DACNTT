@@ -63,11 +63,21 @@ class BusBotV13:
         def replace(match): return self.ABBREVIATIONS[match.group(0)]
         text = self.pattern.sub(replace, text)
         text = text.replace("đại học đại học", "đại học").replace("trường đại học trường đại học", "trường đại học")
-        return text
+        
+        # --- CẢI TIẾN: Loại bỏ các từ thừa chỉ hướng/địa điểm ---
+        stopwords = [
+            "trạm", "bến xe", "điểm dừng", "khu vực", 
+            "lộ trình đi từ", "xe buýt từ", "đi từ", "về", "đến", "tới", "sang", "qua"
+        ]
+        for word in stopwords:
+            text = text.replace(word, " ")
+            
+        return text.strip()
 
-    # --- HÀM TÌM KIẾM & GOM NHÓM (CẬP NHẬT LOGIC VÉT CẠN) ---
+    # --- HÀM TÌM KIẾM & GOM NHÓM ---
     def find_grouped_candidates(self, session, query_text):
-        clean_text = self.normalize_query(query_text).replace("trạm", "").strip()
+        # normalize_query đã được cải tiến để loại bỏ 'trạm', 'đi từ'...
+        clean_text = self.normalize_query(query_text)
         
         # LOGIC 1: Tìm chính xác khi có tên đường (Do Button tạo ra)
         if " đường " in clean_text:
@@ -92,8 +102,6 @@ class BusBotV13:
         
         # LOGIC 2: Tìm diện rộng (Khi người dùng nhập lần đầu)
         else:
-            # - Bỏ Limit 5 -> Tăng lên 50 để lấy hết cơ sở.
-            # - Sắp xếp: Ưu tiên khớp đầu câu (STARTS WITH) để các kết quả chính xác lên đầu.
             q = """
             MATCH (b:BusStop)
             WHERE toLower(b.name) CONTAINS $txt OR toLower(b.code) = $txt
@@ -107,7 +115,7 @@ class BusBotV13:
             ORDER BY 
                CASE WHEN toLower(LocationName) STARTS WITH $txt THEN 0 ELSE 1 END,
                LocationName ASC
-            LIMIT 50
+            LIMIT 20
             """
             results = list(session.run(q, txt=clean_text))
         
