@@ -65,13 +65,13 @@ def normalize_text(text: Union[str, List[str], None]) -> str:
 
     return unicodedata.normalize('NFC', text).lower().strip()
 
-# --- [CRITICAL FIX] HÀM LÀM SẠCH TÊN ĐỊA ĐIỂM (NER CLEANER) ---
-def clean_entity_name(raw_text: str) -> str:
+# --- [FIXED V4] HÀM LÀM SẠCH CÓ ĐIỀU KIỆN ---
+def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
     if not raw_text: return ""
     
     cleaned = raw_text.lower().strip()
     
-    # 1. DANH SÁCH TỪ THỪA Ở ĐẦU (PREFIX)
+    # 1. CẮT PREFIX (Giữ nguyên)
     prefixes = [
         "lộ trình đi xe buýt từ", "lộ trình xe buýt đi từ", "lộ trình xe buýt từ", 
         "lộ trình đi từ", "lộ trình từ", "lộ trình xe buýt về", "lộ trình",
@@ -81,59 +81,56 @@ def clean_entity_name(raw_text: str) -> str:
         "đường đi xe buýt từ", "đường đi từ", "làm sao để đi từ", "làm sao đi từ",
         "xe buýt đi từ", "xe buýt từ", "tuyến xe từ", "bắt xe từ", "đón xe từ", "đi xe buýt từ",
         "đi từ", "đến", "tới", "về", "sang", "qua", "tại", "ở", "khu vực", 
-        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về"
+        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về"
     ]
     
     for word in prefixes:
         if cleaned.startswith(word):
             cleaned = cleaned.replace(word, "", 1).strip()
             
-    # 2. [MỚI] DANH SÁCH TỪ THỪA Ở CUỐI (SUFFIX)
-    # Các từ cảm thán hoặc câu hỏi thường nằm cuối
+    # 2. CẮT SUFFIX (Giữ nguyên)
     suffixes = [
         " như thế nào", " thế nào", " ra sao", " làm sao", 
         " bằng cách nào", " đi đường nào",
         " được không", " có được không", " không ạ", " không",
         " số mấy", " bao nhiêu", " mất bao lâu",
+        " ở đâu", " chỗ nào",
         " nhé", " nha", " nhỉ", " vậy", " ạ", " hả", " hử"
     ]
     
     for suffix in suffixes:
         if cleaned.endswith(suffix):
-            # Cắt bỏ phần đuôi
             cleaned = cleaned[:-len(suffix)].strip()
 
-    # 3. Xử lý các từ nối còn sót lại ở đầu câu (Double Check)
+    # 3. Double Check từ nối
     secondary_stopwords = ["từ ", "đến ", "về ", "tới ", "sang ", "qua ", "của "]
     for sw in secondary_stopwords:
         if cleaned.startswith(sw.strip()):
             cleaned = cleaned.replace(sw.strip(), "", 1).strip()
-    
-    # --- [LOGIC MỚI] TỪ ĐIỂN ĐỒNG NGHĨA (ALIAS MAPPING) ---
-    # Key: Tên dân dã (User hay gọi) -> Value: Tên chính thức (Trong Database Neo4j)
-    ENTITY_ALIASES = {
-        "dinh độc lập": "hội trường thống nhất",
-        "dinh norodom": "hội trường thống nhất",
-        "phủ đầu rồng": "hội trường thống nhất",
+
+    # --- [CHỈ ÁP DỤNG KHI LÀ TOURISM] ---
+    if use_alias:
+        ENTITY_ALIASES = {
+            "dinh độc lập": "hội trường thống nhất",
+            "dinh norodom": "hội trường thống nhất",
+            "phủ đầu rồng": "hội trường thống nhất",
+            
+            "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
+            "nhà thờ lớn sài gòn": "vương cung thánh đường chính tòa đức bà sài gòn",
+            
+            "bưu điện thành phố": "bưu điện trung tâm sài gòn",
+            "bưu điện sài gòn": "bưu điện trung tâm sài gòn",
+            
+            "bến nhà rồng": "bảo tàng hồ chí minh",
+            "bảo tàng bến nhà rồng": "bảo tàng hồ chí minh",
+            
+            "chợ lớn": "chợ bình tây",
+            "landmart 81": "landmark 81",
+            "lăng bác": "lăng chủ tịch hồ chí minh"
+        }
         
-        "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
-        "nhà thờ lớn sài gòn": "vương cung thánh đường chính tòa đức bà sài gòn",
-        
-        "bưu điện thành phố": "bưu điện trung tâm sài gòn",
-        "bưu điện sài gòn": "bưu điện trung tâm sài gòn",
-        
-        "bến nhà rồng": "bảo tàng hồ chí minh",
-        "bảo tàng bến nhà rồng": "bảo tàng hồ chí minh",
-        
-        "chợ lớn": "chợ bình tây",
-        "landmart 81": "landmark 81", # Fix lỗi chính tả
-        "lăng bác": "lăng chủ tịch hồ chí minh"
-    }
-    
-    # Kiểm tra xem từ khóa đã làm sạch có nằm trong danh sách đồng nghĩa không
-    if cleaned in ENTITY_ALIASES:
-        # Nếu có, tráo đổi sang tên chính thức ngay lập tức
-        return ENTITY_ALIASES[cleaned].title()
+        if cleaned in ENTITY_ALIASES:
+            return ENTITY_ALIASES[cleaned].title()
 
     return cleaned.title()
 
