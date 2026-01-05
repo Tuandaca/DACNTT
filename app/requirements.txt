@@ -1,0 +1,22 @@
+# --- 1. Backend API (FastAPI) ---
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.7       # Để xử lý upload ảnh từ Frontend lên Backend
+python-dotenv>=1.0.1          # Đọc file cấu hình .env
+
+# --- 2. Frontend Interface (Streamlit) ---
+streamlit>=1.31.0
+requests>=2.31.0              # Dùng để Frontend gọi API của Backend (không dùng cào data)
+
+# --- 3. Database (Neo4j) ---
+neo4j>=5.17.0                 # Driver kết nối Neo4j (Local hoặc Cloud)
+
+# --- 4. AI & Embeddings ---
+google-generativeai>=0.4.0    # Gọi Gemini API (Chat & Vision)
+sentence-transformers>=2.4.0  # Model tạo vector (chạy dưới Local)
+torch>=2.2.0                  # Deep Learning Core (để chạy model vector)
+
+# --- 5. Data & Image Utilities ---
+pandas>=2.2.0                 # Xử lý dữ liệu dạng bảng (nếu cần load file json/csv vào RAM)
+numpy>=1.26.0                 # Tính toán số học cho Vector
+Pillow>=10.2.0                # Xử lý hình ảnh (Resize, đọc file ảnh)

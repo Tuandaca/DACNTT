@@ -1,0 +1,79 @@
+# Hệ Thống Hỏi Đáp Đa Phương Thức (Multimodal RAG) - Hỗ Trợ Tra Cứu Xe Buýt & Du Lịch TP.HCM
+Link github: https://github.com/Tuandaca/DACNTT.git
+=====================================================================================
+> **Dự án CNTT - HK1/2025-2026** > 
+
+**Sinh viên thực hiện:** 
+Ngô Anh Tuấn - 521H0379  
+Trần Ngọc Phát - 521H129
+
+> **GVHD:** TS. Trần Thanh Phước
+=====================================================================================
+## Giới thiệu (Introduction)
+
+Dự án này là một Trợ lý ảo AI thông minh (AI Assistant) được xây dựng dựa trên kiến trúc:
+**RAG (Retrieval-Augmented Generation)** kết hợp với **Knowledge Graph (Neo4j)**. 
+Hệ thống giải quyết hai bài toán chính:
+1.  **Tra cứu lộ trình xe buýt tối ưu:** Tìm đường đi giữa 2 địa điểm bất kỳ tại TP.HCM (hỗ trợ chuyển tuyến).
+2.  **Hỏi đáp Văn hóa & Du lịch:** Cung cấp thông tin chi tiết về các địa danh, di tích lịch sử thông qua văn bản và hình ảnh.
+
+**Điểm nổi bật:**
+*** Hybrid Search:** Kết hợp tìm kiếm Graph (cho Bus) và Vector Semantic Search (cho Du lịch).
+*** Multimodal:** Hỗ trợ nhận diện địa điểm qua hình ảnh (Vision AI).
+*** GPU Acceleration:** Tối ưu hóa tốc độ vector hóa bằng CUDA.
+*** Cloud Database:** Dữ liệu được lưu trữ trên Neo4j AuraDB (Cloud).
+
+=====================================================================================
+
+## Yêu cầu hệ thống (Prerequisites)
+
+Để chạy được dự án, máy tính của bạn cần cài đặt:
+* **Python 3.10** trở lên.
+* **Git**.
+* (Khuyến nghị) **NVIDIA GPU** với CUDA để chạy model nhanh hơn (nếu không có sẽ chạy bằng CPU).
+* Tài khoản **Google AI Studio** (để lấy API Key Gemini).
+* Tài khoản **Neo4j AuraDB** (Free Tier) hoặc Neo4j Desktop.
+
+=====================================================================================
+
+## ⚙️ Cài đặt (Installation)
+
+### 1. Clone Source Code
+```bash
+git clone https://github.com/Tuandaca/DACNTT.git
+
+cd DACNTT
+
+
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+
+### 2. Cài đặt thư viện phụ thuộc
+cd app
+pip install -r requirements.txt
+
+====================================================================================
+Tạo file .env tại thư mục Backend và điền thông tin này:
+# Cấu hình Neo4j (Database)
+NEO4J_URI=neo4j+s://403c0411.databases.neo4j.io
+NEO4J_USERNAME=neo4j
+NEO4J_PASSWORD=20qU7hUdIdlzyXii3tmnCDgvAFkUh-NobhE52Oq7Dvw
+# API Key Google Gemini (Tự lấy key cảu bạn trong gg AI Studio)
+GEMINI_API_KEY=AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+====================================================================================
+## Cách chạy dự án (Run the Project):
+## Hệ thống gồm 2 thành phần chính: 
+# Backend (API) và Frontend (UI). Bạn cần mở 2 cửa sổ Terminal để chạy song song.
+Tại Terminal 1 (cd app/backend) (Backend API) chạy: 
+uvicorn unified_server:app --reload --port 8000
+# Server sẽ chạy tại: http://127.0.0.1:8000
+# Tài liệu API (Swagger UI): http://127.0.0.1:8000/docs
+Tại Terminal 2 (cd app/frontend) (Frontend UI) chạy:
+streamlit run client_appchat.py
+# Giao diện Chat sẽ tự động mở trên trình duyệt tại: http://localhost:8501
