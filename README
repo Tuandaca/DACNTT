@@ -63,7 +63,7 @@ Tạo file .env tại thư mục Backend và điền thông tin này:
 NEO4J_URI=neo4j+s://403c0411.databases.neo4j.io
 NEO4J_USERNAME=neo4j
 NEO4J_PASSWORD=20qU7hUdIdlzyXii3tmnCDgvAFkUh-NobhE52Oq7Dvw
-# API Key Google Gemini (Tự lấy key cảu bạn trong gg AI Studio)
+# API Key Google Gemini (Tự lấy key của bạn trong gg AI Studio)
 GEMINI_API_KEY=AIxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ====================================================================================
