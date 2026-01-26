@@ -1,11 +1,20 @@
-# Chỉ cho phép (unignore) thư mục app/backend
-!app/backend/
+# Chặn các thư mục rác và dữ liệu nặng
+.git/
+.github/
+.devcontainer/
+data/
+env/
+scripts/
+test/
 
-# Chặn tất cả mọi thứ ở thư mục gốc
-*
+# Chặn các file tài liệu và ảnh rác (dựa trên ảnh bạn gửi)
+DUANCNTT_Report.docx
+README
+thucnghiem24h.png
+*.ipynb
 
-
-# Vẫn nên ignore các file rác trong chính backend (nếu có)
-app/backend/__pycache__
-app/backend/*.pyc
+# Chặn các file môi trường và cache
 app/backend/.env
+__pycache__/
+*.py[cod]
+*$py.class
