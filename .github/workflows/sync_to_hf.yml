@@ -25,7 +25,7 @@ jobs:
           
           # 3. Copy những file cần thiết vào gói hàng này
           # Chỗ này copy Dockerfile, .dockerignore ở gốc và cả thư mục app/backend
-          cp Dockerfile .dockerignore README.md deploy_package/
+          cp Dockerfile .dockerignore README deploy_package/
           cp -r app/backend/ deploy_package/
 
           # 4. Vào thư mục tạm, khởi tạo một Git mới hoàn toàn (để xóa sạch lịch sử nặng)
