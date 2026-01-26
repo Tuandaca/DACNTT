@@ -278,7 +278,7 @@ async def chat_endpoint(request: ChatRequest):
         # Keyword Lists
         info_keywords = ["chi tiết", "cụ thể", "rõ hơn", "thêm về", "kể về", "nói về", "biết gì", "giới thiệu", "thông tin", "review", "ăn gì", "chơi gì", "lịch sử", "có gì", "vui không"]
         hard_bus_keywords = ["xe bus", "xe buýt", "buýt", "tuyến xe", "trạm xe", "số mấy", "metro", "tàu điện"]
-        greeting_keywords = ["xin chào", "chào", "hello", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye"]
+        greeting_keywords = ["xin chào", "chào", "hello", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye", "hi"]
 
         has_hard_bus = any(w in lower_q for w in hard_bus_keywords)
         has_info = any(w in lower_q for w in info_keywords)
