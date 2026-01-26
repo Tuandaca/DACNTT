@@ -4,7 +4,6 @@ import asyncio
 import unicodedata
 import io
 import json
-import time
 import re
 from typing import Optional, Union, List
 from contextlib import asynccontextmanager
@@ -14,16 +13,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
-from sentence_transformers import SentenceTransformer
-from neo4j import AsyncGraphDatabase
-import google.generativeai as genai
 from PIL import Image
 
-# Import Bus Core (Đảm bảo file bus_core.py nằm cùng thư mục)
-from bus_core import BusBotV13
-
 from fastapi.middleware.cors import CORSMiddleware
-
 # --- 1. CẤU HÌNH LOGGING ---
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 logger = logging.getLogger(__name__)
@@ -37,70 +29,115 @@ NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
 
 # --- 3. QUẢN LÝ TÀI NGUYÊN (LAZY LOADING + LOCK) ---
+logger = logging.getLogger(__name__)
+
 llm_model = None
 vector_model = None
-tourism_driver = None
+neo4j_driver = None
 bus_bot = None
 
+resource_lock = asyncio.Lock()
 # Khóa an toàn để tránh Race Condition khi nhiều người cùng gọi load model
 model_lock = asyncio.Lock()
 
 async def get_vector_model():
     global vector_model
-    async with model_lock: # Chỉ 1 luồng được tải tại 1 thời điểm
+    async with resource_lock:
         if vector_model is None:
-            logger.info("⏳ SYSTEM: Đang tải BKAI Vector Model...")
             try:
-                # Chạy trong thread pool để không chặn event loop
+                from sentence_transformers import SentenceTransformer
+
+                logger.info("⏳ Loading Vector Model...")
                 loop = asyncio.get_running_loop()
-                vector_model = await loop.run_in_executor(None, lambda: SentenceTransformer("bkai-foundation-models/vietnamese-bi-encoder"))
-                logger.info("✅ Vector Model Loaded.")
+                vector_model = await loop.run_in_executor(
+                    None,
+                    lambda: SentenceTransformer(
+                        "bkai-foundation-models/vietnamese-bi-encoder"
+                    )
+                )
+                logger.info("✅ Vector Model ready")
+
             except Exception as e:
-                logger.error(f"❌ Lỗi tải Vector Model: {e}")
+                logger.exception("❌ Vector Model load failed")
                 raise e
+
     return vector_model
+
+async def get_llm():
+    global llm_model
+    async with resource_lock:
+        if llm_model is None:
+            try:
+                import google.generativeai as genai
+
+                api_key = os.getenv("GEMINI_API_KEY")
+                if not api_key:
+                    raise RuntimeError("GEMINI_API_KEY missing")
+
+                logger.info("⏳ Initializing Gemini...")
+                genai.configure(api_key=api_key)
+                llm_model = genai.GenerativeModel("gemini-2.0-flash")
+                logger.info("✅ Gemini ready")
+
+            except Exception as e:
+                logger.exception("❌ Gemini init failed")
+                raise e
+
+    return llm_model
+
+async def get_neo4j_driver():
+    global neo4j_driver
+    async with resource_lock:
+        if neo4j_driver is None:
+            try:
+                from neo4j import AsyncGraphDatabase
+
+                logger.info("⏳ Connecting Neo4j...")
+                neo4j_driver = AsyncGraphDatabase.driver(
+                    os.getenv("NEO4J_URI"),
+                    auth=(
+                        os.getenv("NEO4J_USER"),
+                        os.getenv("NEO4J_PASSWORD")
+                    )
+                )
+                await neo4j_driver.verify_connectivity()
+                logger.info("✅ Neo4j connected")
+
+            except Exception as e:
+                logger.exception("❌ Neo4j connection failed")
+                raise e
+
+    return neo4j_driver
 
 async def get_bus_bot():
     global bus_bot
-    async with model_lock:
+    async with resource_lock:
         if bus_bot is None:
-            logger.info("⏳ SYSTEM: Đang khởi tạo BusBot...")
             try:
+                from bus_core import BusBotV13
+
+                logger.info("⏳ Initializing BusBot...")
                 loop = asyncio.get_running_loop()
                 bus_bot = await loop.run_in_executor(None, BusBotV13)
-                logger.info("✅ BusBot Ready.")
+                logger.info("✅ BusBot ready")
+
             except Exception as e:
-                logger.error(f"❌ Lỗi khởi tạo BusBot: {e}")
+                logger.exception("❌ BusBot init failed")
                 raise e
+
     return bus_bot
+
 
 # --- LIFESPAN ---
 @asynccontextmanager
-async def lifespan(app: FastAPI):
-    global llm_model, tourism_driver
-    logger.info("🚀 SYSTEM: Server đang khởi động...")
-    
-    # Cấu hình Gemini
-    if GEMINI_API_KEY:
-        genai.configure(api_key=GEMINI_API_KEY)
-        llm_model = genai.GenerativeModel('gemini-2.0-flash')
-        logger.info("✅ Gemini Configured.")
-    else:
-        logger.warning("⚠️ Thiếu GEMINI_API_KEY!")
-
-    # Kết nối Neo4j
-    try:
-        tourism_driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
-        await tourism_driver.verify_connectivity() 
-        logger.info("✅ Neo4j Connected.")
-    except Exception as e:
-        logger.error(f"❌ Lỗi kết nối Neo4j: {e}")
-    
+async def lifespan(app):
+    logger.info("🚀 Server starting")
     yield
-    
-    logger.info("🛑 SYSTEM: Đang tắt server...")
-    if tourism_driver:
-        await tourism_driver.close()
+    logger.info("🛑 Server shutting down")
+
+    if neo4j_driver:
+        await neo4j_driver.close()
+        logger.info("✅ Neo4j closed")
 
 app = FastAPI(title="Professional Travel & Transport AI", lifespan=lifespan)
 
@@ -168,7 +205,7 @@ async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]
     # Lấy model an toàn
     current_model = await get_vector_model()
     
-    async with tourism_driver.session() as session:
+    async with neo4j_driver.session() as session:
         p_filter_cypher = normalize_text(province_filter) if province_filter else ""
 
         # Query 1: Filter
@@ -233,7 +270,7 @@ async def chat_endpoint(request: ChatRequest):
     # 0. GLOBAL ERROR HANDLING
     try:
         # Check System Health
-        if not llm_model or not tourism_driver:
+        if not llm_model or not neo4j_driver:
             return JSONResponse(status_code=503, content={"answer": "Hệ thống đang khởi động AI (mất khoảng 30s). Vui lòng thử lại sau.", "sources": [], "images": []})
 
         # 1. INPUT SANITIZATION
