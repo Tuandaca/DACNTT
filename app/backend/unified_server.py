@@ -86,7 +86,7 @@ async def get_resources():
                 from sentence_transformers import SentenceTransformer
                 logger.info("⏳ Loading Vector Model (Heavy)...")
                 loop = asyncio.get_running_loop()
-                #chạy cloud mà free thì thay bằng "paraphrase-multilingual-MiniLM-L12-v2" cho nhẹ, chạy local "bkai-foundation-models/vietnamese-bi-encoder"
+                #chạy cloud mà free thì thay bằng "paraphrase-multilingual-MiniLM-L12-v2" cho nhẹ và thêm vào device="cpu", chạy local "bkai-foundation-models/vietnamese-bi-encoder"
                 _vector_model = await loop.run_in_executor(None, lambda: SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2", device="cpu")) 
                 logger.info("✅ Vector Model Loaded")
             except Exception as e: logger.error(f"Vector Model Error: {e}")
@@ -111,7 +111,7 @@ if not os.path.exists("images_items"): os.makedirs("images_items")
 app.mount("/images_items", StaticFiles(directory="images_items"), name="images")
 
 # --- 4. HEALTH CHECK (RENDER BẮT BUỘC PHẢI CÓ) ---
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 async def health_check():
     return {"status": "alive", "message": "Send POST /chat to start."}
 
