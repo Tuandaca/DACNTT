@@ -16,7 +16,7 @@ neo4j>=5.17.0
 # --- 4. AI & Embeddings ---
 google-generativeai>=0.4.0
 sentence-transformers>=2.4.0
-torch>=2.2.0 --index-url https://download.pytorch.org/whl/cpu 
+torch>=2.2.0 --index-url https://download.pytorch.org/whl/cpu
 # [LƯU Ý]: Dòng torch trên ép buộc cài bản CPU để nhẹ (giảm dung lượng từ 800MB -> 100MB), tránh sập Streamlit Cloud.
 
 # --- 5. Data & Utilities ---
