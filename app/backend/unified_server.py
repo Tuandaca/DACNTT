@@ -87,7 +87,7 @@ async def get_resources():
                 logger.info("⏳ Loading Vector Model (Heavy)...")
                 loop = asyncio.get_running_loop()
                 #chạy cloud mà free thì thay bằng "paraphrase-multilingual-MiniLM-L12-v2" cho nhẹ và thêm vào device="cpu", chạy local "bkai-foundation-models/vietnamese-bi-encoder"
-                _vector_model = await loop.run_in_executor(None, lambda: SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2", device="cpu")) 
+                _vector_model = await loop.run_in_executor(None, lambda: SentenceTransformer("bkai-foundation-models/vietnamese-bi-encoder")) 
                 logger.info("✅ Vector Model Loaded")
             except Exception as e: logger.error(f"Vector Model Error: {e}")
         

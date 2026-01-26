@@ -1,0 +1,10 @@
+# Chặn tất cả mọi thứ ở thư mục gốc
+*
+
+# Chỉ cho phép (unignore) thư mục app/backend
+!app/backend/
+
+# Vẫn nên ignore các file rác trong chính backend (nếu có)
+app/backend/__pycache__
+app/backend/*.pyc
+app/backend/.env
