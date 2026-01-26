@@ -106,7 +106,13 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Travel AI", lifespan=lifespan)
 
 # Middleware & Static
-app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins=["*"], 
+    allow_credentials=True, 
+    allow_methods=["*"], 
+    allow_headers=["*"]
+)
 if not os.path.exists("images_items"): os.makedirs("images_items")
 app.mount("/images_items", StaticFiles(directory="images_items"), name="images")
 
@@ -425,5 +431,5 @@ async def chat_with_image_endpoint(file: UploadFile = File(...), question: str =
 
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get("PORT", 7860))
     uvicorn.run(app, host="0.0.0.0", port=port)
