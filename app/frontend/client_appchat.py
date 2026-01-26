@@ -3,9 +3,18 @@ import requests
 import uuid
 
 # --- CẤU HÌNH URL BACKEND ---
-# Tự động lấy từ Secrets (khi lên Cloud) hoặc dùng Localhost (khi chạy máy nhà)
-# Lưu ý: URL không có dấu gạch chéo "/" ở cuối
-BACKEND_URL = st.secrets.get("BACKEND_URL", "http://127.0.0.1:8000")
+try:
+    # Cố gắng lấy từ Secrets (trên Cloud)
+    BACKEND_URL = st.secrets["BACKEND_URL"]
+except FileNotFoundError:
+    # Nếu không thấy file secrets (chạy Local), dùng localhost
+    BACKEND_URL = "http://127.0.0.1:8000"
+except KeyError:
+    # Nếu có file nhưng quên điền key, cũng dùng localhost
+    BACKEND_URL = "http://127.0.0.1:8000"
+except Exception:
+    # Bất chấp mọi lỗi khác
+    BACKEND_URL = "http://127.0.0.1:8000"
 
 # --- CẤU HÌNH TRANG ---
 st.set_page_config(
