@@ -20,6 +20,19 @@ from PIL import Image
 
 from bus_core import BusBotV13
 
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI()
+
+# CẤU HÌNH CORS (QUAN TRỌNG)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Cho phép mọi nguồn (Streamlit, Postman,...) gọi vào
+    allow_credentials=True,
+    allow_methods=["*"],  # Cho phép mọi phương thức (GET, POST...)
+    allow_headers=["*"],  # Cho phép mọi header
+)
+
 # --- 1. CẤU HÌNH LOGGING ---
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
 logger = logging.getLogger(__name__)
@@ -385,10 +398,10 @@ async def chat_endpoint(request: ChatRequest):
                         break 
                 start_loc = start_raw
             except: pass
-        
+    
         if start_loc and end_loc:
             try:
-                # [CORE FIX] Gọi hàm làm sạch thần thánh
+                # [CORE FIX] Gọi hàm làm sạch
                 start_loc = clean_entity_name(start_loc)
                 end_loc = clean_entity_name(end_loc)
                 
@@ -539,3 +552,12 @@ async def chat_with_image_endpoint(file: UploadFile = File(...), question: str =
     except Exception as e:
         logger.error(f"IMAGE ERROR: {e}")
         return {"answer": "Đã xảy ra lỗi khi xử lý hình ảnh.", "sources": [], "images": []}
+
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    # Lấy PORT từ biến môi trường của Render, mặc định là 8000 nếu chạy local
+    port = int(os.environ.get("PORT", 8000))
+    # Host phải là 0.0.0.0 để Public ra ngoài internet
+    uvicorn.run(app, host="0.0.0.0", port=port)

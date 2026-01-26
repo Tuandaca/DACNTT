@@ -2,6 +2,11 @@ import streamlit as st
 import requests
 import uuid
 
+# --- CẤU HÌNH URL BACKEND ---
+# Tự động lấy từ Secrets (khi lên Cloud) hoặc dùng Localhost (khi chạy máy nhà)
+# Lưu ý: URL không có dấu gạch chéo "/" ở cuối
+BACKEND_URL = st.secrets.get("BACKEND_URL", "http://127.0.0.1:8000")
+
 # --- CẤU HÌNH TRANG ---
 st.set_page_config(
     page_title="Hệ thống hỏi đáp đa phương thức RAG",
@@ -111,7 +116,7 @@ for index, msg in enumerate(messages):
             cols = st.columns(len(msg["images"]))
             for i, img_url in enumerate(msg["images"]):
                 with cols[i]:
-                    full_url = img_url if img_url.startswith("http") else f"http://127.0.0.1:8000/{img_url}"
+                    full_url = img_url if img_url.startswith("http") else f"{BACKEND_URL}/{img_url}"
                     st.image(full_url, use_container_width=True)
         
         # 4. Hiển thị Options (nếu có - Bus Ambiguity)
@@ -154,7 +159,8 @@ if messages and messages[-1]["role"] == "user":
                 last_msg = messages[-1]
                 prompt_text = last_msg["content"]
                 
-                api_url = "http://127.0.0.1:8000/chat_with_image" if "image_data" in last_msg else "http://127.0.0.1:8000/chat"
+                base_url = BACKEND_URL
+                api_url = f"{base_url}/chat_with_image" if "image_data" in last_msg else f"{base_url}/chat"
                 
                 if "image_data" in last_msg:
                     files = {"file": last_msg["image_data"]}
