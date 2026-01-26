@@ -1,7 +1,7 @@
 name: Sync to Hugging Face hub
 on:
   push:
-    branches: [main] # Hoặc tên nhánh chính của bạn
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,8 +11,30 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://Tuandaca:$HF_TOKEN@huggingface.co/spaces/Tuandaca/backend-travelAI main
+        run: |
+          # 1. Thiết lập thông tin Git giả định trong máy ảo
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+          # 2. Tạo một thư mục tạm để đóng gói
+          mkdir deploy_package
+          
+          # 3. Copy những file "sống còn" vào gói hàng này
+          # Chỗ này copy Dockerfile, .dockerignore ở gốc và cả thư mục app/backend
+          cp Dockerfile .dockerignore deploy_package/
+          cp -r app/backend/ deploy_package/
+
+          # 4. Vào thư mục tạm, khởi tạo một Git mới hoàn toàn (để xóa sạch lịch sử nặng)
+          cd deploy_package
+          git init
+          git checkout -b main
+          git add .
+          git commit -m "Deploy tinh gọn từ GitHub Actions"
+
+          # 5. Push đè (force) gói hàng sạch này lên Hugging Face
+          # Thay Tuandaca và backend-travelAI bằng đúng thông tin của bạn nếu có thay đổi
+          git push --force https://Tuandaca:$HF_TOKEN@huggingface.co/spaces/Tuandaca/backend-travelAI main
