@@ -17,6 +17,10 @@ from dotenv import load_dotenv
 from PIL import Image
 
 from fastapi.middleware.cors import CORSMiddleware
+import google.generativeai as genai
+from sentence_transformers import SentenceTransformer
+from neo4j import AsyncGraphDatabase
+from bus_core import BusBotV13
 
 # --- 1. CẤU HÌNH ---
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s", datefmt="%H:%M:%S")
@@ -29,81 +33,76 @@ NEO4J_USER = os.getenv("NEO4J_USERNAME", "neo4j")
 NEO4J_PASSWORD = os.getenv("NEO4J_PASSWORD")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") 
 
-# --- 2. QUẢN LÝ TÀI NGUYÊN (LAZY LOADING - CHÌA KHÓA ĐỂ FIX RENDER) ---
-# Khai báo biến toàn cục là None (Chưa tải gì cả)
-_llm_model = None
-_vector_model = None
-_neo4j_driver = None
-_bus_bot = None
+# Biến toàn cục lưu trữ các Model đã nạp
+models = {
+    "llm": None,
+    "vector": None,
+    "driver": None,
+    "bus_bot": None
+}
 
-# Khóa an toàn để tránh 2 người cùng tải 1 lúc
-_resource_lock = asyncio.Lock()
-
-async def get_resources():
-    """
-    Hàm này đảm bảo trả về bộ tứ tài nguyên: (LLM, Vector, Neo4j, BusBot).
-    - Nếu đã tải rồi: Trả về ngay (mất 0s).
-    - Nếu chưa tải: Bắt đầu tải (người dùng đầu tiên sẽ chờ khoảng 20s).
-    """
-    global _llm_model, _vector_model, _neo4j_driver, _bus_bot
-    
-    # Kiểm tra nhanh (Fast path)
-    if _llm_model and _vector_model and _neo4j_driver and _bus_bot:
-        return _llm_model, _vector_model, _neo4j_driver, _bus_bot
-
-    # Vào chế độ tải an toàn (Slow path)
-    async with _resource_lock:
-        # Check lại lần nữa trong lock
-        if not _llm_model:
-            try:
-                import google.generativeai as genai
-                if not GEMINI_API_KEY: raise Exception("Thiếu GEMINI_API_KEY")
-                genai.configure(api_key=GEMINI_API_KEY)
-                _llm_model = genai.GenerativeModel("gemini-2.0-flash")
-                logger.info("✅ Gemini Loaded")
-            except Exception as e: logger.error(f"Gemini Error: {e}")
-
-        if not _neo4j_driver:
-            try:
-                from neo4j import AsyncGraphDatabase
-                _neo4j_driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
-                # Verify kết nối nhẹ
-                await _neo4j_driver.verify_connectivity()
-                logger.info("✅ Neo4j Connected")
-            except Exception as e: logger.error(f"Neo4j Error: {e}")
-
-        if not _bus_bot:
-            try:
-                from bus_core import BusBotV13
-                logger.info("⏳ Loading BusBot Data...")
-                loop = asyncio.get_running_loop()
-                _bus_bot = await loop.run_in_executor(None, BusBotV13)
-                logger.info("✅ BusBot Loaded")
-            except Exception as e: logger.error(f"BusBot Error: {e}")
-
-        if not _vector_model:
-            try:
-                from sentence_transformers import SentenceTransformer
-                logger.info("⏳ Loading Vector Model (Heavy)...")
-                loop = asyncio.get_running_loop()
-                #chạy cloud mà free thì thay bằng "paraphrase-multilingual-MiniLM-L12-v2" cho nhẹ và thêm vào device="cpu", chạy local "bkai-foundation-models/vietnamese-bi-encoder"
-                _vector_model = await loop.run_in_executor(None, lambda: SentenceTransformer("bkai-foundation-models/vietnamese-bi-encoder")) 
-                logger.info("✅ Vector Model Loaded")
-            except Exception as e: logger.error(f"Vector Model Error: {e}")
-        
-        return _llm_model, _vector_model, _neo4j_driver, _bus_bot
-
-# --- 3. LIFESPAN (RỖNG TUẾCH - ĐỂ KHỞI ĐỘNG NHANH) ---
+# --- 2. QUẢN LÝ TÀI NGUYÊN (EAGER LOADING - TẢI TRƯỚC TOÀN BỘ) ---
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Render cần dòng này chạy ngay lập tức.
-    logger.info("🚀 Server started instantly! Resources will load on first request.")
-    yield
-    # Dọn dẹp khi tắt
-    logger.info("🛑 Shutting down...")
-    if _neo4j_driver: await _neo4j_driver.close()
+    """
+    Hàm này chạy NGAY KHI SERVER KHỞI ĐỘNG.
+    Nó sẽ nạp toàn bộ model vào RAM để sẵn sàng phục vụ.
+    """
+    logger.info("🚀 Đang khởi động Server & Nạp tài nguyên (Eager Loading)...")
+    
+    # 1. Nạp Google Gemini
+    try:
+        if not GEMINI_API_KEY:
+            logger.warning("⚠️ Thiếu GEMINI_API_KEY! Chức năng Chat sẽ lỗi.")
+        else:
+            genai.configure(api_key=GEMINI_API_KEY)
+            models["llm"] = genai.GenerativeModel("gemini-2.0-flash")
+            logger.info("✅ Gemini 2.0 Flash Loaded")
+    except Exception as e:
+        logger.error(f"❌ Lỗi nạp Gemini: {e}")
 
-app = FastAPI(title="Travel AI", lifespan=lifespan)
+    # 2. Nạp Vector Model (Nặng nhất - Ưu tiên chạy sớm)
+    try:
+        logger.info("⏳ Đang nạp Vector Model (BKAI Vietnamese)... Vui lòng đợi.")
+        # Chạy trong thread riêng để không chặn event loop
+        loop = asyncio.get_running_loop()
+        models["vector"] = await loop.run_in_executor(None, lambda: SentenceTransformer("bkai-foundation-models/vietnamese-bi-encoder"))
+        logger.info("✅ Vector Model Loaded")
+    except Exception as e:
+        logger.error(f"❌ Lỗi nạp Vector Model: {e}")
+
+    # 3. Kết nối Neo4j
+    try:
+        if NEO4J_URI and NEO4J_PASSWORD:
+            driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
+            await driver.verify_connectivity()
+            models["driver"] = driver
+            logger.info("✅ Neo4j Database Connected")
+        else:
+            logger.warning("⚠️ Thiếu cấu hình Neo4j (URI/PASSWORD).")
+    except Exception as e:
+        logger.error(f"❌ Lỗi kết nối Neo4j: {e}")
+
+    # 4. Nạp dữ liệu BusBot
+    try:
+        logger.info("⏳ Đang nạp dữ liệu xe Buýt (BusBot)...")
+        loop = asyncio.get_running_loop()
+        models["bus_bot"] = await loop.run_in_executor(None, BusBotV13)
+        logger.info("✅ BusBot Data Loaded")
+    except Exception as e:
+        logger.error(f"❌ Lỗi nạp BusBot: {e}")
+
+    logger.info("🎉 SERVER ĐÃ SẴN SÀNG PHỤC VỤ! (RAM đã nạp đủ)")
+    
+    yield # Server chạy tại đây
+    
+    # Dọn dẹp khi tắt Server
+    logger.info("🛑 Đang tắt Server...")
+    if models["driver"]:
+        await models["driver"].close()
+    models.clear()
+
+app = FastAPI(title="Travel AI Backend", lifespan=lifespan)
 
 # Middleware & Static
 app.add_middleware(
@@ -113,15 +112,24 @@ app.add_middleware(
     allow_methods=["*"], 
     allow_headers=["*"]
 )
-if not os.path.exists("images_items"): os.makedirs("images_items")
+
+if not os.path.exists("images_items"):
+    os.makedirs("images_items")
 app.mount("/images_items", StaticFiles(directory="images_items"), name="images")
 
-# --- 4. HEALTH CHECK (RENDER BẮT BUỘC PHẢI CÓ) ---
-@app.api_route("/", methods=["GET", "HEAD"])
+# --- 3. HEALTH CHECK ---
+@app.get("/")
 async def health_check():
-    return {"status": "alive", "message": "Send POST /chat to start."}
+    # Kiểm tra trạng thái thực tế của các model
+    status = {
+        "gemini": "ok" if models["llm"] else "error",
+        "vector": "ok" if models["vector"] else "error",
+        "neo4j": "ok" if models["driver"] else "error",
+        "bus": "ok" if models["bus_bot"] else "error"
+    }
+    return {"status": "alive", "details": status, "message": "Backend is ready."}
 
-# --- 5. HELPER FUNCTIONS (LOGIC CỦA BẠN) ---
+# --- 4. HELPER FUNCTIONS ---
 
 def normalize_text(text: Union[str, List[str], None]) -> str:
     if not text: return ""
@@ -141,13 +149,13 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
         "đường đi xe buýt từ", "đường đi từ", "làm sao để đi từ", "làm sao đi từ",
         "xe buýt đi từ", "xe buýt từ", "tuyến xe từ", "bắt xe từ", "đón xe từ", "đi xe buýt từ",
         "đi từ", "đến", "tới", "về", "sang", "qua", "tại", "ở", "khu vực", 
-        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về"
+        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về", "có gì"
     ]
     for word in prefixes:
         if cleaned.startswith(word):
             cleaned = cleaned.replace(word, "", 1).strip()
             
-    suffixes = [" như thế nào", " thế nào", " ra sao", " làm sao", " ở đâu", " chỗ nào", " nhé", " nha", " nhỉ", " vậy", " ạ", " hả", " đi"]
+    suffixes = [" như thế nào", " thế nào", " ra sao", " làm sao", " ở đâu", " chỗ nào", " nhé", " nha", " nhỉ", " vậy", " ạ", " hả", " đi", " vui", " ngon", " đẹp"]
     for suffix in suffixes:
         if cleaned.endswith(suffix):
             cleaned = cleaned[:-len(suffix)].strip()
@@ -160,15 +168,23 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "bến nhà rồng": "bảo tàng hồ chí minh",
             "chợ lớn": "chợ bình tây", 
             "landmart 81": "landmark 81", 
-            "lăng bác": "lăng chủ tịch hồ chí minh"
+            "lăng bác": "lăng chủ tịch hồ chí minh",
+            "sài gòn": "thành phố hồ chí minh",
+            "hcm": "thành phố hồ chí minh",
+            "tphcm": "thành phố hồ chí minh"
         }
         if cleaned in ENTITY_ALIASES: return ENTITY_ALIASES[cleaned].title()
     
     return cleaned.title()
 
-# --- HYBRID SEARCH LOGIC (SỬA ĐỂ NHẬN MODEL TỪ NGOÀI VÀO) ---
-async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]] = None, model=None, driver=None):
-    if not model or not driver: return [] # Safety check
+# --- 5. HYBRID SEARCH LOGIC ---
+async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]] = None):
+    # Lấy model từ biến toàn cục
+    vec_model = models["vector"]
+    driver = models["driver"]
+
+    if not vec_model or not driver:
+        return [] 
     
     text = clean_entity_name(text)
     search_text_norm = normalize_text(text)
@@ -177,7 +193,7 @@ async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]
     async with driver.session() as session:
         p_filter_cypher = normalize_text(province_filter) if province_filter else ""
         
-        # 1. Location Filter Query
+        # 1. Location Filter Query (Tìm theo địa điểm cụ thể trong tỉnh)
         if len(p_filter_cypher) > 2:
             cypher_loc = """
             MATCH (node:Searchable)-[:LOCATED_IN]->(p:Province)
@@ -190,12 +206,16 @@ async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]
                 records.extend([record.data() async for record in r_loc])
             except: pass
 
-        # 2. Vector & Keyword Query
+        # 2. Vector & Keyword Query (Nếu tìm chưa đủ)
         if len(records) < 5: 
             loop = asyncio.get_running_loop()
             try:
-                vector = await loop.run_in_executor(None, lambda: model.encode(text).tolist())
+                vector = await loop.run_in_executor(None, lambda: vec_model.encode(text).tolist())
+                
+                # Vector Search
                 cypher_vector = "CALL db.index.vector.queryNodes('searchable_index', 50, $vector) YIELD node, score OPTIONAL MATCH (node)-[:LOCATED_IN]->(p:Province) RETURN elementId(node) as id, node, score, p.name as province_name, 'vector' as source_type"
+                
+                # Keyword Search (Full text fallback)
                 cypher_keyword = "MATCH (node:Searchable) WHERE toLower(node.name) CONTAINS $text_norm OPTIONAL MATCH (node)-[:LOCATED_IN]->(p:Province) RETURN elementId(node) as id, node, 1.0 as score, p.name as province_name, 'keyword' as source_type LIMIT 20"
                 
                 try:
@@ -212,11 +232,13 @@ async def hybrid_search_tourism(text: str, province_filter: Union[str, List[str]
     unique_results = {}
     for r in records:
         uid = r['id']
+        # Hạ điểm nếu sai tỉnh (Soft filter)
         if province_filter:
             p_filters = province_filter if isinstance(province_filter, list) else [province_filter]
             if not any(normalize_text(pf) in normalize_text(r.get('province_name')) for pf in p_filters):
-                r['score'] *= 0.1
+                r['score'] *= 0.1 # Phạt nặng nếu sai tỉnh
         
+        # Ngưỡng vector
         if r['source_type'] == 'vector' and r['score'] < 0.65: continue
         
         if uid not in unique_results:
@@ -230,20 +252,20 @@ class ChatRequest(BaseModel):
     province: Optional[Union[str, List[str]]] = None
 
 # ==========================================
-#              MAIN API (LOGIC ĐẦY ĐỦ CỦA BẠN)
+#              MAIN API ENDPOINT
 # ==========================================
 @app.post("/chat")
 async def chat_endpoint(request: ChatRequest):
     try:
-        # --- BƯỚC 1: LẤY TÀI NGUYÊN (QUAN TRỌNG) ---
-        # Hàm này sẽ "treo" request đầu tiên một chút để tải model.
-        # Nhưng Render sẽ KHÔNG giết app vì app đã chạy rồi.
-        llm, vec_model, driver, bus = await get_resources()
+        # Lấy model từ globals
+        llm = models["llm"]
+        bus = models["bus_bot"]
         
-        if not llm or not driver:
-            return {"answer": "Hệ thống đang khởi động AI... Vui lòng thử lại sau 30 giây.", "sources": [], "images": []}
+        # Kiểm tra Server Ready chưa
+        if not llm or not bus or not models["vector"]:
+            return {"answer": "Hệ thống đang khởi động (đang nạp tài nguyên). Vui lòng đợi 10 giây rồi thử lại.", "sources": [], "images": []}
 
-        # --- BƯỚC 2: XỬ LÝ INPUT ---
+        # --- BƯỚC 1: XỬ LÝ INPUT ---
         raw_question = request.question.strip()
         if len(raw_question) > 500: return {"answer": "Câu hỏi quá dài.", "sources": [], "images": []}
         if not raw_question: return {"answer": "Bạn chưa nhập câu hỏi.", "sources": [], "images": []}
@@ -252,8 +274,9 @@ async def chat_endpoint(request: ChatRequest):
         lower_q = question.lower()
         logger.info(f"REQ: {question}")
 
-        # --- BƯỚC 3: SMART INTENT ROUTER (LOGIC CỦA BẠN) ---
-        info_keywords = ["chi tiết", "cụ thể", "rõ hơn", "thêm về", "kể về", "nói về", "biết gì", "giới thiệu", "thông tin", "review", "ăn gì", "chơi gì", "lịch sử"]
+        # --- BƯỚC 2: SMART INTENT ROUTER ---
+        # Keyword Lists
+        info_keywords = ["chi tiết", "cụ thể", "rõ hơn", "thêm về", "kể về", "nói về", "biết gì", "giới thiệu", "thông tin", "review", "ăn gì", "chơi gì", "lịch sử", "có gì", "vui không"]
         hard_bus_keywords = ["xe bus", "xe buýt", "buýt", "tuyến xe", "trạm xe", "số mấy", "metro", "tàu điện"]
         greeting_keywords = ["xin chào", "chào", "hello", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye"]
 
@@ -262,9 +285,9 @@ async def chat_endpoint(request: ChatRequest):
         has_greeting = any(w in lower_q for w in greeting_keywords)
 
         is_bus_intent = False
-        intent = "tourism" # Default
+        intent = "tourism" # Mặc định là du lịch
 
-        # Logic Ưu tiên
+        # Logic Phân loại Intent
         if has_greeting and len(lower_q) < 50 and not has_hard_bus and not has_info:
             intent = "greeting"
         elif has_hard_bus:
@@ -283,18 +306,17 @@ async def chat_endpoint(request: ChatRequest):
                 is_bus_intent = True
                 intent = "bus"
         
-        # Fallback LLM Router
+        # Fallback LLM Router (Dùng AI để phân loại nếu keyword thất bại)
         location_filter = None
         if intent == "tourism" and not has_info and not has_greeting and len(lower_q) > 10:
             try:
                 router_prompt = f"""
-                Phân tích: "{question}".
+                Phân tích câu hỏi: "{question}".
+                Yêu cầu trả về JSON: {{ "intent": "bus"|"tourism"|"greeting", "location": "tên tỉnh/thành phố nếu có" }}
                 Quy tắc:
-                - Có "chi tiết", "kể về" -> tourism.
-                - Từ "đi" cuối câu ("kể đi") -> tourism.
-                - Chỉ "bus" khi tìm đường phương tiện công cộng.
-                - "cảm ơn", "chào" -> greeting.
-                JSON: {{ "intent": "bus"|"tourism"|"greeting", "location": "..." }}
+                - Hỏi về đi lại, tìm đường, xe cộ -> "bus"
+                - Hỏi về địa điểm, ăn chơi, lịch sử -> "tourism"
+                - Chào hỏi -> "greeting"
                 """
                 res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, router_prompt), timeout=3.0)
                 clean = res.text.strip().replace("```json", "").replace("```", "")
@@ -303,24 +325,22 @@ async def chat_endpoint(request: ChatRequest):
                 location_filter = parsed.get("location")
             except: pass
             
-        # Override lần cuối
+        # Override Intent logic
         if intent == "bus" and has_info and not has_hard_bus: intent = "tourism"
         if location_filter: location_filter = clean_entity_name(str(location_filter))
 
-        logger.info(f"🔍 FINAL INTENT: {intent}")
+        logger.info(f"🔍 FINAL INTENT: {intent} | Location: {location_filter}")
 
-        # --- BƯỚC 4: XỬ LÝ GREETING ---
+        # --- BƯỚC 3: XỬ LÝ GREETING ---
         if intent == "greeting":
-            if any(x in lower_q for x in ["cảm ơn", "thank", "hay quá", "tuyệt"]):
+            if any(x in lower_q for x in ["cảm ơn", "thank"]):
                 return {"answer": "Dạ không có chi ạ! Rất vui được hỗ trợ bạn. 🥰", "sources": [], "images": []}
             elif any(x in lower_q for x in ["tạm biệt", "bye"]):
-                return {"answer": "Tạm biệt! Hẹn gặp lại bạn. 👋", "sources": [], "images": []}
-            return {"answer": "Chào bạn! Tôi là trợ lý AI. Bạn cần tìm đường xe buýt hay thông tin du lịch?", "sources": [], "images": []}
+                return {"answer": "Tạm biệt! Hẹn gặp lại bạn trong chuyến đi tới. 👋", "sources": [], "images": []}
+            return {"answer": "Chào bạn! Tôi là trợ lý du lịch & giao thông AI. Bạn cần tìm đường xe buýt hay gợi ý địa điểm vui chơi?", "sources": [], "images": []}
 
-        # --- BƯỚC 5: XỬ LÝ BUS ---
+        # --- BƯỚC 4: XỬ LÝ BUS (GIAO THÔNG) ---
         if intent == "bus":
-            if not bus: return {"answer": "Dữ liệu xe buýt chưa sẵn sàng (đang tải). Thử lại sau 10s nhé."}
-            
             start_loc, end_loc = None, None
             seps = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "]
             prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ", "ghé"]
@@ -360,76 +380,106 @@ async def chat_endpoint(request: ChatRequest):
                         s, e = path_coords[0], path_coords[-1]
                         google_link = f"https://www.google.com/maps/dir/?api=1&origin={s[1]},{s[0]}&destination={e[1]},{e[0]}&travelmode=transit"
 
-                    polish_prompt = f"Dữ liệu: \"\"\"{bus_result['text']}\"\"\"\nViết lại hướng dẫn ngắn gọn, dễ hiểu. In đậm tên trạm và số xe. Hiển thị giá vé."
+                    polish_prompt = f"Dữ liệu lộ trình: \"\"\"{bus_result['text']}\"\"\"\nHãy viết lại hướng dẫn thật ngắn gọn, dễ hiểu. In đậm tên trạm và số xe buýt."
                     final_res = await asyncio.to_thread(llm.generate_content, polish_prompt)
                     ans = final_res.text
                     if google_link: ans += f"\n\n🔗 **[Mở Google Maps]({google_link})**"
                     return {"answer": ans, "sources": [], "images": []}
                 except Exception as e:
                     logger.error(f"BUS Error: {e}")
-                    return {"answer": "Lỗi xử lý tìm đường. Vui lòng thử lại.", "sources": [], "images": []}
+                    return {"answer": "Xin lỗi, tôi gặp lỗi khi tìm đường. Vui lòng thử lại với tên địa điểm cụ thể hơn.", "sources": [], "images": []}
             else:
-                return {"answer": "Vui lòng cung cấp điểm đi và điểm đến (Ví dụ: Từ Bến Thành đến Suối Tiên)", "sources": [], "images": []}
+                return {"answer": "Để tìm đường, bạn vui lòng nói rõ điểm đi và điểm đến (Ví dụ: Từ Bến Thành đến Suối Tiên).", "sources": [], "images": []}
 
-        # --- BƯỚC 6: XỬ LÝ TOURISM ---
+        # --- BƯỚC 5: XỬ LÝ TOURISM (VĂN HÓA - DU LỊCH) ---
+        # Logic Fix: Ưu tiên trả lời rộng nếu câu hỏi rộng
+        
         final_province = request.province if request.province else location_filter
         search_query = clean_entity_name(question)
         if final_province and isinstance(final_province, list): search_query = final_province[0]
 
-        # Hybrid Search (Truyền model & driver vào)
-        search_results = await hybrid_search_tourism(search_query, final_province, model=vec_model, driver=driver)
+        # Hybrid Search
+        search_results = await hybrid_search_tourism(search_query, final_province)
         
+        # Lọc ảnh
+        imgs = []
         if search_results:
             imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2]
+        
+        # Xây dựng context cho RAG
+        ctx = ""
+        if search_results:
             ctx = "\n".join([f"- {i['node']['name']} (Tỉnh: {i.get('province_name','Unknown')}): {i['node']['content']}" for i in search_results])
-            
-            rag_prompt = f"""
-            VAI TRÒ: Chuyên gia Văn hóa - Du lịch Việt Nam.
-            DỮ LIỆU: {ctx}
-            CÂU HỎI: "{question}"
-            YÊU CẦU: Trả lời tự nhiên, hấp dẫn, đúng trọng tâm.
-            """
-            res = await asyncio.to_thread(llm.generate_content, rag_prompt)
-            return {"answer": res.text, "sources": search_results, "images": imgs}
         else:
-            safe_prompt = f"Bạn là trợ lý du lịch VN. Câu hỏi: '{question}'. Trả lời ngắn gọn nếu biết. Nếu hỏi về Code/Y tế/Tài chính -> Từ chối khéo."
-            res = await asyncio.to_thread(llm.generate_content, safe_prompt)
-            return {"answer": res.text, "sources": [], "images": []}
+            ctx = "Không tìm thấy dữ liệu cụ thể trong database."
+
+        # PROMPT MỚI (FIX LỖI LỆCH HƯỚNG)
+        rag_prompt = f"""
+        VAI TRÒ: Bạn là Chuyên gia Du lịch & Văn hóa Việt Nam am hiểu sâu sắc, thân thiện.
+        
+        DỮ LIỆU TÌM THẤY TỪ HỆ THỐNG:
+        {ctx}
+        
+        CÂU HỎI CỦA NGƯỜI DÙNG: "{question}"
+        
+        CHỈ DẪN QUAN TRỌNG:
+        1. Dữ liệu hệ thống có thể bị hẹp hoặc thiếu (ví dụ: chỉ có lễ hội người Khmer). 
+        2. NẾU câu hỏi mang tính tổng quát (ví dụ: "TP.HCM có gì vui?", "Ăn gì ở Hà Nội?"):
+           - ĐỪNG chỉ dựa vào dữ liệu hệ thống nếu nó quá ít hoặc quá đặc thù.
+           - HÃY KẾT HỢP kiến thức rộng lớn của bạn để gợi ý thêm các địa điểm nổi tiếng, món ăn đặc trưng, hoạt động phổ biến tại địa điểm đó.
+           - Ví dụ: Nếu hỏi TP.HCM, hãy nhắc đến Landmark 81, Phố đi bộ, Chợ Bến Thành, Dinh Độc Lập... bên cạnh dữ liệu hệ thống.
+        3. NẾU câu hỏi cụ thể (ví dụ: "Lễ hội Ok Om Bok là gì?"): Hãy bám sát dữ liệu hệ thống để trả lời chính xác.
+        4. Trả lời tự nhiên, hấp dẫn, trình bày rõ ràng (dùng gạch đầu dòng).
+        """
+        
+        res = await asyncio.to_thread(llm.generate_content, rag_prompt)
+        return {"answer": res.text, "sources": search_results, "images": imgs}
 
     except Exception as e:
         logger.error(f"Endpoint Error: {e}")
-        return JSONResponse(status_code=500, content={"answer": "Lỗi hệ thống nội bộ.", "sources": [], "images": []})
+        return JSONResponse(status_code=500, content={"answer": "Hệ thống đang bảo trì hoặc gặp sự cố nội bộ.", "sources": [], "images": []})
 
-# --- API ẢNH (DÙNG LAZY LOADER) ---
+# --- API ẢNH ---
 @app.post("/chat_with_image")
 async def chat_with_image_endpoint(file: UploadFile = File(...), question: str = Form(...)):
     try:
-        # Load tài nguyên
-        llm, vec_model, driver, _ = await get_resources()
+        llm = models["llm"]
+        vec_model = models["vector"]
+        driver = models["driver"]
+
         if not llm: return {"answer": "Hệ thống AI chưa sẵn sàng.", "sources": [], "images": []}
         
         content = await file.read()
         if len(content) > 5 * 1024 * 1024: return {"answer": "Ảnh quá lớn (>5MB).", "sources": [], "images": []}
         img = Image.open(io.BytesIO(content))
         
-        # Vision
-        vision_res = await asyncio.to_thread(llm.generate_content, ["Đây là địa điểm du lịch nào ở VN? Chỉ trả về tên.", img])
+        # Vision Identify
+        vision_res = await asyncio.to_thread(llm.generate_content, ["Đây là địa điểm du lịch nào ở VN? Chỉ trả về tên địa điểm, không giải thích thêm.", img])
         detected = vision_res.text.strip()
         
         if "Unknown" in detected or len(detected) < 2:
-            return {"detected_location": None, "answer": "Không nhận diện được địa điểm.", "sources": [], "images": []}
+            return {"detected_location": None, "answer": "Xin lỗi, tôi không nhận diện được địa điểm này. Bạn có thể chụp rõ hơn không?", "sources": [], "images": []}
             
         # Search & Answer
-        search_results = await hybrid_search_tourism(detected, model=vec_model, driver=driver)
+        search_results = await hybrid_search_tourism(detected)
         imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2]
         ctx = "\n".join([f"- {i['node']['name']}: {i['node']['content']}" for i in search_results[:3]])
         
-        final = await asyncio.to_thread(llm.generate_content, f"Địa điểm: {detected}\nDữ liệu: {ctx}\nHỏi: {question}\nTrả lời:")
+        final_prompt = f"""
+        Địa điểm trong ảnh: {detected}
+        Dữ liệu hệ thống: {ctx}
+        Câu hỏi người dùng: {question}
+        
+        Trả lời ngắn gọn, đúng trọng tâm về địa điểm này.
+        """
+        final = await asyncio.to_thread(llm.generate_content, final_prompt)
         return {"detected_location": detected, "answer": final.text, "sources": search_results, "images": imgs}
     except Exception as e:
+        logger.error(f"Image Error: {e}")
         return {"answer": "Lỗi xử lý ảnh.", "sources": [], "images": []}
 
 if __name__ == "__main__":
     import uvicorn
+    # Hugging Face dùng port 7860, Local dùng port khác
     port = int(os.environ.get("PORT", 7860))
     uvicorn.run(app, host="0.0.0.0", port=port)
