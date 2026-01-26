@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 # --- 2. LOAD BIẾN MÔI TRƯỜNG ---
-load_dotenv(override=True)
+load_dotenv()
 
 NEO4J_URI = os.getenv("NEO4J_URI")
 NEO4J_USER = os.getenv("NEO4J_USERNAME", "neo4j") 
