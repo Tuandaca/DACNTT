@@ -134,16 +134,18 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
         if cleaned.endswith(suffix):
             cleaned = cleaned[:-len(suffix)].strip()
 
-    # 4. Xử lý Alias - ĐẦY ĐỦ 100% KHÔNG CẮT BỚT
+    # 4. Xử lý Alias - DANH SÁCH ĐẦY ĐỦ CỦA BẠN & MỞ RỘNG
     if use_alias or True:
         ENTITY_ALIASES = {
+            # --- FIX CỤM TỪ DÀI CỦA BẠN ---
+            "đại học tôn đức thắng đường nguyễn hữu thọ": "đại học tôn đức thắng",
+            
             # --- 1. ĐỊA DANH DU LỊCH & LANDMARKS ---
             "dinh độc lập": "hội trường thống nhất",
             "hội trường thống nhất": "hội trường thống nhất",
             "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
             "bưu điện thành phố": "bưu điện trung tâm sài gòn",
             
-            # Fix vụ Bảo tàng HCM -> Bến Nhà Rồng để tìm được trạm xe buýt
             "bến nhà rồng": "bến nhà rồng",
             "bảo tàng hồ chí minh": "bến nhà rồng", 
             "bảo tàng hcm": "bến nhà rồng",
@@ -169,7 +171,7 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "tp hcm": "thành phố hồ chí minh",
             "tp.hcm": "thành phố hồ chí minh",
 
-            # --- 3. SÂN BAY & BẾN XE (GIAO THÔNG) ---
+            # --- 3. SÂN BAY & BẾN XE ---
             "tân sơn nhất": "sân bay tân sơn nhất",
             "ga quốc nội": "sân bay tân sơn nhất",
             "ga quốc tế": "sân bay tân sơn nhất",
@@ -186,8 +188,7 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "công viên 23/9": "công viên 23 tháng 9",
             "cv 23/9": "công viên 23 tháng 9",
 
-            # --- 4. TRƯỜNG ĐẠI HỌC (Mở rộng cho sinh viên đi xe buýt) ---
-            # Nhóm ĐHQG
+            # --- 4. TRƯỜNG ĐẠI HỌC ---
             "đh quốc gia": "đại học quốc gia thành phố hồ chí minh",
             "đhqg": "đại học quốc gia thành phố hồ chí minh",
             "khtn": "đại học khoa học tự nhiên",
@@ -202,7 +203,6 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "cntt": "đại học công nghệ thông tin",
             "uit": "đại học công nghệ thông tin",
 
-            # Nhóm trường khác
             "đh tdt": "đại học tôn đức thắng",
             "tdt": "đại học tôn đức thắng",
             "tdtu": "đại học tôn đức thắng",
@@ -211,9 +211,10 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "đh văn lang": "đại học văn lang",
             "vlu": "đại học văn lang",
             "văn lang": "đại học văn lang",
-            "đh vl": "đại học văn lang",
+            "trường văn lang": "đại học văn lang",
             
             "hutech": "đại học công nghệ thành phố hồ chí minh",
+            "đh hutech": "đại học công nghệ thành phố hồ chí minh",
             "đh công nghệ": "đại học công nghệ thành phố hồ chí minh",
             
             "ueh": "đại học kinh tế thành phố hồ chí minh",
@@ -242,7 +243,7 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "đh sư phạm": "đại học sư phạm thành phố hồ chí minh",
             "hcmue": "đại học sư phạm thành phố hồ chí minh",
 
-            # --- 5. BỆNH VIỆN (Điểm đến quan trọng) ---
+            # --- 5. BỆNH VIỆN ---
             "bv chợ rẫy": "bệnh viện chợ rẫy",
             "chợ rẫy": "bệnh viện chợ rẫy",
             "bv 115": "bệnh viện nhân dân 115",
@@ -262,7 +263,7 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "bv tai mũi họng": "bệnh viện tai mũi họng",
             "bv mắt": "bệnh viện mắt",
 
-            # --- 6. TÊN ĐƯỜNG VIẾT TẮT ---
+            # --- 6. TÊN ĐƯỜNG ---
             "nguyễn hữu thọ": "đường nguyễn hữu thọ",
             "cmt8": "đường cách mạng tháng tám",
             "cách mạng tháng 8": "đường cách mạng tháng tám",
@@ -285,13 +286,17 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "ql13": "quốc lộ 13",
             "xa lộ hà nội": "xa lộ hà nội"
         }
-        for alias, full_name in ENTITY_ALIASES.items():
+        
+        # Sắp xếp từ dài xuống ngắn để ưu tiên replace chuỗi dài
+        sorted_aliases = sorted(ENTITY_ALIASES.keys(), key=len, reverse=True)
+        for alias in sorted_aliases:
             if alias in cleaned:
-                cleaned = cleaned.replace(alias, full_name)
+                cleaned = cleaned.replace(alias, ENTITY_ALIASES[alias])
     
     # 5. Fix lỗi lặp từ
     cleaned = cleaned.replace("-", " ")
     cleaned = re.sub(r'\b(\w+)( \1\b)+', r'\1', cleaned)
+    
     cleaned = cleaned.replace("đại học đại học", "đại học")
     cleaned = cleaned.replace("trường trường", "trường")
     cleaned = cleaned.replace("thành phố thành phố", "thành phố")
@@ -380,50 +385,49 @@ async def chat_endpoint(request: ChatRequest):
         lower_q = question.lower()
         logger.info(f"REQ: {question}")
 
-        # --- BƯỚC 1.5: ANTI-TOXIC & OFF-TOPIC FIREWALL (BỘ LỌC KÉP) ---
+        # --- BƯỚC 1.5: ANTI-TOXIC & OFF-TOPIC FIREWALL (BỘ LỌC KÉP - ĐÃ FIX REGEX) ---
         
         # A. BỘ LỌC CÔNG KÍCH / XÚC PHẠM (Chặn ngay lập tức)
+        # Sử dụng Regex \b để bắt nguyên từ, tránh bắt nhầm "Đại học" dính "óc"
         TOXIC_KEYWORDS = [
             "ngu", "dốt", "chó", "cút", "biến", "đần", "óc", "điên", "khùng", "vô dụng", 
             "như l", "như c", "đm", "đkm", "dm", "vcl", "đéo", "mày", "tao", "bot lỏ", 
             "rác rưởi", "phế vật", "cc", "cl"
         ]
-        if any(w in lower_q for w in TOXIC_KEYWORDS):
-            return {
-                "answer": "Vui lòng sử dụng ngôn ngữ lịch sự. Tôi là trợ lý ảo và luôn sẵn sàng hỗ trợ bạn một cách tôn trọng.",
-                "sources": [], 
-                "images": []
-            }
+        
+        # Regex Pattern: \b(ngu|dốt|...)\b (Chỉ bắt từ đứng một mình)
+        toxic_pattern = r'\b(' + '|'.join(map(re.escape, TOXIC_KEYWORDS)) + r')\b'
+        
+        if re.search(toxic_pattern, lower_q):
+             return {
+                 "answer": "Vui lòng sử dụng ngôn ngữ lịch sự. Tôi là trợ lý ảo và luôn sẵn sàng hỗ trợ bạn một cách tôn trọng.",
+                 "sources": [], 
+                 "images": []
+             }
 
         # B. BỘ LỌC NGOÀI LUỒNG (Off-topic Keywords)
-        # Bao quát hết các lĩnh vực ngoài luồng
         OFF_TOPIC_KEYWORDS = [
-            # Kỹ thuật / IT
             "code", "lập trình", "python", "java", "sql", "database", "bug", "lỗi", "error", 
             "máy tính", "laptop", "pc", "màn hình xanh", "blue screen", "cpu", "ram", "fps", "giật lag",
             "cài đặt", "crack", "hack", "virus", "reset", "windows", "linux", "system.exit",
-            # Y tế
             "thuốc", "bệnh", "đau", "khám", "bác sĩ", "ung thư", "tiểu đường", "mang thai",
-            # Tài chính
             "chứng khoán", "bitcoin", "tiền ảo", "vay", "lãi suất", "xổ số", "lô đề", "cá độ",
-            # Chính trị / Bạo lực
             "chính trị", "đảng", "nhà nước", "phản động", "giết", "súng", "bom", "khủng bố", "tự tử",
-            # Tình cảm / Đồi trụy
             "sex", "làm tình", "18+", "khiêu dâm", "gái", "trai", "tán tỉnh", "yêu đương",
-            # Học thuật
             "giải toán", "phương trình", "đạo hàm", "tích phân", "vật lý", "hóa học"
         ]
 
-        for w in OFF_TOPIC_KEYWORDS:
-            if w in lower_q:
-                is_valid_context = any(x in lower_q for x in ["ở đâu", "địa chỉ", "đường nào", "xe buýt", "đi ntn"])
-                if not is_valid_context:
-                    return {
-                        "answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**. Tôi không giải đáp các câu hỏi ngoài phạm vi này.",
-                        "sources": [], "images": []
-                    }
+        off_topic_pattern = r'\b(' + '|'.join(map(re.escape, OFF_TOPIC_KEYWORDS)) + r')\b'
+        
+        if re.search(off_topic_pattern, lower_q):
+            is_valid_context = any(x in lower_q for x in ["ở đâu", "địa chỉ", "đường nào", "xe buýt", "đi ntn"])
+            if not is_valid_context:
+                return {
+                    "answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**. Tôi không giải đáp các câu hỏi ngoài phạm vi này.",
+                    "sources": [], "images": []
+                }
 
-        # --- BƯỚC 2: AI INTENT ROUTER (PHÂN LOẠI TRẮNG/ĐEN) ---
+        # --- BƯỚC 2: AI INTENT ROUTER ---
         intent = "off_topic" 
         location_filter = None
         
@@ -436,7 +440,7 @@ async def chat_endpoint(request: ChatRequest):
             2. "tourism_vn": Du lịch, văn hóa, ẩm thực, lịch sử CẢ NƯỚC VIỆT NAM.
             3. "greeting": Chào hỏi xã giao.
             4. "out_of_scope_transport": Giao thông KHÔNG PHẢI BUS TP.HCM (Máy bay, Tàu hỏa, Bus tỉnh khác).
-            5. "off_topic": Tất cả câu hỏi khác (Kỹ thuật, Y tế, Tình cảm, Code, Toán...).
+            5. "off_topic": Tất cả câu hỏi khác.
 
             CÂU HỎI: "{question}"
             JSON: {{ "intent": "...", "location": "..." }}
@@ -447,7 +451,6 @@ async def chat_endpoint(request: ChatRequest):
             intent = parsed.get("intent", "off_topic")
             location_filter = parsed.get("location")
         except:
-            # Fallback
             if any(w in lower_q for w in ["chào", "hello"]): intent = "greeting"
             elif "xe buýt" in lower_q and ("hcm" in lower_q or "sài gòn" in lower_q): intent = "bus_hcm"
             else: intent = "off_topic" 
@@ -458,7 +461,7 @@ async def chat_endpoint(request: ChatRequest):
         # --- BƯỚC 3: XỬ LÝ THEO INTENT ---
 
         if intent == "off_topic":
-            return {"answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**.", "sources": [], "images": []}
+             return {"answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**.", "sources": [], "images": []}
 
         if intent == "out_of_scope_transport":
             return {"answer": "Hệ thống chưa cập nhật dữ liệu về phương tiện/khu vực này. Tôi chỉ hỗ trợ Xe buýt TP.HCM.", "sources": [], "images": []}
@@ -466,7 +469,7 @@ async def chat_endpoint(request: ChatRequest):
         if intent == "greeting":
             if any(x in lower_q for x in ["cảm ơn", "thank"]):
                 return {"answer": "Dạ không có chi ạ! 🥰", "sources": [], "images": []}
-            return {"answer": "Chào bạn! Tôi là trợ lý AI. Bạn cần tìm đường xe buýt (TP.HCM) hay thông tin du lịch (Việt Nam)?", "sources": [], "images": []}
+            return {"answer": "Chào bạn! Tôi là trợ lý du lịch & giao thông AI. Bạn cần tìm đường xe buýt (TP.HCM) hay thông tin du lịch (Việt Nam)?", "sources": [], "images": []}
 
         # BUS HCM
         if intent == "bus_hcm":
@@ -507,9 +510,9 @@ async def chat_endpoint(request: ChatRequest):
 
                     # L3: Address Lookup
                     if bus_result.get("status") == "error":
-                        logger.info("⚠️ Bus L2 fail. Addr Lookup...")
-                        address_prompt = f"""Tìm địa chỉ TP.HCM cho: 1. {real_start}, 2. {real_end}. JSON: {{"start_addr": "...", "end_addr": "..."}}"""
-                        try:
+                         logger.info("⚠️ Bus L2 fail. Addr Lookup...")
+                         address_prompt = f"""Tìm địa chỉ TP.HCM cho: 1. {real_start}, 2. {real_end}. JSON: {{"start_addr": "...", "end_addr": "..."}}"""
+                         try:
                             addr_res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, address_prompt), timeout=4.0)
                             clean_json = addr_res.text.strip().replace("```json", "").replace("```", "")
                             addr_data = json.loads(clean_json)
@@ -517,7 +520,7 @@ async def chat_endpoint(request: ChatRequest):
                             new_end = addr_data.get("end_addr")
                             if new_start and new_end:
                                 bus_result = await loop.run_in_executor(None, lambda: bus.solve_route(new_start, new_end))
-                        except: pass
+                         except: pass
 
                     if bus_result.get("status") == "ambiguous":
                         return {"answer": bus_result["message"], "options": bus_result["options"], "context_type": "bus_ambiguity", "original_request": {"start": real_start, "end": real_end, "type": bus_result["point_type"]}, "sources": [], "images": []}
@@ -545,7 +548,7 @@ async def chat_endpoint(request: ChatRequest):
             if final_province and isinstance(final_province, list): search_query = final_province[0]
 
             search_results = await hybrid_search_tourism(search_query, final_province)
-            imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2] if search_results else []
+            imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2]
             ctx = "\n".join([f"- {i['node']['name']}: {i['node']['content']}" for i in search_results]) if search_results else "Không có dữ liệu."
 
             rag_prompt = f"""VAI TRÒ: Chuyên gia Du lịch VN. DỮ LIỆU: {ctx}. CÂU HỎI: "{question}". CHỈ DẪN: Trả lời về du lịch/văn hóa. KHÔNG trả lời ngoài luồng."""
