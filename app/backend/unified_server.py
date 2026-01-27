@@ -166,8 +166,9 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
         if cleaned.endswith(suffix):
             cleaned = cleaned[:-len(suffix)].strip()
 
-    if use_alias:
+    if use_alias or True:
         ENTITY_ALIASES = {
+            # Địa danh du lịch
             "dinh độc lập": "hội trường thống nhất", 
             "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
             "bưu điện thành phố": "bưu điện trung tâm sài gòn",
@@ -177,9 +178,36 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "lăng bác": "lăng chủ tịch hồ chí minh",
             "sài gòn": "thành phố hồ chí minh",
             "hcm": "thành phố hồ chí minh",
-            "tphcm": "thành phố hồ chí minh"
+            "tphcm": "thành phố hồ chí minh",
+            
+            # Trường Đại Học (Alias cho Bus)
+            "đh tdt": "đại học tôn đức thắng",
+            "tdt": "đại học tôn đức thắng",
+            "tdtu": "đại học tôn đức thắng",
+            "tôn đức thắng": "đại học tôn đức thắng",
+            
+            "đh văn lang": "đại học văn lang",
+            "vlu": "đại học văn lang",
+            "văn lang": "đại học văn lang",
+            
+            "hutech": "đại học công nghệ thành phố hồ chí minh",
+            "đh hutech": "đại học công nghệ thành phố hồ chí minh",
+            
+            "ueh": "đại học kinh tế thành phố hồ chí minh",
+            "đh kinh tế": "đại học kinh tế thành phố hồ chí minh",
+            
+            "bách khoa": "đại học bách khoa",
+            "hcmut": "đại học bách khoa",
+            
+            "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật",
+            "spkt": "đại học sư phạm kỹ thuật",
+            
+            "fpt": "đại học fpt",
+            "rmit": "đại học rmit"
         }
-        if cleaned in ENTITY_ALIASES: return ENTITY_ALIASES[cleaned].title()
+        for alias, full_name in ENTITY_ALIASES.items():
+            if alias in cleaned:
+                cleaned = cleaned.replace(alias, full_name)
     
     return cleaned.title()
 
@@ -289,32 +317,32 @@ async def chat_endpoint(request: ChatRequest):
             "cách đi", "đường đi", "làm sao đi", "đi bằng gì", "đi như thế nào", # Intent tìm đường
             "bao lâu", "đón xe", "bắt xe"
         ]
-        greeting_keywords = ["xin chào", "chào", "hello", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye", "hi"]
+        greeting_keywords = ["xin chào", "chào", "hello", "hi", "hí", "hé lô", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye", "hi"]
+        question_keywords = ["ai", "gì", "nào", "đâu", "mấy", "bao nhiêu", "sao", "thế nào"]
 
         has_hard_bus = any(w in lower_q for w in hard_bus_keywords)
         has_info = any(w in lower_q for w in info_keywords)
         has_greeting = any(w in lower_q for w in greeting_keywords)
+        has_question_word = any(w in lower_q for w in question_keywords)
 
         is_bus_intent = False
         intent = "tourism" # Mặc định là du lịch
 
-        # Logic Phân loại Intent
-        if has_greeting and len(lower_q) < 50 and not has_hard_bus and not has_info:
+        # --- LOGIC PHÂN LOẠI MỚI ---
+        if has_greeting and len(lower_q) < 50 and not has_hard_bus and not has_info and not has_question_word:
+            # Chỉ Greeting khi câu ngắn VÀ KHÔNG có từ để hỏi
             intent = "greeting"
         elif has_hard_bus:
-            is_bus_intent = True
             intent = "bus"
-        elif has_info:
-            is_bus_intent = False
+        elif has_info or has_question_word:
             intent = "tourism"
         else:
-            # Check cấu trúc tìm đường (Bus)
+            # Check cấu trúc tìm đường
             has_start = any(x in lower_q for x in ["từ", "đi từ", "bắt đầu từ"])
             has_end = any(x in lower_q for x in ["đến", "tới", "về", "qua"])
             is_about_topic = "về" in lower_q and not any(x in lower_q for x in ["về bến", "về trạm", "về nhà", "về đích", "về tới"])
             
             if has_start and has_end and not is_about_topic:
-                is_bus_intent = True
                 intent = "bus"
         
         # Fallback LLM Router (Dùng AI để phân loại nếu keyword thất bại)
