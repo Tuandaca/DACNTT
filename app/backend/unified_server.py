@@ -74,7 +74,13 @@ async def lifespan(app: FastAPI):
     # 3. Kết nối Neo4j
     try:
         if NEO4J_URI and NEO4J_PASSWORD:
-            driver = AsyncGraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASSWORD))
+            driver = AsyncGraphDatabase.driver(
+                NEO4J_URI, 
+                auth=(NEO4J_USER, NEO4J_PASSWORD),
+                keep_alive=True,                 # Giữ kết nối sống
+                max_connection_lifetime=200,     # Làm mới kết nối sau mỗi 200s
+                max_connection_pool_size=50      # Tăng số lượng kết nối đồng thời
+            )
             await driver.verify_connectivity()
             models["driver"] = driver
             logger.info("✅ Neo4j Database Connected")
@@ -277,7 +283,12 @@ async def chat_endpoint(request: ChatRequest):
         # --- BƯỚC 2: SMART INTENT ROUTER ---
         # Keyword Lists
         info_keywords = ["chi tiết", "cụ thể", "rõ hơn", "thêm về", "kể về", "nói về", "biết gì", "giới thiệu", "thông tin", "review", "ăn gì", "chơi gì", "lịch sử", "có gì", "vui không"]
-        hard_bus_keywords = ["xe bus", "xe buýt", "buýt", "tuyến xe", "trạm xe", "số mấy", "metro", "tàu điện"]
+        hard_bus_keywords = [
+            "xe bus", "xe buýt", "buýt", "buyt", "buyet", "buyết", # Bắt lỗi chính tả
+            "tuyến xe", "trạm xe", "số mấy", "metro", "tàu điện",
+            "cách đi", "đường đi", "làm sao đi", "đi bằng gì", "đi như thế nào", # Intent tìm đường
+            "bao lâu", "đón xe", "bắt xe"
+        ]
         greeting_keywords = ["xin chào", "chào", "hello", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye", "hi"]
 
         has_hard_bus = any(w in lower_q for w in hard_bus_keywords)
