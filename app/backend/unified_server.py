@@ -143,9 +143,16 @@ def normalize_text(text: Union[str, List[str], None]) -> str:
     return unicodedata.normalize('NFC', str(text)).lower().strip()
 
 def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
+    """
+    Hàm chuẩn hóa tên địa điểm.
+    Đã thêm tính năng XÓA TỪ LẶP (Duplicate Word Remover)
+    """
     if not raw_text: return ""
+    
+    # 1. Chuẩn hóa cơ bản
     cleaned = raw_text.lower().strip()[:200]
     
+    # 2. Xóa từ khóa thừa (Prefix) - Sắp xếp dài xóa trước
     prefixes = [
         "lộ trình đi xe buýt từ", "lộ trình xe buýt đi từ", "lộ trình xe buýt từ", 
         "lộ trình đi từ", "lộ trình từ", "lộ trình xe buýt về", "lộ trình",
@@ -155,17 +162,23 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
         "đường đi xe buýt từ", "đường đi từ", "làm sao để đi từ", "làm sao đi từ",
         "xe buýt đi từ", "xe buýt từ", "tuyến xe từ", "bắt xe từ", "đón xe từ", "đi xe buýt từ",
         "đi từ", "đến", "tới", "về", "sang", "qua", "tại", "ở", "khu vực", 
-        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về", "có gì"
+        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về", "có gì",
+        "muốn đi", "đang ở"
     ]
+    # Sort để xóa các cụm từ dài trước
+    prefixes.sort(key=len, reverse=True)
+    
     for word in prefixes:
         if cleaned.startswith(word):
             cleaned = cleaned.replace(word, "", 1).strip()
             
+    # 3. Xóa từ khóa thừa (Suffix)
     suffixes = [" như thế nào", " thế nào", " ra sao", " làm sao", " ở đâu", " chỗ nào", " nhé", " nha", " nhỉ", " vậy", " ạ", " hả", " đi", " vui", " ngon", " đẹp"]
     for suffix in suffixes:
         if cleaned.endswith(suffix):
             cleaned = cleaned[:-len(suffix)].strip()
 
+    # 4. Xử lý Alias (Thay thế tên viết tắt)
     if use_alias or True:
         ENTITY_ALIASES = {
             # Địa danh du lịch
@@ -180,15 +193,16 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "hcm": "thành phố hồ chí minh",
             "tphcm": "thành phố hồ chí minh",
             
-            # Trường Đại Học (Alias cho Bus)
+            # Trường Đại Học & Đường xá
             "đh tdt": "đại học tôn đức thắng",
             "tdt": "đại học tôn đức thắng",
             "tdtu": "đại học tôn đức thắng",
+            "tôn đức thắng": "đại học tôn đức thắng",
             
             "đh văn lang": "đại học văn lang",
             "vlu": "đại học văn lang",
             "văn lang": "đại học văn lang",
-            "đại học văn lang": "đại học văn lang",
+            "trường văn lang": "đại học văn lang",
             
             "hutech": "đại học công nghệ thành phố hồ chí minh",
             "đh hutech": "đại học công nghệ thành phố hồ chí minh",
@@ -203,12 +217,28 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "spkt": "đại học sư phạm kỹ thuật",
             
             "fpt": "đại học fpt",
-            "rmit": "đại học rmit"
+            "rmit": "đại học rmit",
+
+            "nguyễn hữu thọ": "đường nguyễn hữu thọ"
         }
         for alias, full_name in ENTITY_ALIASES.items():
             if alias in cleaned:
                 cleaned = cleaned.replace(alias, full_name)
     
+    # 5. --- FIX LỖI LẶP TỪ (Duplicate Words Fix) ---
+    # Dùng Regex để tìm các từ lặp lại liền kề và gộp chúng lại
+    # Ví dụ: "đại học đại học" -> "đại học"
+    cleaned = re.sub(r'\b(\w+)( \1\b)+', r'\1', cleaned)
+    
+    # Fix cứng các trường hợp đặc biệt tiếng Việt dễ bị sót bởi regex
+    cleaned = cleaned.replace("đại học đại học", "đại học")
+    cleaned = cleaned.replace("trường trường", "trường")
+    cleaned = cleaned.replace("thành phố thành phố", "thành phố")
+    cleaned = cleaned.replace("đường đường", "đường")
+
+    # Xóa khoảng trắng thừa
+    cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+
     return cleaned.title()
 
 # --- 5. HYBRID SEARCH LOGIC ---
@@ -406,7 +436,7 @@ async def chat_endpoint(request: ChatRequest):
                         return {
                             "answer": bus_result["message"], 
                             "options": bus_result["options"], 
-                            "context_type": "bus_ambiguity",
+                            "context_type": "bus_ambiguity", 
                             "original_request": {"start": start_loc, "end": end_loc, "type": bus_result["point_type"]},
                             "sources": [], "images": []
                         }
