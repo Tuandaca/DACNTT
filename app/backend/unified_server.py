@@ -399,11 +399,11 @@ async def chat_endpoint(request: ChatRequest):
         toxic_pattern = r'\b(' + '|'.join(map(re.escape, TOXIC_KEYWORDS)) + r')\b'
         
         if re.search(toxic_pattern, lower_q):
-             return {
+            return {
                  "answer": "Vui lòng sử dụng ngôn ngữ lịch sự. Tôi là trợ lý ảo và luôn sẵn sàng hỗ trợ bạn một cách tôn trọng.",
                  "sources": [], 
                  "images": []
-             }
+            }
 
         # B. BỘ LỌC NGOÀI LUỒNG (Off-topic Keywords)
         OFF_TOPIC_KEYWORDS = [
@@ -461,7 +461,7 @@ async def chat_endpoint(request: ChatRequest):
         # --- BƯỚC 3: XỬ LÝ THEO INTENT ---
 
         if intent == "off_topic":
-             return {"answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**.", "sources": [], "images": []}
+            return {"answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**.", "sources": [], "images": []}
 
         if intent == "out_of_scope_transport":
             return {"answer": "Hệ thống chưa cập nhật dữ liệu về phương tiện/khu vực này. Tôi chỉ hỗ trợ Xe buýt TP.HCM.", "sources": [], "images": []}
@@ -475,7 +475,7 @@ async def chat_endpoint(request: ChatRequest):
         if intent == "bus_hcm":
             start_loc, end_loc = None, None
             seps = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "]
-            prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ", "ghé", "muốn đi", "đang ở", "đứng tại"]
+            prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ", "ghé", "muốn đi", "đang ở", "đứng tại", "làm sao để đi xe buýt"]
             found_sep = next((s for s in seps if s in lower_q), None)
             if found_sep:
                 parts = lower_q.split(found_sep, 1)
