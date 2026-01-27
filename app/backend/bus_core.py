@@ -17,10 +17,10 @@ class BusBotV13:
 
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
         
-        # --- TỪ ĐIỂN VIẾT TẮT ---
+        # --- TỪ ĐIỂN VIẾT TẮT (FULL 100%) ---
         self.ABBREVIATIONS = {
             "tdt": "đại học tôn đức thắng", "đh tdt": "đại học tôn đức thắng", "tdtu": "đại học tôn đức thắng",
-            "văn lang": "trường đại học văn lang", "đh văn lang": "trường đại học văn lang", "vlu": "trường đại học văn lang",
+            "văn lang": "văn lang", "đh văn lang": "đại học văn lang", "vlu": "đại học văn lang",
             "csnd": "đại học cảnh sát nhân dân", "đh csnd": "đại học cảnh sát nhân dân",
             "bk": "đại học bách khoa", "bách khoa": "đại học bách khoa", "hcmut": "đại học bách khoa",
             "khtn": "đại học khoa học tự nhiên", "tự nhiên": "đại học khoa học tự nhiên", "hcmus": "đại học khoa học tự nhiên",
@@ -41,7 +41,9 @@ class BusBotV13:
             
             "bến thành": "bến xe buýt sài gòn", "chợ bến thành": "bến xe buýt sài gòn",
             "kdl suối tiên": "Khu DL Suối Tiên",
-            "đầm sen": "công viên văn hóa đầm sen", "cv đầm sen": "công viên văn hóa đầm sen",
+            "công viên văn hóa đầm sen": "đầm sen", 
+            "công viên nước đầm sen": "đầm sen",
+            "cv đầm sen": "đầm sen",
             "thảo cầm viên": "thảo cầm viên",
             "nhà thờ đức bà": "công xã paris",
             "sân bay": "sân bay tân sơn nhất", "tsn": "sân bay tân sơn nhất",
@@ -62,19 +64,20 @@ class BusBotV13:
         if not text: return ""
         text = text.lower()
         
-        # 1. Thay thế từ viết tắt
+        # 1. Thay thế từ viết tắt (Alias)
         def replace(match): return self.ABBREVIATIONS[match.group(0)]
         text = self.pattern.sub(replace, text)
         
-        # --- [FIX QUAN TRỌNG] XỬ LÝ LẶP TỪ DO MỞ RỘNG VIẾT TẮT ---
-        # Ví dụ: User nhập "Đại học Văn Lang" -> Máy dịch thành "Đại học trường đại học Văn Lang"
-        # Cần replace chuỗi lặp đó thành "trường đại học" gọn gàng.
-        text = text.replace("đại học đại học", "đại học") \
-                   .replace("trường đại học trường đại học", "trường đại học") \
-                   .replace("đại học trường đại học", "trường đại học") \
-                   .replace("trường đại học đại học", "trường đại học")
+        # 2. XỬ LÝ LẶP TỪ (Robust Deduplication)
+        # Fix lỗi: "sân bay tân sơn nhất tân sơn nhất" -> "sân bay tân sơn nhất"
+        for num_words in range(5, 0, -1):
+            pattern = r'\b(' + r'\s+'.join([r'\w+'] * num_words) + r')\s+\1\b'
+            text = re.sub(pattern, r'\1', text, flags=re.IGNORECASE)
         
-        # 2. Loại bỏ các từ thừa phổ biến
+        # Normalize spaces
+        text = re.sub(r'\s+', ' ', text)
+        
+        # 3. Loại bỏ các từ thừa phổ biến (Stopwords)
         stopwords = [
             "trạm xe buýt", "trạm", "bến xe", "điểm dừng", "khu vực", 
             "lộ trình xe buýt đi từ", "lộ trình", "xe buýt từ", "đi từ", "về", "đến", "tới", "sang", "qua"
@@ -84,20 +87,59 @@ class BusBotV13:
             
         return text.strip()
 
-    # --- HÀM TÌM KIẾM & GOM NHÓM ---
+    # --- HÀM TÌM KIẾM & GOM NHÓM (LOGIC CẢI TIẾN: RAW FIRST) ---
     def find_grouped_candidates(self, session, query_text):
+        if not query_text: return []
+        
+        # --- BƯỚC 1: TÌM CHÍNH XÁC (RAW MATCH) ---
+        # Tìm xem chuỗi nhập vào có khớp 100% với tên trạm hoặc tên đường không
+        # Bỏ qua khâu Clean/Alias để tránh sửa lợn lành thành lợn què
+        raw_text = query_text.lower().strip()
+        
+        q_raw = """
+        MATCH (b:BusStop)
+        WHERE toLower(b.name) = $txt OR toLower(b.code) = $txt
+        
+        WITH b.name AS LocationName, 
+             COALESCE(b.street, 'Khu vực chính') AS StreetName, 
+             collect(b.id) AS StationIDs,
+             avg(b.lat) as lat, avg(b.lng) as lng
+        
+        RETURN LocationName, StreetName, StationIDs, lat, lng
+        LIMIT 5
+        """
+        raw_results = list(session.run(q_raw, txt=raw_text))
+        
+        # Nếu tìm thấy Raw Match -> Trả về ngay (ƯU TIÊN CAO NHẤT)
+        if raw_results:
+            candidates = []
+            for r in raw_results:
+                candidates.append({
+                    "name": r["LocationName"],
+                    "street": r["StreetName"],
+                    "ids": r["StationIDs"],
+                    "lat": r["lat"],
+                    "lng": r["lng"]
+                })
+            return candidates
+
+        # --- BƯỚC 2: NẾU KHÔNG THẤY RAW -> MỚI CLEAN VÀ TÌM TIẾP ---
         clean_text = self.normalize_query(query_text)
         
-        # LOGIC 1: Tìm chính xác khi có tên đường
+        # LOGIC 2.1: Tìm chính xác khi có tên đường (sau khi clean)
         if " đường " in clean_text:
-            parts = clean_text.split(" đường ")
+            parts = clean_text.split(" đường ", 1) 
             name_part = parts[0].strip() 
-            street_part = parts[1].strip() 
+            street_part = parts[1].strip()
+            
+            street_part = street_part.replace("_", " ").replace("-", " ")
+            street_part = re.sub(r'\s+', ' ', street_part).strip()
             
             q = """
             MATCH (b:BusStop)
             WHERE (toLower(b.name) CONTAINS $name OR toLower(b.code) = $name)
-              AND toLower(b.street) CONTAINS $street
+              AND (toLower(b.street) CONTAINS $street 
+                   OR toLower(REPLACE(REPLACE(b.street, '_', ' '), '-', ' ')) CONTAINS $street)
             
             WITH b.name AS LocationName, 
                  b.street AS StreetName, 
@@ -105,11 +147,11 @@ class BusBotV13:
                  avg(b.lat) as lat, avg(b.lng) as lng
                  
             RETURN LocationName, StreetName, StationIDs, lat, lng
-            LIMIT 1
+            LIMIT 5
             """
             results = list(session.run(q, name=name_part, street=street_part))
         
-        # LOGIC 2: Tìm diện rộng
+        # LOGIC 2.2: Tìm diện rộng (Fuzzy Search)
         else:
             q = """
             MATCH (b:BusStop)
@@ -122,8 +164,10 @@ class BusBotV13:
             
             RETURN LocationName, StreetName, StationIDs, lat, lng
             ORDER BY 
-               CASE WHEN toLower(LocationName) STARTS WITH $txt THEN 0 ELSE 1 END,
-               LocationName ASC
+                CASE WHEN toLower(LocationName) STARTS WITH $txt THEN 0 
+                     WHEN toLower(LocationName) = $txt THEN 0
+                     ELSE 1 END,
+                LocationName ASC
             LIMIT 20
             """
             results = list(session.run(q, txt=clean_text))
