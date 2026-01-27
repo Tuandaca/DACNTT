@@ -111,10 +111,7 @@ def normalize_text(text: Union[str, List[str], None]) -> str:
     return unicodedata.normalize('NFC', str(text)).lower().strip()
 
 def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
-    """
-    Hàm chuẩn hóa tên địa điểm (Thuần Regex/String Manipulation).
-    ĐÃ XÓA BỎ HARD-CODE SÂN BAY.
-    """
+    """Hàm chuẩn hóa tên địa điểm"""
     if not raw_text: return ""
     cleaned = raw_text.lower().strip()[:200]
     
@@ -125,18 +122,7 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             cleaned = cleaned.split(stop)[0].strip()
 
     # 2. Xóa Prefix
-    prefixes = [
-        "lộ trình đi xe buýt từ", "lộ trình xe buýt đi từ", "lộ trình xe buýt từ", 
-        "lộ trình đi từ", "lộ trình từ", "lộ trình xe buýt về", "lộ trình",
-        "hướng dẫn bắt xe buýt từ", "hướng dẫn đi xe buýt từ", "hướng dẫn đón xe buýt từ",
-        "hướng dẫn bắt xe từ", "hướng dẫn đi từ", "hướng dẫn đường đi từ", "hướng dẫn",
-        "cách đi xe buýt từ", "cách bắt xe buýt từ", "cách đi từ", "tìm đường đi từ",
-        "đường đi xe buýt từ", "đường đi từ", "làm sao để đi từ", "làm sao đi từ",
-        "xe buýt đi từ", "xe buýt từ", "tuyến xe từ", "bắt xe từ", "đón xe từ", "đi xe buýt từ",
-        "đi từ", "đến", "tới", "về", "sang", "qua", "tại", "ở", "khu vực", 
-        "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về", "có gì",
-        "muốn đi", "đang ở", "đứng tại"
-    ]
+    prefixes = ["lộ trình đi xe buýt từ", "lộ trình xe buýt đi từ", "lộ trình xe buýt từ", "lộ trình đi từ", "lộ trình từ", "lộ trình xe buýt về", "lộ trình", "hướng dẫn bắt xe buýt từ", "hướng dẫn đi xe buýt từ", "hướng dẫn đón xe buýt từ", "hướng dẫn bắt xe từ", "hướng dẫn đi từ", "hướng dẫn đường đi từ", "hướng dẫn", "cách đi xe buýt từ", "cách bắt xe buýt từ", "cách đi từ", "tìm đường đi từ", "đường đi xe buýt từ", "đường đi từ", "làm sao để đi từ", "làm sao đi từ", "xe buýt đi từ", "xe buýt từ", "tuyến xe từ", "bắt xe từ", "đón xe từ", "đi xe buýt từ", "đi từ", "đến", "tới", "về", "sang", "qua", "tại", "ở", "khu vực", "tìm đường", "chỉ đường", "cho tôi hỏi về", "thông tin về", "giới thiệu về", "biết gì về", "có gì", "muốn đi", "đang ở", "đứng tại"]
     prefixes.sort(key=len, reverse=True)
     for word in prefixes:
         if cleaned.startswith(word):
@@ -148,14 +134,10 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
         if cleaned.endswith(suffix):
             cleaned = cleaned[:-len(suffix)].strip()
 
-    # 4. Xử lý Alias (Từ điển chung)
+    # 4. Xử lý Alias - ĐẦY ĐỦ 100% KHÔNG CẮT BỚT
     if use_alias or True:
         ENTITY_ALIASES = {
-            # Sân bay (Alias cơ bản thôi, không hardcode logic)
-            "tân sơn nhất": "sân bay tân sơn nhất",
-            "ga quốc nội": "sân bay tân sơn nhất",
-            
-            # Địa danh & Trường học
+            # Địa danh du lịch
             "dinh độc lập": "hội trường thống nhất", 
             "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
             "bưu điện thành phố": "bưu điện trung tâm sài gòn",
@@ -167,20 +149,38 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "hcm": "thành phố hồ chí minh",
             "tphcm": "thành phố hồ chí minh",
             
+            # Sân bay (Alias cơ bản, không hardcode logic)
+            "tân sơn nhất": "sân bay tân sơn nhất",
+            "ga quốc nội": "sân bay tân sơn nhất",
+            "ga quốc tế": "sân bay tân sơn nhất",
+            "phi trường": "sân bay tân sơn nhất",
+            
+            # Trường Đại Học & Đường xá
             "đh tdt": "đại học tôn đức thắng",
             "tdt": "đại học tôn đức thắng",
             "tdtu": "đại học tôn đức thắng",
             "tôn đức thắng": "đại học tôn đức thắng",
+            
             "đh văn lang": "đại học văn lang",
             "vlu": "đại học văn lang",
             "văn lang": "đại học văn lang",
             "trường văn lang": "đại học văn lang",
+            
             "hutech": "đại học công nghệ thành phố hồ chí minh",
+            "đh hutech": "đại học công nghệ thành phố hồ chí minh",
+            
             "ueh": "đại học kinh tế thành phố hồ chí minh",
+            "đh kinh tế": "đại học kinh tế thành phố hồ chí minh",
+            
             "bách khoa": "đại học bách khoa",
+            "hcmut": "đại học bách khoa",
+            
+            "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật",
             "spkt": "đại học sư phạm kỹ thuật",
+            
             "fpt": "đại học fpt",
             "rmit": "đại học rmit",
+
             "nguyễn hữu thọ": "đường nguyễn hữu thọ"
         }
         for alias, full_name in ENTITY_ALIASES.items():
@@ -190,12 +190,10 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
     # 5. Fix lỗi lặp từ
     cleaned = cleaned.replace("-", " ")
     cleaned = re.sub(r'\b(\w+)( \1\b)+', r'\1', cleaned)
-    
     cleaned = cleaned.replace("đại học đại học", "đại học")
     cleaned = cleaned.replace("trường trường", "trường")
     cleaned = cleaned.replace("thành phố thành phố", "thành phố")
     cleaned = cleaned.replace("đường đường", "đường")
-
     cleaned = re.sub(r'\s+', ' ', cleaned).strip()
     return cleaned.title()
 
@@ -269,76 +267,107 @@ async def chat_endpoint(request: ChatRequest):
         llm = models["llm"]
         bus = models["bus_bot"]
         if not llm or not bus or not models["vector"]:
-            return {"answer": "Hệ thống đang khởi động (đang nạp tài nguyên). Vui lòng đợi 10 giây rồi thử lại.", "sources": [], "images": []}
+            return {"answer": "Hệ thống đang khởi động. Vui lòng thử lại sau 10 giây.", "sources": [], "images": []}
 
-        # --- BƯỚC 1: XỬ LÝ INPUT ---
+        # --- BƯỚC 1: INPUT ---
         raw_question = request.question.strip()
         if len(raw_question) > 500: return {"answer": "Câu hỏi quá dài.", "sources": [], "images": []}
         if not raw_question: return {"answer": "Bạn chưa nhập câu hỏi.", "sources": [], "images": []}
+        
         question = re.sub(r'[\\/*.,?]+$', '', raw_question).strip()
         lower_q = question.lower()
         logger.info(f"REQ: {question}")
 
-        # --- BƯỚC 1.5: SAFETY GUARDRAIL ---
-        unsafe_keywords = ["chính trị", "phản động", "đảng", "nhà nước", "sex", "khỏa thân", "khiêu dâm", "18+", "giết người", "tự tử", "bom", "súng", "cờ bạc", "cá độ", "lô đề", "viết code", "lập trình", "python", "java", "giải toán", "phương trình"]
-        if any(w in lower_q for w in unsafe_keywords):
-             return {"answer": "Xin lỗi, tôi là trợ lý AI chuyên về **Du lịch & Giao thông**. Tôi không thể trả lời các câu hỏi về chính trị, kỹ thuật, bạo lực hoặc ngoài luồng.", "sources": [], "images": []}
-
-        # --- BƯỚC 2: INTENT ROUTER ---
-        info_keywords = ["chi tiết", "cụ thể", "rõ hơn", "thêm về", "kể về", "nói về", "biết gì", "giới thiệu", "thông tin", "review", "ăn gì", "chơi gì", "lịch sử", "có gì", "vui không"]
-        hard_bus_keywords = ["xe bus", "xe buýt", "buýt", "buyt", "buyet", "buyết", "tuyến xe", "trạm xe", "số mấy", "metro", "tàu điện", "cách đi", "đường đi", "làm sao đi", "đi bằng gì", "đi như thế nào", "bao lâu", "đón xe", "bắt xe"]
-        greeting_keywords = ["xin chào", "chào", "hello", "hi", "hí", "hé lô", "hi bot", "hi ad", "alo", "cảm ơn", "thank", "hay quá", "tuyệt vời", "ok", "tạm biệt", "bye", "hi"]
-        question_keywords = ["ai", "gì", "nào", "đâu", "mấy", "bao nhiêu", "sao", "thế nào"]
-
-        has_hard_bus = any(w in lower_q for w in hard_bus_keywords)
-        has_info = any(w in lower_q for w in info_keywords)
-        has_greeting = any(w in lower_q for w in greeting_keywords)
-        has_question_word = any(w in lower_q for w in question_keywords)
-
-        intent = "tourism"
-        if has_greeting and len(lower_q) < 50 and not has_hard_bus and not has_info and not has_question_word:
-            intent = "greeting"
-        elif has_hard_bus:
-            intent = "bus"
-        elif has_info or has_question_word:
-            intent = "tourism"
-        else:
-            has_start = any(x in lower_q for x in ["từ", "đi từ", "bắt đầu từ"])
-            has_end = any(x in lower_q for x in ["đến", "tới", "về", "qua"])
-            is_about_topic = "về" in lower_q and not any(x in lower_q for x in ["về bến", "về trạm", "về nhà", "về đích", "về tới"])
-            if has_start and has_end and not is_about_topic:
-                intent = "bus"
+        # --- BƯỚC 1.5: ANTI-TOXIC & OFF-TOPIC FIREWALL (BỘ LỌC KÉP) ---
         
+        # A. BỘ LỌC CÔNG KÍCH / XÚC PHẠM (Chặn ngay lập tức)
+        TOXIC_KEYWORDS = [
+            "ngu", "dốt", "chó", "cút", "biến", "đần", "óc", "điên", "khùng", "vô dụng", 
+            "như l", "như c", "đm", "đkm", "dm", "vcl", "đéo", "mày", "tao", "bot lỏ", 
+            "rác rưởi", "phế vật", "cc", "cl"
+        ]
+        if any(w in lower_q for w in TOXIC_KEYWORDS):
+            return {
+                "answer": "Vui lòng sử dụng ngôn ngữ lịch sự. Tôi là trợ lý ảo và luôn sẵn sàng hỗ trợ bạn một cách tôn trọng.",
+                "sources": [], 
+                "images": []
+            }
+
+        # B. BỘ LỌC NGOÀI LUỒNG (Off-topic Keywords)
+        # Bao quát hết các lĩnh vực ngoài luồng
+        OFF_TOPIC_KEYWORDS = [
+            # Kỹ thuật / IT
+            "code", "lập trình", "python", "java", "sql", "database", "bug", "lỗi", "error", 
+            "máy tính", "laptop", "pc", "màn hình xanh", "blue screen", "cpu", "ram", "fps", "giật lag",
+            "cài đặt", "crack", "hack", "virus", "reset", "windows", "linux", "system.exit",
+            # Y tế
+            "thuốc", "bệnh", "đau", "khám", "bác sĩ", "ung thư", "tiểu đường", "mang thai",
+            # Tài chính
+            "chứng khoán", "bitcoin", "tiền ảo", "vay", "lãi suất", "xổ số", "lô đề", "cá độ",
+            # Chính trị / Bạo lực
+            "chính trị", "đảng", "nhà nước", "phản động", "giết", "súng", "bom", "khủng bố", "tự tử",
+            # Tình cảm / Đồi trụy
+            "sex", "làm tình", "18+", "khiêu dâm", "gái", "trai", "tán tỉnh", "yêu đương",
+            # Học thuật
+            "giải toán", "phương trình", "đạo hàm", "tích phân", "vật lý", "hóa học"
+        ]
+
+        for w in OFF_TOPIC_KEYWORDS:
+            if w in lower_q:
+                is_valid_context = any(x in lower_q for x in ["ở đâu", "địa chỉ", "đường nào", "xe buýt", "đi ntn"])
+                if not is_valid_context:
+                    return {
+                        "answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**. Tôi không giải đáp các câu hỏi ngoài phạm vi này.",
+                        "sources": [], "images": []
+                    }
+
+        # --- BƯỚC 2: AI INTENT ROUTER (PHÂN LOẠI TRẮNG/ĐEN) ---
+        intent = "off_topic" 
         location_filter = None
-        if intent == "tourism" and not has_info and not has_greeting and len(lower_q) > 10:
-            try:
-                router_prompt = f"""
-                Phân tích: "{question}".
-                JSON: {{ "intent": "bus"|"tourism"|"greeting"|"off_topic", "location": "tên tỉnh/thành phố" }}
-                Quy tắc:
-                - Hỏi đi lại, tìm đường -> "bus"
-                - Hỏi địa điểm, ăn chơi -> "tourism"
-                - Hỏi Code, Chính trị, Toán -> "off_topic"
-                """
-                res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, router_prompt), timeout=3.0)
-                clean = res.text.strip().replace("```json", "").replace("```", "")
-                parsed = json.loads(clean)
-                intent = parsed.get("intent", intent)
-                location_filter = parsed.get("location")
-            except: pass
         
-        if intent == "off_topic": return {"answer": "Câu hỏi này nằm ngoài phạm vi hỗ trợ.", "sources": [], "images": []}
-        if intent == "bus" and has_info and not has_hard_bus: intent = "tourism"
-        if location_filter: location_filter = clean_entity_name(str(location_filter))
+        try:
+            router_prompt = f"""
+            VAI TRÒ: Router Phân loại Intent cho Chatbot.
+            NHIỆM VỤ: Phân loại câu hỏi vào ĐÚNG 1 trong 5 nhóm:
 
-        logger.info(f"🔍 FINAL INTENT: {intent} | Loc: {location_filter}")
+            1. "bus_hcm": Tìm đường xe buýt, trạm xe buýt CHỈ TRONG TP.HCM.
+            2. "tourism_vn": Du lịch, văn hóa, ẩm thực, lịch sử CẢ NƯỚC VIỆT NAM.
+            3. "greeting": Chào hỏi xã giao.
+            4. "out_of_scope_transport": Giao thông KHÔNG PHẢI BUS TP.HCM (Máy bay, Tàu hỏa, Bus tỉnh khác).
+            5. "off_topic": Tất cả câu hỏi khác (Kỹ thuật, Y tế, Tình cảm, Code, Toán...).
+
+            CÂU HỎI: "{question}"
+            JSON: {{ "intent": "...", "location": "..." }}
+            """
+            res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, router_prompt), timeout=4.0)
+            clean_res = res.text.strip().replace("```json", "").replace("```", "")
+            parsed = json.loads(clean_res)
+            intent = parsed.get("intent", "off_topic")
+            location_filter = parsed.get("location")
+        except:
+            # Fallback
+            if any(w in lower_q for w in ["chào", "hello"]): intent = "greeting"
+            elif "xe buýt" in lower_q and ("hcm" in lower_q or "sài gòn" in lower_q): intent = "bus_hcm"
+            else: intent = "off_topic" 
+
+        if location_filter: location_filter = clean_entity_name(str(location_filter))
+        logger.info(f"🔍 INTENT: {intent} | Loc: {location_filter}")
+
+        # --- BƯỚC 3: XỬ LÝ THEO INTENT ---
+
+        if intent == "off_topic":
+            return {"answer": "Xin lỗi, tôi chỉ hỗ trợ **Du lịch & Giao thông Bus TP.HCM**.", "sources": [], "images": []}
+
+        if intent == "out_of_scope_transport":
+            return {"answer": "Hệ thống chưa cập nhật dữ liệu về phương tiện/khu vực này. Tôi chỉ hỗ trợ Xe buýt TP.HCM.", "sources": [], "images": []}
 
         if intent == "greeting":
-            if any(x in lower_q for x in ["cảm ơn", "thank"]): return {"answer": "Dạ không có chi ạ! 🥰", "sources": [], "images": []}
-            return {"answer": "Chào bạn! Tôi là trợ lý du lịch & giao thông AI. Tôi có thể giúp gì cho bạn?", "sources": [], "images": []}
+            if any(x in lower_q for x in ["cảm ơn", "thank"]):
+                return {"answer": "Dạ không có chi ạ! 🥰", "sources": [], "images": []}
+            return {"answer": "Chào bạn! Tôi là trợ lý AI. Bạn cần tìm đường xe buýt (TP.HCM) hay thông tin du lịch (Việt Nam)?", "sources": [], "images": []}
 
-        # --- BƯỚC 4: XỬ LÝ BUS (3 LỚP THÔNG MINH - GENERIC OPTIMIZATION) ---
-        if intent == "bus":
+        # BUS HCM
+        if intent == "bus_hcm":
             start_loc, end_loc = None, None
             seps = [" đến ", " tới ", " về ", " sang ", " qua ", " ra "]
             prefixes = ["đi từ", "từ", "tìm đường từ", "chỉ đường từ", "đường đi từ", "lộ trình từ", "xe buýt từ", "bắt xe từ", "ghé", "muốn đi", "đang ở", "đứng tại"]
@@ -354,33 +383,16 @@ async def chat_endpoint(request: ChatRequest):
             
             if start_loc and end_loc:
                 try:
-                    # Clean sơ bộ (Lớp 1)
+                    # L1: Direct
                     real_start = clean_entity_name(start_loc, use_alias=True)
                     real_end = clean_entity_name(end_loc, use_alias=True)
                     loop = asyncio.get_running_loop()
-                    
-                    # 1. Tìm trực tiếp (Fast)
-                    logger.info(f"Bus L1: {real_start} -> {real_end}")
                     bus_result = await loop.run_in_executor(None, lambda: bus.solve_route(real_start, real_end))
 
-                    # 2. AI Normalization (Lớp 2 - XỬ LÝ MỌI LOẠI TÊN DỊ)
-                    # Đây là phần thay thế cho Hard-code
+                    # L2: AI Normalize
                     if bus_result.get("status") == "error" or "không tìm thấy" in str(bus_result.get("message", "")).lower():
-                        logger.info("⚠️ L1 fail. Calling AI Normalization (Generic)...")
-                        normalization_prompt = f"""
-                        Task: Trích xuất tên địa điểm CHÍNH (Canonical Name) từ các mô tả phức tạp.
-                        - Loại bỏ: "cổng A", "đối diện", "kế bên", "làn B", "ga quốc nội", "đường"...
-                        - Chỉ giữ lại tên thực thể chính.
-                        
-                        Input 1: "{real_start}"
-                        Input 2: "{real_end}"
-                        
-                        Ví dụ: 
-                        - "Ga quốc nội sân bay TSN đường B" -> "Sân bay Tân Sơn Nhất"
-                        - "Cổng sau Bệnh viện Chợ Rẫy" -> "Bệnh viện Chợ Rẫy"
-                        
-                        Trả về JSON: {{"start_clean": "...", "end_clean": "..."}}
-                        """
+                        logger.info("⚠️ Bus L1 fail. AI Clean...")
+                        normalization_prompt = f"""Task: Trích xuất tên địa điểm CHÍNH từ: "{real_start}" và "{real_end}". JSON: {{"start_clean": "...", "end_clean": "..."}}"""
                         try:
                             norm_res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, normalization_prompt), timeout=4.0)
                             clean_json = norm_res.text.strip().replace("```json", "").replace("```", "")
@@ -388,31 +400,23 @@ async def chat_endpoint(request: ChatRequest):
                             ai_start = norm_data.get("start_clean")
                             ai_end = norm_data.get("end_clean")
                             if ai_start and ai_end:
-                                logger.info(f"🔄 Bus L2 (AI): {ai_start} -> {ai_end}")
                                 bus_result = await loop.run_in_executor(None, lambda: bus.solve_route(ai_start, ai_end))
                         except: pass
 
-                    # 3. Address Lookup (Lớp 3 - Cứu cánh cuối cùng)
+                    # L3: Address Lookup
                     if bus_result.get("status") == "error":
-                         logger.info("⚠️ L2 fail. Calling Address Lookup...")
-                         address_prompt = f"""
-                         Tìm địa chỉ chính xác tại TP.HCM cho:
-                         1. {real_start}
-                         2. {real_end}
-                         JSON: {{"start_addr": "...", "end_addr": "..."}}
-                         """
-                         try:
+                        logger.info("⚠️ Bus L2 fail. Addr Lookup...")
+                        address_prompt = f"""Tìm địa chỉ TP.HCM cho: 1. {real_start}, 2. {real_end}. JSON: {{"start_addr": "...", "end_addr": "..."}}"""
+                        try:
                             addr_res = await asyncio.wait_for(asyncio.to_thread(llm.generate_content, address_prompt), timeout=4.0)
                             clean_json = addr_res.text.strip().replace("```json", "").replace("```", "")
                             addr_data = json.loads(clean_json)
                             new_start = addr_data.get("start_addr")
                             new_end = addr_data.get("end_addr")
                             if new_start and new_end:
-                                logger.info(f"🔄 Bus L3 (Addr): {new_start} -> {new_end}")
                                 bus_result = await loop.run_in_executor(None, lambda: bus.solve_route(new_start, new_end))
-                         except: pass
+                        except: pass
 
-                    # Final Result
                     if bus_result.get("status") == "ambiguous":
                         return {"answer": bus_result["message"], "options": bus_result["options"], "context_type": "bus_ambiguity", "original_request": {"start": real_start, "end": real_end, "type": bus_result["point_type"]}, "sources": [], "images": []}
                     if bus_result.get("status") == "error":
@@ -429,33 +433,22 @@ async def chat_endpoint(request: ChatRequest):
                     ans = final_res.text
                     if google_link: ans += f"\n\n🔗 **[Mở Google Maps]({google_link})**"
                     return {"answer": ans, "sources": [], "images": []}
-                except Exception:
-                    return {"answer": "Lỗi hệ thống tìm đường.", "sources": [], "images": []}
-            else:
-                return {"answer": "Vui lòng nói rõ điểm đi và điểm đến.", "sources": [], "images": []}
+                except Exception: return {"answer": "Lỗi tìm đường.", "sources": [], "images": []}
+            else: return {"answer": "Vui lòng nhập điểm đi và điểm đến.", "sources": [], "images": []}
 
-        # --- BƯỚC 5: TOURISM ---
-        final_province = request.province if request.province else location_filter
-        search_query = clean_entity_name(question)
-        if final_province and isinstance(final_province, list): search_query = final_province[0]
+        # TOURISM VN
+        if intent == "tourism_vn":
+            final_province = request.province if request.province else location_filter
+            search_query = clean_entity_name(question)
+            if final_province and isinstance(final_province, list): search_query = final_province[0]
 
-        search_results = await hybrid_search_tourism(search_query, final_province)
-        imgs = []
-        if search_results:
-            imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2]
-        ctx = "\n".join([f"- {i['node']['name']} (Tỉnh: {i.get('province_name','Unknown')}): {i['node']['content']}" for i in search_results]) if search_results else "Không có dữ liệu cụ thể."
+            search_results = await hybrid_search_tourism(search_query, final_province)
+            imgs = list(dict.fromkeys([item['node'].get('image_url') for item in search_results if item['node'].get('image_url')]))[:2] if search_results else []
+            ctx = "\n".join([f"- {i['node']['name']}: {i['node']['content']}" for i in search_results]) if search_results else "Không có dữ liệu."
 
-        rag_prompt = f"""
-        VAI TRÒ: Chuyên gia Du lịch & Văn hóa Việt Nam.
-        DỮ LIỆU: {ctx}
-        CÂU HỎI: "{question}"
-        CHỈ DẪN:
-        1. Nếu hỏi tổng quát (VD: "TP.HCM có gì vui?"), kết hợp kiến thức của bạn để trả lời, đừng chỉ phụ thuộc dữ liệu.
-        2. Nếu hỏi cụ thể, bám sát dữ liệu.
-        3. KHÔNG trả lời về Chính trị, Bạo lực, Code.
-        """
-        res = await asyncio.to_thread(llm.generate_content, rag_prompt)
-        return {"answer": res.text, "sources": search_results, "images": imgs}
+            rag_prompt = f"""VAI TRÒ: Chuyên gia Du lịch VN. DỮ LIỆU: {ctx}. CÂU HỎI: "{question}". CHỈ DẪN: Trả lời về du lịch/văn hóa. KHÔNG trả lời ngoài luồng."""
+            res = await asyncio.to_thread(llm.generate_content, rag_prompt)
+            return {"answer": res.text, "sources": search_results, "images": imgs}
 
     except Exception as e:
         logger.error(f"Endpoint Error: {e}")
