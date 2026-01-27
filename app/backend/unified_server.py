@@ -137,25 +137,72 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
     # 4. Xử lý Alias - ĐẦY ĐỦ 100% KHÔNG CẮT BỚT
     if use_alias or True:
         ENTITY_ALIASES = {
-            # Địa danh du lịch
-            "dinh độc lập": "hội trường thống nhất", 
+            # --- 1. ĐỊA DANH DU LỊCH & LANDMARKS ---
+            "dinh độc lập": "hội trường thống nhất",
+            "hội trường thống nhất": "hội trường thống nhất",
             "nhà thờ đức bà": "vương cung thánh đường chính tòa đức bà sài gòn",
             "bưu điện thành phố": "bưu điện trung tâm sài gòn",
-            "bến nhà rồng": "bảo tàng hồ chí minh",
-            "chợ lớn": "chợ bình tây", 
-            "landmart 81": "landmark 81", 
+            
+            # Fix vụ Bảo tàng HCM -> Bến Nhà Rồng để tìm được trạm xe buýt
+            "bến nhà rồng": "bến nhà rồng",
+            "bảo tàng hồ chí minh": "bến nhà rồng", 
+            "bảo tàng hcm": "bến nhà rồng",
+            
+            "chợ lớn": "chợ bình tây",
+            "chợ bến thành": "chợ bến thành",
+            "landmart 81": "landmark 81",
+            "landmark 81": "landmark 81",
+            "bitexco": "tòa nhà bitexco financial tower",
             "lăng bác": "lăng chủ tịch hồ chí minh",
+            "thảo cầm viên": "thảo cầm viên sài gòn",
+            "sở thú": "thảo cầm viên sài gòn",
+            "suối tiên": "khu du lịch văn hóa suối tiên",
+            "đầm sen": "công viên văn hóa đầm sen",
+            "phố đi bộ": "phố đi bộ nguyễn huệ",
+            "bùi viện": "phố đi bộ bùi viện",
+            "hồ con rùa": "công trường quốc tế",
+
+            # --- 2. ĐỊA DANH HÀNH CHÍNH ---
             "sài gòn": "thành phố hồ chí minh",
             "hcm": "thành phố hồ chí minh",
             "tphcm": "thành phố hồ chí minh",
-            
-            # Sân bay (Alias cơ bản, không hardcode logic)
+            "tp hcm": "thành phố hồ chí minh",
+            "tp.hcm": "thành phố hồ chí minh",
+
+            # --- 3. SÂN BAY & BẾN XE (GIAO THÔNG) ---
             "tân sơn nhất": "sân bay tân sơn nhất",
             "ga quốc nội": "sân bay tân sơn nhất",
             "ga quốc tế": "sân bay tân sơn nhất",
             "phi trường": "sân bay tân sơn nhất",
+            "tsn": "sân bay tân sơn nhất",
             
-            # Trường Đại Học & Đường xá
+            "bx miền đông": "bến xe miền đông",
+            "bxmd": "bến xe miền đông",
+            "bx miền tây": "bến xe miền tây",
+            "bxmt": "bến xe miền tây",
+            "bx an sương": "bến xe an sương",
+            "bx chợ lớn": "bến xe chợ lớn",
+            "bx buýt sài gòn": "trạm điều hành xe buýt sài gòn",
+            "công viên 23/9": "công viên 23 tháng 9",
+            "cv 23/9": "công viên 23 tháng 9",
+
+            # --- 4. TRƯỜNG ĐẠI HỌC (Mở rộng cho sinh viên đi xe buýt) ---
+            # Nhóm ĐHQG
+            "đh quốc gia": "đại học quốc gia thành phố hồ chí minh",
+            "đhqg": "đại học quốc gia thành phố hồ chí minh",
+            "khtn": "đại học khoa học tự nhiên",
+            "đh khoa học tự nhiên": "đại học khoa học tự nhiên",
+            "xhnv": "đại học khoa học xã hội và nhân văn",
+            "nhân văn": "đại học khoa học xã hội và nhân văn",
+            "đh bách khoa": "đại học bách khoa",
+            "bách khoa": "đại học bách khoa",
+            "hcmut": "đại học bách khoa",
+            "đh quốc tế": "đại học quốc tế",
+            "iu": "đại học quốc tế",
+            "cntt": "đại học công nghệ thông tin",
+            "uit": "đại học công nghệ thông tin",
+
+            # Nhóm trường khác
             "đh tdt": "đại học tôn đức thắng",
             "tdt": "đại học tôn đức thắng",
             "tdtu": "đại học tôn đức thắng",
@@ -164,24 +211,79 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "đh văn lang": "đại học văn lang",
             "vlu": "đại học văn lang",
             "văn lang": "đại học văn lang",
-            "trường văn lang": "đại học văn lang",
+            "đh vl": "đại học văn lang",
             
             "hutech": "đại học công nghệ thành phố hồ chí minh",
-            "đh hutech": "đại học công nghệ thành phố hồ chí minh",
+            "đh công nghệ": "đại học công nghệ thành phố hồ chí minh",
             
             "ueh": "đại học kinh tế thành phố hồ chí minh",
             "đh kinh tế": "đại học kinh tế thành phố hồ chí minh",
             
-            "bách khoa": "đại học bách khoa",
-            "hcmut": "đại học bách khoa",
-            
             "sư phạm kỹ thuật": "đại học sư phạm kỹ thuật",
             "spkt": "đại học sư phạm kỹ thuật",
+            "hcmute": "đại học sư phạm kỹ thuật",
             
             "fpt": "đại học fpt",
             "rmit": "đại học rmit",
+            "đh sài gòn": "đại học sài gòn",
+            "sgu": "đại học sài gòn",
+            "đh mở": "đại học mở thành phố hồ chí minh",
+            "ou": "đại học mở thành phố hồ chí minh",
+            "đh công nghiệp": "đại học công nghiệp thành phố hồ chí minh",
+            "iuh": "đại học công nghiệp thành phố hồ chí minh",
+            "đh luật": "đại học luật thành phố hồ chí minh",
+            "hcmul": "đại học luật thành phố hồ chí minh",
+            "đh y dược": "đại học y dược thành phố hồ chí minh",
+            "ump": "đại học y dược thành phố hồ chí minh",
+            "đh giao thông vận tải": "đại học giao thông vận tải",
+            "gtvt": "đại học giao thông vận tải",
+            "đh nông lâm": "đại học nông lâm",
+            "nlu": "đại học nông lâm",
+            "đh sư phạm": "đại học sư phạm thành phố hồ chí minh",
+            "hcmue": "đại học sư phạm thành phố hồ chí minh",
 
-            "nguyễn hữu thọ": "đường nguyễn hữu thọ"
+            # --- 5. BỆNH VIỆN (Điểm đến quan trọng) ---
+            "bv chợ rẫy": "bệnh viện chợ rẫy",
+            "chợ rẫy": "bệnh viện chợ rẫy",
+            "bv 115": "bệnh viện nhân dân 115",
+            "bệnh viện 115": "bệnh viện nhân dân 115",
+            "bv gia định": "bệnh viện nhân dân gia định",
+            "nhân dân gia định": "bệnh viện nhân dân gia định",
+            "bv ung bướu": "bệnh viện ung bướu",
+            "ung bướu": "bệnh viện ung bướu",
+            "bv nhi đồng": "bệnh viện nhi đồng",
+            "nhi đồng 1": "bệnh viện nhi đồng 1",
+            "nhi đồng 2": "bệnh viện nhi đồng 2",
+            "bv từ dũ": "bệnh viện từ dũ",
+            "từ dũ": "bệnh viện từ dũ",
+            "bv hùng vương": "bệnh viện hùng vương",
+            "hùng vương": "bệnh viện hùng vương",
+            "bv đại học y dược": "bệnh viện đại học y dược",
+            "bv tai mũi họng": "bệnh viện tai mũi họng",
+            "bv mắt": "bệnh viện mắt",
+
+            # --- 6. TÊN ĐƯỜNG VIẾT TẮT ---
+            "nguyễn hữu thọ": "đường nguyễn hữu thọ",
+            "cmt8": "đường cách mạng tháng tám",
+            "cách mạng tháng 8": "đường cách mạng tháng tám",
+            "đbp": "đường điện biên phủ",
+            "điện biên phủ": "đường điện biên phủ",
+            "nvl": "đường nguyễn văn linh",
+            "nguyễn văn linh": "đường nguyễn văn linh",
+            "hbt": "đường hai bà trưng",
+            "hai bà trưng": "đường hai bà trưng",
+            "nkkn": "đường nam kỳ khởi nghĩa",
+            "nam kỳ khởi nghĩa": "đường nam kỳ khởi nghĩa",
+            "pxl": "đường phan xích long",
+            "phan xích long": "đường phan xích long",
+            "ntmk": "đường nguyễn thị minh khai",
+            "nguyễn thị minh khai": "đường nguyễn thị minh khai",
+            "pvđ": "đường phạm văn đồng",
+            "phạm văn đồng": "đường phạm văn đồng",
+            "võ văn kiệt": "đại lộ võ văn kiệt",
+            "ql1a": "quốc lộ 1a",
+            "ql13": "quốc lộ 13",
+            "xa lộ hà nội": "xa lộ hà nội"
         }
         for alias, full_name in ENTITY_ALIASES.items():
             if alias in cleaned:
