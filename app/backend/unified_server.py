@@ -184,11 +184,11 @@ def clean_entity_name(raw_text: str, use_alias: bool = False) -> str:
             "đh tdt": "đại học tôn đức thắng",
             "tdt": "đại học tôn đức thắng",
             "tdtu": "đại học tôn đức thắng",
-            "tôn đức thắng": "đại học tôn đức thắng",
             
             "đh văn lang": "đại học văn lang",
             "vlu": "đại học văn lang",
             "văn lang": "đại học văn lang",
+            "đại học văn lang": "đại học văn lang",
             
             "hutech": "đại học công nghệ thành phố hồ chí minh",
             "đh hutech": "đại học công nghệ thành phố hồ chí minh",
